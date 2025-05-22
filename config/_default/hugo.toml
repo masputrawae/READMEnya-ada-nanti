@@ -1,0 +1,83 @@
+[menus]
+# ========== MENU MAIN ==========
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+    params = {icon = "bi-house"}
+
+  [[menus.main]]
+    name = 'All Notes'
+    pageRef = '/notes'
+    weight = 20
+    params = {icon = "bi-journal-text"}
+
+  [[menus.main]]
+    name = 'All Projects'
+    pageRef = '/projects'
+    weight = 30
+    params = {icon = "bi-kanban"}
+
+  [[menus.main]]
+    name = 'Tags'
+    pageRef = '/tags'
+    weight = 30
+    params = {icon = "bi-tags"}
+
+  [[menus.main]]
+    name = 'Categories'
+    pageRef = '/categories'
+    weight = 40
+    params = {icon = "bi-folder"}
+
+# ========== MENU ANCHOR ==========
+  [[menus.anchor]]
+    name = 'About'
+    url = '/#about-section'
+    weight = 10
+    params = {icon = "bi-person"}
+
+  [[menus.anchor]]
+    name = 'Skills'
+    url = '/#skills-section'
+    weight = 20
+    params = {icon = "bi-tools"}
+
+  [[menus.anchor]]
+    name = 'Projects'
+    url = '/#projects-section'
+    weight = 30
+    params = {icon = "bi-lightbulb"}
+
+  [[menus.anchor]]
+    name = 'Blog'
+    url = '/#Blog-section'
+    weight = 40
+    params = {icon = "bi-journal"}
+
+# ========== MENU SOCIAL ==========
+  [[menus.social]]
+    name        = "Instagram"
+    url         = "https://www.instagram.com/masputrawae/"
+    weight      = 10
+    params      = {icon = "bi-instagram"}
+  [[menus.social]]
+    name        = "Twitter"
+    url         = "https://x.com/"
+    weight      = 20
+    params      = {icon = "bi-twitter-x"}
+  [[menus.social]]
+    name        = "Facebook"
+    url         = "https://facebook.com/"
+    weight      = 30
+    params      = {icon = "bi-facebook"}
+  [[menus.social]]
+    name        = "Github"
+    url         = "https://github.com/masputrawae"
+    weight      = 40
+    params      = {icon = "bi-github"}
+  [[menus.social]]
+    name        = "Discord"
+    url         = "https://discord.gg/nM4EP8DJFZ"
+    weight      = 50
+    params      = {icon = "bi-discord"}

@@ -1,22 +1,18 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-US'
-title = 'My New Hugo Site'
+#============== BASE ==============#
+baseURL           = 'https://masputrawae.github.io/'
+languageCode      = "id"
+title             = "My Notes"
+enableEmoji       = true
+buildFuture = true
 
-[menus]
-  [[menus.main]]
-    name = 'Home'
-    pageRef = '/'
-    weight = 10
-
-  [[menus.main]]
-    name = 'Posts'
-    pageRef = '/posts'
-    weight = 20
-
-  [[menus.main]]
-    name = 'Tags'
-    pageRef = '/tags'
-    weight = 30
+#============== PARAMS ==============#
+[params]
+  author        = "Putra Jaya"
+  description   = "Catatan-catatan pribadi yang mungkin hanya berguna untuk saya sendiri, atau mungkin alien di masa depan, siapa tahu?"
+  logo          = "https://masputrawae.github.io/logo/logo.png"
+  image         = "https://masputrawae.github.io/logo/logo.png"
+  twitter       = "@Masputrawae"
+  tagline       = ["A UI/UX Designer", "A Comedian", "A Learner"]
 
 [module]
   [module.hugoVersion]

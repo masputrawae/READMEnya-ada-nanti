@@ -1,0 +1,22 @@
+$dark: (
+  bg-body: linear-gradient(120deg, #1a1a1a, #2e2e2e, #3a3a3a, #d4af37),
+  bg-second: #1a1a1a,
+  bg-overlay: rgba(0, 0, 0, 0.6),
+
+  cl-accent: #FFD700,
+  cl-accent-alt: #FFC300,
+
+  cl-text: #FFFFFF,
+  cl-text-second: #B3B3B3,
+
+  cl-border: #333333,
+  cl-border-alt: #1a1a1a,
+
+  shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25),
+  shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35),
+  shadow-gold-glow: 0 0 8px rgba(255, 215, 0, 0.6),
+
+  text-shadow-sm: 1px 1px 2px rgba(0, 0, 0, 0.3),
+  text-shadow-md: 2px 2px 4px rgba(0, 0, 0, 0.6),
+  text-shadow-gold-glow: 0 0 6px rgba(255, 215, 0, 0.8),
+);
