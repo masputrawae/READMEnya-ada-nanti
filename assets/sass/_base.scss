@@ -2,73 +2,52 @@
 @use './abstracts/mixins' as m;
 @use './abstracts/variables' as v;
 
-html, body {
+html {
   background: var(--bg-body);
   color: var(--cl-text);
   font-size: v.$font__size--default;
   font-family: v.$font__family;
 }
 
-#backToTop {position: fixed; display: none;}
-.isolation {
-  max-width: 1200px;
-  min-height: 100dvh;
-  height: 100dvh;
-
-  padding: calc(1.5rem * 0.5);
-  margin: 0 auto;
-
+body {
   display: grid;
-  grid-template-columns: 360px minmax(0, 1fr);
-  grid-template-rows: auto;
-  gap: 1rem;
+  grid-template-columns: 320px 60px 1fr;
+  grid-template-rows: auto auto;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'profile navbar main'
+    'profile navbar footer';
+  max-width: 1200px;
+  min-height: 100dvb;
 
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
+  padding: 0 calc(1.5rem * 0.5);
+  margin: 0 auto;
 }
 
-.sidebar {
-  height: 95dvh;
+.profile {
+  grid-area: profile;
+
+
   position: sticky;
   top: 0;
-  
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  grid-row: auto;
-  gap: 0.5em;
-  align-items: start;
-}
+  height: 100dvb;
+  margin: 0;
+  padding-top: 2rem;
+  border-radius: 1rem;
 
-.main {
-  max-width: 70ch;
-  margin: 0 auto;
-}
-.profile {
-  padding: calc(2.5rem * 0.5);
-  margin: 0 auto;
-  text-align: center;
-  border-top-right-radius: 2rem;
-  border-bottom-left-radius: 2rem;
-  box-shadow: var(--shadow-md);
   overflow: hidden;
-  position: relative;
-  border: 3px solid var(--bg-overlay);
-  height: 100%;
   background-color: var(--bg-overlay);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
+  border: 3px solid var(--bg-overlay);
+  
   &__picture {
-    box-shadow: var(--shadow-sm);
     display: block;
-    width: 200px;
-    height: 200px;
+    max-width: 250px;
+    max-height: 250px;
     margin: 0 auto;
     overflow: hidden;
-    border-top-right-radius: 2rem;
-    border-bottom-left-radius: 2rem;
     border: 3px solid var(--bg-overlay);
+    border-radius: inherit;
   }
 
   &__image {
@@ -77,15 +56,17 @@ html, body {
     height: 100%;
   }
 
-  &__title {
-    font-size: v.$font__size--2xl;
-    display: block;
-    margin-block: 1rem;
+  &__description,
+  &__caption {
+    padding: 0;
+    margin: 0;
+    text-align: center;
   }
 
-  &__caption, &__description{
-    margin: 0;
-    padding: 0;
+  &__title {
+    display: block;
+    font-size: v.$font__size--5xl;
+    margin-block: 0.75rem;
   }
 
   &__tagline {
@@ -93,69 +74,54 @@ html, body {
   }
 
   &__description {
-    margin-top: 1rem;
-    font-size: v.$font__size--2xs;
+    margin: 1rem auto;
+    font-size: v.$font__size--3xs;
+    max-width: 30ch;
   }
 
   &__social {
-    margin-top: 1em;
     @include m.flex-center();
-    gap: 0.5em;
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+
+  &__cta {
+    @include m.flex-between();
+    border-top: 3px solid var(--cl-border);
+    width: 320px;
   }
 }
 
+// NAVBAR & NAV
 .navbar {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1em;
-  max-height: 100dvh;
-  height: 100%;
-  position: relative;
-  border-top-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
+  grid-area: navbar;
+  position: sticky;
+  top: 0;
+  height: 100dvb;
   overflow-y: auto;
   scrollbar-width: none;
-  padding: calc(1.5rem * 0.5);
-  margin: 0 auto;
   background-color: var(--bg-overlay);
   border: 3px solid var(--bg-overlay);
+  border-radius: 1rem;
 }
 
 .nav {
   @include m.flex-center();
   flex-direction: column;
-  gap: 0.4em;
-  padding: 0;
   margin: 0;
+  padding: 1rem 0;
+  gap: 0.4em;
   list-style: none;
 }
 
-.btn {
+.main {
+  grid-area: main;
+  max-width: 80ch;
+  padding: 0 calc(1.5rem * 0.5);
+  margin: 0 auto;
   background-color: var(--bg-overlay);
-  text-decoration: none;
-  display: inline-block;
-  padding: 0.4em 0.8em;
-  text-align: center;
-  border: 2px solid var(--cl-border);
-  cursor: pointer;
-  color: var(--cl-text);
-  border-radius: 0.4em;
-
-  &--icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: v.$font__size--md;
-  }
-
-  &--active {
-    background-color: var(--cl-accent);
-    color: black;
-  }
 }
 
-.btn__text {display: none;}
+.footer {
+  grid-area: footer;
+}

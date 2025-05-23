@@ -19,11 +19,11 @@ Renders a menu for the given menu ID.
 {{- define "_partials/inline/menu/walk.html" }}
   {{- $page := .page }}
   {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL "class" "btn btn--icon"}}
+    {{- $attrs := dict "href" .URL "class" "btn btn--icon btn--tooltip"}}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "btn btn--icon btn--active" "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "class" "btn btn--icon btn--tooltip btn--active" "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "btn btn--icon btn--ancestor" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "class" "btn btn--icon btn--tooltip btn--ancestor" "aria-current" "true") }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}

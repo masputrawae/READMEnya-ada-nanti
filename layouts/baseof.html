@@ -7,33 +7,12 @@
     {{ partial "head/head.html" . }}
   </head>
   <body>
-    <div class="isolation">
-      <aside class="sidebar" id="sidebar">
-        {{ partial "layouts/sidebar.html" . }}
-      </aside>
-
-      <div class="main">
-        <header class="main__header">
-          {{ partial "layouts/header.html" . }}
-        </header>
-        <main class="main__content">
-          {{ block "main" . }}{{ end }}
-        </main>
-        <footer class="main__footer">
-          {{ partial "layouts/footer.html" . }}
-        </footer>
-      </div>
-
-      {{/*  Back To Top Button  */}}
-      <button class="btn btn--back-to-top" id="backToTop">
-        <span class="btn__text">Back To Top</span>
-        <i class="bi bi-rocket btn__icon"></i>
-      </button>
-
-      {{/*  LOADING ANIMATION  */}}
-      <div class="loading" id="layoutLoading">
-        {{ partial "components/loading.html" . }}
-      </div>
+    {{ partial "layouts/profile.html" . }}
+    {{ partial "layouts/navbar" . }}
+    <main class="main">{{ block "main" . }}{{ end }}</main>
+    <footer class="footer">{{ partial "layouts/footer.html" . }}</footer>
+    <div style="display: none;">
+      {{ partial "layouts/loading.html" . }}
     </div>
   </body>
 </html>

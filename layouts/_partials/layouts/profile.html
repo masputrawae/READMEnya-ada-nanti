@@ -5,21 +5,19 @@
   <figcaption class="profile__caption">
     <strong class="profile__title">{{ site.Params.author | title }}</strong>
     <em class="profile__tagline">Im a <span id="tagline" data-taglines="{{ site.Params.tagline | jsonify }}">Example Tagline</span></em>
-    <blockquote class="profile__description">
-      {{ site.Params.description }}
-    </blockquote>
+    <blockquote class="profile__description">{{ site.Params.description }}</blockquote>
     <div class="profile__social">
       {{ range site.Menus.social }}
-        <a href="{{ .URL | relURL }}" class="btn btn--icon" aria-label="{{ .Name }}"><i class="bi {{ with .Params.icon }}{{ . }}{{ end }} btn__icon"></i></a>
+        <a href="{{ .URL | relURL }}" class="btn btn--icon btn--tooltip btn--social" aria-label="{{ .Name }}">
+          <i class="bi {{ with .Params.icon }}{{ . }}{{ end }} btn__icon"></i>
+          <span class="btn__text">{{ .Name | title }}</span>
+        </a>
       {{ end }}
     </div>
   </figcaption>
 </figure>
 
-<nav class="navbar">
-  {{ partial "components/menu-button.html" . }}
-  <div class="navbar__separator"></div>
-  {{ partial "components/menu.html" (dict "menuID" "main" "page" .) }}
-  <div class="nav__separator"></div>
-  {{ partial "components/menu-anchor.html" . }}
-</nav>
+<script defer>
+  const tagline = document.getElementById(id).dataset.tagline
+  console.log(tagline)
+</script>
