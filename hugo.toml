@@ -3,7 +3,7 @@ baseURL           = 'https://masputrawae.github.io/'
 languageCode      = "id"
 title             = "My Notes"
 enableEmoji       = true
-buildFuture = true
+buildFuture       = true
 
 #============== PARAMS ==============#
 [params]
@@ -11,8 +11,42 @@ buildFuture = true
   description   = "Catatan-catatan pribadi yang mungkin hanya berguna untuk saya sendiri, atau mungkin alien di masa depan, siapa tahu?"
   logo          = "https://masputrawae.github.io/logo/logo.png"
   image         = "https://masputrawae.github.io/logo/logo.png"
-  twitter       = "@Masputrawae"
-  tagline       = ["A UI/UX Designer", "A Comedian", "A Learner"]
+
+[menus]
+# ========== MENU MAIN ==========
+  [[menus.main]]
+    name           = 'Home'
+    pageRef        = '/'
+    weight         = 10
+  [[menus.main]]
+    name           = 'Notes'
+    pageRef        = '/vault'
+    weight         = 20
+  [[menus.main]]
+    name           = 'Projects'
+    pageRef        = '/vault/projects'
+    weight         = 30
+  [[menus.main]]
+    name           = 'Tags'
+    pageRef        = '/tags'
+    weight         = 40
+  [[menus.main]]
+    name           = 'About'
+    pageRef        = '/about'
+    weight         = 50
+# ========== MENU SOCIAL ==========
+  [[menus.social]]
+    name        = "Instagram"
+    url         = "https://www.instagram.com/masputrawae/"
+    weight      = 10
+  [[menus.social]]
+    name        = "Github"
+    url         = "https://github.com/masputrawae"
+    weight      = 20
+  [[menus.social]]
+    name        = "Discord"
+    url         = "https://discord.gg/nM4EP8DJFZ"
+    weight      = 30
 
 [module]
   [module.hugoVersion]

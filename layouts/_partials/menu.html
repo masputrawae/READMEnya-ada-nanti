@@ -11,19 +11,19 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <ul class="nav" id="menuMain">
+  <nav class="nav">
     {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-  </ul>
+  </nav>
 {{- end }}
 
 {{- define "_partials/inline/menu/walk.html" }}
   {{- $page := .page }}
   {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL "class" "btn btn--icon btn--tooltip"}}
+    {{- $attrs := dict "href" .URL "class" "nav__link"}}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "btn btn--icon btn--tooltip btn--active" "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "class" "nav__link nav__link--active" "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "btn btn--icon btn--tooltip btn--ancestor" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "class" "nav__link nav__link--ancestor" "aria-current" "true") }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}
@@ -31,22 +31,15 @@ Renders a menu for the given menu ID.
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    <li class="nav__item">
       <a
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
           {{- end }}
         {{- end -}}
-      >
-        <i class="bi {{ with .Params.icon }}{{ . }}{{ end }} btn__icon"></i>
-        <span class="btn__text">{{ $name }}</span>
-      </a>
+      >{{ $name }}</a>
       {{- with .Children }}
-        <ul>
-          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-        </ul>
+        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       {{- end }}
-    </li>
   {{- end }}
 {{- end }}

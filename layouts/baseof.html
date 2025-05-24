@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html
-  lang="{{ site.Language.LanguageCode }}"
-  dir="{{ or site.Language.LanguageDirection `ltr` }}"
->
-  <head>
-    {{ partial "head/head.html" . }}
-  </head>
-  <body>
-    {{ partial "layouts/profile.html" . }}
-    {{ partial "layouts/navbar" . }}
-    <main class="main">{{ block "main" . }}{{ end }}</main>
-    <footer class="footer">{{ partial "layouts/footer.html" . }}</footer>
-    <div style="display: none;">
-      {{ partial "layouts/loading.html" . }}
-    </div>
-  </body>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+{{ partial "head/head.html" . }}
+<body>
+  <aside class="sidebar" id="sidebar">
+    {{ partial "sidebar.html" . }}
+  </aside>
+  <main class="main">
+    {{ partial "header.html" . }}
+    {{ block "main" . }}{{ end }}
+    {{ partial "footer.html" . }}
+  </main>
+  {{ partial "loading.html" . }}
+</body>
 </html>
