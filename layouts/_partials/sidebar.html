@@ -1,18 +1,29 @@
 <figure class="brand">
-  <picture class="brand__pict">
+  <picture class="brand__pic">
     <img src="{{ site.Params.logo }}" alt="{{ site.Params.author }}" class="brand__img">
   </picture>
   <figcaption class="brand__caption">
     <strong class="brand__title">{{ site.Params.author }}</strong>
+
+    <nav class="brand__social">
+      {{ $length := len site.Menus.social }}
+        {{ range $i, $e := site.Menus.social }}
+          <a href="{{ $e.URL | relURL }}" class="brand__link">{{ $e.Name }}</a>{{ if lt (add $i 1) $length }} <span class="emoji">&#x2022;</span> {{ end }}
+        {{ end }}
+    </nav>
+    
     <blockquote class="brand__description">
       {{ site.Params.description }}
     </blockquote>
-    <nav class="brand__social">
-      {{ range site.Menus.social }}
-        <a href="{{ .URL | relURL }}" class="brand__link">{{ .Name }}</a>
-      {{ end }}
-    </nav>
   </figcaption>
 </figure>
 
-{{ partial "components/menu.html" (dict "menuID" "main" "page" .) }}
+{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+
+<button 
+  class="btn btn--emoji" 
+  data-sidebar="sidebar"
+  aria-label="Toggle Sidebar"
+>
+  <span class="emoji">&#x2716;</span>
+</button>

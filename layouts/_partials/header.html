@@ -1,25 +1,27 @@
 <header class="header">
   <button 
     class="btn btn--emoji" 
-    id="toggleSidebar" 
+    data-sidebar="sidebar"
     aria-label="Toggle Sidebar"
   >
-    <span class="emoji">📜</span>
+    <span class="emoji">&#x1F9ED;</span>
   </button>
   
   <div class="header__form">
     <form class="search">
-      
+      <label class="search__label" for="search">Search</label>
+      <input name="search" id="search" type="text" class="search__input">
     </form>
     
     <div id="results"></div>
   </div>
   
-  <button 
-    class="btn btn--emoji" 
-    id="switchTheme" 
+  <button
+    class="btn btn--emoji"
+    id="switchTheme"
     aria-label="Switch Theme"
+    data-emoji-theme="{'&#x1F319;', '&#x1F319;', '&#x1F319;'}"
   >
-    <span class="emoji">🌗</span>
+    <span class="emoji">&#x1F311;</span>
   </button>
 </header>

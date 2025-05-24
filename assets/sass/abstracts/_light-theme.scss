@@ -1,23 +1,23 @@
 $light: (
-  bg-body: linear-gradient(135deg, #0d0d0d, #1a1a1a, #262626),
-  bg-second: #1a1a1a,
-  bg-overlay: rgba(0, 0, 0, 0.6),
+  bg-body: #f9fafb,
+  bg-second: #f3f4f6,
+  bg-third: #e5e7eb,
 
+  cl-text: #27272a,
+  cl-title: #111827,
+  cl-muted: #3f3f46,
 
-  cl-accent: #FFD700,
-  cl-accent-alt: #FFC300,
+  cl-accent: #f59e0b,
+  cl-accent-alt: #facc15,
 
-  cl-text: #FFFFFF,
-  cl-text-second: #B3B3B3,
+  cl-border: #d1d5db,
+  cl-border-alt: #9ca3af,
 
-  cl-border: #333333,
-  cl-border-alt: #1a1a1a,
+  shadow-sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05),',
+  shadow-md: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+  shadow-lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05)',
 
-  shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25),
-  shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35),
-  shadow-gold-glow: 0 0 8px rgba(255, 215, 0, 0.6),
-
-  text-shadow-sm: 1px 1px 2px rgba(0, 0, 0, 0.3),
-  text-shadow-md: 2px 2px 4px rgba(0, 0, 0, 0.6),
-  text-shadow-gold-glow: 0 0 6px rgba(255, 215, 0, 0.8),
+  text-shadow-sm: '0 1px 1px rgba(0, 0, 0, 0.5)',
+  text-shadow-md: '0 2px 4px rgba(0, 0, 0, 0.4)',
+  text-shadow-lg: '0 4px 8px rgba(0, 0, 0, 0.3)',
 );

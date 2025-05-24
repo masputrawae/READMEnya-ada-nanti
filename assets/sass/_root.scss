@@ -13,3 +13,7 @@
 }
 
 *,*::after, *::before {box-sizing: border-box;}
+
+.emoji {
+  font-family: v.$font__family--emoji;
+}
