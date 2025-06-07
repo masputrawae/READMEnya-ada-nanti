@@ -1,0 +1,59 @@
+#============== BASE ==============#
+baseURL           = 'https://masputrawae.github.io/'
+languageCode      = 'id'
+title             = 'Putra Jaya'
+enableEmoji       = true
+
+#============== TAXONOMIES ==============#
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+  series = 'series'
+
+#============== PERMALINKS ==============#
+[permalinks]
+  notes = '/:year/:month/:day/:title/'
+  projects = '/:year/:month/:day/:title/'
+  task = '/:year/:month/:day/:title/'
+  series = '/:section/:title/'
+
+#============== PARAMS ==============#
+[params]
+  author        = 'Putra Jaya'
+  tagline       = 'Manusia Biasa'
+  description   = 'Catatan-catatan pribadi yang mungkin hanya berguna untuk saya sendiri, atau mungkin alien di masa depan, siapa tahu?'
+  logo          = 'logo/logo.png'
+  thumbnail     = 'logo/logo.png'
+
+#============== GOOGLE ANALYTICS ==============#
+[services]
+  [services.googleAnalytics]
+    id = 'G-W9TMTZZYG5'
+
+[privacy]
+  [privacy.googleAnalytics]
+    disable = false
+    respectDoNotTrack = false
+
+#============== MODULE ==============#
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = '0.146.0'
+
+  [[module.mounts]]
+    source = 'content'
+    target = 'content'
+    excludeFiles = 'templates/*'
+  [[module.mounts]]
+    source = 'content'
+    target = 'content'
+    excludeFiles = '.obsidian/*'
+  [[module.mounts]]
+    source = 'content'
+    target = 'content'
+    excludeFiles = '.trash/*'
+  [[module.mounts]]
+    source = 'content'
+    target = 'content'
+    excludeFiles = 'private/*'
