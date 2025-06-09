@@ -1,0 +1,112 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const Brand = {
+  name: 'Putra Jaya',
+  logo: 'https://masputrawae.github.io/logo/logo.png',
+  tagline: 'Manusia Biasa',
+}
+
+const Navigation = [
+  { name: 'Home', url: '/' },
+  { name: 'About', url: '/about' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'Projects', url: '/projects' },
+]
+---
+
+<nav
+  id="navigationBar"
+  class="bg-neutral-900 fixed top-0 left-0 w-full border-b-2 border-amber-700 px-10 py-3.5 flex justify-between items-center z-50 max-md:px-5"
+>
+  <!-- Brand Logo -->
+  <a href="/" class="flex items-center gap-1.5">
+    <picture
+      class="w-14 h-14 rounded-full overflow-hidden border-2 border-amber-600 shadow-md"
+    >
+      <img
+        src={Brand.logo}
+        alt={Brand.name}
+        class="w-full h-full hover:scale-125 transition-transform"
+      />
+    </picture>
+    <div class="flex flex-col font-[Marcellus]">
+      <strong class="text-xl text-amber-500">{Brand.name}</strong>
+      <em class="text-sm text-neutral-300 not-italic">{Brand.tagline}</em>
+    </div>
+  </a>
+
+  <!-- Navigation Menu -->
+  <ul
+    id="navbarMenu"
+    class="flex items-center gap-7 rounded-2xl transition-all duration-300 ease-in-out max-md:fixed max-md:flex-col max-md:top-1/2 max-md:left-1/2 max-md:transform max-md:-translate-x-1/2 max-md:-translate-y-1/2 max-md:bg-[#191919] max-md:p-20 max-md:rounded-2xl max-md:opacity-0 max-md:scale-75 max-md:pointer-events-none"
+  >
+    <button
+      class="hidden max-md:block absolute top-4 right-4 text-white hover:text-amber-500"
+      data-navbar="navbarMenu"
+      aria-label="Close menu"
+    >
+      <Icon name="x" class="size-6" />
+    </button>
+
+    {
+      Navigation.map(item => {
+        const isActive =
+          Astro.url.pathname === item.url ||
+          (item.url !== '/' && Astro.url.pathname.startsWith(item.url))
+
+        return (
+          <li>
+            <a
+              href={item.url}
+              class={`text-lg relative transition-colors after:block after:h-[2px] after:bg-amber-500 after:transition-transform after:duration-300 after:origin-left
+              ${isActive ? 'text-amber-400 after:scale-x-100' : 'after:scale-x-0 hover:text-amber-400 hover:after:scale-x-100'}`}
+            >
+              {item.name}
+            </a>
+          </li>
+        )
+      })
+    }
+  </ul>
+
+  <!-- Call to Action & Mobile Menu Toggle -->
+  <div class="flex items-center gap-3">
+    <a
+      href="https://example.com/"
+      class="bg-amber-600 hover:bg-amber-500 text-white px-4 py-2 rounded-full font-semibold transition-colors duration-300 max-md:hidden shadow"
+    >
+      Join Discord
+    </a>
+    <button
+      class="hidden max-md:block text-white"
+      data-navbar="navbarMenu"
+      aria-label="Open menu"
+    >
+      <Icon name="bar-3" class="size-6" />
+    </button>
+  </div>
+</nav>
+
+<style>
+  @media (max-width: 48rem) {
+    #navbarMenu.active {
+      opacity: 1 !important;
+      scale: 1 !important;
+      pointer-events: auto;
+    }
+  }
+</style>
+
+<script is:inline>
+  const toggleButtons = document.querySelectorAll('[data-navbar]')
+
+  toggleButtons.forEach(button => {
+    const targetId = button.getAttribute('data-navbar')
+    const menu = document.getElementById(targetId)
+
+    button.addEventListener('click', () => {
+      menu?.classList.toggle('active')
+    })
+  })
+</script>
