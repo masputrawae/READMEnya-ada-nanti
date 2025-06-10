@@ -1,7 +1,7 @@
 ---
-import '../styles/global.css'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
+import '../styles/main.scss'
 ---
 
 <html lang="en">
@@ -15,12 +15,12 @@ import Footer from '../components/Footer.astro'
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lora:wght@400..700&family=Marcellus&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lora:wght@400;700&family=Marcellus&display=swap"
       rel="stylesheet"
     />
   </head>
   <body class="bg-neutral-950 text-white font-[Lora] font-normal">
-    <Navbar/>
+    <Navbar />
     <slot />
     <Footer />
   </body>

@@ -1,0 +1,32 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+body {
+  font-family: v.$font__family--body;
+  font-size: v.$font__size--default;
+  
+  background-color: v.$cl__bg;
+  color: v.$cl__text;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  background-color: transparent;
+  border: 1px solid v.$cl__border;
+  border-radius: 0.25rem;
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+  cursor: pointer;
+
+  &--primary {
+    background-color: v.$cl__bg--primary;
+    color: v.$cl__text--title;
+    font-weight: 700;
+  }
+}
+
+.icon {
+  @include m.width-height(16px, 16px);
+}

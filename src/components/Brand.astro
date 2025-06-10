@@ -1,0 +1,61 @@
+---
+const BrandItems = {
+  name: 'Putra Jaya',
+  logo: 'https://masputrawae.github.io/logo/logo.png',
+  tagline: 'Manusia Biasa',
+}
+---
+
+<a href="/" class="brand">
+  <picture class="brand__pic">
+    <img src={BrandItems.logo} alt={`Logo ${BrandItems.logo}`} class="brand__logo">
+  </picture>
+  <div class="brand__title">
+    <strong class="brand__name">{BrandItems.name}</strong>
+    <em class="brand__tagline">{BrandItems.tagline}</em>
+  </div>
+</a>
+
+<style lang="scss">
+  @use '../styles/_variables.scss' as v;
+  @use '../styles/_mixins.scss' as m;
+
+  .brand {
+    text-decoration: none;
+    color: v.$cl__text--title;
+    @include m.flex-layout(row, center, center, 10px);
+
+    &__pic {
+      display: block;
+      @include m.width-height(60px, 60px);
+      box-shadow: v.$shadow__md;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+    
+    &__logo {
+      @include m.width-height(100%, 100%);
+      object-fit: contain;
+    }
+
+    &__title {
+      @include m.flex-layout(column);
+      font-family: v.$font__family--heading;
+      font-weight: 400;
+    }
+
+    &__name {
+      font-weight: 400;
+      font-size: v.$font__size--2xl;
+      text-shadow: v.$shadow__md--text;
+    }
+    
+    &__tagline {
+      font-style: normal;
+      font-size: v.$font__size--sm;
+      color: v.$cl__text--muted;
+      text-shadow: v.$shadow__sm--text;
+    }
+  }
+</style>
+

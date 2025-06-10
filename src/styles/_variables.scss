@@ -1,0 +1,78 @@
+//==============================================//
+//===============// BREAKPOINT //===============//
+$breakpoints: (
+  xs:   20em,     // 320px
+  sm:   36em,     // 576px
+  md:   48em,     // 768px
+  lg:   62em,     // 992px
+  xl:   75em,     // 1200px
+  xxl:  87.5em    // 1400px
+);
+
+//==============================================//
+//==================// FONT //==================//
+//  Common Types of Scale Ratios
+//  Some common ratios often used in design:           
+//  Minor Second (1.067)
+//  Major Second (1.125)
+//  Minor Third (1.200) 
+//  Major Third (1.250) 
+//  Perfect Fourth (1.333)
+//  Augmented Fourth (1.414)
+//  Perfect Fifth (1.500)
+//  Golden Ratio (1.618)
+
+$font__family--heading: 'Marcellus', serif;
+$font__family--body: 'Lora', serif;
+$font__family--mono: 'Fira Code', monospace;
+
+@use "sass:math";
+@function scale($step) {
+  @return math.div(math.div(math.round($font__size--default * pow($scale-ratio, $step) * 100), 100), $font__size--default) * 1rem;
+}
+
+$font__size--default          : 16px;
+$scale-ratio                  : 1.125;
+
+$font__size--xs               : scale(-4);
+$font__size--2xs              : scale(-3);
+$font__size--3xs              : scale(-2);
+
+$font__size--sm               : scale(-1);
+$font__size--lg               : scale(1);
+$font__size--xl               : scale(2);
+
+$font__size--2xl              : scale(3);
+$font__size--3xl              : scale(4);
+$font__size--4xl              : scale(5);
+$font__size--5xl              : scale(6);
+$font__size--6xl              : scale(7);
+
+//==============================================//
+//=================// COLOR //==================//
+$cl__bg: #0a0a0a;
+$cl__bg--primary: #c2410c;
+$cl__bg--surface: #171717;
+$cl__bg--alt: #262626;
+
+$cl__text: #e5e5e5;
+$cl__text--title: #fafafa;
+$cl__text--muted: #a3a3a3;
+
+$cl__accent: #f59e0b;
+$cl__accent--hover: #f97316;
+$cl__accent--active: #ea580c;
+
+$cl__border: #404040;
+$cl__border-alt: #525252;
+
+$shadow: 0 1px 3px 0 rgb(0 0 0 / 0.5), 0 1px 2px -1px rgb(0 0 0 / 0.5);
+
+$shadow__sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow__md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+$shadow__lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+$shadow__xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+
+$shadow__sm--text: 0px 1px 0px rgb(0 0 0 / 0.075);
+$shadow__md--text: 0px 1px 1px rgb(0 0 0 / 0.5), 0px 1px 2px rgb(0 0 0 / 0.5);
+$shadow__lg--text: 0px 1px 2px rgb(0 0 0 / 0.5), 0px 3px 2px rgb(0 0 0 / 0.5), 0px 4px 8px rgb(0 0 0 / 0.5);
