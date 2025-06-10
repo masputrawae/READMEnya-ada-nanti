@@ -1,6 +1,8 @@
 ---
 import Navbar from '../components/Navbar.astro'
+import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import Offcanvas from '../components/Offcanvas.astro'
 import '../styles/main.scss'
 ---
 
@@ -19,9 +21,12 @@ import '../styles/main.scss'
       rel="stylesheet"
     />
   </head>
-  <body class="bg-neutral-950 text-white font-[Lora] font-normal">
+  <body>
     <Navbar />
+    <Header />
     <slot />
+
     <Footer />
+    <Offcanvas />
   </body>
 </html>

@@ -1,213 +1,45 @@
 ---
 import { Icon } from 'astro-icon/components'
-import Brand from './Brand.astro'
-const Navigation = [
-  { name: 'Home', url: '/' },
-  { name: 'Portfolio', url: '/portfolio' },
-  { name: 'About', url: '/about' },
-  { name: 'Projects', url: '/projects' },
-  { name: 'Blog', url: '/blog' },
-]
+import { BRAND } from '../config/brand'
 
-const CTA = { name: 'Join Discord', url: 'https://example.com' }
+const Navigation = [
+  { name: 'Home', url: '/', icon: 'icon--' },
+  { name: 'About', url: '/about', icon: 'icon--' },
+  { name: 'Projects', url: '/projects', icon: 'icon--' },
+  { name: 'Blog', url: '/blog', icon: 'icon--' },
+  { name: 'Contect', url: '/contact', icon: 'icon--' },
+]
 ---
 
-<nav class="navbar">
-  <Brand />
-  <button data-menu="navbarMenu" class="btn btn--open">
-    <Icon name="bar-3" class="icon icon--bar-3" />
+<div class="respons-nav">
+  <a href="/" class="respons-nav__brand">
+    <picture class="respons-nav__pic">
+      <img src={BRAND.logo} alt={BRAND.name} class="respons-nav__logo" />
+    </picture>
+
+    <div class="respons-nav__title">
+      <strong class="respons-nav__name">{BRAND.name}</strong>
+      <em class="respons-nav__tagline">{BRAND.tagline}</em>
+    </div>
+  </a>
+
+  <button class="btn" data-offcanvas="offcanvas">
+    <Icon name="icon-bar-3" class="icon icon--nav icon--bar-3" />
   </button>
-  <div class="navbar__menu" id="navbarMenu">
-    <button data-menu="navbarMenu" class="btn btn--close">
-      <Icon name="x" class="icon icon--x" />
-    </button>
-    <ul class="nav">
-      {
-        Navigation.map(item => {
-          const isActive =
-            Astro.url.pathname === item.url ||
-            (item.url !== '/' && Astro.url.pathname.startsWith(item.url))
+</div>
 
-          return (
-            <li class={`nav__item ${isActive ? 'nav__item--active' : ''}`}>
-              <a
-                href={item.url}
-                class={`nav__link ${isActive ? 'nav__link--active' : ''}`}
-              >
-                {item.name}
-              </a>
-            </li>
-          )
-        })
-      }
-    </ul>
-
-    <a href={CTA.url} class="btn btn--primary">
-      {CTA.name}
-    </a>
+<nav class="navbar">
+  <button class="btn" data-offcanvas="offcanvas">
+    <Icon name="icon-bar-3" class="icon icon--nav icon--bar-3" />
+  </button>
+  <div class="nav">
+    {
+      Navigation.map(item => (
+        <a href={item.url} class="nav__link" data-tab={item.name} role="button">
+          <Icon name={item.icon} class="icon icon--nav" />
+          <span>{item.name}</span>
+        </a>
+      ))
+    }
   </div>
-  <div id="overlay"></div>
 </nav>
-<style lang="scss">
-  @use '../styles/_variables.scss' as v;
-  @use '../styles/_mixins.scss' as m;
-
-  .navbar {
-    @include m.flex-layout(row, space-between, center);
-    @include m.width-height(100%, 5rem);
-    background-color: v.$cl__bg--surface;
-
-    padding-inline: 1.75rem;
-    position: fixed;
-    top: 0;
-
-    &__menu {
-      @include m.flex-layout(row, space-between, center, 10rem);
-    }
-  }
-  .nav {
-    @include m.flex-layout(row, space-between, center, 8px);
-    list-style: none;
-
-    &__item {
-      position: relative;
-      padding-bottom: 0.25em;
-      margin-inline: 0.8rem;
-
-      &::before {
-        @include m.transition(width);
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        height: 2px;
-        background-color: v.$cl__bg--primary;
-      }
-
-      &:hover::before,
-      &--active::before {
-        width: 100%;
-      }
-    }
-
-    &__link {
-      @include m.transition(color);
-      font-size: v.$font__size--lg;
-      text-decoration: none;
-      color: v.$cl__text--title;
-
-      &:hover {
-        color: v.$cl__accent--hover;
-      }
-
-      &--active {
-        color: v.$cl__accent--active;
-      }
-    }
-  }
-
-  .btn--primary {
-    @include m.transition(color);
-    font-size: v.$font__size--lg;
-    border-radius: 999rem;
-
-    &:hover {
-      background-color: v.$cl__accent--hover;
-    }
-  }
-
-  .btn--open,
-  .btn--close {
-    display: none;
-  }
-
-  #overlay {
-    display: none;
-  }
-
-  @include m.max(lg) {
-    .btn--open,
-    .btn--close {
-      border: none;
-      padding: 0;
-      display: flex;
-    }
-
-    .btn--close {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-    }
-
-    .icon--x,
-    .icon--bar-3 {
-      @include m.width-height(24px, 24px);
-    }
-
-    .navbar__menu {
-      @include m.transition(scale, visibility, opacity);
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      flex-direction: column;
-      gap: 1rem;
-      padding: 2rem;
-      background-color: v.$cl__bg--surface;
-      border-radius: 8px;
-
-      scale: 0;
-      visibility: hidden;
-      opacity: 0;
-      z-index: 900;
-
-      &--isActive {
-        scale: 1;
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-
-    #overlay {
-      display: block;
-      opacity: 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      background-color: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(1px);
-
-      &.isActive {
-        opacity: 1;
-      }
-    }
-
-    .nav {
-      flex-direction: column;
-      gap: 0;
-      padding: 0;
-      margin: 0;
-
-      &__item {
-        margin-bottom: 0.5rem;
-      }
-    }
-  }
-</style>
-<script>
-  const buttons = document.querySelectorAll('[data-menu]')
-  buttons.forEach(item => {
-    item.addEventListener('click', () => {
-      const idTarget = item.getAttribute('data-menu')
-      const navbarMenu = document.getElementById(`${idTarget}`)
-      const overlay = document.getElementById('overlay')
-
-      navbarMenu?.classList.toggle('navbar__menu--isActive')
-      overlay?.classList.toggle('isActive')
-    })
-  })
-</script>
