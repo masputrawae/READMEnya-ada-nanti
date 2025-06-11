@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Ambil semua konten dari blog dan project
+const blog = await getCollection('blog');
+const projects = await getCollection('projects');
+
+const allItems = [...blog, ...projects];
+
+// Bikin konten dengan slug dan url
+const allPages = allItems.map(item => ({
+  ...item.data,
+  slug: item.id,
+  url: `/${item.collection}/${item.id}/`,
+}));
+
+// Ambil tag dari URL
+const { tag } = Astro.params;
+
+// Filter semua konten yang memiliki tag tersebut
+const filtered = allPages.filter(item =>
+  item.tags && item.tags.includes(tag)
+);
+
+// Generate halaman untuk tiap tag
+export async function getStaticPaths() {
+  const blog = await getCollection('blog');
+  const projects = await getCollection('projects');
+  const allItems = [...blog, ...projects];
+
+  const allTags = Array.from(new Set(
+    allItems.flatMap(item => item.data.tags || [])
+  ));
+
+  return allTags.map(tag => ({
+    params: { tag }
+  }));
+}
+---
+
+<BaseLayout>
+  <h1>Posts with tag: {tag}</h1>
+
+  {filtered.length === 0 ? (
+    <p>No content found with this tag.</p>
+  ) : (
+    <ul>
+      {filtered.map(post => (
+        <li>
+          <a href={post.url}>{post.title}</a>
+          <p>{post.description}</p>
+        </li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>

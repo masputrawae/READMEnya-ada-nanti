@@ -1,7 +1,17 @@
 ---
 import { CTA } from '../data/site'
+import ProjectCard from '../components/ProjectCard.astro'
 import Button from '../components/Button.astro'
-import Card from '../components/Card.astro'
+
+import { getCollection } from 'astro:content'
+const getProjects = await getCollection('projects')
+const projects = getProjects.map(item => {
+  return {
+    ...item.data,
+    slug: item.id,
+    url: `/projects/${item.id}/`,
+  }
+})
 ---
 
 <header class="pt-24">
@@ -26,16 +36,11 @@ import Card from '../components/Card.astro'
     }
   </nav>
 </header>
-<main class="flex flex-col gap-2.5 mt-10 md:grid lg:grid-cols-2 xl:grid-cols-3">
-  <Card title="Holla Card" img="https://picsum.photos/600/400" ctaLink="/about" ctaText="Show More">
-    Anim amet sit veniam minim dolor ullamco nostrud qui ipsum deserunt do.
-  </Card>
 
-  <Card title="Holla Card" img="https://picsum.photos/600/400" ctaLink="/about" ctaText="Show More">
-    Anim amet sit veniam minim dolor ullamco nostrud qui ipsum deserunt do.
-  </Card>
-
-  <Card title="Holla Card" img="https://picsum.photos/600/400" ctaLink="/about" ctaText="Show More">
-    Anim amet sit veniam minim dolor ullamco nostrud qui ipsum deserunt do.
-  </Card>
+<main>
+  {
+    projects.map(item =>(
+      <ProjectCard data={item}/>
+    ))
+  }
 </main>

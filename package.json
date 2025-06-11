@@ -12,6 +12,7 @@
     "@tailwindcss/vite": "^4.1.8",
     "astro": "^5.9.2",
     "astro-icon": "^1.1.5",
+    "rehype-rewrite": "^4.0.2",
     "tailwindcss": "^4.1.8"
   }
 }

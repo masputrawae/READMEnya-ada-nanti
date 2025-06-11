@@ -1,0 +1,32 @@
+---
+import { map } from "astro:schema"
+import Button from "./Button.astro"
+const { data } = Astro.props
+---
+
+<article>
+  <picture>
+    <img src={data.thumbnail} alt={`Image Related ${data.title}`}>
+  </picture>
+
+  <section>
+    <div class="flex gap-1.5">
+      {
+        data.tags.map(tag => (
+          <a href="tag">{tag}</a>
+        ))
+      }
+    </div>
+    <strong>{data.title}</strong>
+
+    <p>{data.description}</p>
+
+    <Button href={data.url}>
+      Read More
+    </Button>
+
+    <Button href={data.repo}>
+      Github Repo
+    </Button>
+  </section>
+</article>
