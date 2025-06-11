@@ -1,9 +1,7 @@
 ---
-import Navbar from '../components/Navbar.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import Offcanvas from '../components/Offcanvas.astro'
-import '../styles/main.scss'
+import '../styles/global.css'
+import Sidebar from '../components/Sidebar.astro'
+import MobileNav from '../components/MobileNav.astro'
 ---
 
 <html lang="en">
@@ -17,16 +15,13 @@ import '../styles/main.scss'
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lora:wght@400;700&family=Marcellus&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Noto+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <Navbar />
-    <Header />
-    <slot />
+  <body class="bg-neutral-900 text-neutral-200 font-['Noto_Sans']">
+    <Sidebar />
 
-    <Footer />
-    <Offcanvas />
+    <MobileNav />
   </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "my-site",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,8 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.9.1",
+    "@tailwindcss/vite": "^4.1.8",
+    "astro": "^5.9.2",
     "astro-icon": "^1.1.5",
-    "sass": "^1.89.2"
+    "tailwindcss": "^4.1.8"
   }
 }
