@@ -3,26 +3,27 @@ import { AUTHOR } from '../data/site'
 ---
 
 <figure
-  class="flex items-center gap-2 cursor-pointer"
+  class="flex cursor-pointer items-center gap-2"
   onclick='window.location.href="/"'
 >
   <picture
-    class="size-12 rounded-full overflow-hidden border-2 border-neutral-700 shadow-sm shadow-black transition-shadow hover:shadow-md"
+    class="size-12 overflow-hidden rounded-full border-2 border-neutral-700 shadow-sm shadow-black transition-shadow hover:shadow-md lg:size-14"
   >
     <img
       src={AUTHOR.logo}
       alt={`Logo ${AUTHOR.name}`}
-      class="size-full transition-transform hover:scale-120"
+      class="size-full transition-transform hover:scale-105"
     />
   </picture>
 
   <figcaption class="flex flex-col leading-5">
-    <strong class="text-white text-shadow-md text-shadow-black"
-      >{AUTHOR.name}</strong
-    >
+    <strong class="font-medium text-white text-shadow-md text-shadow-black lg:text-xl">
+      {AUTHOR.name}
+    </strong>
     <em
-      class="not-italic text-neutral-400 text-xs text-shadow-sm text-shadow-black"
-      >{AUTHOR.tagline}</em
+      class="font-medium text-xs not-italic text-neutral-400 text-shadow-sm text-shadow-black"
     >
+      {AUTHOR.tagline}
+    </em>
   </figcaption>
 </figure>

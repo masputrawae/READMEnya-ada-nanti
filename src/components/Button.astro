@@ -1,0 +1,31 @@
+---
+// src/components/Button.astro
+const {
+  href,
+  primary = false,
+  children,
+  class: className,
+  ...props
+} = Astro.props
+const baseClasses =
+  'font-medium text-xl px-5 py-2 rounded-sm border border-neutral-700 shadow-sm shadow-black transition-all duration-300 hover:bg-neutral-700 hover:shadow-md hover:text-white'
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      {...props}
+      class={`${baseClasses} ${primary ? 'bg-neutral-800' : ''} ${className || ''}`.trim()}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button
+      {...props}
+      class={`${baseClasses} ${primary ? 'bg-neutral-800' : ''} ${className || ''}`.trim()}
+    >
+      <slot />
+    </button>
+  )
+}
