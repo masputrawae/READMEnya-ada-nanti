@@ -1,55 +1,23 @@
 ---
-import { Icon } from 'astro-icon/components'
-import { SOCIAL } from '../data/site'
-import { MENU_NAVIGATION } from '../data/site'
-
-import Menu from './Menu.astro'
+// src > components > Sidebar.astro
 import Brand from './Brand.astro'
+import Navigation from './Navigation.astro'
+import Button from "./Button.astro"
+
+import { MENUS } from '../siteConfig'
+const main = MENUS.main
+const social = MENUS.social
+
+import { Icon } from 'astro-icon/components'
 ---
 
-<div
-  id="sidebarOverlay"
-  class="fixed z-40 size-full pointer-events-none bg-[rgba(0,0,0,0.4)] opacity-0 backdrop-blur-xs transition-all lg:hidden"
->
-</div>
-
-<nav
-  id="sidebar"
-  class="fixed top-0 z-50 h-dvh w-80 max-w-full grid grid-rows-[5rem_minmax(0,1fr)_auto] border-r border-neutral-700 bg-neutral-800 px-4 py-1.5 transition-all invisible -translate-x-full lg:sticky lg:translate-none lg:visible lg:bg-neutral-900 lg:px-2"
->
-  <div class="flex w-full items-center justify-between lg:px-2.5">
+<nav id="sidebar">
+  <div>
     <Brand />
-    <button class="lg:hidden" data-sidebar="sidebar">
-      <Icon name="icon-x-mark" class="size-7" />
-    </button>
+    <Button data-sidebar="sidebar" aria-label="Close Sidebar">
+      <Icon name="icon-x-mark" />
+    </Button>
   </div>
-
-  <Menu menuParams={MENU_NAVIGATION} />
-  <Menu menuParams={SOCIAL} />
+  <Navigation menu={main} />
+  <Navigation menu={social} />
 </nav>
-
-<script>
-  const buttons = document.querySelectorAll('[data-sidebar]')
-  const sidebarOverlay = document.getElementById('sidebarOverlay')
-
-  function toggleSidebar(elm, overlay) {
-    elm?.classList.toggle('-translate-x-full')
-    elm?.classList.toggle('invisible')
-
-    overlay?.classList.toggle('opacity-0')
-    overlay?.classList.toggle('pointer-events-none')
-  }
-
-  sidebarOverlay?.addEventListener('click', () => {
-    toggleSidebar(document.getElementById('sidebar'), sidebarOverlay)
-  })
-
-  buttons.forEach(btn => {
-    const targetId = btn.getAttribute('data-sidebar')
-    const sidebarEl = document.getElementById(`${targetId}`)
-
-    btn.addEventListener('click', () => {
-      toggleSidebar(sidebarEl, sidebarOverlay)
-    })
-  })
-</script>

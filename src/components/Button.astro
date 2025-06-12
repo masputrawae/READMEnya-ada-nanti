@@ -1,30 +1,18 @@
 ---
-// src/components/Button.astro
-const {
-  href,
-  primary = false,
-  children,
-  class: className,
-  ...props
-} = Astro.props
-const baseClasses =
-  'font-medium text-xl px-5 py-2 rounded-sm border border-neutral-700 shadow-sm shadow-black transition-all duration-300 hover:bg-neutral-700 hover:shadow-md hover:text-white'
----
+// src > components > Button.astro
+const { href = '#', isUrl = false, customClass = '', primary = false, ...rest } = Astro.props
 
+// ini nulis class tailwind disini nanti :v:
+const primaryClass = primary ? '' : ''
+const className = `px-1.5 py-2.5 rounded-sm ${primaryClass} ${customClass}`
+---
 {
-  href ? (
-    <a
-      href={href}
-      {...props}
-      class={`${baseClasses} ${primary ? 'bg-neutral-800' : ''} ${className || ''}`.trim()}
-    >
+  isUrl ? (
+    <a {href} class={className} {...rest}>
       <slot />
     </a>
   ) : (
-    <button
-      {...props}
-      class={`${baseClasses} ${primary ? 'bg-neutral-800' : ''} ${className || ''}`.trim()}
-    >
+    <button class={className} {...rest}>
       <slot />
     </button>
   )

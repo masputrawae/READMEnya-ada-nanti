@@ -1,35 +1,76 @@
 ---
+// src > layouts > BaseLayout.astro
 import '../styles/global.css'
+
 import Sidebar from '../components/Sidebar.astro'
-import MobileNav from '../components/MobileNav.astro'
+import MobileHeader from '../components/MobileHeader.astro'
+
+import { DEFAULT_PARAMS } from '../siteConfig'
+
+const { pageMeta } = Astro.props
+const defaultMeta = DEFAULT_PARAMS.meta
+
+// HANDLE URL
+const domain = DEFAULT_PARAMS.domain
+const pageUrl = pageMeta.pageUrl ?? '/'
+const absUrl = `${domain}${pageUrl.startsWith('/') ? pageUrl : `/${pageUrl}`}`
+
+// HANDLE TITLE
+const siteTitle = DEFAULT_PARAMS.siteTitle
+const pageTitle = pageMeta.pageTitle
+const title = pageUrl === '/' ? siteTitle : `${siteTitle} | ${pageTitle}`
+
+// HANDLE META
+const meta = {
+  author: pageMeta.author ?? defaultMeta.author,
+  thumbnail: pageMeta.thumbnail ?? defaultMeta.thumbnail,
+  keywords: (pageMeta.keywords ?? defaultMeta.keywords).join(', '),
+  description: pageMeta.description ?? defaultMeta.description,
+  twitter: defaultMeta.twitter
+}
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={absUrl} />
+    <meta name="theme-color" content="#0f172a" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Noto+Sans:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="font-['Noto_Sans'] text-base bg-neutral-900 text-neutral-200 lg:grid lg:grid-cols-[310px_minmax(0,1fr)]">
-    <Sidebar />
-    <div class="px-5">
-      <slot />
-    </div>
-    <MobileNav />
-  </body>
+    <!-- START: FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicons/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+		<link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    <!-- START: END -->
+
+    <!-- START: Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:image" content={meta.thumbnail} />
+    <meta property="og:url" content={absUrl} />
+    <meta property="og:type" content="website" />
+    <!-- END: Open Graph (Facebook, LinkedIn, WhatsApp) -->
+
+    <!-- START: Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={meta.thumbnail} />
+    <meta name="twitter:site" content={meta.twitter} />
+    <!-- END: Twitter Card -->
+
+    <title>{title}</title>
+    <meta name="author" content={ meta.author } />
+    <meta name="description" content={meta.description} />
+    <meta name="keywords" content={meta.keywords} />
+
+	</head>
+	<body>
+    <slot />
+	</body>
 </html>
-
-<style is:global>
-  html {
-    scrollbar-width: thin;
-  }
-</style>

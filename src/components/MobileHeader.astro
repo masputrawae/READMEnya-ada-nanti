@@ -1,0 +1,14 @@
+---
+// src > components > MobileHeader.astro
+import { Icon } from "astro-icon/components";
+import Button from "./Button.astro";
+import Brand from "./Brand.astro";
+
+const className = ""
+---
+<div class={className}>
+  <Brand data-sidebar="sidebar" aria-label="Open Sidebar" />
+  <Button >
+    <Icon name="icon-bar-3" />
+  </Button>
+</div>

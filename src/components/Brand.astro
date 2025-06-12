@@ -1,29 +1,16 @@
 ---
-import { AUTHOR } from '../data/site'
+// src > components > Brand.astro
+import { DEFAULT_PARAMS } from "../siteConfig";
+const author = DEFAULT_PARAMS.owner
 ---
 
-<figure
-  class="flex cursor-pointer items-center gap-2"
-  onclick='window.location.href="/"'
->
-  <picture
-    class="size-12 overflow-hidden rounded-full border-2 border-neutral-700 shadow-sm shadow-black transition-shadow hover:shadow-md lg:size-14"
-  >
-    <img
-      src={AUTHOR.logo}
-      alt={`Logo ${AUTHOR.name}`}
-      class="size-full transition-transform hover:scale-105"
-    />
+<figure>
+  <picture>
+    <img src={author.logo} alt={author.name}>
   </picture>
 
-  <figcaption class="flex flex-col leading-5">
-    <strong class="font-medium text-white text-shadow-md text-shadow-black lg:text-xl">
-      {AUTHOR.name}
-    </strong>
-    <em
-      class="font-medium text-xs not-italic text-neutral-400 text-shadow-sm text-shadow-black"
-    >
-      {AUTHOR.tagline}
-    </em>
+  <figcaption>
+    <strong>{author.name}</strong>
+    <em>{author.tagline}</em>
   </figcaption>
 </figure>

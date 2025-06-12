@@ -13,7 +13,7 @@ date: 2025-06-10T17:48:04+07:00
 update: 2025-06-10T17:48:04+07:00
 ---
 
-# Example Blog 3
+# Example Blog 2
 
 Excepteur adipisicing sit in velit aliqua incididunt consequat labore ex laborum. Irure magna nostrud et Lorem incididunt. Dolor excepteur ipsum dolor ad dolor dolore mollit elit laboris dolor Lorem. Voluptate ex tempor aliquip mollit consectetur pariatur aute occaecat do ea nostrud et cillum. Ipsum nulla magna deserunt in aliquip consectetur id officia et duis ut est. Incididunt eiusmod sit fugiat proident esse aliquip.
 

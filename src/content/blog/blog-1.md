@@ -13,6 +13,10 @@ date: 2025-06-10T15:38:21+07:00
 update: 2025-06-10T15:38:21+07:00
 ---
 
+[[blog-2|Blog 2]]
+[[blog-2]]
+[[Blog 2]]
+
 # Example Blog 1
 
 Ea elit eiusmod duis cillum consectetur consequat veniam est. Dolore esse deserunt laborum est proident tempor qui pariatur magna irure et dolor est incididunt. Excepteur nisi ex exercitation qui tempor id aliqua. Laboris dolore mollit culpa aute consequat minim magna aliqua consectetur aute sunt laboris eu irure. Esse exercitation nulla sit nostrud sit magna eiusmod. Cillum dolor occaecat commodo ullamco ut est minim cupidatat elit deserunt.

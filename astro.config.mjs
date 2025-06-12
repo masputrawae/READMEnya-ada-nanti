@@ -1,37 +1,36 @@
 // @ts-check
-import { defineConfig } from 'astro/config'
+import { defineConfig } from 'astro/config';
 
-import icon from 'astro-icon'
+import tailwindcss from '@tailwindcss/vite';
 
-import tailwindcss from '@tailwindcss/vite'
-import rehypeRewrite from 'rehype-rewrite'
+import icon from 'astro-icon';
+
+import remarkWikiLink from "@braindb/remark-wiki-link";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [icon()],
-  markdown: {
-    rehypePlugins: [
-      [
-        rehypeRewrite,
-        {
-          rewrite: node => {
-            if (node.tagName === 'a' && node.properties?.href) {
-              const href = node.properties.href
+  vite: {
+    plugins: [tailwindcss()]
+  },
 
-              // Deteksi pola seperti blog-1, note-2, project-3, dsb
-              const match = href.match(/^([a-z]+)-([\w-]+)$/)
-              if (match) {
-                const folder = match[1] // contoh: 'blog'
-                const slug = match[0] // contoh: 'blog-1'
-                node.properties.href = `/${folder}/${slug}`
-              }
-            }
-          },
-        },
-      ],
+  integrations: [icon()],
+
+  markdown: {
+    remarkPlugins: [
+      [
+        remarkWikiLink,
+        {
+          // Konversi [[Page Name]] jadi tautan ke /notes/page-name
+          linkTemplate: ({ slug, alias }) => ({
+            hName: "a",
+            hProperties: {
+              href: `/blog/${slug.toLowerCase()}`,
+              class: "wikilink"
+            },
+            hChildren: [{ type: "text", value: alias || slug }]
+          }),
+        }
+      ]
     ],
   },
-  vite: {
-    plugins: [tailwindcss()],
-  },
-})
+});

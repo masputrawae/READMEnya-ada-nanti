@@ -1,46 +1,21 @@
 ---
-import { CTA } from '../data/site'
-import ProjectCard from '../components/ProjectCard.astro'
-import Button from '../components/Button.astro'
+// src > layouts > Home.astro
+import { getCollection } from "astro:content";
 
-import { getCollection } from 'astro:content'
-const getProjects = await getCollection('projects')
-const projects = getProjects.map(item => {
+const allProjects = await getCollection('projects')
+const project = allProjects.map(item =>{
   return {
     ...item.data,
-    slug: item.id,
-    url: `/projects/${item.id}/`,
+    url: `${item.collection}/${item.id}`
   }
 })
 ---
-
-<header class="pt-24">
-  <h1 class="font-normal text-4xl pt-10 pb-12 md:max-w-xl">
-    Hi!, Saya Putra. <br />Apa Ajalah Penting Halal Hehe.
-  </h1>
-  <p class="font-light md:max-w-3xl">
-    Ini ruang pribadiku untuk belajar, bereksperimen, dan bersenang-senang. Saya
-    seorang pembelajar otodidak yang suka ngoprek kode, menjelajahi ide, dan
-    membangun hal-hal menarik. Yuk, kenalan lebih jauh atau lihat beberapa
-    proyekku!
-  </p>
-  <nav class="flex items-center gap-3 mt-10">
-    {
-      CTA.map(item => {
-        return (
-          <Button primary={item.primary} href={item.url}>
-            {item.name}
-          </Button>
-        )
-      })
-    }
-  </nav>
-</header>
-
-<main>
+<ul>
   {
-    projects.map(item =>(
-      <ProjectCard data={item}/>
+    project.map(item =>(
+      <li>
+        <a href={item.url}>{item.title}</a>
+      </li>
     ))
   }
-</main>
+</ul>
