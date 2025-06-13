@@ -27,7 +27,7 @@ export default defineConfig({
           linkTemplate: ({ slug, alias }) => ({
             hName: "a",
             hProperties: {
-              href: `/blog/${slug.toLowerCase()}`,
+              href: `/blog/${slug.toLowerCase().replace(/\s+/g, '-')}`,
               class: "wikilink"
             },
             hChildren: [{ type: "text", value: alias || slug }]

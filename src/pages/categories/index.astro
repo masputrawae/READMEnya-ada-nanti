@@ -3,30 +3,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro"
 import { getCollection } from "astro:content"
 
 const getAllCategories = async () => {
-  const project = await getCollection('projects');
-  const blog = await getCollection('blog');
+  const projects = await getCollection('projects');
+  const blogs = await getCollection('blog');
 
-  const combined = [...project, ...blog];
+  const combine = [...projects, ...blogs]
+  const getCategories = combine.flatMap(item => item.data.categories || [])
+  const categories = [...new Set(getCategories.sort())]
 
-  const rawCategories = combined.flatMap(item => item.data.categories || []);
+  return categories
+}
 
-  // Buang duplikat dulu
-  const uniqueCategories = [...new Set(rawCategories)];
-
-  // Mapping ke bentuk akhir
-  const result = uniqueCategories.map(category => {
-    const slug = category
-      .toLowerCase()
-      .replace(/\s+/g, '-')   // spasi jadi -
-      .replace(/_+/g, '-');   // underscore juga jadi -
-    const label = category
-    return { label, slug };
-  });
-
-  return result; // array of { label, slug }
-};
-
-const tags = await getAllCategories();
+const category = await getAllCategories()
 
 const meta = {
   pageTitle: 'Category',
@@ -37,9 +24,9 @@ const meta = {
 <BaseLayout metaPage={meta}>
   <ul>
     {
-      tags.map(item => (
+      category.map(item => (
         <li>
-          <a href={`${item.slug}/`}>{item.label}</a>
+          <a href={`${item}/`}>{item}</a>
         </li>
       ))
     }
