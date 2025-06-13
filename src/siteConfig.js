@@ -1,6 +1,5 @@
 export const DEFAULT_PARAMS = {
   siteTitle: 'MasPutraWae',
-  domain: 'https://example.com',
 
   owner: {
     name: 'Putra Jaya',
@@ -14,7 +13,6 @@ export const DEFAULT_PARAMS = {
   ],
 
   meta: {
-    title: 'Home',
     author: 'Putra Jaya',
     thumbnail: 'https://placehold.co/600x400',
     keywords: ['blog', 'home', 'other'],

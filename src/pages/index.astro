@@ -1,16 +1,25 @@
 ---
 // src > pages > index.astro
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Home from "../layouts/Home.astro";
+import BaseLayout from '../layouts/BaseLayout.astro'
 
-const meta = {
-  title: "Home",
-  thumbnail: 'https://placehold.co/600x400',
-  keywords: ['blog', 'home', 'other'],
-  description: 'Aliquip cillum do aliquip ut minim adipisicing proident veniam sint proident ipsum non pariatur.'
-}
+// GET COLLECTION
+import { getCollection } from 'astro:content'
+const allProjects = await getCollection('projects')
+const project = allProjects.map(item => {
+  return {
+    ...item.data,
+    url: `${item.collection}/${item.id}/`,
+  }
+})
 ---
-
-<BaseLayout pageMeta={meta}>
-<Home />
+<BaseLayout>
+  <ul>
+    {
+      project.map(item => (
+        <li>
+          <a href={item.url}>{item.title}</a>
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>

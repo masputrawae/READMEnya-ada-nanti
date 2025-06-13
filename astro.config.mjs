@@ -9,6 +9,9 @@ import remarkWikiLink from "@braindb/remark-wiki-link";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://masputrawae.github.io',
+  base: '/',
+  trailingSlash: "always",
   vite: {
     plugins: [tailwindcss()]
   },

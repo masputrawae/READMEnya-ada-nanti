@@ -1,2 +1,47 @@
 ---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import { getCollection } from "astro:content"
+
+const getAllCategories = async () => {
+  const project = await getCollection('projects');
+  const blog = await getCollection('blog');
+
+  const combined = [...project, ...blog];
+
+  const rawCategories = combined.flatMap(item => item.data.categories || []);
+
+  // Buang duplikat dulu
+  const uniqueCategories = [...new Set(rawCategories)];
+
+  // Mapping ke bentuk akhir
+  const result = uniqueCategories.map(category => {
+    const slug = category
+      .toLowerCase()
+      .replace(/\s+/g, '-')   // spasi jadi -
+      .replace(/_+/g, '-');   // underscore juga jadi -
+    const label = category
+    return { label, slug };
+  });
+
+  return result; // array of { label, slug }
+};
+
+const tags = await getAllCategories();
+
+const meta = {
+  pageTitle: 'Category',
+  description: 'Testing Category Description'
+}
 ---
+
+<BaseLayout metaPage={meta}>
+  <ul>
+    {
+      tags.map(item => (
+        <li>
+          <a href={`${item.slug}/`}>{item.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

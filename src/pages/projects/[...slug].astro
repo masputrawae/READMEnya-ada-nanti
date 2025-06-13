@@ -19,13 +19,12 @@ const { Content } = await render(post)
 
 const meta = {
   pageTitle: data.title,
-  author: data.author ?? null,
+  author: data.author,
   thumbnail: data.thumbnail,
   keywords: data.tags,
-  description: data.description,
-  pageUrl: post.id
+  description: data.description
 }
 ---
-<BaseLayout pageMeta={meta}>
+<BaseLayout metaPage={meta}>
   <Content />
 </BaseLayout>

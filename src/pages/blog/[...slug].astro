@@ -1,12 +1,12 @@
 ---
-import { render, getCollection } from "astro:content";
+import { render, getCollection } from 'astro:content'
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro'
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog')
   return blogPosts.map(post => ({
-    params: { 
+    params: {
       slug: post.id,
     },
     props: { post },
@@ -23,9 +23,9 @@ const meta = {
   thumbnail: data.thumbnail,
   keywords: data.tags,
   description: data.description,
-  pageUrl: post.id
 }
 ---
-<BaseLayout pageMeta={meta}>
+
+<BaseLayout metaPage={meta}>
   <Content />
 </BaseLayout>

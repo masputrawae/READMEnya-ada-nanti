@@ -4,7 +4,7 @@ description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do ei
 thumbnail: 'https://picsum.photos/600/400?5'
 repo: 'https://github.com/dummy/project1'
 tags:
-  - 'web development'
+  - 'web_development'
   - 'javascript'
   - 'react'
 categories: 

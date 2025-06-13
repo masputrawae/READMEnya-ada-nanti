@@ -1,17 +1,14 @@
 ---
 // src > pages > index.astro
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Project from "../../layouts/Project.astro";
 
 const meta = {
   pageTitle: "Projects",
   thumbnail: 'https://placehold.co/600x400',
   keywords: ['project', 'tentang', 'other'],
   description: 'Aliquip cillum do aliquip ut minim adipisicing proident veniam sint proident ipsum non pariatur.',
-  pageUrl: '/Projects'
 }
 ---
 
-<BaseLayout pageMeta={meta}>
-<Project />
+<BaseLayout metaPage={meta}>
 </BaseLayout>
