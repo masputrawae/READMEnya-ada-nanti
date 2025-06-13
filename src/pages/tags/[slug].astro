@@ -14,9 +14,6 @@ export async function getStaticPaths() {
 
   const paths = uniqueTags.map(tag => {
     const slug = tag
-      .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/_+/g, '-');
     return { params: { slug } };
   });
 
@@ -33,9 +30,7 @@ const combined = [...project, ...blog];
 
 const filtered = combined.filter(item => {
   const tags = item.data.tags || [];
-  return tags.some(tag =>
-    tag.toLowerCase().replace(/\s+/g, '-').replace(/_+/g, '-') === slug
-  );
+  return tags.some(tag => tag === slug);
 });
 
 const meta = {

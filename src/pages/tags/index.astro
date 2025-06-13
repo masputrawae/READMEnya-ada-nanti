@@ -3,29 +3,21 @@ import BaseLayout from "../../layouts/BaseLayout.astro"
 import { getCollection } from "astro:content"
 
 const getAllTags = async () => {
-  const project = await getCollection('projects');
-  const blog = await getCollection('blog');
+  const projects = await getCollection('projects');
+  const blogs = await getCollection('blog');
+  const combine = [...projects, ...blogs]
 
-  const combined = [...project, ...blog];
+  const tagsWithCount = {}
 
-  const rawTags = combined.flatMap(item => item.data.tags || []);
+  combine.forEach(item =>{
+    const tags = item.data.tags || [];
+    
+    tags.forEach(tag =>{
+      tagsWithCount[tag] = (tagsWithCount[tag] || 0) +1;
+    })
+  })
 
-  // Buang duplikat dulu
-  const uniqueTags = [...new Set(rawTags)];
-
-  // Mapping ke bentuk akhir
-  const result = uniqueTags.map(tag => {
-    const slug = tag
-      .toLowerCase()
-      .replace(/\s+/g, '-')   // spasi jadi -
-      .replace(/_+/g, '-');   // underscore juga jadi -
-    const label = tag
-      .toUpperCase()
-      .replace(/[_-]+/g, ' '); // _ dan - jadi spasi
-    return { label, slug };
-  });
-
-  return result; // array of { label, slug }
+  return Object.entries(tagsWithCount)
 };
 
 const tags = await getAllTags();
@@ -39,9 +31,9 @@ const meta = {
 <BaseLayout metaPage={meta}>
   <ul>
     {
-      tags.map(item => (
+      tags.map(([item, count]) => (
         <li>
-          <a href={`${item.slug}/`}>{item.label}</a>
+          <a href={`${item}/`}>{item} {`(${count})`}</a>
         </li>
       ))
     }

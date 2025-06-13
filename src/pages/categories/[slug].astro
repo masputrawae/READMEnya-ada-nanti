@@ -14,9 +14,6 @@ export async function getStaticPaths() {
 
   const paths = uniqueCategories.map(category => {
     const slug = category
-      .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/_+/g, '-');
     return { params: { slug } };
   });
 
@@ -33,9 +30,7 @@ const combined = [...project, ...blog];
 
 const filtered = combined.filter(item => {
   const categories = item.data.categories || [];
-  return categories.some(tag =>
-    tag.toLowerCase().replace(/\s+/g, '-').replace(/_+/g, '-') === slug
-  );
+  return categories.some(categories => categories === slug);
 });
 
 const meta = {
@@ -45,4 +40,13 @@ const meta = {
 ---
 
 <BaseLayout metaPage={meta}>
+  <ul>
+    {
+      filtered.map(item =>(
+        <li>
+          <a href={`/${item.collection}/${item.id}/`}>{item.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>

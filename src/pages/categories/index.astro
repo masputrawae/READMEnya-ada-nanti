@@ -2,18 +2,26 @@
 import BaseLayout from "../../layouts/BaseLayout.astro"
 import { getCollection } from "astro:content"
 
-const getAllCategories = async () => {
+const getAllCategoriesWithCount = async () => {
   const projects = await getCollection('projects');
   const blogs = await getCollection('blog');
+  const combine = [...projects, ...blogs];
 
-  const combine = [...projects, ...blogs]
-  const getCategories = combine.flatMap(item => item.data.categories || [])
-  const categories = [...new Set(getCategories.sort())]
+  const categoryCount = {};
 
-  return categories
-}
+  combine.forEach(item => {
+    const categories = item.data.categories || [];
 
-const category = await getAllCategories()
+    categories.forEach(cat => {
+      categoryCount[cat] = (categoryCount[cat] || 0) + 1;
+    });
+  });
+
+  return Object.entries(categoryCount);
+};
+
+const category = await getAllCategoriesWithCount()
+console.log('🚀 ===== LOG ===== 🚀:\n', category);
 
 const meta = {
   pageTitle: 'Category',
@@ -24,11 +32,12 @@ const meta = {
 <BaseLayout metaPage={meta}>
   <ul>
     {
-      category.map(item => (
+      category.map(([name, count]) => (
         <li>
-          <a href={`${item}/`}>{item}</a>
+          <a href={`${name}/`}>{name} ({count})</a>
         </li>
       ))
     }
   </ul>
+
 </BaseLayout>
