@@ -1,0 +1,29 @@
+---
+import { siteParams } from '../siteConfig'
+import { Image } from 'astro:assets'
+---
+
+<figure
+  class="items-center flex gap-2 cursor-pointer"
+  onclick='window.location.href="/"'
+  aria-label={`Logo Brand ${siteParams.author}`}
+>
+  <Image 
+    class="block overflow-hidden rounded-full border-2 border-slate-800 shadow-md shadow-black"
+    src={siteParams.logo}
+    alt={`Logo ${siteParams.title}`}
+    width={50}
+    height={50}
+    densities={[1.5, 2]}
+    loading="eager"
+    />
+  <figcaption class="leading-2">
+    <strong
+      class="block text-lg font-semibold text-white text-shadow-lg text-shadow-black"
+      >{siteParams.author}</strong
+    >
+    <em class="text-xs not-italic text-neutral-300 text-shadow-lg text-shadow-black"
+      >{siteParams.tagline}</em
+    >
+  </figcaption>
+</figure>

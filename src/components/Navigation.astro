@@ -1,0 +1,45 @@
+---
+interface Menus {
+  url?: string
+  label?: string
+  icon?: string
+}
+
+import { Icon } from 'astro-icon/components'
+const { menus } = Astro.props
+const activeClass =
+  'bg-neutral-900 text-white shadow-xs shadow-black hover:bg-neutral-800'
+const defaultClass =
+  'rounded-sm px-3 text-neutral-400 transition-all duration-300 hover:text-white'
+---
+
+<ul class="px-2.5 py-5">
+  {
+    menus.map((item: Menus) => {
+      const nowUrl = Astro.url.pathname
+      const itemUrl = item.url || ''
+      const isActive =
+        nowUrl === itemUrl ||
+        (itemUrl !== '/' && Astro.url.pathname.startsWith(itemUrl))
+
+      return (
+        <li class={`${defaultClass} ${isActive ? activeClass : ''}`}>
+          <a
+            href={item.url}
+            class="flex items-center gap-3 p-1.5"
+            id={item.label}
+          >
+            <Icon
+              name={item.icon}
+              role="img"
+              title={`icon ${item.label}`}
+              aria-labelledby={item.label}
+              class="size-5"
+            />
+            {item.label}
+          </a>
+        </li>
+      )
+    })
+  }
+</ul>

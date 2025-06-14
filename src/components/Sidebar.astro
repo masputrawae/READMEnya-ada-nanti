@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components'
+import Brand from '../components/Brand.astro'
+import Navigation from './Navigation.astro'
+import { siteParams } from '../siteConfig'
+
+const menuMain = siteParams.menus.main
+const menuSocial = siteParams.menus.social
+
+const allMenus = [menuMain, menuSocial]
+---
+
+<div
+  onclick="closeSidebar()"
+  class="fixed top-0 left-0 z-40 h-full w-full invisible opacity-0 backdrop-blur-md transition-all"
+  id="overlay"
+></div>
+
+<nav
+  class="fixed left-0 top-0 z-50 h-dvh w-80 -translate-x-full grid grid-rows-[4rem_minmax(0,1fr)_auto] border-r-2 border-r-neutral-900 px-5 py-6 backdrop-blur-md invisible opacity-0 transition-all lg:sticky lg:visible lg:opacity-100 lg:translate-0 lg:backdrop-blur-none"
+  id="sidebar"
+>
+  <header class="relative">
+    <Brand />
+    <button
+      onclick="closeSidebar()"
+      class="absolute right-2 top-2 flex items-center lg:hidden"
+    >
+      <Icon name="icon-x-mark" class="size-8" />
+    </button>
+  </header>
+
+  {allMenus.map(item => <Navigation menus={item} />)}
+</nav>
+
+<script is:inline>
+  const overlay = document.getElementById('overlay')
+  const sidebar = document.getElementById('sidebar')
+
+  function openSidebar() {
+    sidebar?.classList.remove('-translate-x-full', 'invisible', 'opacity-0')
+    overlay?.classList.remove('invisible', 'opacity-0')
+  }
+
+  function closeSidebar() {
+    sidebar?.classList.add('-translate-x-full', 'invisible', 'opacity-0')
+    overlay?.classList.add('invisible', 'opacity-0')
+  }
+</script>

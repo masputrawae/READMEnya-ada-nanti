@@ -2,18 +2,23 @@
 // components/head.astro
 
 import { siteParams } from "../siteConfig";
-const { meta = {} } = Astro.props
+interface MetaProps {
+  title?: string;
+  description?: string;
+  thumbnail?: string;
+  keywords?: string[];
+}
+
+const { meta = {} }: { meta?: MetaProps } = Astro.props;
+const fallbackTitle = "Halaman Rahasia Tanpa Judul 😅"
 
 const { site } = Astro
 const { pathname } = Astro.url
 const fullUrl = new URL(pathname, site).href
 
-const siteTitle = siteParams.title
-const pageTitle = meta.title
-
-const title = pathname === '/' ? siteTitle : `${siteTitle} | ${pageTitle}`
+const title = pathname === '/' ? siteParams.title : `${siteParams.title} | ${meta.title ?? fallbackTitle}`
 const author = siteParams.author
-const twitter = meta.twitter
+const twitter = siteParams.twitter
 const thumbnail = meta.thumbnail ?? siteParams.thumbnail
 const description = meta.description ?? siteParams.description
 const keyword = (meta.keywords ?? siteParams.keyword).join(', ')
@@ -23,7 +28,7 @@ const keyword = (meta.keywords ?? siteParams.keyword).join(', ')
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content={Astro.generator} />
   <meta name="theme-color" content="#0f172a" />
-  <link rel="canonical" href= />
+  <link rel="canonical" href={fullUrl} />
 
   <!-- START: FAVICONS -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -51,8 +56,14 @@ const keyword = (meta.keywords ?? siteParams.keyword).join(', ')
   <meta name="twitter:site" content={ twitter } />
   <!-- END: Twitter Card -->
 
+  <meta property="og:site_name" content={siteParams.title} />
+  <meta name="language" content="id" />
+
   <title>{title}</title>
   <meta name="author" content={ author } />
   <meta name="description" content={ description } />
   <meta name="keywords" content={ keyword } />
+
+  <meta name="robots" content="index, follow" />
+  <meta name="copyright" content="© 2025 Putra" />
 </head>

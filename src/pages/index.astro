@@ -1,6 +1,36 @@
 ---
 import BaseLayouts from "../layouts/BaseLayouts.astro";
+import Button from "../components/Button.astro";
+import ProjectFeatured from '../components/ProjectFeatured.astro'
+import { siteParams } from "../siteConfig";
+
+import { getCollection } from "astro:content";
+
+const project = await getCollection('projects')
 ---
 <BaseLayouts>
-  Hello
+  <header class="pt-20 max-w-3xl mx-auto px-4">
+    <h1 class="text-4xl font-bold mb-2">👋 Halo, Selamat Datang!</h1>
+    <em class="text-gray-500">Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em>
+    <p class="mt-4">
+      Blog ini berisi catatan belajar saya dalam bidang <strong>JavaScript, Python, dan teknologi web</strong>. Saya juga menulis hal-hal yang saya pelajari seputar <strong>matematika dasar</strong> dan <strong>bahasa Inggris</strong>.
+    </p>
+    <p class="mt-4">
+      Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang sama, semoga bisa jadi teman belajar yang menyenangkan.
+    </p>
+    <nav class="flex items-center gap-1.5 mt-4">
+      {
+        siteParams.cta.map(item =>(
+          <Button href={item.url} primary={item.primary} customClass="text-xl">
+            {item.label}
+          </Button>
+        ))
+      }
+    </nav>
+  </header>
+  <main class="block px-3">
+    {
+      project.map(item =><ProjectFeatured projects={{...item}} />)
+    }
+  </main>
 </BaseLayouts>

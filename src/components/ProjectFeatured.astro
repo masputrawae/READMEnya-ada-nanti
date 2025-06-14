@@ -1,0 +1,14 @@
+---
+import { Picture } from 'astro:assets'
+const { projects } = Astro.props
+---
+
+<article class="">
+  <Picture
+    src={projects.data.thumbnail}
+    alt={projects.data.title}
+    class="aspect-video"
+    inferSize={true}
+    format="svg"
+  />
+</article>
