@@ -7,8 +7,6 @@ tags:
   - example
   - python
   - cyber
-categories:
-  - Python
 date: 2025-06-10T17:48:04+07:00
 update: 2025-06-10T17:48:04+07:00
 ---

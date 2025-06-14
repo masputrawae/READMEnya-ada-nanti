@@ -1,5 +1,5 @@
 {
-  "name": "bismalam",
+  "name": "pasti-bisa",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,9 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@braindb/remark-wiki-link": "^2.1.0",
+    "@astrojs/mdx": "^4.3.0",
     "@tailwindcss/vite": "^4.1.10",
-    "astro": "^5.9.2",
+    "astro": "^5.9.3",
     "astro-icon": "^1.1.5",
     "tailwindcss": "^4.1.10"
   }

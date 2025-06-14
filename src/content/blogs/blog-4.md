@@ -2,18 +2,14 @@
 title: 'Example Blog 4'
 description: 'Esse veniam ea amet magna esse mollit eiusmod. Proident excepteur ex ea irure veniam nulla duis mollit.'
 thumbnail: 'https://picsum.photos/600/400?4'
-tags: 
+tags:
   - blog
   - example
   - php
   - backend
-categories:
-  - PHP
 date: 2025-06-10T09:04:39+07:00
 update: 2025-06-10T09:04:39+07:00
 ---
-
-[[blog-1]]
 
 # Example Blog 4
 
