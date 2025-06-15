@@ -1,0 +1,8 @@
+---
+import { siteParams } from "../siteConfig"
+const year = new Date().getFullYear()
+---
+<footer class="flex justify-between items-center px-5 pb-3.5">
+  <p class="prose prose-invert text-sm">&copy; {year} - {siteParams.author}</p>
+  <p class="prose prose-invert text-sm">Generate with {Astro.generator}</p>
+</footer>

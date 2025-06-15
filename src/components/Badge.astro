@@ -1,0 +1,16 @@
+---
+const { customClass, href, ...rest } = Astro.props
+
+const className = `inline-flex bg-neutral-900/80 px-3 py-1.5 rounded-full text-sm text-neutral-200 font-medium cursor-pointer shadow-sm shadow-black ${customClass ? customClass : ''}`
+---
+{
+  !href ? (
+    <span class={className} {...rest}>
+      <slot />
+    </span>
+  ) : (
+    <a href={href} class={className} {...rest}>
+      <slot />
+    </a>
+  )
+}

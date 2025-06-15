@@ -7,7 +7,7 @@ const cls = `${className} ${primary ? 'bg-neutral-700 text-white' : ''} ${custom
 
 {
   !href ? (
-    <button class={cls} {...rest}>
+    <button class={cls} {...rest} >
       <slot />
     </button>
   ) : (
