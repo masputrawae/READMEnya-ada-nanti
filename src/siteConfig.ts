@@ -1,6 +1,4 @@
-// src/siteConfig.ts
-
-export const siteParams = {
+export const siteConfig = {
   title: 'MasPutraWae',
   author: 'Putra Jaya',
   logo: '/logo.png',
@@ -24,11 +22,7 @@ export const siteParams = {
       { label: 'Tags', url: '/tags', icon: 'icon-tag' },
     ],
     social: [
-      {
-        label: 'Instagram',
-        url: 'https://example.com',
-        icon: 'icon-instagram',
-      },
+      { label: 'Instagram', url: 'https://example.com', icon: 'icon-instagram'},
       { label: 'Github', url: 'https://example.com', icon: 'icon-github' },
       { label: 'Discord', url: 'https://example.com', icon: 'icon-discord' },
     ],

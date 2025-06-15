@@ -1,23 +1,23 @@
 // @ts-check
-import { defineConfig, passthroughImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 
-import icon from 'astro-icon';
-
-import tailwindcss from '@tailwindcss/vite';
+import react from '@astrojs/react';
 
 import mdx from '@astrojs/mdx';
 
+import tailwindcss from '@tailwindcss/vite';
+
+import vercel from '@astrojs/vercel';
+
+import icon from 'astro-icon';
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://masputrawae.github.io',
-  base: '/',
-  image: {
-    remotePatterns: [{ protocol: "https" }],
-    domains: ["astro.build"],
-    service: passthroughImageService(),
-  },
-  integrations: [icon(), mdx()],
+  integrations: [react(), mdx(), icon()],
+
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+
+  adapter: vercel()
 });

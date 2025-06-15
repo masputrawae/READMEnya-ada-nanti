@@ -4,37 +4,41 @@ interface Menus {
   label?: string
   icon?: string
 }
-
 import { Icon } from 'astro-icon/components'
-const { menus } = Astro.props
-const activeClass =
-  'bg-neutral-950/70 text-white shadow-xs shadow-black backdrop-blur-md hover:bg-neutral-900/50 md:bg-neutral-800'
-const defaultClass =
-  'rounded-sm px-3 text-neutral-300 text-shadow-sm text-shadow-black transition-all duration-300 hover:text-white'
+
+const { menu } = Astro.props
 ---
 
-<ul class="px-2.5 py-5">
+<ul>
   {
-    menus.map((item: Menus) => {
+    menu.map((item: Menus) => {
+      // IDENTIFY ACTIVE PAGE
       const nowUrl = Astro.url.pathname
       const itemUrl = item.url || ''
       const isActive =
         nowUrl === itemUrl ||
         (itemUrl !== '/' && Astro.url.pathname.startsWith(itemUrl))
 
+      // CLASS NAME
+      const className = {
+        liDefault: 'mb-3 px-2.5 py-1.5',
+        liActive: 'rounded-sm bg-neutral-800/50 shadow-md shadow-black/70 transition-all duration-300 hover:bg-neutral-800/80 hover:shadow-lg',
+
+        linkDefault: 'flex items-center gap-2 p-1 font-semibold text-neutral-400 transition-all duration-300 hover:text-neutral-50',
+        linkActive: 'text-white',
+      }
+
+      const setClassLi = `${className.liDefault} ${isActive ? className.liActive : ''}`
+      const setClassLink = `${className.linkDefault} ${isActive ? className.linkActive : ''}`
+
       return (
-        <li class={`${defaultClass} ${isActive ? activeClass : ''}`}>
-          <a
-            href={item.url}
-            class="flex items-center gap-3 p-1.5"
-            id={item.label}
-          >
+        <li class={setClassLi}>
+          <a href={item.url} class={setClassLink}>
             <Icon
               name={item.icon}
+              class="size-6"
               role="img"
-              title={`icon ${item.label}`}
-              aria-labelledby={item.label}
-              class="size-5"
+              title={item.label}
             />
             {item.label}
           </a>

@@ -1,18 +1,20 @@
 ---
-const { href, customClass = '', primary = false, ...rest } = Astro.props
-const className =
-  'inline-flex cursor-pointer items-center justify-center rounded-sm border border-neutral-700 px-6 py-2 font-bold shadow-sm shadow-black hover:bg-neutral-900'
-const cls = `${className} ${primary ? 'bg-neutral-700 text-white' : ''} ${customClass}`
+const { href, primary = false, customClass = '', title, ...rest } = Astro.props
+
+const className = ''
+const classPrimary = `${primary ? '' : ''}`
+
+const classes = `${className} ${classPrimary} ${customClass}`
 ---
 
 {
   !href ? (
-    <button class={cls} {...rest} >
-      <slot />
+    <button class={classes} {...rest}>
+      {!title ? <slot /> : title }
     </button>
   ) : (
-    <a href={href} class={cls} {...rest}>
-      <slot />
+    <a href={href} class={classes} {...rest}>
+      {!title ? <slot /> : title }
     </a>
   )
 }

@@ -1,7 +1,9 @@
 ---
 // components/head.astro
 
-import { siteParams } from "../siteConfig";
+import { siteConfig } from "../siteConfig";
+import { ClientRouter } from "astro:transitions";
+
 interface MetaProps {
   title?: string;
   description?: string;
@@ -12,16 +14,16 @@ interface MetaProps {
 const { meta = {} }: { meta?: MetaProps } = Astro.props;
 const fallbackTitle = "Halaman Rahasia Tanpa Judul 😅"
 
-const { site } = Astro
+const { origin } = Astro.url
 const { pathname } = Astro.url
-const fullUrl = new URL(pathname, site).href
+const fullUrl = new URL(pathname, origin).href
 
-const title = pathname === '/' ? siteParams.title : `${siteParams.title} | ${meta.title ?? fallbackTitle}`
-const author = siteParams.author
-const twitter = siteParams.twitter
-const thumbnail = meta.thumbnail ?? siteParams.thumbnail
-const description = meta.description ?? siteParams.description
-const keyword = (meta.keywords ?? siteParams.keyword).join(', ')
+const title = pathname === '/' ? siteConfig.title : `${siteConfig.title} | ${meta.title ?? fallbackTitle}`
+const author = siteConfig.author
+const twitter = siteConfig.twitter
+const thumbnail = meta.thumbnail ?? siteConfig.thumbnail
+const description = meta.description ?? siteConfig.description
+const keyword = (meta.keywords ?? siteConfig.keyword).join(', ')
 ---
 <head>
   <meta charset="utf-8" />
@@ -56,7 +58,7 @@ const keyword = (meta.keywords ?? siteParams.keyword).join(', ')
   <meta name="twitter:site" content={ twitter } />
   <!-- END: Twitter Card -->
 
-  <meta property="og:site_name" content={siteParams.title} />
+  <meta property="og:site_name" content={siteConfig.title} />
   <meta name="language" content="id" />
 
   <title>{title}</title>

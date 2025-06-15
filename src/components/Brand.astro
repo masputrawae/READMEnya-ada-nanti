@@ -1,29 +1,25 @@
 ---
-import { siteParams } from '../siteConfig'
-import { Image } from 'astro:assets'
+import Image from 'astro/components/Image.astro'
+import { siteConfig } from '../siteConfig'
 ---
 
-<figure
-  class="items-center flex gap-2 cursor-pointer"
-  onclick='window.location.href="/"'
-  aria-label={`Logo Brand ${siteParams.author}`}
->
-  <Image 
-    class="block overflow-hidden rounded-full border-2 border-slate-800 shadow-md shadow-black"
-    src={siteParams.logo}
-    alt={`Logo ${siteParams.title}`}
+<figure class="flex items-center gap-2.5 cursor-pointer" onclick='window.location.href="/"'>
+  <Image
+    src={siteConfig.logo}
+    alt={`Logo ${siteConfig.title}`}
     width={50}
     height={50}
-    densities={[1.5, 2]}
+    format="webp"
     loading="eager"
-    />
-  <figcaption class="leading-2">
-    <strong
-      class="block text-lg font-semibold text-white text-shadow-lg text-shadow-black"
-      >{siteParams.author}</strong
-    >
-    <em class="text-xs not-italic text-neutral-300 text-shadow-lg text-shadow-black"
-      >{siteParams.tagline}</em
-    >
+    densities={[1.5, 2]}
+    class="rounded-full shadow-sm shadow-black/50"
+  />
+  <figcaption>
+    <strong class="block text-xl text-neutral-50 text-shadow-md shadow-black/80">
+      {siteConfig.author}
+    </strong>
+    <em class="block not-italic text-sm text-neutral-400 text-shadow-md shadow-black/80">
+      {siteConfig.tagline}
+    </em>
   </figcaption>
 </figure>
