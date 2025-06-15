@@ -8,9 +8,9 @@ interface Menus {
 import { Icon } from 'astro-icon/components'
 const { menus } = Astro.props
 const activeClass =
-  'bg-neutral-900 text-white shadow-xs shadow-black hover:bg-neutral-800'
+  'bg-neutral-950/70 text-white shadow-xs shadow-black backdrop-blur-md hover:bg-neutral-900/50 md:bg-neutral-800'
 const defaultClass =
-  'rounded-sm px-3 text-neutral-400 transition-all duration-300 hover:text-white'
+  'rounded-sm px-3 text-neutral-300 text-shadow-sm text-shadow-black transition-all duration-300 hover:text-white'
 ---
 
 <ul class="px-2.5 py-5">
