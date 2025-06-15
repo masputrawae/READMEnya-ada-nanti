@@ -10,7 +10,7 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://masputrawae.github.io',
-  base: '/READMEnya-ada-nanti/',
+  base: '/',
   image: {
     remotePatterns: [{ protocol: "https" }],
     domains: ["astro.build"],
