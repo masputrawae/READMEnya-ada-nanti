@@ -10,7 +10,7 @@ import { Image } from 'astro:assets'
 >
   <Image 
     class="block overflow-hidden rounded-full border-2 border-slate-800 shadow-md shadow-black"
-    src={siteParams.logo}
+    src={`${Astro.site}${siteParams.logo}`}
     alt={`Logo ${siteParams.title}`}
     width={50}
     height={50}
