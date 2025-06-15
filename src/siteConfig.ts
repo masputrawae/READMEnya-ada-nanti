@@ -3,7 +3,7 @@
 export const siteParams = {
   title: 'MasPutraWae',
   author: 'Putra Jaya',
-  logo: '/logo.png',
+  logo: './logo.png',
   thumbnail: 'https://placehold.co/600x400',
   tagline: 'Manusia Biasa',
   description: 'Consectetur incididunt velit commodo id voluptate elit.',
@@ -11,17 +11,17 @@ export const siteParams = {
   twitter: '@Masputrawae',
 
   cta: [
-    { label: 'About', url: '/about', primary: true },
+    { label: 'About', url: './about', primary: true },
     { label: 'Discord', url: 'https://example.com', primary: false },
   ],
 
   menus: {
     main: [
-      { label: 'Home', url: '/', icon: 'icon-home' },
-      { label: 'About', url: '/about', icon: 'icon-person-circle' },
-      { label: 'Projects', url: '/projects', icon: 'icon-wrench-screwdriver' },
-      { label: 'Blog', url: '/blogs', icon: 'icon-pencil-square' },
-      { label: 'Tags', url: '/tags', icon: 'icon-tag' },
+      { label: 'Home', url: './', icon: 'icon-home' },
+      { label: 'About', url: './about', icon: 'icon-person-circle' },
+      { label: 'Projects', url: './projects', icon: 'icon-wrench-screwdriver' },
+      { label: 'Blog', url: './blogs', icon: 'icon-pencil-square' },
+      { label: 'Tags', url: './tags', icon: 'icon-tag' },
     ],
     social: [
       {

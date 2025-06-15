@@ -25,7 +25,7 @@ const defaultClass =
       return (
         <li class={`${defaultClass} ${isActive ? activeClass : ''}`}>
           <a
-            href={`${Astro.site}${item.url}`}
+            href={item.url}
             class="flex items-center gap-3 p-1.5"
             id={item.label}
           >
