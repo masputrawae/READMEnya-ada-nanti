@@ -1,16 +1,21 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+	<header class="prose prose-invert prose-neutral">
+		<h1>Halo, Selamat Datang!</h1>
+
+		<em>Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em>
+		<p>
+			Blog ini berisi catatan belajar saya dalam bidang **JavaScript, Python, dan teknologi web**.
+			Saya juga menulis hal-hal yang saya pelajari seputar **matematika dasar** dan **bahasa
+			Inggris**.
+		</p>
+
+		<p>
+			Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang
+			sama, semoga bisa jadi teman belajar yang menyenangkan.
+		</p>
+	</header>
+</BaseLayout>

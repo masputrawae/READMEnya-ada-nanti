@@ -1,0 +1,39 @@
+---
+title: Apa Perbedaan Bash Dan Shell
+date: 2025-06-14T16:20:37+07:00
+update: 2025-06-14T16:20:37+07:00
+tags:
+  - Linux
+---
+
+# Apa Perbedaan Bash Dan Shell
+
+**Shell** secara sederhana adalah penerjemah antara manusia dan sistem operasi. Ia memungkinkan kita memberikan perintah ke sistem melalui teks.
+
+Sebenarnya tidak ada perbedaan langsung antara "bash" dan "shell", karena **Bash adalah salah satu jenis shell**. Beberapa jenis shell yang populer antara lain:
+
+- **Bash** (Bourne Again Shell)
+- **Zsh** (Z Shell)
+- **Fish** (Friendly Interactive Shell)
+- **sh** (Bourne Shell)
+- dan masih banyak lagi
+
+## Analogi Sederhana
+
+Bayangkan _shell_ seperti kendaraan. Maka:
+
+- **Shell** adalah konsep kendaraan secara umum.
+- **Bash** bisa diibaratkan mobil,
+- **Zsh** seperti motor,
+- **Fish** seperti bus,
+- dan **sh** seperti kereta.
+
+Jadi, shell adalah kategori umum, sedangkan bash dan lainnya adalah jenis-jenisnya.
+
+## Kesimpulan
+
+> Semua Bash adalah Shell, tetapi tidak semua Shell adalah Bash.
+
+---
+
+Dibuat pada tanggal: Sabtu, Juni 14, 2025, 4:20:37 sore
