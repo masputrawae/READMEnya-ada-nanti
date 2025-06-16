@@ -2,7 +2,7 @@
 title: 'Example Blog 3'
 description: 'Veniam consectetur consequat proident pariatur ullamco sunt ad fugiat consectetur excepteur est fugiat.'
 thumbnail: 'https://picsum.photos/600/400?3'
-tags: 
+tags:
   - blog
   - example
   - markdown

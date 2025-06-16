@@ -1,0 +1,32 @@
+---
+import Image from 'astro/components/Image.astro'
+import Button from './Button.astro'
+import Badge from './Badge.astro'
+
+const { content } = Astro.props
+---
+
+<article class="overflow-hidden rounded-2xl bg-neutral-800/50 shadow-md shadow-black">
+	<Image
+		src={content.data.thumbnail}
+		alt={content.data.title}
+		format="webp"
+		densities={[1, 1.5, 2, 3]}
+		inferSize
+		class="aspect-video w-full"
+	/>
+	<section
+		class="prose prose-invert prose-a:no-underline prose-p:text-[14px] m-auto p-5 leading-relaxed xl:max-w-lg"
+	>
+		<strong class="my-3.5 block text-2xl">{content.data.title}</strong>
+		<div class="flex items-center gap-1">
+			{content.data.tags.map((i: string) => <Badge title={i} customClass="text-xs" />)}
+		</div>
+		<p class="text-sm text-neutral-400">{content.data.description}</p>
+		<Button
+			onclick=`window.location.href="${content.collection}/${content.id}"`
+			title="Read More"
+			customClass="w-fit"
+		/>
+	</section>
+</article>

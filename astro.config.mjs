@@ -1,23 +1,23 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config'
 
-import react from '@astrojs/react';
+import react from '@astrojs/react'
 
-import mdx from '@astrojs/mdx';
+import mdx from '@astrojs/mdx'
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite'
 
-import vercel from '@astrojs/vercel';
-
-import icon from 'astro-icon';
+import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), mdx(), icon()],
-
-  vite: {
-    plugins: [tailwindcss()]
-  },
-
-  adapter: vercel()
-});
+	integrations: [react(), mdx(), icon()],
+	image: {
+		domains: ['astro.build'],
+		remotePatterns: [{ protocol: 'https' }],
+		service: passthroughImageService()
+	},
+	vite: {
+		plugins: [tailwindcss()]
+	}
+})

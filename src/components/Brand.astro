@@ -3,23 +3,23 @@ import Image from 'astro/components/Image.astro'
 import { siteConfig } from '../siteConfig'
 ---
 
-<figure class="flex items-center gap-2.5 cursor-pointer" onclick='window.location.href="/"'>
-  <Image
-    src={siteConfig.logo}
-    alt={`Logo ${siteConfig.title}`}
-    width={50}
-    height={50}
-    format="webp"
-    loading="eager"
-    densities={[1.5, 2]}
-    class="rounded-full shadow-sm shadow-black/50"
-  />
-  <figcaption>
-    <strong class="block text-xl text-neutral-50 text-shadow-md shadow-black/80">
-      {siteConfig.author}
-    </strong>
-    <em class="block not-italic text-sm text-neutral-400 text-shadow-md shadow-black/80">
-      {siteConfig.tagline}
-    </em>
-  </figcaption>
+<figure class="flex cursor-pointer items-center gap-2.5" onclick='window.location.href="/"'>
+	<Image
+		src={siteConfig.logo}
+		alt={`Logo ${siteConfig.title}`}
+		width={48}
+		height={48}
+		format="webp"
+		loading="eager"
+		densities={[1.5, 2]}
+		class="rounded-full shadow-sm shadow-black/50"
+	/>
+	<figcaption class="leading-6">
+		<strong class="block text-lg font-semibold text-neutral-50 text-shadow-black/80 text-shadow-md">
+			{siteConfig.author}
+		</strong>
+		<em class="block text-xs text-neutral-400 not-italic text-shadow-black text-shadow-sm">
+			{siteConfig.tagline}
+		</em>
+	</figcaption>
 </figure>

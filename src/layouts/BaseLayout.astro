@@ -7,17 +7,14 @@ import Footer from '../components/Footer.astro'
 import '../styles/global.css'
 ---
 
-<html
-  lang="id"
-  class="font-[Noto_Sans,var(--font-sans)] bg-neutral-950 text-[14px] text-neutral-300 md:text-[15px] lg:text-[16px] 2xl:text-[18]"
->
-  <Headed {...Astro.props} />
-  <body>
-    <Sidebar />
-    <MobileHeader />
-    <div>
-      <slot />
-      <Footer />
-    </div>
-  </body>
+<html lang="id" class="bg-neutral-900 font-[Noto_Sans,var(--font-sans)] text-neutral-300">
+	<Headed {...Astro.props} />
+	<body class="lg:grid lg:grid-cols-[320px_minmax(0,1fr)]">
+		<Sidebar />
+		<MobileHeader />
+		<div>
+			<slot />
+			<Footer />
+		</div>
+	</body>
 </html>

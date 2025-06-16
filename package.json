@@ -1,24 +1,32 @@
 {
-  "name": "hei_tayo",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
-    "@astrojs/react": "^4.3.0",
-    "@astrojs/vercel": "^8.1.5",
-    "@tailwindcss/vite": "^4.1.10",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "astro": "^5.9.3",
-    "astro-icon": "^1.1.5",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.10"
-  }
+	"name": "hei_tayo",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"prettier": "npx prettier . --write"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^4.3.0",
+		"@astrojs/react": "^4.3.0",
+		"@tailwindcss/vite": "^4.1.10",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"astro": "^5.9.3",
+		"astro-icon": "^1.1.5",
+		"marked": "^15.0.12",
+		"prettier": "^3.5.3",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.6.12",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"sharp": "^0.34.2",
+		"tailwindcss": "^4.1.10"
+	},
+	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.16"
+	}
 }

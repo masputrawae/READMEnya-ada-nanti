@@ -2,7 +2,7 @@
 title: 'Example Blog 1'
 description: 'Aliquip cillum do aliquip ut minim adipisicing proident veniam sint proident ipsum non pariatur.'
 thumbnail: 'https://picsum.photos/600/400'
-tags: 
+tags:
   - blog
   - example
   - javascript

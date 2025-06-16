@@ -2,7 +2,7 @@
 title: 'Example Blog 2'
 description: 'Lorem ea qui irure minim consequat deserunt id velit exercitation.'
 thumbnail: 'https://picsum.photos/600/400?2'
-tags: 
+tags:
   - blog
   - example
   - python
