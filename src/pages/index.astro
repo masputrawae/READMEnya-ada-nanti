@@ -1,66 +1,16 @@
 ---
-import { marked } from 'marked'
-import { getCollection } from 'astro:content'
 
-import BaseLayout from '../layouts/BaseLayout.astro'
-import FeaturedProjects from '../components/FeaturedProjects.astro'
-import Cards from '../components/Cards.astro'
-
-import Button from '../components/Button.astro'
-import { siteConfig } from '../siteConfig'
-import postRaw from '../content/welcome.md?raw'
-
-const cta = siteConfig.cta
-const content = marked.parse(postRaw)
-
-const projects = await getCollection('projects')
-const getFeatured = projects.filter((item) => item.data.featured)
-const featured = getFeatured
-	.sort((a, b) => b.data.date.getDate() - b.data.date.getDate())
-	.slice(0, 2)
-
-const blogs = await getCollection('blogs')
-const news = blogs.sort((a, b) => b.data.date.getDate() - b.data.date.getDate()).slice(0, 4)
 ---
 
-<BaseLayout>
-	<header class="m-auto min-h-[90dvh] max-w-5xl px-5 pt-28">
-		<div
-			class="prose prose-invert prose-em:not-italic prose-h1:font-normal prose-h1:text-5xl prose-p:text-[14px] prose-p:lg:text-[16px] m-auto max-w-none leading-relaxed text-neutral-300"
-			set:html={content}
-		/>
-
-		<nav class="mt-5 flex items-center gap-2">
-			{
-				cta.map((item) => (
-					<Button
-						href={item.url}
-						title={item.label}
-						primary={item.primary}
-						customClass="text-xl px-8 py-3"
-					/>
-				))
-			}
-		</nav>
-	</header>
-
-	<main>
-		<div class="m-auto max-w-5xl px-5 pt-24">
-			<h2 class="mb-1.5 text-3xl font-semibold text-white">Projects</h2>
-			<p class="mb-14">Beberapa Karya yang mungkin bagus menurutku!</p>
-
-			<div class="grid gap-10">
-				{featured.map((i) => <FeaturedProjects project={i} />)}
-			</div>
-		</div>
-
-		<div class="m-auto max-w-5xl px-5 pt-24">
-			<h2 class="mb-1.5 text-3xl font-semibold text-white">New Notes</h2>
-			<p class="mb-14">Catatan Terbaru!</p>
-
-			<div class="m-auto grid max-w-4xl gap-10 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-				{news.map((i) => <Cards content={i} />)}
-			</div>
-		</div>
-	</main>
-</BaseLayout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+	</body>
+</html>

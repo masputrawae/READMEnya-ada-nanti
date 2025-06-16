@@ -1,30 +1,18 @@
-// content.config.ts
-import { z, defineCollection } from 'astro:content'
-import { glob, file } from 'astro/loaders' // Not available with legacy API
+import { defineCollection, z } from 'astro:content'
+import { glob, file } from 'astro/loaders'
 
-const projects = defineCollection({
-	loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/projects' }),
+const docs = defineCollection({
+	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/docs' }),
 	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		thumbnail: z.string(),
+		title: z.string().optional(),
+		description: z.string().optional(),
+		thumbnail: z.string().optional(),
 		tags: z.array(z.string()).optional(),
-		date: z.coerce.date(),
+		date: z.coerce.date().optional(),
 		update: z.coerce.date().optional(),
-		featured: z.boolean().optional()
+		featured: z.boolean().optional(),
+		type: z.array(z.string()).optional()
 	})
 })
 
-const blogs = defineCollection({
-	loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/blogs' }),
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		thumbnail: z.string(),
-		tags: z.array(z.string()).optional(),
-		date: z.coerce.date(),
-		update: z.coerce.date().optional()
-	})
-})
-
-export const collections = { blogs, projects }
+export const collections = { docs }
