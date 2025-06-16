@@ -17,13 +17,11 @@ Menggunakan `preventDefault()`
 </form>
 
 <script>
-	document
-		.getElementById("myForm")
-		.addEventListener("submit", function (event) {
-			event.preventDefault(); // Mencegah refresh
-			console.log("Form disubmit tanpa refresh");
-			// Lakukan aksi lain di sini, seperti fetch/AJAX
-		});
+	document.getElementById('myForm').addEventListener('submit', function (event) {
+		event.preventDefault() // Mencegah refresh
+		console.log('Form disubmit tanpa refresh')
+		// Lakukan aksi lain di sini, seperti fetch/AJAX
+	})
 </script>
 ```
 

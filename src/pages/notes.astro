@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
+const firstChar = (str: string) => String.fromCodePoint(str.codePointAt(0)!)
+
+const docs = await getCollection('docs')
+type Docs = typeof docs
+const docsByChar = new Map<string, Docs>()
+docs.forEach((doc) => {
+	const char = firstChar(doc.data.title || '').toUpperCase()
+	docsByChar.set(char, docsByChar.get(char) || [])
+	docsByChar.get(char)?.push(doc)
+})
+const comparator = new Intl.Collator('en')
+const charsSorted = [...docsByChar.keys()].sort(comparator.compare)
+---
+
+<BaseLayout>
+	<header
+		class="prose prose-invert prose-neutral max-w-none text-[14px] leading-normal font-light md:text-[15px] lg:text-[16px]"
+	>
+		<h1 class="font-light">Halo, Selamat Datang!</h1>
+
+		<p>
+			<em class="not-italic"
+				>Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em
+			>
+			Blog ini berisi catatan belajar saya dalam bidang <b>JavaScript</b>, <b>Python</b>, dan <b
+				>teknologi web</b
+			>. Saya juga menulis hal-hal yang saya pelajari seputar matematika dasar dan <b
+				>bahasa Inggris</b
+			>.
+		</p>
+		<p>
+			Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang
+			sama, semoga bisa jadi teman belajar yang menyenangkan.
+		</p>
+	</header>
+
+	<nav class="prose prose-invert prose-neutral grid max-w-none grid-cols-3 gap-3.5">
+		{
+			charsSorted.map((char) => (
+				<div class="border border-neutral-700 p-5">
+					<h3>{char}</h3>
+					<ul>
+						{docsByChar.get(char)?.map((doc) => (
+							<li>
+								<a href={doc.id}>{doc.data.title}</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))
+		}
+	</nav>
+</BaseLayout>

@@ -14,7 +14,7 @@ Ingin mengulang kode sebanyak 5 kali:
 
 ```javascript
 for (let i = 0; i < 5; i++) {
-	console.log(`loop ke - ${i}`);
+	console.log(`loop ke - ${i}`)
 }
 
 // Hasil output:

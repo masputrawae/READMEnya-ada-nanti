@@ -3,6 +3,9 @@
 import '../styles/global.css'
 import { SiteConfig } from '../siteConfig'
 
+import MobileHeader from '../components/MobileHeader.astro'
+import Sidebar from '../components/Sidebar.astro'
+
 interface MetaProps {
 	title?: string
 	description?: string
@@ -26,7 +29,7 @@ const description = meta.description ?? SiteConfig.description
 const keyword = (meta.keywords ?? SiteConfig.keyword).join(', ')
 ---
 
-<html lang="id" class="font-[Noto_Sans,sans-serif] bg-neutral-900 text-neutral-300">
+<html lang="id" class="bg-neutral-900 font-[Noto_Sans,sans-serif] text-neutral-400">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -71,7 +74,12 @@ const keyword = (meta.keywords ?? SiteConfig.keyword).join(', ')
 		<meta name="robots" content="index, follow" />
 		<meta name="copyright" content="© 2025 Putra" />
 	</head>
-	<body> 
-    <slot />
-  </body>
+	<body class="grid lg:grid-cols-[320px_minmax(0,1fr)]">
+		<Sidebar />
+		<main class="mx-auto mt-32 px-3.5 lg:max-w-5xl">
+			<slot />
+		</main>
+
+		<MobileHeader />
+	</body>
 </html>

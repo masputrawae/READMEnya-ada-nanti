@@ -18,14 +18,14 @@ Contoh **function** sederhana:
 
 ```javascript
 function sapa(nama) {
-	console.log("Halo, " + nama + " Selamat Datang!");
+	console.log('Halo, ' + nama + ' Selamat Datang!')
 }
 
 // Panggil fungsi
-sapa("Joni"); // Output: Halo, Joni Selamat Datang!
+sapa('Joni') // Output: Halo, Joni Selamat Datang!
 
 // Bisa dipanggil lagi
-sapa("Jono"); // Output: Halo, Jono Selamat Datang!
+sapa('Jono') // Output: Halo, Jono Selamat Datang!
 ```
 
 **Beberapa cara membuat function**:

@@ -18,14 +18,14 @@ Tipe Scope di JavaScript:
 
 ```javascript
 // Ini global Scope
-let nama = "John";
+let nama = 'John'
 
 function sapa() {
 	// Bisa diakses di dalam function
-	console.log(nama);
+	console.log(nama)
 }
 
-sapa();
+sapa()
 ```
 
 ## Function Scope
@@ -35,12 +35,12 @@ sapa();
 ```javascript
 function sapa() {
 	// Variabel di dalam function
-	nama = "John";
-	console.log(nama);
+	nama = 'John'
+	console.log(nama)
 }
 
 // Tidak bisa di panggil dari luar, ini akan error
-console.log(nama); //error: nama is not defined
+console.log(nama) //error: nama is not defined
 ```
 
 ## Block Scope
@@ -49,17 +49,16 @@ diperkenalkan oleh `let` & `const`, [[Variabel]] yang dideklarasikan di dalam bl
 
 ```javascript
 {
-	let nama = "John";
-	console.log(nana); // bisa akses
+	let nama = 'John'
+	console.log(nana) // bisa akses
 }
 
 // Tidak bisa di akses di luar blok
-console.log(nama); //error: nama is not defined
+console.log(nama) //error: nama is not defined
 ```
 
 > [!WARNING]
 > keywoard `var` tidak memiliki block scope, hanya function scope
-
 
 ---
 

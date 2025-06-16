@@ -32,12 +32,12 @@ Perilaku Jika Pakai `const`
 Contoh dengan `let`
 
 ```javascript
-let angka = 10;
+let angka = 10
 {
-	let angka = 20;
-	console.log(angka);
+	let angka = 20
+	console.log(angka)
 }
-console.log(angka);
+console.log(angka)
 
 // Output
 // 20
@@ -47,12 +47,12 @@ console.log(angka);
 Contoh dengan `var`
 
 ```javascript
-var angka = 10;
+var angka = 10
 {
-	var angka = 20;
-	console.log(angka);
+	var angka = 20
+	console.log(angka)
 }
-console.log(angka);
+console.log(angka)
 
 // Output
 // 20
@@ -62,10 +62,10 @@ console.log(angka);
 Contoh dengan `const`
 
 ```javascript
-const angka = 10;
-angka = 20;
+const angka = 10
+angka = 20
 
-console.log(angka);
+console.log(angka)
 
 // Output
 // Error: Assignment to constant variable.

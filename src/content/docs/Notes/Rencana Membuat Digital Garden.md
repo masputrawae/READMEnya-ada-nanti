@@ -33,7 +33,7 @@ Ada plugin resmi, tapi rasanya kurang memuaskan kalau tidak dibuat sendiri. Tera
 
 - Wikilink `[[Nama Catatan]]` **nggak terbaca**
 - Bisa sih dikonversi pakai script Python → markdown link  
-     Tapi balik lagi... aku **nggak pengin ubah catatan** asliku.
+   Tapi balik lagi... aku **nggak pengin ubah catatan** asliku.
 
 ### 3. **Astro JS**
 
@@ -56,7 +56,7 @@ Aku ingin membuat digital garden dengan fitur berikut:
 - Belum paham [[Content Collections di Astro]]
 - Bingung cara pasang dan pakai plugin Astro
 - Slug URL berubah jadi lowercase dan pakai dash  
-     Misalnya: `Contoh Catatan` → `contoh-catatan` → link jadi **not found**
+   Misalnya: `Contoh Catatan` → `contoh-catatan` → link jadi **not found**
 - Masih bingung harus mulai dari mana
 
 ---
@@ -64,13 +64,12 @@ Aku ingin membuat digital garden dengan fitur berikut:
 ## ✅ Masalah yang Sudah Terpecahkan
 
 - **Wikilink berhasil terbaca**  
-     ➤ Berkat plugin `@braindb/remark-wiki-link`
+   ➤ Berkat plugin `@braindb/remark-wiki-link`
 
 ---
 
->[!NOTE]
->Tidak untuk sekarang, mungkin aku buat di masa mendatang 
-
+> [!NOTE]
+> Tidak untuk sekarang, mungkin aku buat di masa mendatang
 
 ---
 

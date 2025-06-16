@@ -15,6 +15,7 @@ Tapi ada satu hal yang membuatku kurang nyaman: **penamaan file**. Aku tidak pah
 Aku lebih terinspirasi dari cara simpel yang dibahas di [Linking Your Thinking with Nick Milo](https://youtu.be/c6wXmkmt8WM?feature=shared). Dia menulis catatan secara mengalir, tanpa aturan yang kaku. Tidak membuat folder, tidak pakai plugin, benar-benar tanpa tekanan — dan justru terasa lebih lepas.
 
 Satu hal yang aku adopsi juga adalah pemicu untuk mencatat. Aku menggunakan dua pertanyaan sebagai penanda:
+
 - **Apakah ini menarik?**
 - **Apakah ini penting?**
 

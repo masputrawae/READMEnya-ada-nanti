@@ -9,38 +9,41 @@ tags:
 # Cara Mendeklarasikan Variabel Di JavaScript
 
 **Cara Pertama pakai var** (tidak direkomendasikan)
+
 ```javascript
-var nama = "John";
-var usia = 25;
+var nama = 'John'
+var usia = 25
 var isActive = true
 ```
 
 **Cara Kedua pakai let atau const**
+
 ```javascript
-let nama = "John";
-let usia = 25;
+let nama = 'John'
+let usia = 25
 let isActive = true
 ```
 
-Bisa mengganti isi variabel 
+Bisa mengganti isi variabel
 
 ```javascript
-let nama = "John"
+let nama = 'John'
 
-nama = "Smith"
+nama = 'Smith'
 console.log(nama) // Output: Smith
 ```
 
 Nilai variabel yang sekiranya tidak boleh berubah gunakan const
 
 ```javascript
-const nama = "John";
+const nama = 'John'
 
-nama = "Smith"
+nama = 'Smith'
 console.log(nama) // Output: Error karena variabel yang telah dideklarasikan dengan const tidak bisa di ubah
 ```
 
 **Terkait**:
+
 - [[Perbedaan const let dan var Di JavaScript]]
 - [[Scope Di JavaScript]]
 - [[Closure Di JavaScript]]

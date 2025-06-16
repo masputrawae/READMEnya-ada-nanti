@@ -1,21 +1,36 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { SiteConfig } from '../siteConfig'
+import Button from '../components/Button.astro'
+const cta = SiteConfig.menus.cta
 ---
 
 <BaseLayout>
-	<header class="prose prose-invert prose-neutral">
-		<h1>Halo, Selamat Datang!</h1>
+	<header
+		class="prose prose-invert prose-neutral max-w-none text-[14px] leading-normal font-light md:text-[15px] lg:text-[16px]"
+	>
+		<h1 class="font-light">Halo, Selamat Datang!</h1>
 
-		<em>Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em>
 		<p>
-			Blog ini berisi catatan belajar saya dalam bidang **JavaScript, Python, dan teknologi web**.
-			Saya juga menulis hal-hal yang saya pelajari seputar **matematika dasar** dan **bahasa
-			Inggris**.
+			<em class="not-italic"
+				>Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em
+			>
+			Blog ini berisi catatan belajar saya dalam bidang <b>JavaScript</b>, <b>Python</b>, dan <b
+				>teknologi web</b
+			>. Saya juga menulis hal-hal yang saya pelajari seputar matematika dasar dan <b
+				>bahasa Inggris</b
+			>.
 		</p>
-
 		<p>
 			Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang
 			sama, semoga bisa jadi teman belajar yang menyenangkan.
 		</p>
 	</header>
+	<nav class="my-5 flex items-center gap-2.5">
+		{
+			cta.map((i) => (
+				<Button href={i.url} primary={i.primary} title={i.label} customClass="text-xl" />
+			))
+		}
+	</nav>
 </BaseLayout>

@@ -15,21 +15,20 @@ Mode `"use strict"` di JavaScript adalah sebuah fitur yang membuat aturan kode j
 Taruh di awal kode:
 
 ```javascript
-"use strict";
-
+'use strict'
 ```
 
 Misalnya:
 
 ```javascript
-"use strict";
-x = 10; // ERROR: x is not defined
+'use strict'
+x = 10 // ERROR: x is not defined
 ```
 
 Jika tanpa mode Strict:
 
 ```javascript
-x = 5; // Tidak error walaupun kamu tidak deklarasikan `x`
+x = 5 // Tidak error walaupun kamu tidak deklarasikan `x`
 ```
 
 ---

@@ -9,9 +9,9 @@ tags:
 # Rencana Membuat Portfolio
 
 - Inspirasi Beberapa desain
-    - [Inspirasi 1](https://preview.themeforest.net/item/ryan-vcard-resume-cv-template/full_screen_preview/21584603?_ga=2.8275058.1726572120.1525276116-2037007974.1524375404%3Fref%3Dslidesmarts)
-    - [Inspirasi 2](https://dribbble.com/shots/20753864-Shot-20753864)
-    - [Inspirasi 3](https://video-production.weblium.site/)
+  - [Inspirasi 1](https://preview.themeforest.net/item/ryan-vcard-resume-cv-template/full_screen_preview/21584603?_ga=2.8275058.1726572120.1525276116-2037007974.1524375404%3Fref%3Dslidesmarts)
+  - [Inspirasi 2](https://dribbble.com/shots/20753864-Shot-20753864)
+  - [Inspirasi 3](https://video-production.weblium.site/)
 - Font
 
 ```html
@@ -24,22 +24,22 @@ tags:
 ```
 
 - Yang ingin ditampilkan
-    Kurang yakin isi dari portfolio nya, tidak ada hal unik dari diriku, cuma sempat terpikir menampilkan seperti:
-    - Blog/Tutorial, soalnya keinginan ku ingin sedikit berbagi ilmu lewat tulisan, walaupun aku belum pernah bikin blog sebelumnya
-    - Proyek, walaupun tidak punya proyek mungkin saat ini bisa aku isi dengan hasil praktik coding, nanti jika sudah ada proyek nyata baru diisi itu
-    - About/Tentang saya, cuma aku tidak pandai menceritakan tentang diriku sendiri, aku sudah lihat beberapa contoh, cuma agak sedikit ragu, dan untuk skill yang ingin ditampilkan juga ngak terlalu percaya diri sih, soalnya saat ini (saat catatan ini ditulis) aku masih mempelajari dan mendalami skill yang ku punya
-    - Contact, ini satu hal yang mungkin dibutuhkan mendatang cuma, sekarang tidak melayani itu, jadi mungkin skip, dan tetap aku catat aja siapa tahu ke depannya butuh
+  Kurang yakin isi dari portfolio nya, tidak ada hal unik dari diriku, cuma sempat terpikir menampilkan seperti:
+  - Blog/Tutorial, soalnya keinginan ku ingin sedikit berbagi ilmu lewat tulisan, walaupun aku belum pernah bikin blog sebelumnya
+  - Proyek, walaupun tidak punya proyek mungkin saat ini bisa aku isi dengan hasil praktik coding, nanti jika sudah ada proyek nyata baru diisi itu
+  - About/Tentang saya, cuma aku tidak pandai menceritakan tentang diriku sendiri, aku sudah lihat beberapa contoh, cuma agak sedikit ragu, dan untuk skill yang ingin ditampilkan juga ngak terlalu percaya diri sih, soalnya saat ini (saat catatan ini ditulis) aku masih mempelajari dan mendalami skill yang ku punya
+  - Contact, ini satu hal yang mungkin dibutuhkan mendatang cuma, sekarang tidak melayani itu, jadi mungkin skip, dan tetap aku catat aja siapa tahu ke depannya butuh
 - Rencana Deploy
-    Rencana Deploy mungkin sekarang hanya ada 1 opsi, pakai GitHub pages + GitHub action, ada ke pikiran di Netlify cuma belum pernah coba, takut ribet, cuma Entahlah nanti
+  Rencana Deploy mungkin sekarang hanya ada 1 opsi, pakai GitHub pages + GitHub action, ada ke pikiran di Netlify cuma belum pernah coba, takut ribet, cuma Entahlah nanti
 - Penulisan Konten
-    Untuk Blog atau Tutorial mungkin lebih mudah ditulis pakai markdown / MDX jika memungkinkan tergantung konteks-nya nanti, cuma sekarang lebih proper ke markdown saja, lebih mudah di pakai
+  Untuk Blog atau Tutorial mungkin lebih mudah ditulis pakai markdown / MDX jika memungkinkan tergantung konteks-nya nanti, cuma sekarang lebih proper ke markdown saja, lebih mudah di pakai
 - Teknologi yang ingin digunakan
-    - Vanilla JavaScript
-        Sambil belajar aku memilih Vanilla JavaScript karena, sambil belajar juga dan berhubung proyek pribadi bebas aja.
-    - CSS • SCSS/SASS / Tailwind
-        Ini dilema, di sisi lain aku suka pakai SCSS/SASS, di sisi lain aku tertarik untuk belajar Tailwind, kalau di gabung ngak recommended kata Di dokumentasi Tailwind nya, jadi aku harus putuskan salah satu
+  - Vanilla JavaScript
+    Sambil belajar aku memilih Vanilla JavaScript karena, sambil belajar juga dan berhubung proyek pribadi bebas aja.
+  - CSS • SCSS/SASS / Tailwind
+    Ini dilema, di sisi lain aku suka pakai SCSS/SASS, di sisi lain aku tertarik untuk belajar Tailwind, kalau di gabung ngak recommended kata Di dokumentasi Tailwind nya, jadi aku harus putuskan salah satu
 - Antara Pakai Astro & Hugo
-    Dilemma harus pakai [[Astro Atau Hugo]], pasalnya jika pakai Astro aku sedikit kesulitan untuk membuatnya, soalnya baru bagiku saat catatan ini dibuat 😁. Kalau pakai Hugo bisa bisa aja, cuma sebenarnya bosan, ingin sesuatu hal baru😁. Entahlah nanti dipikirkan sambil jalan
+  Dilemma harus pakai [[Astro Atau Hugo]], pasalnya jika pakai Astro aku sedikit kesulitan untuk membuatnya, soalnya baru bagiku saat catatan ini dibuat 😁. Kalau pakai Hugo bisa bisa aja, cuma sebenarnya bosan, ingin sesuatu hal baru😁. Entahlah nanti dipikirkan sambil jalan
 
 ## Kesimpulan Rekomendasi Awal
 

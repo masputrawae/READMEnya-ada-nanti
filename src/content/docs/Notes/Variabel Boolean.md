@@ -14,13 +14,13 @@ tags:
 Contoh di JavaScript:
 
 ```javascript
-const sedangBelajar = true;
+const sedangBelajar = true
 
 // Sedikit percabangan
 if (sedangBelajar) {
-	console.log("Saya sedang belajar");
+	console.log('Saya sedang belajar')
 } else {
-	console.log("Saya tidak sedang belajar");
+	console.log('Saya tidak sedang belajar')
 }
 ```
 

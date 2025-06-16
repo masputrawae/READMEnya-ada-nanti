@@ -4,7 +4,6 @@
 	"trailingComma": "none",
 	"semi": false,
 	"printWidth": 100,
-	"pluginSearchDirs": false,
 	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
 	"overrides": [
 		{

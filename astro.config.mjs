@@ -21,7 +21,7 @@ await bdb.ready()
 export default defineConfig({
 	site: 'https://masputrawae.github.io',
 	adapter: netlify(),
-  image: {
+	image: {
 		domains: ['astro.build'],
 		remotePatterns: [{ protocol: 'https' }],
 		service: passthroughImageService()

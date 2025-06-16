@@ -24,11 +24,11 @@ tags:
 Kalu ingin lihat lebih banyak:
 
 ```javascript
-console.log(Object.getOwnPropertyNames(Math));
+console.log(Object.getOwnPropertyNames(Math))
 
 // Atau
 for (let name of Object.getOwnPropertyNames(Math)) {
-	console.log(name, typeof Math[name]);
+	console.log(name, typeof Math[name])
 }
 ```
 

@@ -14,11 +14,11 @@ Jika lupa nulis var, let atau const, maka **[[JavaScript]]** tetap membuat [[Var
 
 ```javascript
 // Kasus khusus tanpa keyword akan jadi var
-z = 10; // Ini otomatis jadi global variable (seolah var z = 10 di global scope)
+z = 10 // Ini otomatis jadi global variable (seolah var z = 10 di global scope)
 {
-	z = 20;
+	z = 20
 }
-console.log(z);
+console.log(z)
 ```
 
 Ini sangat **tidak disarankan**, karena bisa:
@@ -29,8 +29,8 @@ Ini sangat **tidak disarankan**, karena bisa:
 Di mode `"strict"`, ini akan menghasilkan **error**.
 
 ```javascript
-"use strict";
-z = 10; // ❌ Error: z is not defined
+'use strict'
+z = 10 // ❌ Error: z is not defined
 ```
 
 **Terkait**:

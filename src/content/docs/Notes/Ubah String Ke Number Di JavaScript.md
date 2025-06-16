@@ -13,24 +13,24 @@ tags:
 **Caranya**:
 
 ```javascript
-console.log("\n========", "SEBELUM DIUBAH", "========\n");
+console.log('\n========', 'SEBELUM DIUBAH', '========\n')
 
-const data1 = "10";
-const data2 = "10.5";
+const data1 = '10'
+const data2 = '10.5'
 
 const cekTipe = `Data 1: ${data1} Tipe Data: ${typeof data1}
-Data 2: ${data2} Tipe Data: ${typeof data2}`;
+Data 2: ${data2} Tipe Data: ${typeof data2}`
 
-console.log(cekTipe);
-console.log("\n========", "SETELAH DIUBAH", "========\n");
+console.log(cekTipe)
+console.log('\n========', 'SETELAH DIUBAH', '========\n')
 
-const ubahKeInt = parseInt(data1);
-const ubahKeFloat = parseFloat(data2);
+const ubahKeInt = parseInt(data1)
+const ubahKeFloat = parseFloat(data2)
 
 const setelahDiubah = `Data 1: ${ubahKeInt} Tipe Data: ${typeof ubahKeInt}
-Data 2: ${ubahKeFloat} Tipe Data: ${typeof ubahKeFloat}`;
+Data 2: ${ubahKeFloat} Tipe Data: ${typeof ubahKeFloat}`
 
-console.log(setelahDiubah);
+console.log(setelahDiubah)
 ```
 
 Maka jika di cek di console akan menghasilkan output:

@@ -1,0 +1,43 @@
+---
+import { Icon } from 'astro-icon/components'
+import { SiteConfig } from '../siteConfig'
+import Brand from './Brand.astro'
+import Nav from './Nav.astro'
+
+const navItem = [SiteConfig.menus.main, SiteConfig.menus.social]
+---
+
+<div
+	onclick="sidebarClose()"
+	class="invisible fixed top-0 left-0 z-40 h-dvh w-dvw bg-black/95 opacity-0 transition-all duration-300"
+	id="overlay"
+>
+</div>
+
+<nav
+	class="invisible fixed top-0 left-0 z-50 grid h-dvh w-[320px] -translate-x-full grid-rows-[auto_minmax(0,1fr)_auto] border-r-2 border-r-neutral-800 bg-neutral-900 px-3.5 py-1.5 transition-all duration-500 lg:visible lg:sticky lg:-translate-0"
+	id="sidebar"
+>
+	<header class="flex items-center justify-between py-2.5">
+		<Brand />
+		<button onclick="sidebarClose()" class="lg:hidden">
+			<Icon name="icon-x-mark" class="size-6" />
+		</button>
+	</header>
+
+	{navItem.map((i) => <Nav item={i} />)}
+</nav>
+
+<script is:inline>
+	const ovl = document.getElementById('overlay')
+	const sdb = document.getElementById('sidebar')
+
+	function sidebarOpen() {
+		ovl?.classList.remove('invisible', 'opacity-0')
+		sdb?.classList.remove('-translate-x-full', 'invisible', 'invisible')
+	}
+	function sidebarClose() {
+		ovl?.classList.add('invisible', 'opacity-0')
+		sdb?.classList.add('-translate-x-full', 'invisible', 'invisible')
+	}
+</script>

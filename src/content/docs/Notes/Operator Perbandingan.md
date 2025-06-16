@@ -36,13 +36,13 @@ Berikut adalah tabel perbandingan dalam bahasa pemrograman JavaScript , PHP, dan
 `==` membandingkan nilai saja (bisa auto-convert tipe data).
 
 ```javascript
-"5" == 5; // true
+'5' == 5 // true
 ```
 
 `===` membandingkan nilai dan tipe data.
 
 ```javascript
-"5" === 5; // false
+'5' === 5 // false
 ```
 
 ### Python

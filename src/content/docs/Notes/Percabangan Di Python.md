@@ -42,13 +42,13 @@ Penjelasannya:
 Secara sederhananya kondisi ini akan mencocokkan nilai dengan perbandingan lebih dari sama dengan `>=`, dan akan menyesuaikan sesuai kondisi nya, jika kode tersebut ditulis secara lebih detail mungkin akan seperti ini:
 
 - Cek nilai, apakah lebih besar atau sama dengan 95?, jika iya
-    - Tampilkan Great A
+  - Tampilkan Great A
 - Jika tidak, apakah lebih besar atau sama dengan 75, jika iya
-    - Tampilkan Great B
+  - Tampilkan Great B
 - Jika tidak, apakah lebih besar atau sama dengan 60, jika iya
-    - Tampilkan Great C
+  - Tampilkan Great C
 - Jika tidak ada satupun Kondisi di atas
-    - Tampilkan Great D
+  - Tampilkan Great D
 
 Tentang [[Operator Perbandingan]]
 

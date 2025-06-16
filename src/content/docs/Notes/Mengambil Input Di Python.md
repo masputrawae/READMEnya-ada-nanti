@@ -23,6 +23,7 @@ print(type(angka)) # <class 'int'>
 ```
 
 **Terkait**:
+
 - [[Casting Tipe Data Di Python]]
 
 ---
