@@ -6,6 +6,7 @@ tags:
   - 'web_development'
   - 'javascript'
   - 'react'
+type: 'Projects'
 date: 2025-02-10T15:38:21+07:00
 update: 2025-06-10T15:38:21+07:00
 ---

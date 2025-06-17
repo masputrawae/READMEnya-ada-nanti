@@ -6,6 +6,7 @@ tags:
   - 'AI'
   - 'NLP'
   - 'python'
+type: 'Projects'
 featured: true
 date: 2025-07-14T12:00:00+07:00
 update: 2025-05-10T16:45:00+07:00

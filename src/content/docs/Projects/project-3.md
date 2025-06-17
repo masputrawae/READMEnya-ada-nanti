@@ -6,6 +6,7 @@ tags:
   - 'mobile'
   - 'health'
   - 'flutter'
+type: 'Projects'
 featured: true
 date: 2025-03-15T09:00:00+07:00
 update: 2025-06-01T14:30:00+07:00

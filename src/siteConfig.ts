@@ -10,15 +10,15 @@ export const SiteConfig = {
 
 	menus: {
 		cta: [
-			{ label: 'About', url: '/about', primary: true },
+			{ label: 'About', url: '/about/', primary: true },
 			{ label: 'Discord', url: 'https://example.com', primary: false }
 		],
 		main: [
 			{ label: 'Home', url: '/', icon: 'icon-home' },
-			{ label: 'About', url: '/about', icon: 'icon-person-circle' },
-			{ label: 'Projects', url: '/projects', icon: 'icon-wrench-screwdriver' },
-			{ label: 'Notes', url: '/notes', icon: 'icon-pencil-square' },
-			{ label: 'Tags', url: '/tags', icon: 'icon-tag' }
+			{ label: 'About', url: '/about/', icon: 'icon-person-circle' },
+			{ label: 'Projects', url: '/projects/', icon: 'icon-wrench-screwdriver' },
+			{ label: 'Notes', url: '/notes/', icon: 'icon-pencil-square' },
+			{ label: 'Tags', url: '/tags/', icon: 'icon-tag' }
 		],
 		social: [
 			{ label: 'Instagram', url: 'https://example.com', icon: 'icon-instagram' },

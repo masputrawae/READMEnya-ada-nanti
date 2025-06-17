@@ -7,6 +7,7 @@ tags:
   - javascript
 date: 2025-06-10T15:38:21+07:00
 update: 2025-06-10T15:38:21+07:00
+type: 'Permanent'
 featured: true
 ---
 

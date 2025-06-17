@@ -10,21 +10,9 @@ const docs = defineCollection({
 		tags: z.array(z.string()).optional(),
 		date: z.coerce.date().optional(),
 		update: z.coerce.date().optional(),
-		featured: z.boolean().optional()
+		featured: z.boolean().optional(),
+		type: z.enum(['Projects', 'Notes', 'Permanent']).optional()
 	})
 })
 
-const projects = defineCollection({
-	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/projects' }),
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		thumbnail: z.string(),
-		tags: z.array(z.string()).optional(),
-		date: z.coerce.date().optional(),
-		update: z.coerce.date().optional(),
-		featured: z.boolean().optional()
-	})
-})
-
-export const collections = { docs, projects }
+export const collections = { docs }
