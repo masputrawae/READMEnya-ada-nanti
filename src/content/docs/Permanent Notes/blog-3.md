@@ -5,7 +5,6 @@ thumbnail: 'https://picsum.photos/600/400?3'
 tags:
   - blog
   - example
-  - markdown
 date: 2025-06-10T09:04:39+07:00
 update: 2025-06-10T09:04:39+07:00
 featured: true

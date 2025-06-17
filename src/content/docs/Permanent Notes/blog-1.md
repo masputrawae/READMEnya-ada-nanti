@@ -4,9 +4,7 @@ description: 'Aliquip cillum do aliquip ut minim adipisicing proident veniam sin
 thumbnail: 'https://picsum.photos/600/400'
 tags:
   - blog
-  - example
   - javascript
-  - website
 date: 2025-06-10T15:38:21+07:00
 update: 2025-06-10T15:38:21+07:00
 featured: true

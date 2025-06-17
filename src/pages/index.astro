@@ -1,8 +1,16 @@
 ---
+import { getContents } from '../utils/getContent.js'
+
 import BaseLayout from '../layouts/BaseLayout.astro'
+import ProjectsComponent from '../components/ProjectsComponent.astro'
+import NotesComponents from '../components/NotesComponents.astro'
 import { SiteConfig } from '../siteConfig'
 import Button from '../components/Button.astro'
+
 const cta = SiteConfig.menus.cta
+
+const projects = await getContents('featured', 'projects', 3)
+const notes = await getContents('featured', 'docs', 4)
 ---
 
 <BaseLayout>
@@ -11,19 +19,12 @@ const cta = SiteConfig.menus.cta
 	>
 		<h1 class="font-light">Halo, Selamat Datang!</h1>
 
+		<em class="not-italic">Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em>
 		<p>
-			<em class="not-italic"
-				>Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em
-			>
-			Blog ini berisi catatan belajar saya dalam bidang <b>JavaScript</b>, <b>Python</b>, dan <b
-				>teknologi web</b
-			>. Saya juga menulis hal-hal yang saya pelajari seputar matematika dasar dan <b
-				>bahasa Inggris</b
-			>.
-		</p>
-		<p>
-			Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang
-			sama, semoga bisa jadi teman belajar yang menyenangkan.
+			Blog ini berisi catatan belajar saya dalam bidang JavaScript, Python, dan teknologi web. Saya
+			juga menulis hal-hal yang saya pelajari seputar matematika dasar dan bahasa Inggris. Semua
+			catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang sama,
+			semoga bisa jadi teman belajar yang menyenangkan.
 		</p>
 	</header>
 	<nav class="my-5 flex items-center gap-2.5">
@@ -33,4 +34,19 @@ const cta = SiteConfig.menus.cta
 			))
 		}
 	</nav>
+	<div class="mt-20 text-[14px] md:text-[15px] lg:text-[16px]">
+		<h2 class="text-3xl font-light text-neutral-50">Featured Projects</h2>
+		<p>Karya yang menurutku terbaik</p>
+		<div class="mt-16">
+			<ProjectsComponent projects={projects} />
+		</div>
+	</div>
+
+	<div class="mt-20 text-[14px] md:text-[15px] lg:text-[16px]">
+		<h2 class="text-3xl font-light text-neutral-50">Featured Notes</h2>
+		<p>Beberapa Catatan yang menurutku terbaik</p>
+		<div class="mt-16 grid gap-20 md:grid-cols-2">
+			<NotesComponents notes={notes} />
+		</div>
+	</div>
 </BaseLayout>

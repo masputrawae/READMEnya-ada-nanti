@@ -4,6 +4,7 @@
 	"trailingComma": "none",
 	"semi": false,
 	"printWidth": 100,
+	"tailwindFunctions": ["clsx"],
 	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
 	"overrides": [
 		{

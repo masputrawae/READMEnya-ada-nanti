@@ -6,7 +6,6 @@ tags:
   - blog
   - example
   - php
-  - backend
 date: 2025-06-10T09:04:39+07:00
 update: 2025-06-10T09:04:39+07:00
 featured: true

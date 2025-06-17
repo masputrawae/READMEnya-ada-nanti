@@ -4,9 +4,7 @@ description: 'Lorem ea qui irure minim consequat deserunt id velit exercitation.
 thumbnail: 'https://picsum.photos/600/400?2'
 tags:
   - blog
-  - example
   - python
-  - cyber
 date: 2025-06-10T17:48:04+07:00
 update: 2025-06-10T17:48:04+07:00
 featured: true
