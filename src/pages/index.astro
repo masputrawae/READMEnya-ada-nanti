@@ -10,7 +10,7 @@ import Button from '../components/Button.astro'
 const cta = SiteConfig.menus.cta
 
 const projects = await getContents('featured', 'Projects', 3)
-const permanent = await getContents('featured', 'Permanent', 4)
+const permanent = await getContents('all', 'Permanent',)
 ---
 
 <BaseLayout>
@@ -43,8 +43,8 @@ const permanent = await getContents('featured', 'Permanent', 4)
 	</div>
 
 	<div class="mt-20 text-[14px] md:text-[15px] lg:text-[16px]">
-		<h2 class="text-3xl font-light text-neutral-50">Featured Notes</h2>
-		<p>Beberapa Catatan yang menurutku terbaik</p>
+		<h2 class="text-3xl font-light text-neutral-50">My Notes</h2>
+		<p>Catatan yang menurutku sudah bisa dibaca</p>
 		<div class="mt-16 grid gap-20 md:grid-cols-2">
 			<NotesComponents notes={permanent} />
 		</div>

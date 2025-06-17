@@ -1,26 +1,64 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
+import Projects from './projects.astro'
+
+const firstChar = (str: string) => String.fromCodePoint(str.codePointAt(0)!)
+
+const docs = await getCollection('docs')
+const filteredType = docs.filter((i) => i.data.type !== 'Projects')
+type Docs = typeof docs
+const docsByChar = new Map<string, Docs>()
+filteredType.forEach((doc) => {
+	const char = firstChar(doc.data.title || '').toUpperCase()
+	docsByChar.set(char, docsByChar.get(char) || [])
+	docsByChar.get(char)?.push(doc)
+})
+const comparator = new Intl.Collator('en')
+const charsSorted = [...docsByChar.keys()].sort(comparator.compare)
 ---
 
 <BaseLayout>
 	<header
-		class="prose prose-invert prose-neutral max-w-none text-[14px] leading-normal font-light md:text-[15px] lg:text-[16px]"
+		class="prose prose-a:text-blue-300 prose-invert prose-neutral max-w-none text-[14px] leading-normal font-light md:text-[15px] lg:text-[16px]"
 	>
-		<h1 class="font-light">Halo, Selamat Datang!</h1>
+		<h1 class="font-light">Sedang Mencari Resep!</h1>
 
 		<p>
-			<em class="not-italic"
-				>Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em
-			>
-			Blog ini berisi catatan belajar saya dalam bidang <b>JavaScript</b>, <b>Python</b>, dan <b
-				>teknologi web</b
-			>. Saya juga menulis hal-hal yang saya pelajari seputar matematika dasar dan <b
-				>bahasa Inggris</b
-			>.
+			Pernah nggak sih kalian bertanya-tanya, kenapa nasi goreng di warung pinggir jalan itu bisa
+			seenak itu? 🤔 Aku sudah mencoba berbagai resep dari seluruh penjuru dunia—dari dapur rumah
+			sampai dapur YouTube—tapi tetap saja rasanya belum nendang!
 		</p>
 		<p>
-			Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang
-			sama, semoga bisa jadi teman belajar yang menyenangkan.
+			Apakah ini hasil latihan bertahun-tahun? Atau… mungkinkah ada campur tangan makhluk halus? 👻
+			Entahlah. Tapi satu yang pasti: pencarian ini belum selesai!
 		</p>
+    <hr>
+		<table>
+			<thead>
+				<tr>
+					<th>Karakter</th>
+					<th>Judul</th>
+					<th>Ditulis</th>
+					<th>Update</th>
+				</tr>
+			</thead>
+			<tbody>
+				{
+					charsSorted.map((char) =>
+						docsByChar.get(char)?.map((doc) => (
+							<tr>
+								<td>{char}</td>
+								<td>
+									<a href={`/${doc.id}/`}>{doc.data.title}</a>
+								</td>
+                <td>{new Date(doc.data.date || 0).toLocaleDateString()}</td>
+                <td>{new Date(doc.data.update || 0).toLocaleDateString()}</td>
+							</tr>
+						))
+					)
+				}
+			</tbody>
+		</table>
 	</header>
 </BaseLayout>
