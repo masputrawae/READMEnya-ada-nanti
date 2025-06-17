@@ -2,6 +2,7 @@
 import { getContents } from '../utils/getContent.js'
 
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Prose from '../components/Prose.astro'
 import ProjectsComponent from '../components/ProjectsComponent.astro'
 import NotesComponents from '../components/NotesComponents.astro'
 import { SiteConfig } from '../siteConfig'
@@ -14,39 +15,47 @@ const permanent = await getContents('all', 'Permanent')
 ---
 
 <BaseLayout>
-	<header
-		class="prose prose-invert prose-neutral max-w-none text-[14px] leading-normal font-light md:text-[15px] lg:text-[16px]"
-	>
-		<h1 class="font-light">Halo, Selamat Datang!</h1>
+	<header class="min-h-screen">
+		<Prose>
+			<h1 class="font-light">Halo, Selamat Datang!</h1>
+			<em class="not-italic"
+				>Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em
+			>
+			<p>
+				Blog ini berisi catatan belajar saya dalam bidang JavaScript, Python, dan teknologi web.
+				Saya juga menulis hal-hal yang saya pelajari seputar matematika dasar dan bahasa Inggris.
+				Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang
+				sama, semoga bisa jadi teman belajar yang menyenangkan.
+			</p>
+		</Prose>
 
-		<em class="not-italic">Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em>
-		<p>
-			Blog ini berisi catatan belajar saya dalam bidang JavaScript, Python, dan teknologi web. Saya
-			juga menulis hal-hal yang saya pelajari seputar matematika dasar dan bahasa Inggris. Semua
-			catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang sama,
-			semoga bisa jadi teman belajar yang menyenangkan.
-		</p>
+		<nav class="decor my-5 flex items-center gap-2.5">
+			{
+				cta.map((i) => (
+					<Button
+						href={i.url}
+						primary={i.primary}
+						title={i.label}
+						customClass="text-xl no-underline font-normal"
+					/>
+				))
+			}
+		</nav>
 	</header>
-	<nav class="my-5 flex items-center gap-2.5">
-		{
-			cta.map((i) => (
-				<Button href={i.url} primary={i.primary} title={i.label} customClass="text-xl" />
-			))
-		}
-	</nav>
-	<div class="mt-20 text-[14px] md:text-[15px] lg:text-[16px]">
+
+	<div class="text-[14px] md:text-[15px] lg:text-[16px]">
 		<h2 class="text-3xl font-light text-neutral-50">Featured Projects</h2>
 		<p>Karya yang menurutku terbaik</p>
 		<div class="mt-16">
-			<ProjectsComponent projects={projects} />
+			<ProjectsComponent projects={projects} server:defer />
 		</div>
 	</div>
 
-	<div class="mt-20 text-[14px] md:text-[15px] lg:text-[16px]">
+	<div class="mt-44 text-[14px] md:text-[15px] lg:text-[16px]">
 		<h2 class="text-3xl font-light text-neutral-50">My Notes</h2>
 		<p>Catatan yang menurutku sudah bisa dibaca</p>
-		<div class="mt-16 grid gap-20 md:grid-cols-2">
-			<NotesComponents notes={permanent} />
+		<div class="mt-16 grid gap-10 md:grid-cols-2">
+			<NotesComponents notes={permanent} server:defer />
 		</div>
 	</div>
 </BaseLayout>

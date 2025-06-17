@@ -7,24 +7,24 @@ const { notes } = Astro.props
 
 {
 	notes.map((i) => (
-		<article class="xs:max-w-xs max-w-full overflow-hidden rounded-md text-[14px] shadow-sm shadow-black/80 transition-all duration-500 hover:shadow-lg hover:shadow-black/50">
-			<Image
-				src={i.data.thumbnail}
-				alt={i.data.title}
-				width={600}
-				height={400}
-				format="webp"
-				densities={[1, 1.5, 2, 3]}
-				inferSize
-				class="m-auto aspect-video h-auto w-full"
-			/>
+		<article class="max-w-full overflow-hidden rounded-md text-[14px] shadow-sm shadow-black/80 transition-all duration-500 hover:shadow-lg hover:shadow-black/50">
+			<picture class="m-auto w-full aspect-video overflow-hidden">
+				<Image
+					src={i.data.thumbnail}
+					alt={i.data.title}
+					width={600}
+					height={400}
+					format="webp"
+					class="h-auto w-full"
+				/>
+			</picture>
 			<section class="m-auto mt-3.5 flex max-w-lg flex-col gap-3.5 p-5">
-				<nav class="flex items-center gap-1.5">
+				<strong class="text-2xl text-neutral-50">{i.data.title}</strong>
+        <nav class="flex items-center gap-1.5">
 					{i.data.tags.map((tag) => (
 						<Badge href={tag} title={tag} customClass="text-xs" />
 					))}
 				</nav>
-				<strong class="text-xl text-neutral-50">{i.data.title}</strong>
 				<p>{i.data.description}</p>
 				<Button title="Read More" href={`${i.id}/`} customClass="font-semibold text-lg" />
 			</section>

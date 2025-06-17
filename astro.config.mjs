@@ -1,7 +1,9 @@
 // @ts-check
-import { defineConfig, passthroughImageService } from 'astro/config'
-import remarkWikiLink from '@braindb/remark-wiki-link'
+import { defineConfig } from 'astro/config'
+import { imageService } from "@unpic/astro/service";
 import { brainDbAstro, getBrainDb } from '@braindb/astro'
+
+import remarkWikiLink from '@braindb/remark-wiki-link'
 import netlify from '@astrojs/netlify'
 
 import sitemap from '@astrojs/sitemap'
@@ -24,7 +26,10 @@ export default defineConfig({
 	image: {
 		domains: ['astro.build'],
 		remotePatterns: [{ protocol: 'https' }],
-		service: passthroughImageService()
+		service: imageService({
+      placeholder: "blurhash",
+      layout: "constrained",
+    })
 	},
 	integrations: [brainDbAstro({ remarkWikiLink: true }), sitemap(), react(), mdx(), icon()],
 	markdown: { remarkPlugins: [remarkWikiLink] },

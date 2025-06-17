@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { getCollection } from 'astro:content'
+import Prose from '../components/Prose.astro'
 import Projects from './projects.astro'
 
 const firstChar = (str: string) => String.fromCodePoint(str.codePointAt(0)!)
@@ -19,21 +20,22 @@ const charsSorted = [...docsByChar.keys()].sort(comparator.compare)
 ---
 
 <BaseLayout>
-	<header
-		class="prose prose-a:text-blue-300 prose-invert prose-neutral max-w-none text-[14px] leading-normal font-light md:text-[15px] lg:text-[16px]"
-	>
-		<h1 class="font-light">Sedang Mencari Resep!</h1>
+	<Prose>
+		<header class="min-h-screen">
+			<h1 class="font-light">Sedang Mencari Resep!</h1>
 
-		<p>
-			Pernah nggak sih kalian bertanya-tanya, kenapa nasi goreng di warung pinggir jalan itu bisa
-			seenak itu? 🤔 Aku sudah mencoba berbagai resep dari seluruh penjuru dunia—dari dapur rumah
-			sampai dapur YouTube—tapi tetap saja rasanya belum nendang!
-		</p>
-		<p>
-			Apakah ini hasil latihan bertahun-tahun? Atau… mungkinkah ada campur tangan makhluk halus? 👻
-			Entahlah. Tapi satu yang pasti: pencarian ini belum selesai!
-		</p>
-		<hr />
+			<p>
+				Pernah nggak sih kalian bertanya-tanya, kenapa nasi goreng di warung pinggir jalan itu bisa
+				seenak itu? 🤔 Aku sudah mencoba berbagai resep dari seluruh penjuru dunia—dari dapur rumah
+				sampai dapur YouTube—tapi tetap saja rasanya belum nendang!
+			</p>
+			<p>
+				Apakah ini hasil latihan bertahun-tahun? Atau… mungkinkah ada campur tangan makhluk halus?
+				👻 Entahlah. Tapi satu yang pasti: pencarian ini belum selesai!
+			</p>
+		</header>
+	</Prose>
+	<Prose>
 		<table>
 			<thead>
 				<tr>
@@ -60,5 +62,5 @@ const charsSorted = [...docsByChar.keys()].sort(comparator.compare)
 				}
 			</tbody>
 		</table>
-	</header>
+	</Prose>
 </BaseLayout>
