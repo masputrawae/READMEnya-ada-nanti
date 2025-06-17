@@ -33,7 +33,7 @@ const charsSorted = [...docsByChar.keys()].sort(comparator.compare)
 			Apakah ini hasil latihan bertahun-tahun? Atau… mungkinkah ada campur tangan makhluk halus? 👻
 			Entahlah. Tapi satu yang pasti: pencarian ini belum selesai!
 		</p>
-    <hr>
+		<hr />
 		<table>
 			<thead>
 				<tr>
@@ -52,8 +52,8 @@ const charsSorted = [...docsByChar.keys()].sort(comparator.compare)
 								<td>
 									<a href={`/${doc.id}/`}>{doc.data.title}</a>
 								</td>
-                <td>{new Date(doc.data.date || 0).toLocaleDateString()}</td>
-                <td>{new Date(doc.data.update || 0).toLocaleDateString()}</td>
+								<td>{new Date(doc.data.date || 0).toLocaleDateString()}</td>
+								<td>{new Date(doc.data.update || 0).toLocaleDateString()}</td>
 							</tr>
 						))
 					)

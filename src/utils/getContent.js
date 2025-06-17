@@ -9,15 +9,15 @@ function sortByDate(items) {
 }
 
 function filterByType(items, type) {
-  if(!type){
-    return [...items].filter(i => (i.data.type !== 'Projects' & i.data.type !== 'Permanent'))
-  }
-  return [...items].filter(i => (i.data.type === type))
+	if (!type) {
+		return [...items].filter((i) => (i.data.type !== 'Projects') & (i.data.type !== 'Permanent'))
+	}
+	return [...items].filter((i) => i.data.type === type)
 }
 
 export async function getContents(show = 'all', type, limit = 2) {
 	const getPost = await getCollection('docs')
-  const typeFiltered = filterByType(getPost, type)
+	const typeFiltered = filterByType(getPost, type)
 	if (show === 'all') {
 		return sortByDate(typeFiltered)
 	}

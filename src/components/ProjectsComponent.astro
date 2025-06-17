@@ -29,11 +29,7 @@ const { projects } = Astro.props
 				</nav>
 				<strong class="text-xl text-neutral-50">{i.data.title}</strong>
 				<p>{i.data.description}</p>
-				<Button
-					title="View Project"
-					href={`/${i.collection}/${i.id}/`}
-					customClass="font-semibold text-lg"
-				/>
+				<Button title="View Project" href={`/${i.id}/`} customClass="font-semibold text-lg" />
 			</section>
 		</article>
 	))
