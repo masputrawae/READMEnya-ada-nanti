@@ -35,7 +35,7 @@ const projects = await getContents('all', 'Projects')
 		<h2 class="text-3xl font-light text-neutral-50">Featured Projects</h2>
 		<p>Karya yang menurutku terbaik</p>
 		<div class="mt-16">
-			<ProjectsComponent projects={projects} server:defer />
+			<ProjectsComponent projects={projects} />
 		</div>
 	</div>
 </BaseLayout>

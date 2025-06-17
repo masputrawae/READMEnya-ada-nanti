@@ -8,7 +8,7 @@ const { notes } = Astro.props
 {
 	notes.map((i) => (
 		<article class="max-w-full overflow-hidden rounded-md text-[14px] shadow-sm shadow-black/80 transition-all duration-500 hover:shadow-lg hover:shadow-black/50">
-			<picture class="m-auto w-full aspect-video overflow-hidden">
+			<picture class="m-auto aspect-video w-full overflow-hidden">
 				<Image
 					src={i.data.thumbnail}
 					alt={i.data.title}
@@ -20,7 +20,7 @@ const { notes } = Astro.props
 			</picture>
 			<section class="m-auto mt-3.5 flex max-w-lg flex-col gap-3.5 p-5">
 				<strong class="text-2xl text-neutral-50">{i.data.title}</strong>
-        <nav class="flex items-center gap-1.5">
+				<nav class="flex items-center gap-1.5">
 					{i.data.tags.map((tag) => (
 						<Badge href={tag} title={tag} customClass="text-xs" />
 					))}

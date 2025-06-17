@@ -77,7 +77,7 @@ const keyword = (meta.keywords ?? SiteConfig.keyword).join(', ')
 	</head>
 	<body class="grid font-light lg:grid-cols-[320px_minmax(0,1fr)]">
 		<Sidebar />
-		<main class="block mx-auto mt-32 px-3.5 max-w-full overflow-x-hidden lg:max-w-5xl lg:px-10">
+		<main class="mx-auto mt-32 block max-w-full overflow-x-hidden px-3.5 lg:max-w-5xl lg:px-10">
 			<slot />
 			<Footer />
 		</main>

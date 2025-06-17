@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config'
-import { imageService } from "@unpic/astro/service";
+import { imageService } from '@unpic/astro/service'
 import { brainDbAstro, getBrainDb } from '@braindb/astro'
 
 import remarkWikiLink from '@braindb/remark-wiki-link'
@@ -27,9 +27,9 @@ export default defineConfig({
 		domains: ['astro.build'],
 		remotePatterns: [{ protocol: 'https' }],
 		service: imageService({
-      placeholder: "blurhash",
-      layout: "constrained",
-    })
+			placeholder: 'blurhash',
+			layout: 'constrained'
+		})
 	},
 	integrations: [brainDbAstro({ remarkWikiLink: true }), sitemap(), react(), mdx(), icon()],
 	markdown: { remarkPlugins: [remarkWikiLink] },

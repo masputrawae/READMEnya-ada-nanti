@@ -21,7 +21,7 @@ const { projects } = Astro.props
 
 			<section class="m-auto mt-3.5 flex max-w-lg flex-col gap-3.5">
 				<strong class="text-2xl text-neutral-50">{i.data.title}</strong>
-        <nav class="flex items-center gap-1.5">
+				<nav class="flex items-center gap-1.5">
 					{i.data.tags.map((tag) => (
 						<Badge href={tag} title={tag} customClass="text-xs" />
 					))}
