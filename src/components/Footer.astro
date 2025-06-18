@@ -1,12 +1,51 @@
-<footer
-	class="mt-10 flex flex-col items-center justify-between border-t border-neutral-700 px-2.5 py-10 text-sm md:flex-row"
->
-	<p>
-		© {new Date().getFullYear()} · <strong>Putra Jaya</strong> · All rights reserved. | <a
-			href="/disclaimer/"
-			class="text-blue-500">Disclaimer</a
-		>
-	</p>
+---
+import { SiteConfig, MENUS } from '../siteConfig'
+import Prose from './Prose.astro'
+import { Icon } from 'astro-icon/components'
 
-	<p>Generate Using: <a href="https://astro.build/" class="text-blue-500">{Astro.generator}</a></p>
-</footer>
+const socialMedia = MENUS.social
+const footerNav = MENUS.footer
+---
+
+<div class="border-t-2 border-neutral-800 px-3.5 py-10 shadow-md shadow-black">
+	<Prose>
+		<footer class="mx-auto max-w-5xl">
+			<nav class="mb-10 flex items-center justify-center gap-5">
+				{
+					socialMedia.map(i => (
+						<a
+							href={i.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={i.label}
+							class="text-white hover:text-amber-400"
+						>
+							<Icon name={i.icon} class="size-10" role="img" title={i.label} />
+						</a>
+					))
+				}
+			</nav>
+			<p>
+				© {new Date().getFullYear()} · <strong>Putra Jaya</strong> · All rights reserved.
+			</p>
+
+			<nav>
+				<ul>
+					{
+						footerNav.map(i => (
+							<li>
+								<a href={i.url} class="text-blue-500">
+									{i.label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+
+			<p>
+				Generate Using: <a href="https://astro.build/" class="text-blue-500">{Astro.generator}</a>
+			</p>
+		</footer>
+	</Prose>
+</div>

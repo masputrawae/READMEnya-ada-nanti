@@ -1,11 +1,10 @@
 ---
+import Base from '../layouts/Base.astro'
 import { render, getCollection } from 'astro:content'
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Prose from '../components/Prose.astro'
 
 export async function getStaticPaths() {
-	const blogPosts = await getCollection('docs')
-	return blogPosts.map((post) => ({
+	const blogPosts = await getCollection('vaults')
+	return blogPosts.map((post: any) => ({
 		params: {
 			slug: post.id
 		},
@@ -17,8 +16,4 @@ const { post } = Astro.props
 const { Content } = await render(post)
 ---
 
-<BaseLayout>
-	<Prose>
-		<Content />
-	</Prose>
-</BaseLayout>
+<Base />

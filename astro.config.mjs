@@ -1,38 +1,42 @@
 // @ts-check
 import { defineConfig } from 'astro/config'
-import { imageService } from '@unpic/astro/service'
-import { brainDbAstro, getBrainDb } from '@braindb/astro'
 
-import remarkWikiLink from '@braindb/remark-wiki-link'
-import netlify from '@astrojs/netlify'
+import { brainDbAstro, generateSlug } from '@braindb/astro'
 
 import sitemap from '@astrojs/sitemap'
 
-import react from '@astrojs/react'
-
-import mdx from '@astrojs/mdx'
+import icon from 'astro-icon'
 
 import tailwindcss from '@tailwindcss/vite'
 
-import icon from 'astro-icon'
+import mdx from '@astrojs/mdx'
 
-const bdb = getBrainDb()
-await bdb.ready()
+import react from '@astrojs/react'
 
-// https://astro.build/config
 export default defineConfig({
-	site: 'https://masputrawae.github.io',
-	adapter: netlify(),
 	image: {
-		domains: ['astro.build'],
-		remotePatterns: [{ protocol: 'https' }],
-		service: imageService({
-			placeholder: 'blurhash',
-			layout: 'constrained'
-		})
+		experimentalLayout: 'constrained'
 	},
-	integrations: [brainDbAstro({ remarkWikiLink: true }), sitemap(), react(), mdx(), icon()],
-	markdown: { remarkPlugins: [remarkWikiLink] },
+	experimental: {
+		responsiveImages: true
+	},
+	integrations: [
+		brainDbAstro({
+			root: 'src/content/vaults',
+			source: '/',
+			remarkWikiLink: true,
+			git: false,
+			url: (filePath, frontmatter) => {
+				const slug = frontmatter.slug ? String(frontmatter.slug) : generateSlug(filePath)
+				const cleanSlug = slug.replace(/^\/+/, '')
+				return `/${cleanSlug}/`
+			}
+		}),
+		sitemap(),
+		icon(),
+		mdx(),
+		react()
+	],
 
 	vite: {
 		plugins: [tailwindcss()]

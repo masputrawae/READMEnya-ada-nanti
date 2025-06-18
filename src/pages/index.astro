@@ -1,61 +1,56 @@
 ---
-import { getContents } from '../utils/getContent.js'
-
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Prose from '../components/Prose.astro'
-import ProjectsComponent from '../components/ProjectsComponent.astro'
-import NotesComponents from '../components/NotesComponents.astro'
+import { Image } from 'astro:assets'
 import { SiteConfig } from '../siteConfig'
-import Button from '../components/Button.astro'
+import { getCollection } from 'astro:content'
+import { sortPost } from '../utils/sortPost.js'
 
-const cta = SiteConfig.menus.cta
+import Prose from '../components/Prose.astro'
+import Base from '../layouts/Base.astro'
+import FeaturedNotes from '../components/FeaturedNotes.astro'
 
-const projects = await getContents('featured', 'Projects', 3)
-const permanent = await getContents('all', 'Permanent')
+const getAllPosts = await getCollection('vaults')
+const notes = getAllPosts.filter((i) => i.data.type !== 'Projects')
+const projects = getAllPosts.filter((i) => i.data.type === 'Projects')
+
+const newPosts = sortPost(notes, 'newPosts')
+const lastUpdate = sortPost(notes, 'lastUpdate')
+const newProjects = sortPost(projects, 'newPosts', 2)
 ---
 
-<BaseLayout>
-	<header class="min-h-screen">
-		<Prose>
-			<h1 class="font-light">Halo, Selamat Datang!</h1>
-			<em class="not-italic"
-				>Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em
+<Base>
+	<Prose>
+		<header
+			class="mx-auto mt-40 flex max-w-5xl flex-col items-center gap-3.5 px-3.5 md:flex-row md:justify-between"
+		>
+			<picture
+				class="my-10 block w-1/2 overflow-hidden rounded-lg shadow-sm shadow-black md:order-2 md:w-2/5 md:shrink-1"
 			>
-			<p>
-				Blog ini berisi catatan belajar saya dalam bidang JavaScript, Python, dan teknologi web.
-				Saya juga menulis hal-hal yang saya pelajari seputar matematika dasar dan bahasa Inggris.
-				Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang
-				sama, semoga bisa jadi teman belajar yang menyenangkan.
-			</p>
-		</Prose>
+				<Image
+					src={SiteConfig.logo}
+					width={512}
+					height={512}
+					alt="Place Holder"
+					loading="eager"
+					class="block w-full object-cover"
+				/>
+			</picture>
+			<section class="md:order-1 md:w-1/2 md:shrink-0">
+				<h1>!Hi Welcome...</h1>
 
-		<nav class="decor my-5 flex items-center gap-2.5">
-			{
-				cta.map((i) => (
-					<Button
-						href={i.url}
-						primary={i.primary}
-						title={i.label}
-						customClass="text-xl no-underline font-normal"
-					/>
-				))
-			}
-		</nav>
-	</header>
+				<em> Tempat saya mencatat perjalanan belajar sebagai programmer otodidak. </em>
+				<p>
+					Blog ini berisi catatan belajar saya dalam bidang JavaScript, Python, dan teknologi web.
+					Saya juga menulis hal-hal yang saya pelajari seputar matematika dasar dan bahasa Inggris.
+					Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang
+					sama, semoga bisa jadi teman belajar yang menyenangkan.
+				</p>
+			</section>
+		</header>
 
-	<div class="text-[14px] md:text-[15px] lg:text-[16px]">
-		<h2 class="text-3xl font-light text-neutral-50">Featured Projects</h2>
-		<p>Karya yang menurutku terbaik</p>
-		<div class="mt-16">
-			<ProjectsComponent projects={projects} />
-		</div>
-	</div>
-
-	<div class="mt-44 text-[14px] md:text-[15px] lg:text-[16px]">
-		<h2 class="text-3xl font-light text-neutral-50">My Notes</h2>
-		<p>Catatan yang menurutku sudah bisa dibaca</p>
-		<div class="mt-16 grid gap-10 md:grid-cols-2">
-			<NotesComponents notes={permanent} />
-		</div>
-	</div>
-</BaseLayout>
+		<main class="mx-auto max-w-5xl px-3.5">
+			<FeaturedNotes items={newProjects} heading="Last Projects" type="projects" />
+			<FeaturedNotes items={newPosts} heading="New Notes" />
+			<FeaturedNotes items={lastUpdate} heading="Last Update" />
+		</main>
+	</Prose>
+</Base>

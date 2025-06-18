@@ -8,7 +8,7 @@ tags:
 
 # Variabel Tanpa Keyword Di JavaScript
 
-Jika lupa nulis var, let atau const, maka **[[JavaScript]]** tetap membuat [[Variabel]]-nya tapi langsung di global object (`window` di browser, `global` di Node.js)
+Jika lupa nulis var, let atau const, maka **JavaScript** tetap membuat [[Variabel]]-nya tapi langsung di global object (`window` di browser, `global` di Node.js)
 
 **Contoh**:
 

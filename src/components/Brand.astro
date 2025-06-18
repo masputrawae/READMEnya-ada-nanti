@@ -3,18 +3,23 @@ import { SiteConfig } from '../siteConfig'
 import { Image } from 'astro:assets'
 ---
 
-<figure class="flex items-center gap-1.5">
-	<Image
-		src={SiteConfig.logo}
-		alt={SiteConfig.author}
-		format="png"
-		width={48}
-		height={48}
-		loading="eager"
-		class="rounded-full shadow-sm shadow-black/80"
-	/>
-	<figcaption class="font-light text-shadow-black text-shadow-sm">
-		<strong class="block text-xl text-neutral-50">{SiteConfig.author}</strong>
-		<em class="block text-sm text-neutral-400 not-italic">{SiteConfig.tagline}</em>
+<figure class="flex cursor-pointer items-center gap-3" onclick="window.location.href='/'">
+	<picture class="overflow-hidden rounded-full shadow-md">
+		<Image
+			src={SiteConfig.logo}
+			alt={SiteConfig.author}
+			width={50}
+			height={50}
+			class="lg:size-16"
+			loading="eager"
+		/>
+	</picture>
+	<figcaption class="flex flex-col">
+		<strong class="text-xl font-semibold text-white text-shadow-black text-shadow-sm lg:text-2xl"
+			>{SiteConfig.author}</strong
+		>
+		<em class="text-sm text-neutral-300 not-italic text-shadow-black text-shadow-sm lg:text-base"
+			>{SiteConfig.tagline}</em
+		>
 	</figcaption>
 </figure>

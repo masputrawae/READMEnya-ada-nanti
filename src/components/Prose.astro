@@ -1,9 +1,7 @@
 ---
-const { className = '' } = Astro.props
+const customClass = Astro.props
 ---
 
-<div
-	class=`prose prose-invert prose-neutral min-w-full max-w-full text-[14px] leading-relaxed font-normal md:text-[15px] prose-a:text-blue-300 ${className}`
->
+<div class={`prose prose-invert prose-neutral max-w-full text-neutral-200 ${customClass}`}>
 	<slot />
 </div>

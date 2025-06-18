@@ -1,8 +1,8 @@
 import { defineCollection, z } from 'astro:content'
 import { glob, file } from 'astro/loaders'
 
-const docs = defineCollection({
-	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/docs' }),
+const vaults = defineCollection({
+	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/vaults' }),
 	schema: z.object({
 		title: z.string().optional(),
 		description: z.string().optional(),
@@ -10,9 +10,8 @@ const docs = defineCollection({
 		tags: z.array(z.string()).optional(),
 		date: z.coerce.date().optional(),
 		update: z.coerce.date().optional(),
-		featured: z.boolean().optional(),
-		type: z.enum(['Projects', 'Notes', 'Permanent']).optional()
+		type: z.enum(['Projects', 'Permanent', 'Notes']).optional()
 	})
 })
 
-export const collections = { docs }
+export const collections = { vaults }

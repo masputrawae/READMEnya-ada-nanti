@@ -9,6 +9,9 @@ tags:
 
 # Variabel
 
+[[testing]]
+[[testing-very]]
+[Test Biasa](nested/testing/)
 Secara sederhananya **Variabel** adalah sebuah wadah yang berisikan item tertentu atau isi tertentu. Di Matematika istilah **variabel** juga sering digunakan dan umum dipakai. Di dalam bahasa pemrograman sendiri juga sama, istilah **Variabel** Dipakai di semua jenis bahasa pemrograman.
 
 ## Contoh Variabel di JavaScript
