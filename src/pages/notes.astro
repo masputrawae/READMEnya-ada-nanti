@@ -8,7 +8,7 @@ import Badge from '../components/Badge.astro'
 
 const notes = await getPosts(null, false)
 const getAllPosts = await getCollection('vaults')
-const getTags = getAllPosts.map(i => i.data.tags).flat()
+const getTags = getAllPosts.map((i) => i.data.tags).flat()
 const tags = Array.from(new Set(getTags))
 ---
 
@@ -19,7 +19,11 @@ const tags = Array.from(new Set(getTags))
 				<h1>Sedang Mencari Resep!</h1>
 
 				<nav class="flex flex-wrap items-start gap-3.5">
-					{tags.map(i => <Badge href={`/${i}/`} label={capitalizeEachWord(i?.replace(/[-_]/g, ' '))} />)}
+					{
+						tags.map((i) => (
+							<Badge href={`/${i}/`} label={capitalizeEachWord(i?.replace(/[-_]/g, ' '))} />
+						))
+					}
 				</nav>
 
 				<p>

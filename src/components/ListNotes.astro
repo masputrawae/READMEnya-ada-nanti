@@ -5,11 +5,11 @@ const { items } = Astro.props
 
 <ul>
 	{
-		items.map(i => (
+		items.map((i) => (
 			<li>
 				<a
 					href={`/${i.id}/`}
-					class="flex justify-between border-b border-dashed border-b-neutral-700 no-underline text-neutral-400 hover:text-neutral-200"
+					class="flex justify-between border-b border-dashed border-b-neutral-700 text-neutral-400 no-underline hover:text-neutral-200"
 				>
 					{i.data.title}
 

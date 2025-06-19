@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 		}
 	}
 
-	return Array.from(tagSet).map(tag => ({
+	return Array.from(tagSet).map((tag) => ({
 		params: { tag }
 	}))
 }
@@ -27,13 +27,15 @@ if (Array.isArray(tag)) {
 }
 tag = typeof tag === 'string' ? tag : String(tag)
 const posts = await getCollection('vaults')
-const filteredPosts = posts.filter(post => post.data.tags?.includes(tag as string))
+const filteredPosts = posts.filter((post) => post.data.tags?.includes(tag as string))
 ---
 
 <BaseLayout>
 	<main class="mx-auto px-4 md:px-10">
 		<Prose className="prose-h1:font-normal mb-10">
-			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">{capitalizeEachWord(tag)}</h1>
+			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">
+				{capitalizeEachWord(tag)}
+			</h1>
 			<ListNotes
 				items={filteredPosts.sort(
 					(a, b) => new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()

@@ -10,11 +10,11 @@ export async function getPosts(type, featured = false, limit) {
 	} else {
 		filtered = filtered.filter((i) => i.data.type !== 'Projects')
 	}
-  if (!featured) {
-    return filtered
-      .sort((a, b) => new Date(b.data.date || 0) - new Date(a.data.date || 0))
-      .slice(0, limit)
-  }
+	if (!featured) {
+		return filtered
+			.sort((a, b) => new Date(b.data.date || 0) - new Date(a.data.date || 0))
+			.slice(0, limit)
+	}
 	return filtered
 		.filter((i) => i.data.featured)
 		.sort((a, b) => new Date(b.data.date || 0) - new Date(a.data.date || 0))
