@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css'
-
+import { ClientRouter } from 'astro:transitions'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 ---
@@ -14,6 +14,8 @@ import Footer from '../components/Footer.astro'
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Document</title>
+
+		<ClientRouter />
 	</head>
 	<body class="min-h-dvh max-w-dvw overflow-x-hidden">
 		<Navbar />

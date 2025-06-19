@@ -1,5 +1,5 @@
 ---
-const { items, heading, type = 'notes' } = Astro.props
+const { items, heading, type = 'notes', withClock = true } = Astro.props
 import { Image } from 'astro:assets'
 import { timeFormat } from '../utils/timeFormat.js'
 ---
@@ -12,7 +12,7 @@ import { timeFormat } from '../utils/timeFormat.js'
 			<ul class="ml-0 list-none pl-0">
 				{items.map((i) => {
 					const timeMechine = new Date(i.data.date || 0).toISOString()
-					const timeHumman = timeFormat(i.data.date || 0)
+					const timeHumman = timeFormat(i.data.date || 0, withClock)
 					return (
 						<li class="flex items-center justify-between border-b border-dashed border-b-neutral-800">
 							<a href={i.id} class="text-amber-400 no-underline">
@@ -28,7 +28,7 @@ import { timeFormat } from '../utils/timeFormat.js'
 		) : (
 			items.map((i) => {
 				const timeMechine = new Date(i.data.date || 0).toISOString()
-				const timeHumman = timeFormat(i.data.date || 0)
+				const timeHumman = timeFormat(i.data.date || 0, withClock)
 				return (
 					<figure class="mb-5 grid overflow-hidden border-b border-dashed border-b-neutral-700 py-10 md:grid-cols-2 md:gap-10">
 						<picture class="aspect-video overflow-hidden rounded-lg shadow-md shadow-black">

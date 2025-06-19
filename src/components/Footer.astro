@@ -7,45 +7,33 @@ const socialMedia = MENUS.social
 const footerNav = MENUS.footer
 ---
 
-<div class="border-t-2 border-neutral-800 px-3.5 py-10 shadow-md shadow-black">
-	<Prose>
-		<footer class="mx-auto max-w-5xl">
-			<nav class="mb-10 flex items-center justify-center gap-5">
-				{
-					socialMedia.map(i => (
-						<a
-							href={i.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label={i.label}
-							class="text-white hover:text-amber-400"
-						>
-							<Icon name={i.icon} class="size-10" role="img" title={i.label} />
-						</a>
-					))
-				}
-			</nav>
+<div class="mt-28 border-t-2 border-neutral-800 px-3.5 py-5 shadow-md shadow-black">
+	<footer class="mx-auto max-w-5xl">
+		<nav class="mb-10 flex items-center justify-center gap-5">
+			{
+				socialMedia.map((i) => (
+					<a
+						href={i.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-sm hover:text-amber-500"
+					>
+						<Icon name={i.icon} class="size-10" aria-label={i.label} role="img" title={i.label} />
+					</a>
+				))
+			}
+		</nav>
+
+		<div class="text-center">
 			<p>
 				© {new Date().getFullYear()} · <strong>Putra Jaya</strong> · All rights reserved.
 			</p>
 
-			<nav>
-				<ul>
-					{
-						footerNav.map(i => (
-							<li>
-								<a href={i.url} class="text-blue-500">
-									{i.label}
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</nav>
-
 			<p>
-				Generate Using: <a href="https://astro.build/" class="text-blue-500">{Astro.generator}</a>
+				Generate Using <a href="https://astro.build/" class="text-blue-500 underline"
+					>{Astro.generator}</a
+				>
 			</p>
-		</footer>
-	</Prose>
+		</div>
+	</footer>
 </div>

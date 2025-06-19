@@ -23,10 +23,12 @@ export const MENUS = {
 	footer: [
 		{ label: 'Disclaimer', url: '/disclaimer/' },
 		{ label: 'License', url: '/license/' },
-		{ label: 'Contact', url: '/Contact/' }
+		{ label: 'About', url: '/about/' }
 	],
 	social: [
 		{ label: 'Instagram', url: 'https://example.com', icon: 'icon-instagram' },
+		{ label: 'Twitter X', url: 'https://example.com', icon: 'icon-twitter-x' },
+		{ label: 'Facebook', url: 'https://example.com', icon: 'icon-facebook' },
 		{ label: 'Github', url: 'https://example.com', icon: 'icon-github' },
 		{ label: 'Discord', url: 'https://example.com', icon: 'icon-discord' }
 	]

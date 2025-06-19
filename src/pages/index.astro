@@ -13,14 +13,13 @@ const notes = getAllPosts.filter((i) => i.data.type !== 'Projects')
 const projects = getAllPosts.filter((i) => i.data.type === 'Projects')
 
 const newPosts = sortPost(notes, 'newPosts')
-const lastUpdate = sortPost(notes, 'lastUpdate')
 const newProjects = sortPost(projects, 'newPosts', 2)
 ---
 
 <Base>
 	<Prose>
 		<header
-			class="mx-auto mt-40 flex max-w-5xl flex-col items-center gap-3.5 px-3.5 md:flex-row md:justify-between"
+			class="mx-auto mt-40 flex max-w-5xl flex-col items-center gap-3.5 px-3.5 md:flex-row md:items-start md:justify-between"
 		>
 			<picture
 				class="my-10 block w-1/2 overflow-hidden rounded-lg shadow-sm shadow-black md:order-2 md:w-2/5 md:shrink-1"
@@ -36,8 +35,9 @@ const newProjects = sortPost(projects, 'newPosts', 2)
 			</picture>
 			<section class="md:order-1 md:w-1/2 md:shrink-0">
 				<h1>!Hi Welcome...</h1>
-
-				<em> Tempat saya mencatat perjalanan belajar sebagai programmer otodidak. </em>
+				<em class="not-italic">
+					Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.
+				</em>
 				<p>
 					Blog ini berisi catatan belajar saya dalam bidang JavaScript, Python, dan teknologi web.
 					Saya juga menulis hal-hal yang saya pelajari seputar matematika dasar dan bahasa Inggris.
@@ -49,8 +49,10 @@ const newProjects = sortPost(projects, 'newPosts', 2)
 
 		<main class="mx-auto max-w-5xl px-3.5">
 			<FeaturedNotes items={newProjects} heading="Last Projects" type="projects" />
+			<a href="/projects/" class="text-lg text-blue-400 no-underline">👉️ View all Projects ...</a>
+
 			<FeaturedNotes items={newPosts} heading="New Notes" />
-			<FeaturedNotes items={lastUpdate} heading="Last Update" />
+			<a href="/notes/" class="text-lg text-blue-400 no-underline">👉️ View all Notes ...</a>
 		</main>
 	</Prose>
 </Base>

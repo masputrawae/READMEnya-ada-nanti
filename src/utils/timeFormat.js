@@ -1,4 +1,4 @@
-export function timeFormat(dateInput) {
+export function timeFormat(dateInput, withClock) {
 	const date = new Date(dateInput)
 
 	// Daftar nama hari dan bulan dalam Bahasa Indonesia
@@ -32,5 +32,11 @@ export function timeFormat(dateInput) {
 	jam = jam % 12
 	jam = jam ? jam : 12 // Jam 0 harus jadi 12
 
-	return `${namaHari}, ${tanggal} ${namaBulan} ${tahun} - Jam ${jam}:${menit} ${ampm}`
+	let setDate
+
+	withClock
+		? (setDate = `${namaHari}, ${tanggal} ${namaBulan} ${tahun}  - Jam ${jam}:${menit} ${ampm}`)
+		: (setDate = `${namaHari}, ${tanggal} ${namaBulan} ${tahun}`)
+
+	return setDate
 }
