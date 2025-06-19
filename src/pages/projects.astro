@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Prose from '../components/Prose.astro'
+import Button from '../components/Button.astro'
+import ListProjects from '../components/ListProjects.astro'
+
+import { getPosts } from '../utils.js'
+
+const projects = await getPosts('Projects', false)
+---
+
+<BaseLayout>
+	<main class="my-auto px-4 md:px-10 ">
+		<Prose className="prose-h1:font-normal">
+			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">All Projects</h1>
+			<ListProjects items={projects} />
+		</Prose>
+	</main>
+</BaseLayout>

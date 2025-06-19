@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Prose from '../components/Prose.astro'
+import ListNotes from '../components/ListNotes.astro'
+import { getPosts, capitalizeEachWord } from '../utils.js'
+import { getCollection } from 'astro:content'
+import Badge from '../components/Badge.astro'
+
+const notes = await getPosts(null, false)
+const getAllPosts = await getCollection('vaults')
+const getTags = getAllPosts.map(i => i.data.tags).flat()
+const tags = Array.from(new Set(getTags))
+---
+
+<BaseLayout>
+	<header class="m-auto px-4 md:px-10">
+		<Prose className="m-auto">
+			<section>
+				<h1>Sedang Mencari Resep!</h1>
+
+				<nav class="flex flex-wrap items-start gap-3.5">
+					{tags.map(i => <Badge href={`/${i}/`} label={capitalizeEachWord(i?.replace(/[-_]/g, ' '))} />)}
+				</nav>
+
+				<p>
+					Pernah nggak sih kalian bertanya-tanya, kenapa nasi goreng di warung pinggir jalan itu
+					bisa seenak itu? 🤔 Aku sudah mencoba berbagai resep dari seluruh penjuru dunia—dari dapur
+					rumah sampai dapur YouTube—tapi tetap saja rasanya belum nendang!
+				</p>
+				<p>
+					Apakah ini hasil latihan bertahun-tahun? Atau… mungkinkah ada campur tangan makhluk halus?
+					👻 Entahlah. Tapi satu yang pasti: pencarian ini belum selesai!
+				</p>
+			</section>
+		</Prose>
+	</header>
+	<main class="my-auto mt-32 px-4 md:px-10">
+		<Prose className="prose-h1:font-normal mt-24 mb-10">
+			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">All Notes</h1>
+			<ListNotes items={notes} />
+		</Prose>
+	</main>
+</BaseLayout>

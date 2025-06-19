@@ -15,7 +15,7 @@ const notes = await getPosts(null, false, 10)
 ---
 
 <BaseLayout>
-	<header class="m-auto grid gap-5 px-5 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+	<header class="m-auto grid gap-5 px-4 md:px-10 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
 		<Image
 			src={SITE_CONFIG.logo}
 			alt={SITE_CONFIG.author}
@@ -48,7 +48,7 @@ const notes = await getPosts(null, false, 10)
 			</section>
 		</Prose>
 	</header>
-	<main class="my-auto mt-32 px-5 lg:mt-56">
+	<main class="my-auto mt-32 px-4 md:px-10 lg:mt-56">
 		<Prose className="prose-h1:font-normal">
 			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">Featured Projects</h1>
 			<ListProjects items={projects} />

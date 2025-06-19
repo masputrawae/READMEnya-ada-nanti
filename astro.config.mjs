@@ -15,6 +15,8 @@ import react from '@astrojs/react'
 
 export default defineConfig({
 	image: {
+    domains: ["astro.build"],
+    remotePatterns: [{ protocol: "https" }],
 		experimentalLayout: 'constrained'
 	},
 	experimental: {

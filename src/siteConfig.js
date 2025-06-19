@@ -19,8 +19,7 @@ export const MENUS = {
 		{ label: 'Home', url: '/', icon: 'icon-home' },
 		{ label: 'About', url: '/about/', icon: 'icon-person-circle' },
 		{ label: 'Projects', url: '/projects/', icon: 'icon-wrench-screwdriver' },
-		{ label: 'Notes', url: '/notes/', icon: 'icon-pencil-square' },
-		{ label: 'Tags', url: '/tags/', icon: 'icon-tag' }
+		{ label: 'Notes', url: '/notes/', icon: 'icon-pencil-square' }
 	],
 
 	footer: [

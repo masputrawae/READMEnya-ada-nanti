@@ -1,9 +1,9 @@
 ---
-const { className = ''} = Astro.props
+const { className = '' } = Astro.props
 ---
 
 <div
-	class={`prose prose-invert prose-neutral max-w-full text-neutral-200 text-[15px] ${className}`}
+	class={`prose prose-invert prose-neutral max-w-full text-neutral-200 text-[15px] prose-pre:font-['Fira_Code','JetBrains_Mono',var(--font-mono)] prose-code:font-['Fira_Code','JetBrains_Mono',var(--font-mono)] prose-code:before:content-none prose-code:after:content-none prose-pre:shadow-sm prose-pre:shadow-black prose-pre:overflow-x-auto prose-pre:w-full ${className}`}
 >
 	<slot />
 </div>

@@ -1,2 +1,6 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
+
+code:not(pre code) {
+  @apply bg-neutral-700 text-xs font-light text-white rounded-md px-1 py-0.5 font-['Fira_Code','JetBrains_Mono',var(--font-mono)];
+}
