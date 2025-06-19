@@ -1,0 +1,40 @@
+---
+import Button from './Button.astro'
+import Badge from './Badge.astro'
+import { Image } from 'astro:assets'
+import { capitalizeEachWord, timeFormat } from '../utils.js'
+const { items } = Astro.props
+---
+
+{
+	items.map(i => (
+		<article
+			onclick={`window.location.href="${i.id}"`}
+			class="items-center group mb-5 grid gap-5 overflow-hidden border-b border-dashed border-b-neutral-700 pb-10 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"
+		>
+			<picture class="aspect-video overflow-hidden rounded-lg shadow-md shadow-black m-auto max-w-none md:max-w-sm lg:max-w-none xl:max-w-sm">
+				<Image
+					src={i.data.thumbnail}
+					alt={i.data.title}
+					width={600}
+					height={400}
+					class="w-full object-cover transition-transform duration-300 group-hover:scale-110"
+				/>
+			</picture>
+
+			<section class="m-auto text-neutral-400">
+				<h1>{i.data.title}</h1>
+				<nav class="flex items-center gap-2 my-2">
+					{i.data.tags.map(tag => (
+						<Badge customClass="text-sm text-neutral-400" href={`/tags/${tag}/`} label={capitalizeEachWord(tag)} />
+					))}
+				</nav>
+				<time datetime={i.data.date.toISOString()}>
+					Create On: {timeFormat(i.data.date, false)}
+				</time>
+				<p>{i.data.description}</p>
+				<Button label="View Project" />
+			</section>
+		</article>
+	))
+}

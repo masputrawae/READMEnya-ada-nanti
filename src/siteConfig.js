@@ -1,4 +1,4 @@
-export const SiteConfig = {
+export const SITE_CONFIG = {
 	title: 'MasPutraWae',
 	author: 'Putra Jaya',
 	logo: '/logo.png',
@@ -12,19 +12,23 @@ export const SiteConfig = {
 export const MENUS = {
 	cta: [
 		{ label: 'About', url: '/about/', primary: true },
-		{ label: 'Discord', url: 'https://example.com', primary: false }
+		{ label: 'Lihat Catatan Saya', url: '/notes/', primary: false }
 	],
+
 	main: [
-		{ label: 'Home', url: '/' },
-		{ label: 'About', url: '/about/' },
-		{ label: 'Projects', url: '/projects/' },
-		{ label: 'Notes', url: '/notes/' }
+		{ label: 'Home', url: '/', icon: 'icon-home' },
+		{ label: 'About', url: '/about/', icon: 'icon-person-circle' },
+		{ label: 'Projects', url: '/projects/', icon: 'icon-wrench-screwdriver' },
+		{ label: 'Notes', url: '/notes/', icon: 'icon-pencil-square' },
+		{ label: 'Tags', url: '/tags/', icon: 'icon-tag' }
 	],
+
 	footer: [
 		{ label: 'Disclaimer', url: '/disclaimer/' },
 		{ label: 'License', url: '/license/' },
 		{ label: 'About', url: '/about/' }
 	],
+
 	social: [
 		{ label: 'Instagram', url: 'https://example.com', icon: 'icon-instagram' },
 		{ label: 'Twitter X', url: 'https://example.com', icon: 'icon-twitter-x' },

@@ -1,25 +1,33 @@
 ---
-import { SiteConfig } from '../siteConfig'
+import { SITE_CONFIG } from '../siteConfig'
 import { Image } from 'astro:assets'
 ---
 
-<figure class="flex cursor-pointer items-center gap-3" onclick="window.location.href='/'">
-	<picture class="overflow-hidden rounded-full shadow-md">
+<figure
+	class="group flex cursor-pointer items-center gap-3 select-none"
+	onclick="window.location.href='/'"
+>
+	<picture
+		class="size-14 overflow-hidden rounded-full border-2 border-neutral-800 shadow-sm shadow-black transition-shadow duration-500 group-hover:shadow-md"
+	>
 		<Image
-			src={SiteConfig.logo}
-			alt={SiteConfig.author}
-			width={50}
-			height={50}
-			class="lg:size-16"
+			src={SITE_CONFIG.logo}
+			alt={SITE_CONFIG.author}
+			width={56}
+			height={56}
+			format="webp"
+			class="size-full object-contain transition-transform duration-300 group-hover:scale-110"
 			loading="eager"
 		/>
 	</picture>
 	<figcaption class="flex flex-col">
-		<strong class="text-xl font-semibold text-white text-shadow-black text-shadow-sm lg:text-2xl"
-			>{SiteConfig.author}</strong
+		<strong
+			class="text-xl font-semibold text-white transition-colors duration-300 text-shadow-black text-shadow-sm group-hover:text-amber-500"
+			>{SITE_CONFIG.author}</strong
 		>
-		<em class="text-sm text-neutral-300 not-italic text-shadow-black text-shadow-sm lg:text-base"
-			>{SiteConfig.tagline}</em
+		<em
+			class="text-sm text-neutral-400 not-italic transition-colors duration-300 text-shadow-black text-shadow-sm group-hover:text-white"
+			>{SITE_CONFIG.tagline}</em
 		>
 	</figcaption>
 </figure>

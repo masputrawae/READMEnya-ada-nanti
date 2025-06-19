@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const { menu } = Astro.props
+---
+
+<nav class="flex flex-col gap-1">
+	{
+		menu.map((i: any) => {
+			const urlNow = Astro.url.pathname
+			const urlActive = i.url === urlNow || (i.url !== '/' && urlNow.startsWith(i.url))
+
+			const className = `flex items-center gap-3 px-4 py-2 text-sm text-shadow-sm text-shadow-black hover:text-neutral-50 font-semibold ${urlActive ? 'text-white rounded-md bg-neutral-800 border border-neutral-700 shadow-sm shadow-black/50' : 'text-neutral-400'}`
+
+			return (
+				<a href={i.url} class={className}>
+					<Icon name={i.icon} role="img" title={i.label} class="size-4" />
+					{i.label}
+				</a>
+			)
+		})
+	}
+</nav>

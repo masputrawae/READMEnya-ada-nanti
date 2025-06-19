@@ -1,0 +1,27 @@
+---
+import Button from './Button.astro'
+import Badge from './Badge.astro'
+import { Image } from 'astro:assets'
+import { capitalizeEachWord, timeFormat } from '../utils.js'
+const { items } = Astro.props
+---
+
+<ul>
+	{
+		items.map(i => (
+			<li>
+				<a
+					href={i.id}
+					class="flex justify-between border-b border-dashed border-b-neutral-700 no-underline text-neutral-400 hover:text-neutral-200"
+				>
+					{i.data.title}
+
+					<time datetime={i.data.date.toISOString()}>
+						<span class="lg:hidden">{timeFormat(i.data.date, false)}</span>
+						<span class="hidden lg:inline">{timeFormat(i.data.date, true)}</span>
+					</time>
+				</a>
+			</li>
+		))
+	}
+</ul>

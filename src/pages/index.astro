@@ -1,58 +1,64 @@
 ---
-import { Image } from 'astro:assets'
-import { SiteConfig } from '../siteConfig'
-import { getCollection } from 'astro:content'
-import { sortPost } from '../utils/sortPost.js'
-
+import BaseLayout from '../layouts/BaseLayout.astro'
 import Prose from '../components/Prose.astro'
-import Base from '../layouts/Base.astro'
-import FeaturedNotes from '../components/FeaturedNotes.astro'
+import Button from '../components/Button.astro'
+import ListProjects from '../components/ListProjects.astro'
+import ListNotes from '../components/ListNotes.astro'
 
-const getAllPosts = await getCollection('vaults')
-const notes = getAllPosts.filter((i) => i.data.type !== 'Projects')
-const projects = getAllPosts.filter((i) => i.data.type === 'Projects')
+import { Image } from 'astro:assets'
+import { SITE_CONFIG, MENUS } from '../siteConfig'
+import { getPosts } from '../utils.js'
 
-const newPosts = sortPost(notes, 'newPosts')
-const newProjects = sortPost(projects, 'newPosts', 2)
+const cta = MENUS.cta
+const projects = await getPosts('Projects', true, 3)
+const notes = await getPosts(null, false, 10)
 ---
 
-<Base>
-	<Prose>
-		<header
-			class="mx-auto mt-40 flex max-w-5xl flex-col items-center gap-3.5 px-3.5 md:flex-row md:items-start md:justify-between"
-		>
-			<picture
-				class="my-10 block w-1/2 overflow-hidden rounded-lg shadow-sm shadow-black md:order-2 md:w-2/5 md:shrink-1"
-			>
-				<Image
-					src={SiteConfig.logo}
-					width={512}
-					height={512}
-					alt="Place Holder"
-					loading="eager"
-					class="block w-full object-cover"
-				/>
-			</picture>
-			<section class="md:order-1 md:w-1/2 md:shrink-0">
+<BaseLayout>
+	<header class="m-auto grid gap-5 px-5 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+		<Image
+			src={SITE_CONFIG.logo}
+			alt={SITE_CONFIG.author}
+			width={512}
+			height={512}
+			format="webp"
+			class="m-auto w-xs rounded-lg shadow-sm shadow-black"
+			loading="eager"
+		/>
+		<Prose className="m-auto">
+			<section>
 				<h1>!Hi Welcome...</h1>
-				<em class="not-italic">
-					Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.
-				</em>
+				<em class="not-italic"
+					>Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em
+				>
 				<p>
 					Blog ini berisi catatan belajar saya dalam bidang JavaScript, Python, dan teknologi web.
 					Saya juga menulis hal-hal yang saya pelajari seputar matematika dasar dan bahasa Inggris.
 					Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang
 					sama, semoga bisa jadi teman belajar yang menyenangkan.
 				</p>
+
+				<nav class="flex items-center gap-3.5">
+					{
+						cta.map(i => (
+							<Button label={i.label} primary={i.primary} url={i.url} customClass="text-2xl" />
+						))
+					}
+				</nav>
 			</section>
-		</header>
+		</Prose>
+	</header>
+	<main class="my-auto mt-32 px-5 lg:mt-56">
+		<Prose className="prose-h1:font-normal">
+			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">Featured Projects</h1>
+			<ListProjects items={projects} />
+      <Button url="/projects/" customClass="text-lg" primary={true} label="👉️ View all projects ..." />
+		</Prose>
 
-		<main class="mx-auto max-w-5xl px-3.5">
-			<FeaturedNotes items={newProjects} heading="Last Projects" type="projects" />
-			<a href="/projects/" class="text-lg text-blue-400 no-underline">👉️ View all Projects ...</a>
-
-			<FeaturedNotes items={newPosts} heading="New Notes" />
-			<a href="/notes/" class="text-lg text-blue-400 no-underline">👉️ View all Notes ...</a>
-		</main>
-	</Prose>
-</Base>
+    <Prose className="prose-h1:font-normal mt-24 mb-10">
+			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">New Notes</h1>
+			<ListNotes items={notes} />
+      <Button url="/notes/" customClass="text-lg" primary={true} label="👉️ View all notes ..." />
+		</Prose>
+	</main>
+</BaseLayout>

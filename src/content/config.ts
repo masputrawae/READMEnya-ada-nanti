@@ -10,7 +10,8 @@ const vaults = defineCollection({
 		tags: z.array(z.string()).optional(),
 		date: z.coerce.date().optional(),
 		update: z.coerce.date().optional(),
-		type: z.enum(['Projects', 'Permanent', 'Notes']).optional()
+    featured: z.boolean().optional(),
+		type: z.enum(['Projects', 'Permanent', 'Notes']).optional(),
 	})
 })
 

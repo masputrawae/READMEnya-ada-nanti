@@ -1,0 +1,27 @@
+---
+import '../styles/global.css'
+
+import Sidebar from '../components/Sidebar.astro'
+import Footer from '../components/Footer.astro'
+import MobileNav from '../components/MobileNav.astro'
+---
+
+<html
+	lang="id"
+	class="bg-radial-[at_25%_25%] from-neutral-800 to-neutral-950 to-75% font-['Noto_Sans',var(--font-serif)] text-neutral-200"
+>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Document</title>
+	</head>
+	<body class="grid min-h-dvh max-w-dvw overflow-x-hidden lg:grid-cols-[320px_minmax(0,1fr)]">
+		<Sidebar />
+		<div class="mt-28">
+			<slot />
+			<Footer />
+		</div>
+		<MobileNav />
+	</body>
+</html>

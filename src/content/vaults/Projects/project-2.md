@@ -6,6 +6,7 @@ tags:
   - 'dashboard'
   - 'analytics'
   - 'vue'
+featured: true
 type: 'Projects'
 date: 2025-06-10T15:38:21+07:00
 update: 2025-06-15T10:20:00+07:00

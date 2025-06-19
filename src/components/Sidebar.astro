@@ -1,0 +1,42 @@
+---
+import Brand from './Brand.astro'
+import Navigations from './Navigations.astro'
+
+import { Icon } from 'astro-icon/components'
+import { MENUS } from '../siteConfig'
+
+const menuGroup = [MENUS.main, MENUS.social]
+---
+
+<header
+	class="invisible top-0 left-0 fixed z-50 grid h-dvh w-xs -translate-x-full grid-rows-[4.5rem_minmax(0,1fr)_auto] gap-5 border-r-2 border-r-neutral-800 bg-neutral-900 px-5 py-2 shadow-sm shadow-black transition-all duration-500 lg:visible lg:sticky lg:translate-none"
+	id="sidebar"
+>
+	<div class="flex items-center justify-between">
+		<Brand />
+		<button class="lg:hidden" onclick="sidebarClose()">
+			<Icon name="icon-x-mark" role="img" class="size-7" />
+		</button>
+	</div>
+
+	{menuGroup.map((i) => <Navigations menu={i} />)}
+</header>
+
+<div
+	onclick="sidebarClose()"
+	class="invisible fixed z-40 size-full bg-black/80 opacity-0 transition-all duration-300"
+	id="overlay"
+>
+</div>
+
+<script is:inline>
+	function sidebarOpen() {
+		document.getElementById('sidebar').classList.remove('-translate-x-full', 'invisible')
+		document.getElementById('overlay').classList.remove('opacity-0', 'invisible')
+	}
+
+	function sidebarClose() {
+		document.getElementById('sidebar').classList.add('-translate-x-full', 'invisible')
+		document.getElementById('overlay').classList.add('opacity-0', 'invisible')
+	}
+</script>
