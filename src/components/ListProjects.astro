@@ -12,7 +12,7 @@ const { items } = Astro.props
 			onclick={`window.location.href="${i.id}"`}
 			class="items-center group mb-5 grid gap-5 overflow-hidden border-b border-dashed border-b-neutral-700 pb-10 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"
 		>
-			<picture class="aspect-video overflow-hidden rounded-lg shadow-md shadow-black m-auto max-w-none md:max-w-sm lg:max-w-none xl:max-w-sm">
+			<picture class="aspect-video overflow-hidden rounded-lg shadow-md shadow-black m-auto max-w-none md:max-w-sm lg:max-w-none xl:max-w-md">
 				<Image
 					src={i.data.thumbnail}
 					alt={i.data.title}

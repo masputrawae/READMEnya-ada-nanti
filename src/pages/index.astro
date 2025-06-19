@@ -22,10 +22,10 @@ const notes = await getPosts(null, false, 10)
 			width={512}
 			height={512}
 			format="webp"
-			class="m-auto w-xs rounded-lg shadow-sm shadow-black"
+			class="my-0 mx-auto w-xs rounded-lg shadow-sm shadow-black md:order-2 lg:order-1 xl:order-2"
 			loading="eager"
 		/>
-		<Prose className="m-auto">
+		<Prose className="m-auto md:order-1 lg:order-2 xl:order-1">
 			<section>
 				<h1>!Hi Welcome...</h1>
 				<em class="not-italic"
@@ -52,13 +52,18 @@ const notes = await getPosts(null, false, 10)
 		<Prose className="prose-h1:font-normal">
 			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">Featured Projects</h1>
 			<ListProjects items={projects} />
-      <Button url="/projects/" customClass="text-lg" primary={true} label="👉️ View all projects ..." />
+			<Button
+				url="/projects/"
+				customClass="text-lg"
+				primary={true}
+				label="👉️ View all projects ..."
+			/>
 		</Prose>
 
-    <Prose className="prose-h1:font-normal mt-24 mb-10">
+		<Prose className="prose-h1:font-normal mt-24 mb-10">
 			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">New Notes</h1>
 			<ListNotes items={notes} />
-      <Button url="/notes/" customClass="text-lg" primary={true} label="👉️ View all notes ..." />
+			<Button url="/notes/" customClass="text-lg" primary={true} label="👉️ View all notes ..." />
 		</Prose>
 	</main>
 </BaseLayout>

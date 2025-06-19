@@ -1,1 +1,25 @@
-<p>Hello Footer</p>
+---
+import { Icon } from 'astro-icon/components'
+import Prose from './Prose.astro'
+---
+
+<Prose>
+	<footer class="border-t-2 border-t-neutral-800 px-10 py-2.5 text-center">
+		<p>
+			Made with <Icon
+				name="icon-heart-fill"
+				class="inline size-4 text-red-500"
+				title="Cinta"
+				role="img"
+			/> Using <a
+				href="https://astro.build/"
+				class="text-blue-500"
+				target="_blank"
+				rel="noopener noreferrer">{Astro.generator}</a
+			>
+		</p>
+		<p>
+			© {new Date().getFullYear()} · <strong>Putra Jaya</strong> · All rights reserved.
+		</p>
+	</footer>
+</Prose>
