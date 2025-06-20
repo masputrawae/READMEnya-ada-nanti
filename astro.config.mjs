@@ -12,7 +12,7 @@ import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://www.example.com',
+	site: 'https://gas-jalan.netlify.app',
 	image: {
 		domains: ['astro.build'],
 		remotePatterns: [{ protocol: 'https' }]
