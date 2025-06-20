@@ -3,24 +3,19 @@ import { defineConfig } from 'astro/config'
 
 import { brainDbAstro, generateSlug } from '@braindb/astro'
 
-import sitemap from '@astrojs/sitemap'
-
-import icon from 'astro-icon'
-
 import tailwindcss from '@tailwindcss/vite'
-
 import mdx from '@astrojs/mdx'
-
+import icon from 'astro-icon'
+import netlify from '@astrojs/netlify'
+import sitemap from '@astrojs/sitemap'
 import react from '@astrojs/react'
 
+// https://astro.build/config
 export default defineConfig({
+	site: 'https://www.example.com',
 	image: {
 		domains: ['astro.build'],
-		remotePatterns: [{ protocol: 'https' }],
-		experimentalLayout: 'constrained'
-	},
-	experimental: {
-		responsiveImages: true
+		remotePatterns: [{ protocol: 'https' }]
 	},
 	integrations: [
 		brainDbAstro({
@@ -39,8 +34,8 @@ export default defineConfig({
 		mdx(),
 		react()
 	],
-
 	vite: {
 		plugins: [tailwindcss()]
-	}
+	},
+	adapter: netlify()
 })

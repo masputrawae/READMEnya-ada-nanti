@@ -1,25 +1,14 @@
 ---
-import { Icon } from 'astro-icon/components'
-import Prose from './Prose.astro'
+import { SITE_CONFIG } from '../SiteConfig'
 ---
 
-<Prose>
-	<footer class="border-t-2 border-t-neutral-800 px-10 py-2.5 text-center">
-		<p>
-			Made with <Icon
-				name="icon-heart-fill"
-				class="inline size-4 text-red-500"
-				title="Cinta"
-				role="img"
-			/> Using <a
-				href="https://astro.build/"
-				class="text-blue-500"
-				target="_blank"
-				rel="noopener noreferrer">{Astro.generator}</a
-			>
-		</p>
-		<p>
-			© {new Date().getFullYear()} · <strong>Putra Jaya</strong> · All rights reserved.
-		</p>
-	</footer>
-</Prose>
+<footer class="flex flex-col items-center text-xs border-t border-dashed border-t-neutral-700 m-auto md:flex-row md:justify-between">
+	<p>
+		© {new Date().getFullYear()} · {SITE_CONFIG.author} · All rights reserved. | <a
+			href="/disclaimer/">Disclaimer</a>
+	</p>
+	<p>
+		Made with ❤️ using <a href="https://astro.build/" target="_blank" rel="noopener noreferrer"
+			>{Astro.generator}</a>
+	</p>
+</footer>

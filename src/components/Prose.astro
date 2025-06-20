@@ -3,7 +3,7 @@ const { className = '' } = Astro.props
 ---
 
 <div
-	class={`prose prose-invert prose-neutral max-w-full text-neutral-200 text-[15px] prose-pre:font-['Fira_Code','JetBrains_Mono',var(--font-mono)] prose-code:font-['Fira_Code','JetBrains_Mono',var(--font-mono)] prose-code:before:content-none prose-code:after:content-none prose-pre:shadow-sm prose-pre:shadow-black prose-pre:overflow-x-auto prose-pre:w-full ${className}`}
+	class={`prose-code:before:content-none prose-code:after:content-none max-w-none prose prose-neutral prose-invert leading-relaxed prose-pre:font-mono prose-code:font-mono prose-headings:font-normal ${className}`}
 >
 	<slot />
 </div>

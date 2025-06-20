@@ -1,0 +1,50 @@
+---
+interface ProjectsCard {
+	items?: string[]
+	heading?: string
+}
+
+import { Image } from 'astro:assets'
+import { timeFormat } from '../utils/timeFormat'
+import { capitalizeEachWord } from '../utils/capitalizeEachWord'
+
+import Badge from './Badge.astro'
+import Button from './Button.astro'
+import Prose from './Prose.astro'
+
+const { items, heading } = Astro.props as ProjectsCard
+---
+
+<section>
+	{heading && <h1>{heading}</h1>}
+	{
+		items?.map((i: any) => (
+			<figure class="grid items-center border-t border-dashed border-t-neutral-700 py-10 md:grid-cols-2 md:gap-10 xl:gap-28">
+				<picture class="m-auto aspect-video w-full overflow-hidden rounded-lg shadow-sm shadow-black xl:max-w-lg">
+					<Image
+						src={i.data.thumbnail}
+						alt={i.data.title}
+						width={600}
+						height={400}
+						format={'webp'}
+						loading={`lazy`}
+						layout={`full-width`}
+						class={`size-full object-cover`}
+					/>
+				</picture>
+				<figcaption class="m-auto grid gap-0.5">
+					<strong class="text-2xl font-normal">{i.data.title}</strong>
+					<p class="md:mb-1">{i.data.description}</p>
+
+					<nav class="mb-5 flex items-center gap-1.5">
+						{i.data.tags.map((tag: string) => (
+							<Badge href={`/tag/${tag}`} sizes="text-xs" label={capitalizeEachWord(tag)} />
+						))}
+					</nav>
+
+					<Button label="View Project" onclick={`window.location.href="/${i.id}/"`} />
+				</figcaption>
+			</figure>
+		))
+	}
+</section>

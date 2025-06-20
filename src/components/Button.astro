@@ -1,17 +1,34 @@
 ---
-const { url, primary = false, label, customClass = '', ...rest } = Astro.props
+export interface ButtonParams {
+	href?: string
+	label?: string
+	primary?: boolean
+	sizes?: 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl'
+	classes?: string
+	[key: string]: any
+}
 
-const className = `px-5 py-2 cursor-pointer shadow-sm shadow-black no-underline border border-neutral-800 rounded-sm transition-all duration-300 hover:shadow-md hover:border-neutral-700 font-semibold ${primary ? 'bg-neutral-800 text-white ' : 'text-neutral-300 hover:text-white '} ${customClass}`
+const {
+	href,
+	label,
+	primary = false,
+	sizes = 'text-base',
+	classes = '',
+	...rest
+} = Astro.props as ButtonParams
+
+const className =
+	`rounded-md px-7 py-3.5 text-shadow-sm text-shadow-black shadow-black/50 shadow-sm border-neutral-700 border inline-flex w-fit hover:bg-neutral-800 hover:text-white font-semibold transition-all duration-300 hover:shadow-md hover:text-shadow-md no-underline ${classes} ${sizes} ${primary ? 'bg-neutral-800 text-white' : ''}`.trim()
 ---
 
 {
-	!url ? (
+	!href ? (
 		<button class={className} {...rest}>
-			{!label ? <slot /> : label}
+			{label ?? <slot />}
 		</button>
 	) : (
-		<a href={url} class={className} {...rest}>
-			{!label ? <slot /> : label}
+		<a href={href} class={className} {...rest}>
+			{label ?? <slot />}
 		</a>
 	)
 }

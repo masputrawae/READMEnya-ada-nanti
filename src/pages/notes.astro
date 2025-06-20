@@ -1,47 +1,64 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Prose from '../components/Prose.astro'
-import ListNotes from '../components/ListNotes.astro'
-import { getPosts, capitalizeEachWord } from '../utils.js'
 import { getCollection } from 'astro:content'
+import { getAllPosts } from '../utils/getPosts'
+import { timeFormat } from '../utils/timeFormat'
+import { capitalizeEachWord } from '../utils/capitalizeEachWord'
+import Layout from '../layouts/Layout.astro'
 import Badge from '../components/Badge.astro'
 
-const notes = await getPosts(null, false)
-const getAllPosts = await getCollection('vaults')
-const getTags = getAllPosts.map((i) => i.data.tags).flat()
-const tags = Array.from(new Set(getTags))
+const notes = await getAllPosts()
+
+const getAllContent = await getCollection('vaults')
+const getTags = getAllContent.flatMap(i => i.data.tags)
+const tags = [...new Set(getTags)]
+
+
+const meta = {
+	title: 'Notes',
+	description: `Pernah nggak sih kalian bertanya-tanya, kenapa nasi goreng di warung pinggir jalan itu bisa seenak itu? 🤔 Aku sudah mencoba berbagai resep dari seluruh penjuru dunia—dari dapur rumah sampai dapur YouTube—tapi tetap saja rasanya belum nendang!`
+}
 ---
 
-<BaseLayout>
-	<header class="m-auto px-4 md:px-10">
-		<Prose className="m-auto">
-			<section>
-				<h1>Sedang Mencari Resep!</h1>
+<Layout meta={meta}>
+	<header>
+		<h1>Sedang Mencari Resep!</h1>
 
-				<nav class="flex flex-wrap items-start gap-3.5">
-					{
-						tags.map((i) => (
-							<Badge href={`/${i}/`} label={capitalizeEachWord(i?.replace(/[-_]/g, ' '))} />
-						))
-					}
-				</nav>
+		<nav class="flex flex-wrap gap-1.5">
+			{tags.map(i => <Badge href={`/tag/${i}/`} label={capitalizeEachWord(i || '')} />)}
+		</nav>
 
-				<p>
-					Pernah nggak sih kalian bertanya-tanya, kenapa nasi goreng di warung pinggir jalan itu
-					bisa seenak itu? 🤔 Aku sudah mencoba berbagai resep dari seluruh penjuru dunia—dari dapur
-					rumah sampai dapur YouTube—tapi tetap saja rasanya belum nendang!
-				</p>
-				<p>
-					Apakah ini hasil latihan bertahun-tahun? Atau… mungkinkah ada campur tangan makhluk halus?
-					👻 Entahlah. Tapi satu yang pasti: pencarian ini belum selesai!
-				</p>
-			</section>
-		</Prose>
+		<p>
+			Pernah nggak sih kalian bertanya-tanya, kenapa nasi goreng di warung pinggir jalan itu bisa
+			seenak itu? 🤔 Aku sudah mencoba berbagai resep dari seluruh penjuru dunia—dari dapur rumah
+			sampai dapur YouTube—tapi tetap saja rasanya belum nendang!
+		</p>
+		<p>
+			Apakah ini hasil latihan bertahun-tahun? Atau… mungkinkah ada campur tangan makhluk halus? 👻 <br
+			/>Entahlah. Tapi satu yang pasti: pencarian ini belum selesai!
+		</p>
 	</header>
-	<main class="my-auto mt-32 px-4 md:px-10">
-		<Prose className="prose-h1:font-normal mt-24 mb-10">
-			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">All Notes</h1>
-			<ListNotes items={notes} />
-		</Prose>
+	<main class="mt-14">
+		<h2>All Notes</h2>
+		<ul class="m-0 list-none p-0">
+			{
+				notes.map((i: any) => (
+					<li class="group border-t border-dashed border-t-neutral-500 py-2.5">
+						<a href={`/${i.id}/`} class="no-underline">
+							<span class="block text-lg text-neutral-100 group-hover:text-amber-500">
+								{i.data.title}
+							</span>
+							<time
+								class="flex items-center justify-between text-neutral-500 group-hover:text-white"
+								datetime={new Date(i.data.date || 0).toISOString()}
+							>
+								<span>Created On:</span>
+								<span class="hidden lg:inline">{timeFormat(i.data.date, true)}</span>
+								<span class="lg:hidden">{timeFormat(i.data.date, false)}</span>
+							</time>
+						</a>
+					</li>
+				))
+			}
+		</ul>
 	</main>
-</BaseLayout>
+</Layout>

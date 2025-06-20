@@ -1,0 +1,57 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import { capitalizeEachWord } from "../../utils/capitalizeEachWord"
+import { timeFormat } from "../../utils/timeFormat"
+import { getCollection } from 'astro:content'
+export async function getStaticPaths() {
+	const posts = await getCollection('vaults')
+
+	const tagSet = new Set()
+	for (const post of posts) {
+		for (const tag of post.data.tags || []) {
+			tagSet.add(tag)
+		}
+	}
+
+	return Array.from(tagSet).map((tag) => ({
+		params: { tag }
+	}))
+}
+
+let { tag } = Astro.params
+if (Array.isArray(tag)) {
+	tag = tag[0]
+}
+const tagStr: string = typeof tag === 'string' ? tag : String(tag)
+const posts = await getCollection('vaults')
+const filteredPosts = posts.filter((post) => post.data.tags?.includes(tagStr))
+
+const meta = {
+  title: capitalizeEachWord(tagStr),
+  description: `Kumpulan Catatan Terkait dengan tagar ${capitalizeEachWord(tagStr)}`
+}
+---
+<Layout meta={meta}>
+  <header>
+	<h1>{capitalizeEachWord(tagStr)}</h1>
+    <ul class="m-0 list-none p-0">
+			{
+				filteredPosts.map((i: any) => (
+					<li class="group border-t border-dashed border-t-neutral-500 py-2.5">
+						<a href={`/${i.id}/`} class="no-underline">
+							<span class="block text-lg text-neutral-100 group-hover:text-amber-500">{i.data.title}</span>
+							<time
+								class="flex items-center justify-between text-neutral-500 group-hover:text-white"
+								datetime={new Date(i.data.date || 0).toISOString()}
+							>
+								<span>Created On:</span>
+								<span class="hidden lg:inline">{timeFormat(i.data.date, true)}</span>
+								<span class="lg:hidden">{timeFormat(i.data.date, false)}</span>
+							</time>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+  </header>
+</Layout>

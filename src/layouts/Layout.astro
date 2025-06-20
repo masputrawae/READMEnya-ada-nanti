@@ -1,0 +1,61 @@
+---
+import '../styles/global.css'
+
+import Headed from '../components/Headed.astro'
+import Sidebar from '../components/Sidebar.astro'
+import MobileTopBar from '../components/MobileTopBar.astro'
+import Prose from '../components/Prose.astro'
+import Footer from '../components/Footer.astro'
+
+const { meta } = Astro.props
+---
+
+<html
+	lang="id"
+	class="bg-radial-[at_25%_25%] from-neutral-800 to-neutral-950 to-75% font-sans text-neutral-300"
+>
+	<Headed meta={meta} />
+	<body class="lg:grid lg:grid-cols-[320px_minmax(0,1fr)]">
+		<MobileTopBar />
+		<Sidebar />
+		<Prose className="min-h-dvh w-full max-w-full px-5 pt-28 md:px-10 xl:mx-auto xl:max-w-7xl">
+			<slot />
+      <Footer />
+		</Prose>
+	</body>
+</html>
+
+<style is:global>
+	@font-face {
+		font-display: swap;
+		font-family: 'Noto Sans';
+		font-style: normal;
+		font-weight: 400;
+		src: url('/fonts/noto-sans-v39-latin-regular.woff2') format('woff2');
+	}
+	@font-face {
+		font-display: swap;
+		font-family: 'Noto Sans';
+		font-style: normal;
+		font-weight: 700;
+		src: url('/fonts/noto-sans-v39-latin-700.woff2') format('woff2');
+	}
+	@font-face {
+		font-display: swap;
+		font-family: 'Fira Code';
+		font-style: normal;
+		font-weight: 400;
+		src: url('/fonts/fira-code-v26-latin-regular.woff2') format('woff2');
+	}
+</style>
+
+<script is:inline>
+	function sidebarOpen() {
+		document.getElementById('sidebar').classList.remove('-translate-x-full', 'invisible')
+		document.getElementById('overlay').classList.remove('opacity-0', 'invisible')
+	}
+	function sidebarClose() {
+		document.getElementById('sidebar').classList.add('-translate-x-full', 'invisible')
+		document.getElementById('overlay').classList.add('opacity-0', 'invisible')
+	}
+</script>

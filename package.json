@@ -1,5 +1,5 @@
 {
-	"name": "gas-teroos",
+	"name": "1-pasti",
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^4.3.0",
+		"@astrojs/netlify": "^6.4.0",
 		"@astrojs/react": "^4.3.0",
 		"@astrojs/sitemap": "^3.4.1",
 		"@braindb/astro": "^0.1.1",
@@ -18,7 +19,7 @@
 		"@tailwindcss/vite": "^4.1.10",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
-		"astro": "^5.9.4",
+		"astro": "^5.10.0",
 		"astro-icon": "^1.1.5",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",

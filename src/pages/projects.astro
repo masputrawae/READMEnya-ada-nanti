@@ -1,19 +1,34 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Prose from '../components/Prose.astro'
-import Button from '../components/Button.astro'
-import ListProjects from '../components/ListProjects.astro'
+import ProjectCards from '../components/ProjectCards.astro'
+import Layout from '../layouts/Layout.astro'
+import { getAllPosts } from '../utils/getPosts'
+const projects = await getAllPosts('Projects')
 
-import { getPosts } from '../utils.js'
-
-const projects = await getPosts('Projects', false)
+const meta = {
+	title: 'Projects',
+	description: `Berikut adalah beberapa proyek kecil yang saya buat selama proses belajar pemrograman secara otodidak. Tidak ada yang sempurna, tapi setiap baris kodenya adalah bagian dari perjalanan saya memahami dunia teknologi.`
+}
 ---
 
-<BaseLayout>
-	<main class="my-auto px-4 md:px-10">
-		<Prose className="prose-h1:font-normal">
-			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">All Projects</h1>
-			<ListProjects items={projects} />
-		</Prose>
+<Layout meta={meta}>
+	<header>
+		<h1>Proyek-proyek Saya</h1>
+		<p>
+			Berikut adalah beberapa proyek kecil yang saya buat selama proses belajar pemrograman secara
+			otodidak. Tidak ada yang sempurna, tapi setiap baris kodenya adalah bagian dari perjalanan
+			saya memahami dunia teknologi.
+		</p>
+		<p>
+			Saya membuat proyek-proyek ini untuk bersenang-senang, bereksperimen, dan mengasah kemampuan.
+			Kadang iseng, kadang serius—tapi semuanya adalah langkah kecil yang berarti.
+		</p>
+		<hr />
+		<p>
+			Catatan: Semua proyek di sini masih dalam tahap belajar. Kalau ada yang menarik atau ingin
+			memberi masukan, saya akan sangat menghargainya
+		</p>
+	</header>
+	<main class="mt-14">
+		<ProjectCards items={projects} />
 	</main>
-</BaseLayout>
+</Layout>

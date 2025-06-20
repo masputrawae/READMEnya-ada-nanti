@@ -1,54 +1,47 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Prose from '../components/Prose.astro'
-import Button from '../components/Button.astro'
-
 import { Image } from 'astro:assets'
-import { SITE_CONFIG, MENUS } from '../siteConfig'
+import { SITE_CONFIG } from '../SiteConfig'
+import Layout from '../layouts/Layout.astro'
 
-const cta = MENUS.cta
+const meta = {
+	title: 'About',
+	description: `Saya belajar pemrograman secara otodidak karena sudah lama putus sekolah dan tidak punya akses ke pendidikan formal. Tidak ada motivasi besar atau tujuan mulia—saya cuma ingin mengisi hari-hari dengan sesuatu yang berarti, dan belajar hal baru setiap hari terasa lebih baik daripada tidak belajar apa-apa sama sekali.`
+}
 ---
 
-<BaseLayout>
-	<header class="m-auto px-4 md:px-10">
-		<div class="m-auto grid gap-5 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+<Layout meta={meta}>
+	<header>
+		<h1>Halo, saya Putra</h1>
+		<em class="not-italic">Dari Jawa Timur, Indonesia.</em>
+		<picture class="block aspect-video w-full overflow-hidden rounded-2xl shadow-sm shadow-black">
 			<Image
-				src={SITE_CONFIG.logo}
-				alt={SITE_CONFIG.author}
-				width={512}
-				height={512}
-				format="webp"
-				class="mx-auto my-0 w-xs rounded-lg shadow-sm shadow-black md:order-2 lg:order-1 xl:order-2"
-				loading="eager"
+				src={SITE_CONFIG.thumbnail || ''}
+				alt={SITE_CONFIG.author || 'Putra Jaya'}
+				width={1792}
+				height={1024}
+				format={'webp'}
+				loading={`eager`}
+				layout={`full-width`}
+				class={`size-full object-cover`}
 			/>
-			<Prose className="m-auto md:order-1 lg:order-2 xl:order-1">
-				<section>
-					<h1>!Halo, saya Putra...</h1>
-					<em class="not-italic">Dari Jawa Timur, Indonesia.</em>
-					<p>
-						Saya belajar pemrograman secara otodidak karena sudah lama putus sekolah dan tidak punya
-						akses ke pendidikan formal. Tidak ada motivasi besar atau tujuan mulia—saya cuma ingin
-						mengisi hari-hari dengan sesuatu yang berarti, dan belajar hal baru setiap hari terasa
-						lebih baik daripada tidak belajar apa-apa sama sekali.
-					</p>
-				</section>
-			</Prose>
-		</div>
-		<Prose>
-			<section>
-				<h2>Prinsip & Pendekatan</h2>
-				<p>
-					Saya percaya bahwa belajar harus menyenangkan. Prinsip saya sederhana: lakukan apa yang
-					kamu suka. Karena itu, saya tidak terpaku pada satu jalur. Saat ini saya sedang fokus
-					mengeksplorasi JavaScript, tapi siapa tahu ke mana perjalanan ini akan membawa saya.
-				</p>
-				<h2>Sedikit tentang Hobi</h2>
-				<p>
-					Dulu saya suka main Dota 2, sekarang lebih sering nonton turnamennya aja. Saya juga pernah
-					hobi main gitar, meskipun sekarang udah jarang. Tentang hal menarik dari diri saya?
-					Mungkin bukan saya yang bisa menilai—biar orang lain saja yang merasakannya 😄
-				</p>
-			</section>
-		</Prose>
+		</picture>
+		<p>
+			Saya belajar pemrograman secara otodidak karena sudah lama putus sekolah dan tidak punya akses
+			ke pendidikan formal. Tidak ada motivasi besar atau tujuan mulia—saya cuma ingin mengisi
+			hari-hari dengan sesuatu yang berarti, dan belajar hal baru setiap hari terasa lebih baik
+			daripada tidak belajar apa-apa sama sekali.
+		</p>
+		<h2>Prinsip & Pendekatan</h2>
+		<p>
+			Saya percaya bahwa belajar harus menyenangkan. Prinsip saya sederhana: lakukan apa yang kamu
+			suka. Karena itu, saya tidak terpaku pada satu jalur. Saat ini saya sedang fokus
+			mengeksplorasi JavaScript, tapi siapa tahu ke mana perjalanan ini akan membawa saya.
+		</p>
+		<h2>Sedikit tentang Hobi</h2>
+		<p>
+			Dulu saya suka main Dota 2, sekarang lebih sering nonton turnamennya aja. Saya juga pernah
+			hobi main gitar, meskipun sekarang udah jarang. Tentang hal menarik dari diri saya? Mungkin
+			bukan saya yang bisa menilai—biar orang lain saja yang merasakannya 😄
+		</p>
 	</header>
-</BaseLayout>
+</Layout>

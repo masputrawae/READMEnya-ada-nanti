@@ -1,28 +1,44 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Prose from '../components/Prose.astro'
-import { render, getCollection } from 'astro:content'
+import Layout from "../layouts/Layout.astro";
+import { SITE_CONFIG } from "../SiteConfig";
+import { capitalizeEachWord } from "../utils/capitalizeEachWord";
+import { getAllPosts } from "../utils/getPosts";
+import { render, getCollection } from "astro:content";
+import { timeFormat } from "../utils/timeFormat";
 
-export async function getStaticPaths() {
-	const blogPosts = await getCollection('vaults')
-	return blogPosts.map((post: any) => ({
-		params: {
-			slug: post.id
-		},
-		props: { post }
-	}))
+export async function getStaticPaths(){
+  const getAllNotes = await getCollection('vaults')
+  return getAllNotes.map((post)=>({
+    params: {
+      slug: post.id
+    },
+    props: {post}
+  }))
 }
 
 const { post } = Astro.props
 const { Content } = await render(post)
+
+const title = capitalizeEachWord(post.data.title || '')
+const description = post.data.description
+const thumbnail = post.data.thumbnail
+
+const meta = {
+  title: title,
+  description: description ? description : `Catatan Yang Membahas tentang ${title}`,
+  keywords: post.data.tags,
+  thumbnail: thumbnail ? thumbnail : SITE_CONFIG.thumbnail
+}
+
+const getDate = new Date(post.data.date || 0).toISOString()
 ---
 
-<BaseLayout>
-	<main class="px-4 md:px-8">
-		<Prose className="prose-a:text-blue-500">
-			<article>
-				<Content />
-			</article>
-		</Prose>
-	</main>
-</BaseLayout>
+<Layout meta={meta}>
+  <article>
+    <Content/>
+    <time datetime={getDate} class="mt-10">
+      <strong>Dibuat Pada Tanggal: </strong>
+      <span class="hidden lg:inline">{timeFormat(getDate, true)}</span>
+    </time>
+  </article>
+</Layout>

@@ -1,21 +1,27 @@
 ---
+interface MenuItem {
+	label: string
+	url: string
+	icon?: string
+}
+
 import { Icon } from 'astro-icon/components'
 
-const { menu } = Astro.props
+const { items } = Astro.props
 ---
 
-<nav class="flex flex-col gap-1">
+<nav>
 	{
-		menu.map((i: any) => {
-			const urlNow = Astro.url.pathname
-			const urlActive = i.url === urlNow || (i.url !== '/' && urlNow.startsWith(i.url))
+		items.map((item: MenuItem) => {
+			const { pathname } = Astro.url
+			const urlActive = item.url === pathname || (item.url !== '/' && pathname.startsWith(item.url))
 
-			const className = `flex items-center gap-3 px-4 py-2 text-sm text-shadow-sm text-shadow-black hover:text-neutral-50 font-semibold ${urlActive ? 'text-white rounded-md bg-neutral-800 border border-neutral-700 shadow-sm shadow-black/50' : 'text-neutral-400'}`
-
+			const className =
+				`flex items-center gap-3 px-5 py-3 text-sm text-shadow-sm text-shadow-black hover:text-neutral-50 font-semibold transition-all duration-300 ${urlActive ? 'text-white rounded-md bg-neutral-800 border border-neutral-700 shadow-sm shadow-black/50' : 'text-neutral-400'}`.trim()
 			return (
-				<a href={i.url} class={className}>
-					<Icon name={i.icon} role="img" title={i.label} class="size-4" />
-					{i.label}
+				<a href={item.url} class={className}>
+					<Icon name={item.icon} title={item.label} role="img" class="size-5" />
+					{item.label}
 				</a>
 			)
 		})

@@ -1,16 +1,26 @@
 ---
-const { href, label, customClass = '', ...rest } = Astro.props
-const className = `px-3 py-1 border border-neutral-800 transition-all duration-300 inline-flex items-center w-fit shadow-sm shadow-black rounded-full no-underline cursor-pointer hover:shadow-md hover:bg-neutral-800 hover:text-white ${customClass}`
+interface BadgeParams {
+	href?: string
+	label?: string
+	sizes?: 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl'
+	classes?: string
+	[key: string]: any
+}
+
+const { href, label, sizes = 'text-xs', classes = '', ...rest } = Astro.props as BadgeParams
+
+const className =
+	`font-semibold rounded-full px-4 py-2 shadow-sm shadow-black border border-neutral-800 transition-all duration-200 hover:shadow-md hover:bg-neutral-800 hover:text-white no-underline text-shadow-md text-shadow-black inline-flex w-fit ${classes} ${sizes}`.trim()
 ---
 
 {
 	!href ? (
 		<span class={className} {...rest}>
-			{!label ? <slot /> : label}
+			{label ? label : <slot />}
 		</span>
 	) : (
 		<a href={href} class={className} {...rest}>
-			{!label ? <slot /> : label}
+			{label ? label : <slot />}
 		</a>
 	)
 }

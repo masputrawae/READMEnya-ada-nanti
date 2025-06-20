@@ -1,28 +1,26 @@
 ---
-import { SITE_CONFIG } from '../siteConfig'
+import { SITE_CONFIG } from '../SiteConfig'
 import { Image } from 'astro:assets'
 ---
 
-<figure
-	class="group flex cursor-pointer items-center gap-3 select-none"
-	onclick="window.location.href='/'"
->
+<figure class="group flex cursor-pointer items-center gap-2" onclick="window.location.href='/'">
 	<picture
-		class="size-14 overflow-hidden rounded-full border-2 border-neutral-800 shadow-sm shadow-black transition-shadow duration-500 group-hover:shadow-md"
+		class="block size-14 overflow-hidden rounded-full border-2 border-neutral-800 shadow-md shadow-black transition-shadow duration-300 group-hover:shadow-sm"
 	>
 		<Image
-			src={SITE_CONFIG.logo}
-			alt={SITE_CONFIG.author}
+			src={SITE_CONFIG?.logo || ''}
+			alt={SITE_CONFIG?.author || ''}
 			width={56}
 			height={56}
-			format="webp"
-			class="size-full object-contain transition-transform duration-300 group-hover:scale-110"
-			loading="eager"
+			format={'webp'}
+			loading={`eager`}
+			layout="constrained"
+			class="size-14 transition-transform duration-300 group-hover:scale-110"
 		/>
 	</picture>
 	<figcaption class="flex flex-col">
 		<strong
-			class="text-xl font-semibold text-white transition-colors duration-300 text-shadow-black text-shadow-sm group-hover:text-amber-500"
+			class="text-lg text-white transition-colors duration-300 text-shadow-black text-shadow-sm group-hover:text-amber-500"
 			>{SITE_CONFIG.author}</strong
 		>
 		<em

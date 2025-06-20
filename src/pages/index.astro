@@ -1,69 +1,34 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Prose from '../components/Prose.astro'
-import Button from '../components/Button.astro'
-import ListProjects from '../components/ListProjects.astro'
-import ListNotes from '../components/ListNotes.astro'
+import Layout from '../layouts/Layout.astro'
+import ProjectCards from '../components/ProjectCards.astro'
 
 import { Image } from 'astro:assets'
-import { SITE_CONFIG, MENUS } from '../siteConfig'
-import { getPosts } from '../utils.js'
+import { SITE_CONFIG, MENUS } from '../SiteConfig'
+import { getAllPosts } from '../utils/getPosts'
+import Button from '../components/Button.astro'
 
 const cta = MENUS.cta
-const projects = await getPosts('Projects', true, 3)
-const notes = await getPosts(null, false, 10)
+const logo = SITE_CONFIG.logo || ''
+const author = SITE_CONFIG.author || ''
+
+const featuredNotes = await getAllPosts('Permanent', 4, true)
+const featuredProjects = await getAllPosts('Projects', 2, true)
+const allNotes = await getAllPosts()
 ---
 
-<BaseLayout>
-	<header class="m-auto grid gap-5 px-4 md:grid-cols-2 md:px-10 lg:grid-cols-1 xl:grid-cols-2">
-		<Image
-			src={SITE_CONFIG.logo}
-			alt={SITE_CONFIG.author}
-			width={512}
-			height={512}
-			format="webp"
-			class="mx-auto my-0 w-xs rounded-lg shadow-sm shadow-black md:order-2 lg:order-1 xl:order-2"
-			loading="eager"
-		/>
-		<Prose className="m-auto md:order-1 lg:order-2 xl:order-1">
-			<section>
-				<h1>!Hi Welcome...</h1>
-				<em class="not-italic"
-					>Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em
-				>
-				<p>
-					Blog ini berisi catatan belajar saya dalam bidang JavaScript, Python, dan teknologi web.
-					Saya juga menulis hal-hal yang saya pelajari seputar matematika dasar dan bahasa Inggris.
-					Semua catatan ditulis dengan gaya santai dan apa adanya. Kalau kamu juga belajar hal yang
-					sama, semoga bisa jadi teman belajar yang menyenangkan.
-				</p>
+<Layout>
+	<header>
+		<h1>👋 Selamat datang!</h1>
+		<em class="not-italic">Tempat saya mencatat perjalanan belajar sebagai programmer otodidak.</em>
+		<p>
+			Saya seorang pembelajar otodidak yang suka ngoprek kode, menjelajahi ide, dan membangun hal-hal menarik. Yuk, kenalan lebih jauh atau lihat beberapa proyekku!
+		</p>
 
-				<nav class="flex items-center gap-3.5">
-					{
-						cta.map((i) => (
-							<Button label={i.label} primary={i.primary} url={i.url} customClass="text-2xl" />
-						))
-					}
-				</nav>
-			</section>
-		</Prose>
+		<nav class="flex items-center gap-2">
+			{cta?.map((i: any) => <Button href={i.url} label={i.label} primary={i.primary} />)}
+		</nav>
 	</header>
-	<main class="my-auto mt-32 px-4 md:px-10 lg:mt-56">
-		<Prose className="prose-h1:font-normal">
-			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">Featured Projects</h1>
-			<ListProjects items={projects} />
-			<Button
-				url="/projects/"
-				customClass="text-lg"
-				primary={true}
-				label="👉️ View all projects ..."
-			/>
-		</Prose>
-
-		<Prose className="prose-h1:font-normal mt-24 mb-10">
-			<h1 class="block border-b border-dashed border-b-neutral-700 pb-2">New Notes</h1>
-			<ListNotes items={notes} />
-			<Button url="/notes/" customClass="text-lg" primary={true} label="👉️ View all notes ..." />
-		</Prose>
+	<main class="mt-14">
+		<ProjectCards heading="Last Projects" items={featuredProjects} />
 	</main>
-</BaseLayout>
+</Layout>
