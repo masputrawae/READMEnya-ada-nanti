@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content'
 import { getAllPosts } from '../utils/getPosts'
 import { timeFormat } from '../utils/timeFormat'
 import { capitalizeEachWord } from '../utils/capitalizeEachWord'
+
+import Search from 'astro-pagefind/components/Search'
 import Layout from '../layouts/Layout.astro'
 import Badge from '../components/Badge.astro'
 
@@ -11,7 +13,6 @@ const notes = await getAllPosts()
 const getAllContent = await getCollection('vaults')
 const getTags = getAllContent.flatMap(i => i.data.tags)
 const tags = [...new Set(getTags)]
-
 
 const meta = {
 	title: 'Notes',
@@ -23,9 +24,11 @@ const meta = {
 	<header>
 		<h1>Sedang Mencari Resep!</h1>
 
-		<nav class="flex flex-wrap gap-1.5">
+		<nav class="flex flex-wrap gap-2 mb-10">
 			{tags.map(i => <Badge href={`/tag/${i}/`} label={capitalizeEachWord(i || '')} />)}
 		</nav>
+
+		<Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
 
 		<p>
 			Pernah nggak sih kalian bertanya-tanya, kenapa nasi goreng di warung pinggir jalan itu bisa
@@ -61,4 +64,39 @@ const meta = {
 			}
 		</ul>
 	</main>
+	<style is:global>
+		.pagefind-ui {
+			--pagefind-ui-scale: 0.75;
+			--pagefind-ui-primary: navy;
+			--pagefind-ui-text: rgb(255, 255, 255);
+			--pagefind-ui-border: rgb(52, 52, 52);
+			--pagefind-ui-border-width: 1px;
+			--pagefind-ui-border-radius: 0.25rem;
+			--pagefind-ui-font: sans-serif;
+			--pagefind-ui-background: rgb(27, 27, 27);
+			width: 100%;
+		}
+		.pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin-top: 0px;
+			z-index: 9999;
+			padding: 0 2em 1em;
+			overflow-y: auto;
+			box-shadow:
+				0 10px 10px -5px rgb(41, 41, 41),
+				0 2px 2px 0 rgba(0, 0, 0, 0.1);
+			border-bottom-right-radius: var(--pagefind-ui-border-radius);
+			border-bottom-left-radius: var(--pagefind-ui-border-radius);
+			background-color: var(--pagefind-ui-background);
+		}
+		.pagefind-ui .pagefind-ui__result-link {
+			color: var(--pagefind-ui-primary);
+		}
+
+		.pagefind-ui .pagefind-ui__result-excerpt {
+			color: var(--pagefind-ui-text);
+		}
+	</style>
 </Layout>

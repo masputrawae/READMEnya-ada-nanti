@@ -9,6 +9,7 @@ import icon from 'astro-icon'
 import netlify from '@astrojs/netlify'
 import sitemap from '@astrojs/sitemap'
 import react from '@astrojs/react'
+import pagefind from "astro-pagefind";
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,7 +33,8 @@ export default defineConfig({
 		sitemap(),
 		icon(),
 		mdx(),
-		react()
+		react(),
+    pagefind()
 	],
 	vite: {
 		plugins: [tailwindcss()]
