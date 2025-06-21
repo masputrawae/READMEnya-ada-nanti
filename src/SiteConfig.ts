@@ -54,8 +54,8 @@ export const MENUS: MenuConfig = {
 		{ label: 'About', url: '/about/' }
 	],
 	social: [
-		{ label: 'Instagram', url: 'https://example.com', icon: 'icon-instagram' },
-		{ label: 'Github', url: 'https://example.com', icon: 'icon-github' },
-		{ label: 'Discord', url: 'https://example.com', icon: 'icon-discord' }
+		{ label: 'Instagram', url: 'https://www.instagram.com/masputrawae/', icon: 'icon-instagram' },
+		{ label: 'Github', url: 'https://github.com/masputrawae/', icon: 'icon-github' },
+		{ label: 'Discord', url: 'https://discord.gg/nM4EP8DJFZ', icon: 'icon-discord' }
 	]
 }
