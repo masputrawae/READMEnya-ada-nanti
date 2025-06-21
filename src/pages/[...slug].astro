@@ -34,11 +34,11 @@ const getDate = new Date(post.data.date || 0).toISOString()
 ---
 
 <Layout meta={meta}>
-  <article>
+  <article class="prose-a:text-blue-400 prose-code:font-normal">
     <Content/>
-    <time datetime={getDate} class="mt-10">
+    <time datetime={getDate} class="mt-10 text-sm">
       <strong>Dibuat Pada Tanggal: </strong>
-      <span class="hidden lg:inline">{timeFormat(getDate, true)}</span>
+      <span>{timeFormat(getDate, true)}</span>
     </time>
   </article>
 </Layout>

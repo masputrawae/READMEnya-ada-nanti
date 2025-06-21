@@ -9,7 +9,9 @@ import icon from 'astro-icon'
 import netlify from '@astrojs/netlify'
 import sitemap from '@astrojs/sitemap'
 import react from '@astrojs/react'
-import pagefind from "astro-pagefind";
+import pagefind from 'astro-pagefind'
+
+import remarkObsidianCallout from 'remark-obsidian-callout'
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +19,10 @@ export default defineConfig({
 	image: {
 		domains: ['astro.build'],
 		remotePatterns: [{ protocol: 'https' }]
+	},
+	markdown: {
+		// @ts-ignore
+		remarkPlugins: [[remarkObsidianCallout, { titleTextTagName: 'strong', iconTagName: 'strong' }]]
 	},
 	integrations: [
 		brainDbAstro({
@@ -34,7 +40,7 @@ export default defineConfig({
 		icon(),
 		mdx(),
 		react(),
-    pagefind()
+		pagefind()
 	],
 	vite: {
 		plugins: [tailwindcss()]

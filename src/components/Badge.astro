@@ -10,7 +10,7 @@ interface BadgeParams {
 const { href, label, sizes = 'text-xs', classes = '', ...rest } = Astro.props as BadgeParams
 
 const className =
-	`font-semibold rounded-full px-4 py-2 shadow-sm shadow-black border border-neutral-800 transition-all duration-200 hover:shadow-md hover:bg-neutral-800 hover:text-white no-underline text-shadow-md text-shadow-black inline-flex w-fit ${classes} ${sizes}`.trim()
+	`font-semibold rounded-full px-4 py-2 shadow-sm shadow-black border border-neutral-800 transition-all duration-200 hover:shadow-md hover:bg-neutral-800 hover:text-white no-underline text-shadow-md text-shadow-black text-neutral-300 inline-flex w-fit ${classes} ${sizes}`.trim()
 ---
 
 {
