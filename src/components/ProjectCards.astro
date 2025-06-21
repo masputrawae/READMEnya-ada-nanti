@@ -16,7 +16,7 @@ const { items, heading } = Astro.props as ProjectsCard
 ---
 
 <section>
-	{heading && <h1>{heading}</h1>}
+	{heading && <h2 class="text-4xl">{heading}</h2>}
 	{
 		items?.map((i: any) => (
 			<figure class="grid items-center border-t border-dashed border-t-neutral-700 py-10 md:grid-cols-2 md:gap-10 xl:gap-28">
@@ -29,7 +29,7 @@ const { items, heading } = Astro.props as ProjectsCard
 						format={'webp'}
 						loading={`lazy`}
 						layout={`full-width`}
-						class={`size-full object-cover`}
+						class={`size-full object-fill`}
 					/>
 				</picture>
 				<figcaption class="m-auto grid gap-0.5">

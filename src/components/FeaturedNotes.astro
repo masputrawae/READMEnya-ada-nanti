@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets'
+import { getAllPosts } from '../utils/getPosts'
+
+const featuredNotes = await getAllPosts('Permanent', null, true)
+---
+
+<section class="mb-10">
+	<div
+		class="flex space-x-4 overflow-x-auto p-4"
+		style="scrollbar-width: thin; scrollbar-color: #3a3a3a #0000002a;"
+	>
+		{
+			featuredNotes.map(i => (
+				<figure class="relative flex h-auto min-w-[420px] cursor-pointer items-center overflow-hidden rounded-xl shadow-md shadow-black">
+					<picture class="flex aspect-video items-center overflow-hidden">
+						<Image
+							src={i.data.thumbnail || 'https://placehold.co/600/400'}
+							alt={i.data.title || 'Image'}
+							width={600}
+							height={400}
+              loading={`eager`}
+							class={`size-full object-fill brightness-50`}
+						/>
+					</picture>
+					<figcaption class="absolute bottom-4 left-4 text-white text-shadow-black text-shadow-md">
+						<p>{i.data.description}</p>
+						<a href={`/${i.id}/`} class="font-bold text-lg text-amber-500">
+							{i.data.title}
+						</a>
+					</figcaption>
+				</figure>
+			))
+		}
+	</div>
+</section>

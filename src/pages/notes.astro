@@ -1,18 +1,9 @@
 ---
-import { getCollection } from 'astro:content'
-import { getAllPosts } from '../utils/getPosts'
-import { timeFormat } from '../utils/timeFormat'
-import { capitalizeEachWord } from '../utils/capitalizeEachWord'
-
 import Search from 'astro-pagefind/components/Search'
 import Layout from '../layouts/Layout.astro'
-import Badge from '../components/Badge.astro'
-
-const notes = await getAllPosts()
-
-const getAllContent = await getCollection('vaults')
-const getTags = getAllContent.flatMap(i => i.data.tags)
-const tags = [...new Set(getTags)]
+import FeaturedNotes from '../components/FeaturedNotes.astro'
+import ListNotes from '../components/ListNotes.astro'
+import TagCloud from '../components/TagCloud.astro'
 
 const meta = {
 	title: 'Notes',
@@ -22,14 +13,9 @@ const meta = {
 
 <Layout meta={meta}>
 	<header>
-		<h1>Sedang Mencari Resep!</h1>
-
-		<nav class="flex flex-wrap gap-2 mb-10">
-			{tags.map(i => <Badge href={`/tag/${i}/`} label={capitalizeEachWord(i || '')} />)}
-		</nav>
-
-		<Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
-
+    <h1>Sedang Mencari Resep!</h1>
+    <FeaturedNotes />
+		<TagCloud />
 		<p>
 			Pernah nggak sih kalian bertanya-tanya, kenapa nasi goreng di warung pinggir jalan itu bisa
 			seenak itu? 🤔 Aku sudah mencoba berbagai resep dari seluruh penjuru dunia—dari dapur rumah
@@ -41,33 +27,13 @@ const meta = {
 		</p>
 	</header>
 	<main class="mt-14">
-		<h2>All Notes</h2>
-		<ul class="m-0 list-none p-0">
-			{
-				notes.map((i: any) => (
-					<li class="group border-t border-dashed border-t-neutral-500 py-2.5">
-						<a href={`/${i.id}/`} class="no-underline">
-							<span class="block text-lg text-neutral-100 group-hover:text-amber-500">
-								{i.data.title}
-							</span>
-							<time
-								class="flex items-center justify-between text-neutral-500 group-hover:text-white"
-								datetime={new Date(i.data.date || 0).toISOString()}
-							>
-								<span>Created On:</span>
-								<span class="hidden lg:inline">{timeFormat(i.data.date, true)}</span>
-								<span class="lg:hidden">{timeFormat(i.data.date, false)}</span>
-							</time>
-						</a>
-					</li>
-				))
-			}
-		</ul>
+    <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
+		<ListNotes />
 	</main>
-	<style is:global>
+	<style is:inline>
 		.pagefind-ui {
 			--pagefind-ui-scale: 0.75;
-			--pagefind-ui-primary: navy;
+			--pagefind-ui-primary: rgb(210, 210, 210);
 			--pagefind-ui-text: rgb(255, 255, 255);
 			--pagefind-ui-border: rgb(52, 52, 52);
 			--pagefind-ui-border-width: 1px;

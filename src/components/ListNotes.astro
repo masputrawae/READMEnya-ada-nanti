@@ -1,0 +1,31 @@
+---
+import { getAllPosts } from '../utils/getPosts'
+import { timeFormat } from '../utils/timeFormat'
+
+const notes = await getAllPosts()
+---
+
+<section>
+	<h2>All Notes</h2>
+	<ul class="m-0 list-none p-0">
+		{
+			notes.map((i: any) => (
+				<li class="group border-t border-dashed border-t-neutral-500 py-2.5">
+					<a href={`/${i.id}/`} class="no-underline">
+						<span class="block text-lg text-neutral-100 group-hover:text-amber-500">
+							{i.data.title}
+						</span>
+						<time
+							class="flex items-center justify-between text-neutral-500 group-hover:text-white"
+							datetime={new Date(i.data.date || 0).toISOString()}
+						>
+							<span>Created On:</span>
+							<span class="hidden lg:inline">{timeFormat(i.data.date, true)}</span>
+							<span class="lg:hidden">{timeFormat(i.data.date, false)}</span>
+						</time>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</section>

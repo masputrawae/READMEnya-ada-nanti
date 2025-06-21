@@ -1,0 +1,21 @@
+---
+import Badge from './Badge.astro'
+import { getCollection } from 'astro:content'
+import { capitalizeEachWord } from '../utils/capitalizeEachWord'
+import { Icon } from 'astro-icon/components'
+
+const getAllContent = await getCollection('vaults')
+const getTags = getAllContent.flatMap(i => i.data.tags)
+const tags = [...new Set(getTags)]
+---
+
+<nav class="mb-10 flex flex-wrap gap-2">
+	{
+		tags.map(i => (
+			<Badge href={`/tag/${i}/`} classes="gap-2 items-center">
+				<Icon name="icon-sparkles" class="text-amber-500" />
+				{capitalizeEachWord(i || '')}
+			</Badge>
+		))
+	}
+</nav>
