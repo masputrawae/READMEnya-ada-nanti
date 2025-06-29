@@ -21,6 +21,6 @@ const allNotes = await getPosts({type: 'NotProjects'})
     <TagCloud/>
   </header>
 	<main class="mt-10">
-    <ListNotes items={allNotes} />
+    <ListNotes items={allNotes} label="All Notes" />
 	</main>
 </BaseLayout>

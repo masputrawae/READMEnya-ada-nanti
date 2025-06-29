@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+import { getCollection } from 'astro:content'
+import { render } from 'astro:content'
+import Prose from '../components/Prose.astro'
+
+export const getStaticPaths = async () => {
+	const allPosts = await getCollection('vault')
+
+	return [...allPosts.map(entry => ({ params: { slug: entry.id }, props: { entry: entry } }))]
+}
+const { entry } = Astro.props
+const { Content } = await render(entry)
+---
+
+<BaseLayout>
+	<article>
+		<Prose>
+			<Content />
+		</Prose>
+	</article>
+</BaseLayout>
