@@ -1,0 +1,226 @@
+{
+  "main": {
+    "id": "9219d989f37921a9",
+    "type": "split",
+    "children": [
+      {
+        "id": "64cdc58771ea0e8b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5538519b2abcbd8a",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Tab baru"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9b870a27a7111285",
+    "type": "split",
+    "children": [
+      {
+        "id": "4f85f54243bab4ce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b025f92d53a6441",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Penjelajah berkas"
+            }
+          },
+          {
+            "id": "2466b0b90f3895e0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#javascript",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Penelusuran"
+            }
+          },
+          {
+            "id": "dc082e832bc1aad1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Penanda"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "af61283664a75dea",
+    "type": "split",
+    "children": [
+      {
+        "id": "13a7b2e3e993c2b9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "43abac36f1257dcf",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Fleeting Notes/20250626072343 Asynchronous Di JavaScript.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlink pada 20250626072343 Asynchronous Di JavaScript"
+            }
+          },
+          {
+            "id": "81a7d9670dd6c8e1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Tautan Keluar"
+            }
+          },
+          {
+            "id": "b35e4e00dcbb50cd",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "54f99ae2e46602ff",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Kerangka"
+            }
+          },
+          {
+            "id": "656165619be6c95d",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "canvas:Buat kanvas baru": false,
+      "daily-notes:Buka catatan hari ini": false,
+      "switcher:Buka peralih cepat": false,
+      "graph:Buka tampilan grafik": false,
+      "templates:Masukkan template": false,
+      "command-palette:Buka palet perintah": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "5538519b2abcbd8a",
+  "lastOpenFiles": [
+    "Vault/Notes/20250628171342 Operator Perbandingan Di JavaScript.md",
+    "Vault/Notes/20250628161357 Ternary Operator Di JavaScript.md",
+    "Vault/Notes/20250628151617 Membanggakan Diri Sendiri Kepada Orang Lain.md",
+    "Vault/Notes/20250628073045 Menghilangkan Duplikat Pada Array di JavaScript.md",
+    "Vault/Notes/20250628071334 Callback Function di JavaScript.md",
+    "Vault/Notes/20250628070829 Promise Di JavaScript.md",
+    "Vault/Notes/20250628065020 async-await di JavaScript.md",
+    "Vault/Notes/20250627234640 Asynchronous Di JavaScript.md",
+    "Vault/Notes/20250627165415 Logical AND Operator di JavaScript.md",
+    "Vault/Notes/20250627164057 Jenis Nilai Yang Falsy dan Truthy JavaScript.md",
+    "Vault/Notes/20250627161909 Logical OR Operator di JavaScript.md",
+    "Vault/Notes/20250627160058 Nullis Coalescing Operator.md",
+    "Vault/Notes/20250625012240 Breakpoint SCSS.md",
+    "Vault/Notes/20250625011618 Cara Cepat Buat Typescale Dengan SCSS.md",
+    "Vault/Notes/20250624161056 Membuat Slugify Sederhana Di JavaScript.md",
+    "Vault/Notes/20250623211931 Fenomena Lemot Tapi Ngak Lemot.md",
+    "Vault/Notes/20250623124343 Mengurutkan Array Berdasarkan Nilai Boolean Di JavaScript.md",
+    "Vault/Notes/20250622075934 Tipe Data Di Python.md",
+    "Vault/Notes/20250621102028 Antara Mobile First atau Desktop First.md",
+    "Vault/Notes/20250621101648 Sudo.md",
+    "Vault/Notes/20250621101503 Tandai Link Halaman Aktif di Astro.md",
+    "Vault/Notes/20250621095130 Tipe Data Di JavaScript.md",
+    "Vault/Notes/20250620221110 Ubah String Ke Number Di JavaScript.md",
+    "Vault/Notes/20250620070610 Strict Mode Di JavaScript.md",
+    "Vault/Notes/20250620070056 Variabel Tanpa Keyword Di JavaScript.md",
+    "Vault/Notes/20250615144253 Fungsi Slice Di JavaScript.md",
+    "Data/topic.json",
+    "Templates",
+    "Image/random9.jpeg",
+    "Image/random8.jpeg",
+    "Image/random7.jpeg",
+    "Image/random6.jpeg",
+    "Image/random5.jpeg",
+    "Image/random4.jpeg",
+    "Image/random3.jpeg",
+    "Image/random2.jpeg",
+    "Image/random15.jpeg",
+    "Image/random14.jpeg",
+    "Image",
+    "content/vault",
+    "content/vault/Image",
+    "pages/gallery.astro",
+    "content/vault/Notes/References",
+    "content/vault/Notes/Permanent",
+    "content/vault/Notes/Inbox",
+    "content/vault/Notes"
+  ]
+}
