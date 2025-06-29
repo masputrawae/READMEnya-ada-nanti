@@ -8,6 +8,11 @@ export const SITE_DEFAULT = {
 }
 
 export const MENUS = {
+	cta: [
+		{ label: 'About', href: '/about/', primary: true },
+		{ label: 'My Notes', href: '/notes/', primary: false }
+	],
+
 	main: [
 		{ label: 'Home', href: '/', icon: 'icon-home' },
 		{ label: 'Projects', href: '/projects/', icon: 'icon-wrench-screwdriver' },

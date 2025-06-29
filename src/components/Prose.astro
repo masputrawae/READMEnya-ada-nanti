@@ -1,0 +1,7 @@
+---
+const {className = ''} = Astro.props
+---
+
+<div class={`prose prose-invert prose-neutral text-sm max-w-full prose-headings:font-normal prose-a:text-blue-400 xl:text-base ${className}`}>
+  <slot />
+</div>

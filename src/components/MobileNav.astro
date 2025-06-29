@@ -1,0 +1,14 @@
+---
+import Brand from './Brand.astro'
+
+import { Icon } from 'astro-icon/components'
+---
+
+<div
+	class="sticky top-0 left-0 flex justify-between border-b-2 border-b-neutral-800 bg-neutral-900 px-5 py-2.5 shadow-sm shadow-black lg:hidden"
+>
+	<Brand />
+	<button onclick="sidebarOpen()">
+		<Icon name="icon-bar-3" class="size-6 text-white" />
+	</button>
+</div>

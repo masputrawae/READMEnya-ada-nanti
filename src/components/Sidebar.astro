@@ -1,0 +1,90 @@
+---
+import Brand from './Brand.astro'
+
+import { MENUS } from '../site.config'
+import { relUrl } from '../utils/setUrl'
+import { Icon } from 'astro-icon/components'
+
+const menus = [MENUS.main, MENUS.social]
+---
+
+<header class="sidebar" id="sidebar">
+	<div class="sidebar__header">
+		<Brand />
+		<button onclick="sidebarClose()" class="lg:hidden">
+			<Icon name="icon-x-mark" class="size-6" />
+		</button>
+	</div>
+	{
+		menus.map(menu => (
+			<nav class="sidebar__nav">
+				{menu.map(item => {
+					const { pathname } = Astro.url
+					const label = item.label
+					const icon = item.icon
+					const url = relUrl(item.href)
+					const isActive = url === pathname || (url !== relUrl('/') && pathname.startsWith(url))
+					const classes = `nav-url ${isActive ? 'nav-url--active' : ''}`
+
+					return (
+						<a href={url} class={classes}>
+							<Icon name={icon} />
+							<span>{label}</span>
+						</a>
+					)
+				})}
+			</nav>
+		))
+	}
+</header>
+
+<div class="overlay-sidebar" id="overlay-sidebar" onclick="sidebarClose()"></div>
+
+<style is:global>
+	@reference "../styles/global.css";
+
+	.sidebar {
+		@apply invisible fixed top-0 left-0 z-50 grid h-dvh w-xs -translate-x-full grid-rows-[auto_minmax(0,1fr)_auto] gap-5 border-r border-r-neutral-800 bg-neutral-900 p-5 shadow-sm shadow-black transition-all duration-500 lg:visible lg:sticky lg:translate-none;
+	}
+
+	.sidebar--active {
+		@apply visible translate-none;
+	}
+
+	.sidebar__header {
+		@apply flex items-center justify-between;
+	}
+
+	.sidebar__nav {
+		@apply flex flex-col gap-1;
+	}
+
+	.nav-url {
+		@apply flex items-center gap-1 px-4 py-2 text-neutral-400 transition-colors duration-300 hover:text-white;
+	}
+
+	.nav-url--active {
+		@apply rounded-md border border-neutral-800 text-white shadow-sm shadow-black;
+	}
+
+	.overlay-sidebar {
+		@apply invisible fixed top-0 left-0 z-40 size-full bg-black/80 opacity-0 transition-all duration-500 lg:hidden;
+	}
+	.overlay-sidebar--active {
+		@apply visible opacity-100;
+	}
+</style>
+
+<script is:inline>
+	const sidebar = document.getElementById('sidebar')
+	const overlay = document.getElementById('overlay-sidebar')
+
+	function sidebarOpen() {
+		sidebar?.classList.add('sidebar--active')
+		overlay?.classList.add('overlay-sidebar--active')
+	}
+	function sidebarClose() {
+		sidebar?.classList.remove('sidebar--active')
+		overlay?.classList.remove('overlay-sidebar--active')
+	}
+</script>

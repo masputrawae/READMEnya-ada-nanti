@@ -13,7 +13,7 @@ const vault = defineCollection({
     update: z.coerce.date().optional(),
     thumbnail: z.string().optional(),
     featured: z.boolean().optional(),
-    type: z.enum(["Projects"]).optional(),
+    type: z.enum(["Projects", "Notes", "Series"]).optional(),
   })
 })
 

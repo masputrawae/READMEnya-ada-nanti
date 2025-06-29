@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets'
+import { SITE_DEFAULT } from '../site.config'
+import { relUrl } from '../utils/setUrl'
+
+const title = SITE_DEFAULT.title
+const logo = SITE_DEFAULT.logo
+const tagline = SITE_DEFAULT.tagline
+---
+
+<figure
+	class="flex cursor-pointer items-center gap-1.5"
+	onclick={`window.location.href="${relUrl('/')}"`}
+>
+	<Image
+		src={logo}
+		alt={title}
+		width={56}
+		height={56}
+		format="webp"
+		layout="constrained"
+		loading="eager"
+		class="block size-14 rounded-full border-2 border-neutral-900 shadow-sm shadow-black"
+	/>
+
+	<figcaption class="grid">
+		<strong class="text-xl text-white text-shadow-black text-shadow-sm">{title}</strong>
+		<em class="text-xs not-italic text-shadow-black text-shadow-sm">{tagline}</em>
+	</figcaption>
+</figure>

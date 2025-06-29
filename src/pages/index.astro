@@ -1,10 +1,34 @@
 ---
-import Badge from '../components/Badge.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Prose from '../components/Prose.astro'
+import Button from '../components/Button.astro'
+import ListProjects from '../components/ListProjects.astro'
+
+import { relUrl } from '../utils/setUrl.ts'
+import { getPosts } from '../utils/posts.ts'
+import { Content } from '../content/Home.md'
+import { MENUS } from '../site.config.ts'
+
+const cta = MENUS.cta
+const featuredProjects = await getPosts({ type: 'Projects', limit: 2, featured: false })
 ---
 
 <BaseLayout>
-	<Badge> Testing 1 </Badge>
-	<Badge> Testing 2 </Badge>
-	<Badge> Testing 3 </Badge>
+	<header>
+		<Prose className="prose-em:not-italic">
+			<Content />
+		</Prose>
+		<nav class="mt-10 flex items-center gap-2">
+			{
+				cta.map(i => (
+					<Button href={relUrl(i.href)} primary={i.primary} className="text-lg">
+						{i.label}
+					</Button>
+				))
+			}
+		</nav>
+	</header>
+	<main class="mt-10">
+		<ListProjects items={featuredProjects} label="Top Projects" />
+	</main>
 </BaseLayout>

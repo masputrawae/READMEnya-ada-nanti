@@ -1,0 +1,34 @@
+---
+interface Button {
+	href?: string | null
+	primary?: boolean
+	className?: string
+}
+
+const { href = null, primary = false, className = '', ...rest } = Astro.props as Button
+const classes = `btn ${primary ? 'btn--primary' : ''} ${className}`.trim()
+---
+
+{
+	href ? (
+		<a href={href} class={classes} {...rest}>
+			<slot />
+		</a>
+	) : (
+		<button class={classes} {...rest}>
+			<slot />
+		</button>
+	)
+}
+
+<style is:global>
+	@reference "../styles/global.css";
+
+	.btn {
+		@apply inline-flex w-fit cursor-pointer items-center gap-1.5 rounded-md border border-neutral-700 px-7 py-2.5 font-bold shadow-sm shadow-black transition-colors duration-300 text-shadow-black text-shadow-sm hover:bg-neutral-800 hover:text-white;
+	}
+
+	.btn--primary {
+		@apply bg-neutral-700;
+	}
+</style>

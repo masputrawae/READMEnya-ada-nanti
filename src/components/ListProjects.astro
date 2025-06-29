@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets'
+import { sortByDate, sortByFeatured } from '../utils/posts'
+import { relUrl } from '../utils/setUrl'
+import { titleWord } from '../utils/titleWord.ts'
+import Button from './Button.astro'
+import Badge from './Badge.astro'
+import { Icon } from 'astro-icon/components'
+
+const { items, label } = Astro.props
+const projects = sortByFeatured(sortByDate(items))
+---
+
+<h2 class="mb-2 text-2xl text-white text-shadow-black text-shadow-sm">{label}</h2>
+<div id="projectContainer">
+	{
+		projects.map(item => {
+			const href = relUrl(`/${item.id}/`)
+			const title = titleWord(item.data.title)
+			const thumbnail = item.data.thumbnail
+			const description = item.data.description
+			const featured = item.data.featured
+
+			return (
+				<article class="project group">
+					<picture class="project__picture">
+						<Image
+							src={thumbnail}
+							alt={title}
+							width={1920}
+							height={1080}
+							format="webp"
+							quality="high"
+							layout="full-width"
+							class="project__img"
+						/>
+					</picture>
+					<section class="project__body">
+						<a href={href} class="project__title">
+							{featured && <Icon name="icon-sparkles" class="text-amber-500" />}
+							{title}
+						</a>
+						<nav class="project__tags">
+							{item.data.tags.map((tag: string) => {
+								const tagTitle = titleWord(tag)
+								const href = relUrl(`/tag/${tag}/`)
+
+								return (
+									<Badge href={href} className="text-xs">
+										{tagTitle}
+									</Badge>
+								)
+							})}
+						</nav>
+						<p class="project__description">{description}</p>
+						<Button className="text-lg">View Projects</Button>
+					</section>
+				</article>
+			)
+		})
+	}
+</div>
+
+<style is:global>
+	@reference "../styles/global.css";
+
+	.project {
+		@apply grid items-center gap-5 border-t border-t-neutral-700 py-10 md:grid-cols-2 md:gap-5 xl:gap-10 m-auto;
+	}
+
+	.project__body {
+		@apply grid items-center gap-5 text-sm leading-relaxed text-neutral-400;
+	}
+
+	.project__title {
+		@apply flex items-center gap-1.5 text-2xl text-white text-shadow-black text-shadow-sm;
+	}
+
+	.project__picture {
+		@apply block aspect-video overflow-hidden rounded-2xl shadow-md shadow-black/70 transition-shadow duration-300 group-hover:shadow-sm m-auto;
+	}
+
+	.project__img {
+		@apply w-full object-contain transition-transform duration-300 ease-initial group-hover:scale-110;
+	}
+
+	.project__tags {
+		@apply flex items-center gap-2;
+	}
+</style>
+
+<script is:inline>
+	document.getElementById('projectContainer').addEventListener('click', e => {
+		if (e.target.tagName === 'BUTTON') {
+			const article = e.target.closest('article')
+			const link = article.querySelector('a')
+			if (link) link.click()
+		}
+	})
+</script>
