@@ -8,6 +8,19 @@ interface GetPosts {
 
 import { getCollection } from 'astro:content'
 
+// SORTED BY DATE
+export function sortByDate(items: any) {
+	return [...items].sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+}
+
+// SORTED BY FEATURED
+export function sortByFeatured(items: any) {
+	return [...items].sort((a, b) =>
+		a.data.featured === b.data.featured ? 0 : a.data.featured ? -1 : 1
+	)
+}
+
+// GET POST
 export async function getPosts(val: GetPosts) {
 	const allPosts = await getCollection('vault')
 	let posts
@@ -19,17 +32,48 @@ export async function getPosts(val: GetPosts) {
 		posts = allPosts.filter((i) => i.data.type === val.type)
 	}
 	const featured = val.featured ? posts.filter((i) => i.data.featured) : posts
-	return val.limit ? featured.slice(0, val.limit) : featured
+	const limited = val.limit ? featured.slice(0, val.limit) : featured
+	return limited
+		.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+		.sort((a, b) => (a.data.featured === b.data.featured ? 0 : a.data.featured ? -1 : 1))
 }
 
-// SORTED BY DATE
-export function sortByDate(items:any) {
-	return [...items].sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-}
+// TIME FORMAT
+export function timeFormat(dateInput: string, longDate: boolean) {
+	const date = new Date(dateInput)
+	const hari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu']
+	const bulan = [
+		'Januari',
+		'Februari',
+		'Maret',
+		'April',
+		'Mei',
+		'Juni',
+		'Juli',
+		'Agustus',
+		'September',
+		'Oktober',
+		'November',
+		'Desember'
+	]
 
-// SORTED BY FEATURED
-export function sortByFeatured(items:any) {
-	return [...items].sort((a, b) =>
-		a.data.featured === b.data.featured ? 0 : a.data.featured ? -1 : 1
-	)
+	const namaHari = hari[date.getDay()]
+	const tanggal = date.getDate()
+	const namaBulan = bulan[date.getMonth()]
+	const tahun = date.getFullYear()
+
+	let jam = date.getHours()
+	const menit = date.getMinutes().toString().padStart(2, '0')
+
+	const ampm = jam >= 12 ? 'PM' : 'AM'
+	jam = jam % 12
+	jam = jam ? jam : 12
+
+	let setDate
+
+	longDate
+		? (setDate = `${namaHari}, ${tanggal} ${namaBulan} ${tahun}  - Jam ${jam}:${menit} ${ampm}`)
+		: (setDate = `${tanggal} ${namaBulan} ${tahun}`)
+
+	return setDate
 }

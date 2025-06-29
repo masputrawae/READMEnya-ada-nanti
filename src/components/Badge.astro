@@ -21,10 +21,10 @@ const classes = `badge ${className}`.trim()
 	)
 }
 
-<style is:global>
+<style itemscope>
 	@reference "../styles/global.css";
 
 	.badge {
-		@apply inline-flex w-fit cursor-pointer items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-800 px-4 py-2 font-bold shadow-sm shadow-black transition-colors duration-300 text-shadow-black text-shadow-sm hover:bg-neutral-700 hover:text-white;
+		@apply inline-flex w-fit cursor-pointer items-center gap-1.5 rounded-full border border-neutral-800 bg-neutral-900 px-4 py-2 font-bold shadow-sm shadow-black transition-colors duration-300 text-shadow-black text-shadow-sm hover:bg-neutral-800 hover:text-white;
 	}
 </style>

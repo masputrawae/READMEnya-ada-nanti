@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Prose from '../components/Prose.astro'
+import TagCloud from '../components/TagCloud.astro'
+import ListNotes from '../components/ListNotes.astro'
+
+import {getPosts} from '../utils/posts.ts'
+import { Content, frontmatter } from '../content/NotesContent.md'
+import { Image } from 'astro:assets'
+
+const allNotes = await getPosts({type: 'NotProjects'})
+---
+
+<BaseLayout>
+	<header>
+    <Prose className="prose-em:not-italic mt-10">
+			<Content />
+      <h2>All Tags</h2>
+		</Prose>
+    <br>
+    <TagCloud/>
+  </header>
+	<main class="mt-10">
+    <ListNotes items={allNotes} />
+	</main>
+</BaseLayout>

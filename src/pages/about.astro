@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Prose from '../components/Prose.astro'
+import { Content, frontmatter } from '../content/AboutContent.md'
+import { Image } from 'astro:assets'
+---
+
+<BaseLayout>
+	<header>
+		<Image 
+      src={frontmatter.thumbnail} 
+      alt="Thumbnail" 
+      inferSize={true}
+      class="rounded-2xl shadow-md shadow-black"
+    />
+
+		<Prose className="prose-em:not-italic mt-10">
+			<Content />
+		</Prose>
+	</header>
+</BaseLayout>

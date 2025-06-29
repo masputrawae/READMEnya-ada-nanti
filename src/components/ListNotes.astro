@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon/components'
+import { timeFormat } from '../utils/posts'
+import { relUrl } from '../utils/setUrl'
+
+const { items } = Astro.props
+---
+
+<h2 class="mt-10 text-2xl text-white">All Notes</h2>
+<nav class="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+	{
+		items.map((item: any) => {
+			const href = relUrl(`/${item.id}/`)
+			const title = item.data.title
+			const isoDate = new Date(item.data.date).toISOString()
+			const fullDate = timeFormat(isoDate, true)
+			const shortDate = timeFormat(isoDate, false)
+			const featured = item.data.featured
+
+			return (
+				<a href={href} class="note">
+					<strong class="note__title">
+						{featured && <Icon name="icon-sparkles" class="text-amber-500" />}
+						<span>{title}</span>
+					</strong>
+					<time datetime={isoDate} class="note__date">
+						<span class="note__time note__time--full-date">Publish On: {fullDate}</span>
+						<span class="note__time note__time--short-date">Publish On: {shortDate}</span>
+					</time>
+				</a>
+			)
+		})
+	}
+</nav>
+
+<style>
+	@reference "../styles/global.css";
+	.note {
+		@apply grid rounded-2xl border-2 border-neutral-700 bg-neutral-800/90 px-6 py-3 leading-relaxed shadow-sm shadow-black hover:bg-neutral-700 transition-colors duration-300;
+	}
+
+	.note__title {
+		@apply flex items-center gap-2 text-lg text-white text-shadow-black text-shadow-md;
+	}
+
+	.note__time {
+		@apply text-sm text-neutral-400;
+	}
+
+	.note__time--full-date {
+		@apply hidden lg:inline ;
+	}
+
+	.note__time--short-date {
+		@apply lg:hidden ;
+	}
+</style>

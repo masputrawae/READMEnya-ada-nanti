@@ -1,7 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Prose from '../components/Prose.astro'
+
+import { Content, frontmatter } from '../content/ProjectContent.md'
+import { getPosts } from '../utils/posts'
+import ListProjects from '../components/ListProjects.astro'
+
+const featuredProjects = await getPosts({ type: 'Projects' })
 ---
 
 <BaseLayout>
-
+	<header>
+		<Prose>
+			<Content />
+		</Prose>
+	</header>
+	<main class="mt-10">
+		<ListProjects items={featuredProjects} />
+	</main>
 </BaseLayout>
