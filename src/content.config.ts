@@ -17,13 +17,4 @@ const vault = defineCollection({
   })
 })
 
-const topic = defineCollection({
-	loader: file('src/content/Data/topic.json'),
-	schema: z.object({
-		title: z.string(),
-		thumbnail: z.string(),
-		description: z.string()
-	})
-})
-
-export const collections = { vault, topic }
+export const collections = { vault }
