@@ -14,7 +14,6 @@ export default defineConfig({
 			root: 'src/content/Vault',
 			source: '/',
 			remarkWikiLink: true,
-			git: false,
 			url: (filePath, frontmatter) => {
 				const slug = frontmatter.slug ? String(frontmatter.slug) : generateSlug(filePath)
 				const cleanSlug = slug.replace(/^\/+/, '')

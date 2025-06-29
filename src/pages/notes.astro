@@ -5,7 +5,7 @@ import TagCloud from '../components/TagCloud.astro'
 import ListNotes from '../components/ListNotes.astro'
 
 import {getPosts} from '../utils/posts.ts'
-import { Content, frontmatter } from '../content/NotesContent.md'
+import { Content, frontmatter } from '../content/NotesPage.md'
 import { Image } from 'astro:assets'
 
 const allNotes = await getPosts({type: 'NotProjects'})
