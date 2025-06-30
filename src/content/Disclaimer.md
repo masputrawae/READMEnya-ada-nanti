@@ -1,7 +1,7 @@
 ---
 title: Disclaimer
-description: Isi Nanti
-thumbnail: 'https://picsum.photos/10/10'
+description: 'Seluruh konten yang tersedia di situs ini merupakan catatan pribadi saya, Putra, yang ditujukan sebagai dokumentasi pembelajaran, eksplorasi, eksperimen, dan refleksi pribadi. Saya tidak menjamin keakuratan, kelengkapan, atau relevansi dari informasi yang disampaikan di sini, terutama mengingat sebagian besar catatan bersifat dinamis, belum tentu lengkap, dan bisa mengandung kesalahan atau bias pemahaman.'
+thumbnail: '/default-images/notes-image.webp'
 ---
 
 # Disclaimer

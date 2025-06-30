@@ -1,7 +1,7 @@
 ---
 title: 'Notes'
-description: 'Isi Nanti'
-thumbnail: 'https://picsum.photos/1920/1080'
+description: 'Pernah nggak sih kalian bertanya-tanya, kenapa nasi goreng di warung pinggir jalan itu bisa seenak itu? 🤔 Aku sudah mencoba berbagai resep dari seluruh penjuru dunia—dari dapur rumah sampai dapur YouTube—tapi tetap saja rasanya belum nendang!'
+thumbnail: '/default-images/notes-image.webp'
 ---
 
 # Sedang Mencari Resep?

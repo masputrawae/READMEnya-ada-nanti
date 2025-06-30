@@ -3,14 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Prose from '../components/Prose.astro'
 import { Content, frontmatter } from '../content/AboutPage.md'
 import { Image } from 'astro:assets'
+
+const meta = {
+  title: frontmatter.title,
+  thumbnail: frontmatter.thumbnail,
+  description: frontmatter.description,
+  type: "profile",
+}
 ---
 
-<BaseLayout>
+<BaseLayout meta={meta}>
 	<header>
 		<Image 
       src={frontmatter.thumbnail} 
       alt="Thumbnail" 
-      inferSize={true}
+      width={1920}
+      height={1080}
       class="rounded-2xl shadow-md shadow-black"
     />
 

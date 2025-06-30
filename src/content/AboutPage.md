@@ -1,7 +1,7 @@
 ---
 title: 'About'
-description: 'Isi Nanti'
-thumbnail: 'https://picsum.photos/1920/1080'
+description: 'Saya belajar pemrograman secara otodidak karena sudah lama putus sekolah dan tidak punya akses ke pendidikan formal. Tidak ada motivasi besar atau tujuan mulia—saya cuma ingin mengisi hari-hari dengan sesuatu yang berarti, dan belajar hal baru setiap hari terasa lebih baik daripada tidak belajar apa-apa sama sekali.'
+thumbnail: '/default-images/notes-image.webp'
 ---
 
 # Halo, saya Putra

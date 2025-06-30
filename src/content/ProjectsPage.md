@@ -1,7 +1,7 @@
 ---
 title: 'Projects'
-description: 'Isi Nanti'
-thumbnail: 'https://picsum.photos/1920/1080'
+description: 'Berikut adalah beberapa proyek kecil yang saya buat selama proses belajar pemrograman secara otodidak. Tidak ada yang sempurna, tapi setiap baris kodenya adalah bagian dari perjalanan saya memahami dunia teknologi.'
+thumbnail: '/default-images/general-image.webp'
 ---
 
 # Proyek-proyek Saya
@@ -13,4 +13,3 @@ Saya membuat proyek-proyek ini untuk bersenang-senang, bereksperimen, dan mengas
 ---
 
 Catatan: Semua proyek di sini masih dalam tahap belajar. Kalau ada yang menarik atau ingin memberi masukan, saya akan sangat menghargainya!
-

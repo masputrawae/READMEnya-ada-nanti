@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import { getCollection } from 'astro:content'
 import { render } from 'astro:content'
 import Prose from '../components/Prose.astro'
+import { absUrl } from '../utils/setUrl'
 
 export const getStaticPaths = async () => {
 	const allPosts = await getCollection('vault')
@@ -12,9 +13,18 @@ export const getStaticPaths = async () => {
 }
 const { entry } = Astro.props
 const { Content } = await render(entry)
+
+const meta = {
+  title: entry.data.title,
+  thumbnail: entry.data.thumbnail || absUrl('/default-images/notes-image.webp'),
+  description: entry.data.description || `Catatan Yang Membahas ${entry.data.title}`,
+  type: 'article',
+  publicTime: new Date(entry.data.date).toISOString(),
+  tag: entry.data.tags,
+}
 ---
 
-<BaseLayout>
+<BaseLayout meta={meta}>
 	<article>
 		<Prose className="dark">
 			<Content />

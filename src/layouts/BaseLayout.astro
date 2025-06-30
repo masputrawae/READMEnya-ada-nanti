@@ -4,15 +4,87 @@ import '../styles/global.css'
 import Sidebar from '../components/Sidebar.astro'
 import MobileNav from '../components/MobileNav.astro'
 import Footer from '../components/Footer.astro'
+
+import { SITE_DEFAULT } from '../site.config'
+import { SEO } from 'astro-seo'
+import { absUrl, relUrl } from '../utils/setUrl'
+import Tag from '../pages/tag/[tag].astro'
+import { tagCloud } from '../utils/tagCloud'
+
+// ==> Meta
+const { pathname, href } = Astro.url
+const { meta = {} } = Astro.props
+
+const getAllTags = await tagCloud()
+
+const siteName = SITE_DEFAULT.siteName
+const author = SITE_DEFAULT.title
+const twitter = SITE_DEFAULT.twitter
+
+const title = pathname === relUrl('/') ? siteName : `${siteName} | ${meta.title || 'Tidak Ada Judul'}`
+const thumbnail = absUrl(meta.thumbnail || SITE_DEFAULT.thumbnail)
+const description = meta.description || SITE_DEFAULT.description
+const type = meta.type || "website"
+const publicTime = meta.publicTime || new Date().toISOString()
+const tags = meta.tag || getAllTags.map((tag:any) => tag.tag)
+
+/*
+const meta = {
+  title: ,
+  thumbnail: ,
+  description: ,
+  type: ,
+  publicTime: ,
+  tag: [],
+}
+*/
 ---
 
 <html lang="id" class="bg-neutral-900 font-serif text-neutral-300">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+    <SEO 
+      title={title}
+      description={description}
+      openGraph={{
+        basic: {
+          title: title,
+          type: type,
+          image: thumbnail,
+          url: href,
+        },
+        optional: {
+          description: description,
+          siteName: siteName
+        },
+        article: {
+          publishedTime: publicTime,
+          authors: [author],
+          tags: [tags]
+        }
+      }}
+      twitter={{
+        site: siteName,
+        title: title,
+        description: description,
+        image: thumbnail,
+        imageAlt: description,
+        card: "summary_large_image",
+        creator: twitter
+      }}
+      extend={{
+        link: [
+          { rel: 'apple-touch-icon', type: 'image/png', sizes: '192x192', href: relUrl('/favicons/apple-touch-icon.png') },
+          { rel: 'icon', type: 'image/png', sizes: '512x512', href: relUrl('/favicons/android-chrome-512x512.png') },
+          { rel: 'icon', type: 'image/png', sizes: '192x192', href: relUrl('/favicons/android-chrome-192x192.png') },
+          { rel: 'icon', type: 'image/png', sizes: '32x32', href: relUrl('/favicons/favicon-32x32.png') },
+          { rel: 'icon', type: 'image/png', sizes: '16x16', href: relUrl('/favicons/favicon-16x16.png') },
+          { rel: 'icon', type: 'image/x-icon', href: relUrl('/favicons/favicon.ico') },
+          { rel: 'manifest', href: relUrl('/favicons/site.webmanifest') },
+          { rel: 'sitemap', href: relUrl('/sitemap-index.xml') },
+        ],
+      }}
+    />
 	</head>
 	<body class="grid lg:grid-cols-[320px_minmax(0,1fr)]">
 		<Sidebar />

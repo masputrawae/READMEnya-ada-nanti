@@ -1,9 +1,10 @@
 export const SITE_DEFAULT = {
+  siteName: 'Putra Jaya',
 	title: 'Putra Jaya',
 	tagline: 'Manusia Biasa',
-	logo: '/logo.webp',
+	logo: '/default-images/logo.webp',
 	description: 'Ini ruang pribadiku untuk belajar, bereksperimen, dan bersenang-senang',
-	thumbnail: '/thumbnail.webp',
+	thumbnail: '/default-images/general-image.webp',
 	twitter: '@Masputrawae'
 }
 

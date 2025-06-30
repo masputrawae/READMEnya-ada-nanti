@@ -6,7 +6,7 @@ import ListNotes from '../../components/ListNotes.astro'
 import { titleWord } from '../../utils/titleWord'
 import type { GetStaticPaths } from 'astro'
 import { tagCloud } from '../../utils/tagCloud.js'
-import { getPosts } from '../../utils/posts'
+import { getPosts, timeFormat } from '../../utils/posts'
 
 export const getStaticPaths = (async() => {
   const allTags = await tagCloud()
@@ -25,9 +25,14 @@ const filtered = allPosts?.filter(post => post.data.tags.includes(tag.tag))
 
 const tagTitle = titleWord(tag.tag)
 const tagCount = tag.count
+const dateNow = new Date().toISOString()
+const meta = {
+  title: tagTitle,
+  description: `Semua Catatan dengan tag: ${tagTitle} total catatan ada: ${tagCount}, per: ${timeFormat(dateNow, true)}`,
+}
 ---
 
-<BaseLayout>
+<BaseLayout meta={meta}>
 	<header>
 		<ListNotes items={filtered} label={`Catatan Dengan Tag: ${tagTitle}, Total Catatan ${tagCount}`} />
 	</header>

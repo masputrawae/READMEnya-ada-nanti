@@ -6,17 +6,21 @@ import ListProjects from '../components/ListProjects.astro'
 
 import { relUrl } from '../utils/setUrl.ts'
 import { getPosts } from '../utils/posts.ts'
-import { Content } from '../content/Home.md'
+import { Content, frontmatter } from '../content/Home.md'
 import { MENUS } from '../site.config.ts'
-import RecentChanges from '../components/RecentChanges.astro'
 
 const cta = MENUS.cta
 const featuredProjects = await getPosts({ type: 'Projects', limit: 2, featured: false })
+
+const meta = {
+  title: frontmatter.title,
+  thumbnail: frontmatter.thumbnail,
+  description: frontmatter.description,
+}
 ---
 
-<BaseLayout>
+<BaseLayout meta={meta}>
 	<header>
-    <RecentChanges />
 		<Prose className="prose-em:not-italic">
 			<Content />
 		</Prose>

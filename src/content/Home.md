@@ -1,3 +1,9 @@
+---
+title: 'Home'
+description: 'Ini ruang pribadiku untuk belajar, bereksperimen, dan bersenang-senang'
+thumbnail: '/default-images/general-image.webp'
+---
+
 # Selamat datang!
 
 _Ini ruang pribadiku untuk belajar, bereksperimen, dan bersenang-senang._

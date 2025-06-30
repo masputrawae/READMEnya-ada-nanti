@@ -3,24 +3,70 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Prose from '../components/Prose.astro'
 import TagCloud from '../components/TagCloud.astro'
 import ListNotes from '../components/ListNotes.astro'
+import Search from 'astro-pagefind/components/Search'
 
-import {getPosts} from '../utils/posts.ts'
+import { getPosts } from '../utils/posts.ts'
 import { Content, frontmatter } from '../content/NotesPage.md'
 import { Image } from 'astro:assets'
 
-const allNotes = await getPosts({type: 'NotProjects'})
+const allNotes = await getPosts({ type: 'NotProjects' })
+
+const meta = {
+	title: frontmatter.title,
+	thumbnail: frontmatter.thumbnail,
+	description: frontmatter.description
+}
 ---
 
-<BaseLayout>
+<BaseLayout meta={meta}>
 	<header>
-    <Prose className="prose-em:not-italic mt-10">
+		<Prose className="prose-em:not-italic mt-10">
 			<Content />
-      <h2>All Tags</h2>
+			<h2>All Tags</h2>
 		</Prose>
-    <br>
-    <TagCloud/>
-  </header>
+		<br />
+		<TagCloud />
+		<br />
+		<Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
+	</header>
 	<main class="mt-10">
-    <ListNotes items={allNotes} label={`Total Semua Catatan Saat Ini: ${allNotes.length}`} />
+		<ListNotes items={allNotes} label={`Total Semua Catatan Saat Ini: ${allNotes.length}`} />
 	</main>
+
+	<style is:inline>
+		.pagefind-ui {
+			--pagefind-ui-scale: 0.75;
+			--pagefind-ui-primary: white;
+			--pagefind-ui-text: white;
+			--pagefind-ui-border: var(--color-neutral-800);
+			--pagefind-ui-background: rgba(0, 0, 0, 0.1);
+			--pagefind-ui-border-width: 1px;
+			--pagefind-ui-border-radius: 0.25rem;
+			--pagefind-ui-font: sans-serif;
+
+			width: 100%;
+			margin-top: 1rem;
+		}
+
+		.pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin-top: 0px;
+			z-index: 9999;
+			padding: 0 2em 1em;
+			overflow-y: auto;
+			border-bottom-right-radius: var(--pagefind-ui-border-radius);
+			border-bottom-left-radius: var(--pagefind-ui-border-radius);
+			background-color: var(--color-neutral-800);
+		}
+
+		.pagefind-ui .pagefind-ui__result-link {
+			color: var(--color-blue-500);
+		}
+
+		.pagefind-ui .pagefind-ui__result-excerpt {
+			color: var(--color-neutral-300);
+		}
+	</style>
 </BaseLayout>
