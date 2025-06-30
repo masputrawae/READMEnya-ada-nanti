@@ -8,7 +8,6 @@ import Footer from '../components/Footer.astro'
 import { SITE_DEFAULT } from '../site.config'
 import { SEO } from 'astro-seo'
 import { absUrl, relUrl } from '../utils/setUrl'
-import Tag from '../pages/tag/[tag].astro'
 import { tagCloud } from '../utils/tagCloud'
 
 // ==> Meta
@@ -27,17 +26,6 @@ const description = meta.description || SITE_DEFAULT.description
 const type = meta.type || "website"
 const publicTime = meta.publicTime || new Date().toISOString()
 const tags = meta.tag || getAllTags.map((tag:any) => tag.tag)
-
-/*
-const meta = {
-  title: ,
-  thumbnail: ,
-  description: ,
-  type: ,
-  publicTime: ,
-  tag: [],
-}
-*/
 ---
 
 <html lang="id" class="bg-neutral-900 font-serif text-neutral-300">
@@ -97,3 +85,33 @@ const meta = {
 		</div>
 	</body>
 </html>
+
+<style is:global>
+	@font-face {
+		font-display: swap;
+		font-family: 'Noto Sans';
+		font-style: normal;
+		font-weight: 400;
+		src: url('/fonts/noto-sans-v39-latin-regular.woff2') format('woff2');
+	}
+	@font-face {
+		font-display: swap;
+		font-family: 'Noto Sans';
+		font-style: normal;
+		font-weight: 700;
+		src: url('/fonts/noto-sans-v39-latin-700.woff2') format('woff2');
+	}
+	@font-face {
+		font-display: swap;
+		font-family: 'Fira Code';
+		font-style: normal;
+		font-weight: 400;
+		/* Optional <=== */
+		font-variant-ligatures: none;
+		font-feature-settings:
+			'liga' 0,
+			'calt' 0;
+		/* Optional ===> */
+		src: url('/fonts/fira-code-v26-latin-regular.woff2') format('woff2');
+	}
+</style>
