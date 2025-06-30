@@ -4,7 +4,7 @@ import { SITE_DEFAULT } from '../site.config'
 import { relUrl } from '../utils/setUrl'
 
 const title = SITE_DEFAULT.title
-const logo = SITE_DEFAULT.logo
+const logo = relUrl(SITE_DEFAULT.logo)
 const tagline = SITE_DEFAULT.tagline
 ---
 

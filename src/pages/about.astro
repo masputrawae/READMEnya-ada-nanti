@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Prose from '../components/Prose.astro'
 import { Content, frontmatter } from '../content/AboutPage.md'
 import { Image } from 'astro:assets'
+import { relUrl } from '../utils/setUrl'
 
 const meta = {
   title: frontmatter.title,
@@ -15,7 +16,7 @@ const meta = {
 <BaseLayout meta={meta}>
 	<header>
 		<Image 
-      src={frontmatter.thumbnail} 
+      src={relUrl(frontmatter.thumbnail)} 
       alt="Thumbnail" 
       width={1920}
       height={1080}
