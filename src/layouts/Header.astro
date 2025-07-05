@@ -1,0 +1,31 @@
+---
+import Search from "astro-pagefind/components/Search";
+
+const { href, activeLink } = Astro.props
+
+const readPage = `/${href}/`
+const discussionPage = `/Talk/${href}/`
+const sourcePage = `/Source/${href}/`
+const historyPage = `/History/${href}/`
+const searchPage = `/search/`
+
+const baseClass = 'border border-b-0 border-zinc-800 px-4 py-1'
+---
+<div class="flex items-center justify-between">
+  <h1>Judul</h1>
+  <button>x</button>
+</div>
+
+<div class="flex items-center justify-between">
+  <div class="flex items-center justify-between">
+    <a class={`${baseClass} ${activeLink === 'readPage' ? 'bg-zinc-800 text-white' : ''}`} href={readPage}>Read</a>
+    <a class={`${baseClass} ${activeLink === 'discussionPage' ? 'bg-zinc-800 text-white' : ''}`} href={discussionPage}>Discussion</a>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <a class={`${baseClass} ${activeLink === 'sourcePage' ? 'bg-zinc-800 text-white' : ''}`} href={sourcePage}>View Source</a>
+    <a class={`${baseClass} ${activeLink === 'historyPage' ? 'bg-zinc-800 text-white' : ''}`} href={historyPage}>View History</a>
+    <!-- <Search className="bg-neutral-950" /> -->
+  </div>
+</div>
+

@@ -1,0 +1,24 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../layouts/Layout.astro"
+
+import { getCollection, render } from "astro:content"
+
+export const getStaticPaths = (async() => {
+  const docs = await getCollection('docs')
+
+  return [
+    ...docs.map((entry) => ({
+      params: { slug: entry.id },
+      props: { entry }
+    }))
+  ];
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props
+const { Content } = await render(entry)
+---
+
+<Layout href={entry.id} activeLink="readPage">
+  <Content />
+</Layout>

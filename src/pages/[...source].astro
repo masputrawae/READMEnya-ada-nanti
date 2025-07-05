@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../layouts/Layout.astro"
+
+import { getCollection } from "astro:content"
+
+export const getStaticPaths = (async() => {
+  const docs = await getCollection('docs')
+
+  return [
+    ...docs.map((entry) => ({
+      params: { source: `/Source/${entry.id}` },
+      props: { id: entry.id, filePath: entry.filePath, title: entry.data.title }
+    }))
+  ];
+}) satisfies GetStaticPaths;
+
+const { id, filePath, title  } = Astro.props
+
+const markdownFiles = import.meta.glob('/src/content/docs/**/*.md', {
+	query: '?raw',
+	import: 'default'
+})
+
+const fullPath = `/${filePath}`
+const loadRaw = markdownFiles[fullPath]
+const rawMarkdown = loadRaw ? await loadRaw() : null
+---
+
+<Layout href={id} activeLink="sourcePage">
+  <pre set:html={rawMarkdown}></pre>
+</Layout>

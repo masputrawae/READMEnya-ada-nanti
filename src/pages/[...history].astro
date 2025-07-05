@@ -1,0 +1,62 @@
+---
+import type { GetStaticPaths } from 'astro'
+import Layout from '../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+
+export const getStaticPaths = (async () => {
+	const docs = await getCollection('docs')
+
+	return [
+		...docs.map(entry => ({
+			params: { history: `/History/${entry.id}` },
+			props: { filePath: entry.filePath, title: entry.data.title, id: entry.id }
+		}))
+	]
+}) satisfies GetStaticPaths
+
+const { filePath, title, id } = Astro.props
+
+import { execSync } from 'child_process'
+
+// Ambil log versi ringkas
+const historyRaw = execSync(`git log --pretty=format:"%h|%at|%s" -- "${filePath}"`)
+	.toString()
+	.split('\n')
+	.map(line => {
+		const [hash, timestamp, message] = line.split('|')
+		return {
+			hash,
+			timestamp: Number(timestamp) * 1000,
+			message
+		}
+	})
+
+// Ambil isi file per commit
+const fullHistory = historyRaw.map(entryLog => {
+	const rawContent = execSync(`git show ${entryLog.hash}:${filePath}`).toString()
+
+	return {
+		...entryLog,
+		content: rawContent
+	}
+})
+---
+
+<Layout>
+	<article class="border border-zinc-800">
+		<ul>
+			{
+				fullHistory.map(i => (
+					<li>
+						<a href={`/old-version:${i.hash}`}>
+							timestamp: {i.timestamp} | message: {i.message} | hash: {i.hash}{' '}
+						</a>
+						<div>
+							<pre>{i.content}</pre>
+						</div>
+					</li>
+				))
+			}
+		</ul>
+	</article>
+</Layout>
