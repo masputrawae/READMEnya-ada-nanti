@@ -19,7 +19,7 @@ const { filePath, title, id } = Astro.props
 import { execSync } from 'child_process'
 
 // Ambil log versi ringkas
-const historyRaw = execSync(`git log --pretty=format:"%h|%at|%s" -- "${filePath}"`)
+const history = execSync(`git log --pretty=format:"%h|%at|%s" -- "${filePath}"`)
 	.toString()
 	.split('\n')
 	.map(line => {
@@ -31,27 +31,21 @@ const historyRaw = execSync(`git log --pretty=format:"%h|%at|%s" -- "${filePath}
 		}
 	})
 
-// Ambil isi file per commit
-const fullHistory = historyRaw.map(entryLog => {
-	const rawContent = execSync(`git show ${entryLog.hash}:${filePath}`).toString()
-
-	return {
-		...entryLog,
-		content: rawContent
-	}
-})
+const GITHUB_REPO = 'https://github.com/masputrawae/READMEnya-ada-nanti'
 ---
 
 <Layout href={id} activeLink="readPage">
 	<ul>
 		{
-			fullHistory.map(i => (
-				<li>
-					<a href={`/${id}/${i.hash}/`}>
-						timestamp: {i.timestamp} | message: {i.message} | hash: {i.hash}{' '}
-					</a>
-				</li>
-			))
+			history.map(i => {
+				return (
+					<li>
+						<a href={`${GITHUB_REPO}/repo/blob/${i.hash}/${filePath}`}>
+							timestamp: {i.timestamp} | message: {i.message} | hash: {i.hash}{' '}
+						</a>
+					</li>
+				)
+			})
 		}
 	</ul>
 </Layout>
