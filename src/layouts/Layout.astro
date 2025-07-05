@@ -13,12 +13,19 @@ const { href, activeLink } = Astro.props
 	<head>
 		<Headed />
 	</head>
-	<body class="grid">
+	<body class="grid lg:grid-cols-[20%_minmax(0,1fr)]">
     <Sidebar />
-    <div>
+    <div class="max-w-full">
       <Header href={href} activeLink={activeLink} />
-      <slot />
+      <main>
+        <article class="markdown px-5 lg:px-10">
+          <slot />
+        </article>
+      </main>
       <Footer />
     </div>
+    <script>
+      import '../components/script/sidebar'
+    </script>
 	</body>
 </html>

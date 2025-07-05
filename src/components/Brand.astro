@@ -1,24 +1,32 @@
 ---
-import { Image } from "astro:assets";
-import { SITE_PARAMS } from "../site.config";
-import { relUrl } from "../utils/url";
+import { Image } from 'astro:assets'
+import { SITE_PARAMS } from '../site.config'
+import { relUrl } from '../utils/url'
+import { Icon } from 'astro-icon/components'
 
 const title = SITE_PARAMS.author
 const baseUrl = SITE_PARAMS.baseUrl
 const tagline = SITE_PARAMS.tagline
 const logo = relUrl(SITE_PARAMS.logo)
+
+const { sidebar = 'open' } = Astro.props
 ---
 
-<a href={baseUrl} class="flex items-center gap-2">
-  <Image 
-    src={logo} 
-    alt={title}
-    width={58}
-    height={58}
-    class="rounded-full border-2 border-zinc-900 shadow-sm shadow-black"
-  />
-  <span class="grid text-shadow-md text-shadow-black">
-    <strong class="text-zinc-100 text-xl">{title}</strong>
-    <em class="not-italic text-zinc-400">{tagline}</em>
-  </span>
-</a>
+<div class={`flex items-center justify-between ${sidebar === 'open' ? 'lg:hidden' : ''}`}>
+	<a href={baseUrl} class="flex items-center gap-2">
+		<Image
+			src={logo}
+			alt={title}
+			width={58}
+			height={58}
+			class="rounded-full border-2 border-zinc-900 shadow-sm shadow-black"
+		/>
+		<span class="grid text-shadow-black text-shadow-md">
+			<strong class="text-xl text-zinc-100">{title}</strong>
+			<em class="text-zinc-400 not-italic">{tagline}</em>
+		</span>
+	</a>
+	<button data-sidebar>
+		<Icon name={sidebar === "open" ? 'icon-bar-3' : "icon-x-mark"} class="size-6 text-white" />
+	</button>
+</div>

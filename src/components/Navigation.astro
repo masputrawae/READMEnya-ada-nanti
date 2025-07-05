@@ -1,5 +1,5 @@
 ---
-// src/components/Sidebar.astro
+// src/components/Navigation.astro
 import { getCollection } from 'astro:content'
 import { SIDEBAR_GROUPS } from '../sidebar.config'
 import { relUrl } from '../utils/url'
@@ -33,15 +33,20 @@ const sidebarStructure = sortedGroups.map(group => ({
 {
 	sidebarStructure.map(group => (
 		<div class="grid">
-			<strong class="group-title border-b border-b-zinc-800 text-zinc-100 mb-2 pb-1">{group.title}</strong>
+			<strong class="group-title mb-2 border-b border-b-zinc-800 pb-1 text-zinc-100">
+				{group.title}
+			</strong>
 
-			<div class="flex flex-col">
+			<nav class="flex flex-col">
 				{group.items.map(item => (
-					<a href={item.href} class={currentPath === item.href ? 'text-white' : 'text-zinc-400 hover:text-white'}>
+					<a
+						href={item.href}
+						class={currentPath === item.href ? 'text-white' : 'text-zinc-400 hover:text-white'}
+					>
 						{item.title}
 					</a>
 				))}
-			</div>
+			</nav>
 		</div>
 	))
 }
