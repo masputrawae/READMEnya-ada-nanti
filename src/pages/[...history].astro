@@ -42,21 +42,19 @@ const fullHistory = historyRaw.map(entryLog => {
 })
 ---
 
-<Layout>
-	<article class="border border-zinc-800">
-		<ul>
-			{
-				fullHistory.map(i => (
-					<li>
-						<a href={`/old-version:${i.hash}`}>
-							timestamp: {i.timestamp} | message: {i.message} | hash: {i.hash}{' '}
-						</a>
-						<div>
-							<pre>{i.content}</pre>
-						</div>
-					</li>
-				))
-			}
-		</ul>
-	</article>
+<Layout href={id} activeLink="readPage">
+	<ul>
+		{
+			fullHistory.map(i => (
+				<li>
+					<a href={`/old-version:${i.hash}`}>
+						timestamp: {i.timestamp} | message: {i.message} | hash: {i.hash}{' '}
+					</a>
+					<div>
+						<pre>{i.content}</pre>
+					</div>
+				</li>
+			))
+		}
+	</ul>
 </Layout>
