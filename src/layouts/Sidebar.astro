@@ -1,7 +1,17 @@
 ---
-import Navigation from "../components/Navigation.astro";
+import { Icon } from 'astro-icon/components'
+import Brand from '../components/Brand.astro'
+import Navigation from '../components/Navigation.astro'
 ---
 
-<aside class="sidebar">
-  <Navigation />
+<aside
+	class="sidebar fixed top-0 left-0 flex flex-col gap-5 h-dvh w-xs  overflow-y-auto border-r border-r-zinc-800 bg-zinc-900 p-5"
+>
+	<div class="flex items-center justify-between">
+		<Brand />
+		<button>
+			<Icon name="icon-x-mark" class="size-6 text-white" />
+		</button>
+	</div>
+	<Navigation />
 </aside>

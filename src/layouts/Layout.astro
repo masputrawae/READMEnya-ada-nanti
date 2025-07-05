@@ -9,11 +9,11 @@ import Sidebar from './Sidebar.astro'
 const { href, activeLink } = Astro.props
 ---
 
-<html lang="id" class="bg-zinc-900 text-zinc-300 text-[14px] font-sans">
+<html lang="id" class="bg-zinc-900 text-zinc-300 text-[15px] font-sans">
 	<head>
 		<Headed />
 	</head>
-	<body>
+	<body class="grid">
     <Sidebar />
     <div>
       <Header href={href} activeLink={activeLink} />
