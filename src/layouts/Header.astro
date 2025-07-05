@@ -18,7 +18,7 @@ const baseClass = 'border border-b-0 border-zinc-800 px-4 py-1'
 	<Brand />
 
 	<div class="flex items-center justify-between">
-		<div class="flex items-center justify-between">
+		<div class="flex items-center">
 			<a
 				class={`${baseClass} ${activeLink === 'readPage' ? 'bg-zinc-800 text-white' : ''}`}
 				href={readPage}>Read</a
@@ -29,7 +29,7 @@ const baseClass = 'border border-b-0 border-zinc-800 px-4 py-1'
 			>
 		</div>
 
-		<div class="flex items-center justify-between">
+		<div class="flex items-center">
 			<a
 				class={`${baseClass} ${activeLink === 'sourcePage' ? 'bg-zinc-800 text-white' : ''}`}
 				href={sourcePage}>View Source</a
@@ -38,7 +38,59 @@ const baseClass = 'border border-b-0 border-zinc-800 px-4 py-1'
 				class={`${baseClass} ${activeLink === 'historyPage' ? 'bg-zinc-800 text-white' : ''}`}
 				href={historyPage}>View History</a
 			>
-			<Search className="bg-neutral-950" />
+			<Search id="search" className="pagefind-ui custom" uiOptions={{ showImages: false }} />
 		</div>
 	</div>
 </div>
+
+<style is:global>
+	@reference '../styles/global.css';
+
+	.pagefind-ui {
+		--pagefind-ui-scale: auto;
+		--pagefind-ui-primary: navy;
+		--pagefind-ui-text: var(--color-zinc-200);
+		--pagefind-ui-border: var(--color-zinc-800);
+		--pagefind-ui-border-width: 0px;
+		--pagefind-ui-border-radius: 0;
+		--pagefind-ui-font: sans-serif;
+
+		width: auto;
+	}
+
+	.pagefind-ui.custom {
+		--pagefind-ui-background: var(--color-zinc-900);
+		border: 1px solid var(--color-zinc-700);
+		border-bottom: none;
+		@apply border border-b-0 border-zinc-800 px-4 py-1;
+	}
+	.pagefind-ui__search-input:focus {
+		outline: none !important;
+		border: none !important;
+		box-shadow: none !important;
+	}
+
+	.pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin-top: 0px;
+		z-index: 9999;
+		padding: 0 2em 1em;
+		overflow-y: auto;
+		box-shadow:
+			0 10px 10px -5px rgba(0, 0, 0, 0.2),
+			0 2px 2px 0 rgba(0, 0, 0, 0.1);
+		border-bottom-right-radius: var(--pagefind-ui-border-radius);
+		border-bottom-left-radius: var(--pagefind-ui-border-radius);
+		background-color: var(--pagefind-ui-background);
+	}
+
+	.pagefind-ui .pagefind-ui__result-link {
+		color: var(--pagefind-ui-primary);
+	}
+
+	.pagefind-ui .pagefind-ui__result-excerpt {
+		color: var(--pagefind-ui-text);
+	}
+</style>

@@ -36,7 +36,7 @@ const history = execSync(`git log --max-count=100 --pretty=format:"%h|%at|%s" --
   })
 ---
 
-<Layout href={id} activeLink="readPage">
+<Layout href={id} activeLink="historyPage">
   <h1>History: {title}</h1>
   <p class="repo-link">
     <a href={`${GITHUB_REPO}/tree/${defaultBranch}/${filePath}`} target="_blank">
