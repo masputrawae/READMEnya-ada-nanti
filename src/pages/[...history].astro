@@ -47,12 +47,9 @@ const fullHistory = historyRaw.map(entryLog => {
 		{
 			fullHistory.map(i => (
 				<li>
-					<a href={`/old-version:${i.hash}`}>
+					<a href={`/${id}/${i.hash}/`}>
 						timestamp: {i.timestamp} | message: {i.message} | hash: {i.hash}{' '}
 					</a>
-					<div>
-						<pre>{i.content}</pre>
-					</div>
 				</li>
 			))
 		}
