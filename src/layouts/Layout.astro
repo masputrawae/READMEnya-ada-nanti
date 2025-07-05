@@ -17,7 +17,7 @@ const { href, activeLink } = Astro.props
     <Sidebar />
     <div class="max-w-full">
       <Header href={href} activeLink={activeLink} />
-      <main>
+      <main class="border border-zinc-800">
         <article class="markdown px-5 lg:px-10">
           <slot />
         </article>

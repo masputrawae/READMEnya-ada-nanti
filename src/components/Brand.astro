@@ -12,7 +12,7 @@ const logo = relUrl(SITE_PARAMS.logo)
 const { sidebar = 'open' } = Astro.props
 ---
 
-<div class={`flex items-center justify-between ${sidebar === 'open' ? 'lg:hidden' : ''}`}>
+<div class={`flex items-center justify-between ${sidebar === 'open' ? 'lg:hidden border-b border-zinc-700 px-4 py-2' : ''}`}>
 	<a href={baseUrl} class="flex items-center gap-2">
 		<Image
 			src={logo}
