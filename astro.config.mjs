@@ -8,9 +8,9 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://masputrawae.github.io',
-  base: '/',
+  base: '/READMEnya-ada-nanti/',
   redirects: {
-    '/':'/home/'
+    '/READMEnya-ada-nanti/':'/home/'
   },
   vite: {
     plugins: [tailwindcss()]

@@ -1,0 +1,41 @@
+---
+import type { GetStaticPaths } from 'astro'
+import Layout from '../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import { execSync } from 'child_process'
+
+export const getStaticPaths = (async () => {
+	const docs = await getCollection('docs')
+	return docs.map(entry => ({
+		params: { discussion: `/Talk:${entry.id}/` },
+		props: {
+			filePath: entry.filePath,
+			title: entry.data.title,
+			id: entry.id
+		}
+	}))
+}) satisfies GetStaticPaths
+
+const { id } = Astro.props
+---
+
+<Layout href={id} activeLink="discussionPage">
+	<section class="mx-auto mt-12">
+		<script
+			is:inline
+			src="https://giscus.app/client.js"
+			data-repo="masputrawae/READMEnya-ada-nanti"
+			data-repo-id="R_kgDOOZ9iaQ"
+			data-category="General"
+			data-category-id="DIC_kwDOOZ9iac4CsgYg"
+			data-mapping="pathname"
+			data-strict="1"
+			data-reactions-enabled="1"
+			data-emit-metadata="0"
+			data-input-position="bottom"
+			data-theme="dark"
+			data-lang="id"
+			crossorigin="anonymous"
+			async></script>
+	</section>
+</Layout>

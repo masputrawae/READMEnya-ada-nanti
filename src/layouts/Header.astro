@@ -4,9 +4,9 @@ import Search from "astro-pagefind/components/Search";
 const { href, activeLink } = Astro.props
 
 const readPage = `/${href}/`
-const discussionPage = `/Talk/${href}/`
-const sourcePage = `/Source/${href}/`
-const historyPage = `/History/${href}/`
+const discussionPage = `/Talk:${href}/`
+const sourcePage = `/Source:${href}/`
+const historyPage = `/History:${href}/`
 const searchPage = `/search/`
 
 const baseClass = 'border border-b-0 border-zinc-800 px-4 py-1'

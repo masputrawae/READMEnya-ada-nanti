@@ -2,50 +2,114 @@
 import type { GetStaticPaths } from 'astro'
 import Layout from '../layouts/Layout.astro'
 import { getCollection } from 'astro:content'
-
-export const getStaticPaths = (async () => {
-	const docs = await getCollection('docs')
-
-	return [
-		...docs.map(entry => ({
-			params: { history: `/History/${entry.id}` },
-			props: { filePath: entry.filePath, title: entry.data.title, id: entry.id }
-		}))
-	]
-}) satisfies GetStaticPaths
-
-const { filePath, title, id } = Astro.props
-
 import { execSync } from 'child_process'
 
-// Ambil log versi ringkas
-const history = execSync(`git log --pretty=format:"%h|%at|%s" -- "${filePath}"`)
-	.toString()
-	.split('\n')
-	.map(line => {
-		const [hash, timestamp, message] = line.split('|')
-		return {
-			hash,
-			timestamp: Number(timestamp) * 1000,
-			message
-		}
-	})
+export const getStaticPaths = (async () => {
+  const docs = await getCollection('docs')
+  return docs.map(entry => ({
+    params: { history: `/History:${entry.id}/` },
+    props: { 
+      filePath: entry.filePath, 
+      title: entry.data.title, 
+      id: entry.id,
+      // Tambahkan branch default untuk handle kasus hash tidak ditemkan
+      defaultBranch: execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
+    }
+  }))
+}) satisfies GetStaticPaths
 
+const { filePath, title, id, defaultBranch } = Astro.props
 const GITHUB_REPO = 'https://github.com/masputrawae/READMEnya-ada-nanti'
+
+// Optimasi: Cache git log selama build
+const history = execSync(`git log --max-count=100 --pretty=format:"%h|%at|%s" -- "${filePath}"`)
+  .toString()
+  .split('\n')
+  .filter(Boolean) // Hapus line kosong
+  .map(line => {
+    const [hash, timestamp, message] = line.split('|')
+    return {
+      hash,
+      date: new Date(Number(timestamp) * 1000),
+      message
+    }
+  })
 ---
 
 <Layout href={id} activeLink="readPage">
-	<ul>
-		{
-			history.map(i => {
-				return (
-					<li>
-						<a href={`${GITHUB_REPO}/repo/blob/${i.hash}/${filePath}`}>
-							timestamp: {i.timestamp} | message: {i.message} | hash: {i.hash}{' '}
-						</a>
-					</li>
-				)
-			})
-		}
-	</ul>
+  <h1>History: {title}</h1>
+  <p class="repo-link">
+    <a href={`${GITHUB_REPO}/tree/${defaultBranch}/${filePath}`} target="_blank">
+      View current file on GitHub ↗
+    </a>
+  </p>
+
+  <ul class="history-list">
+    {history.map(i => (
+      <li>
+        <a 
+          href={`${GITHUB_REPO}/blob/${i.hash}/${filePath}`} 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="history-item"
+        >
+          <span class="hash">{i.hash.slice(0, 7)}</span>
+          <span class="date">{i.date.toLocaleDateString()}</span>
+          <span class="message">{i.message}</span>
+          <span class="icon">↗</span>
+        </a>
+      </li>
+    ))}
+  </ul>
 </Layout>
+
+<style>
+  .history-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .history-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .history-item:hover {
+    background: var(--hover-bg);
+  }
+
+  .hash {
+    font-family: monospace;
+    color: var(--accent-color);
+    font-size: 0.9em;
+  }
+
+  .date {
+    color: var(--text-light);
+    font-size: 0.9em;
+    min-width: 120px;
+  }
+
+  .message {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .icon {
+    opacity: 0.5;
+  }
+
+  .repo-link {
+    margin-bottom: 1.5rem;
+  }
+</style>
