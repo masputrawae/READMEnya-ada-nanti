@@ -9,7 +9,7 @@ export const getStaticPaths = (async() => {
 
   return [
     ...docs.map((entry) => ({
-      params: { slug: entry.id },
+      params: { slug: entry.id === 'home' ? '/' : `${entry.id}/` },
       props: { entry }
     }))
   ];

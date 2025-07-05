@@ -1,13 +1,14 @@
 ---
 import Search from "astro-pagefind/components/Search";
+import { relUrl } from '../utils/url'
 
 const { href, activeLink } = Astro.props
 
-const readPage = `/${href}/`
-const discussionPage = `/Talk:${href}/`
-const sourcePage = `/Source:${href}/`
-const historyPage = `/History:${href}/`
-const searchPage = `/search/`
+const readPage = relUrl(`/${href}/`)
+const discussionPage = relUrl(`/Talk:${href}/`)
+const sourcePage = relUrl(`/Source:${href}/`)
+const historyPage = relUrl(`/History:${href}/`)
+const searchPage = relUrl(`/search/`)
 
 const baseClass = 'border border-b-0 border-zinc-800 px-4 py-1'
 ---

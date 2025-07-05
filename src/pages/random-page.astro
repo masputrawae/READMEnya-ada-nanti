@@ -1,0 +1,21 @@
+---
+// Bagian server-side (Astro)
+import { getCollection } from 'astro:content'
+import { relUrl } from '../utils/url'
+import Layout from '../layouts/Layout.astro'
+
+const docs = await getCollection('docs')
+const slugs = docs
+	.map(doc => relUrl(`/${doc.id}/`))
+	.filter(doc => doc !== relUrl('home') && doc !== relUrl('/home/'))
+---
+
+<Layout>
+	<div id="data-redirect" data-links={`${JSON.stringify(slugs)}`}></div>
+	<script is:inline>
+		const data = document.getElementById('data-redirect').getAttribute('data-links')
+		const links = JSON.parse(data)
+		const random = links[Math.floor(Math.random() * links.length)]
+		window.location.href = random
+	</script>
+</Layout>

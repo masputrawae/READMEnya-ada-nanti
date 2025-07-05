@@ -2,6 +2,7 @@
 // src/components/Sidebar.astro
 import { getCollection } from 'astro:content'
 import { SIDEBAR_GROUPS } from '../sidebar.config'
+import { relUrl } from '../utils/url'
 
 const docs = await getCollection('docs')
 const currentPath = Astro.url.pathname
@@ -37,7 +38,7 @@ const sidebarStructure = sortedGroups.map(group => ({
 			<ul>
 				{group.items.map(item => (
 					<li>
-						<a href={item.href} class={currentPath === item.href ? 'active' : ''}>
+						<a href={relUrl(item.href)} class={currentPath === item.href ? 'active' : ''}>
 							{item.title}
 						</a>
 					</li>
