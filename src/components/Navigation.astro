@@ -1,0 +1,48 @@
+---
+// src/components/Sidebar.astro
+import { getCollection } from 'astro:content'
+import { SIDEBAR_GROUPS } from '../sidebar.config'
+
+const docs = await getCollection('docs')
+const currentPath = Astro.url.pathname
+
+// 1. Filter dokumen dengan sidebar aktif
+const sidebarItems = docs
+	.filter(doc => doc.data.sidebar?.active)
+	.map(doc => ({
+		group: doc.data.sidebar?.group,
+		order: doc.data.sidebar?.order,
+		href: doc.id,
+		title: doc.data.title,
+		id: doc.id
+	}))
+
+// 2. Urutkan groups sesuai config
+const sortedGroups = [...SIDEBAR_GROUPS].sort((a, b) => a.order - b.order)
+
+// 3. Bangun struktur sidebar
+const sidebarStructure = sortedGroups.map(group => ({
+	...group,
+	items: sidebarItems
+		.filter(item => item.group === group.id)
+		.sort((a, b) => (b.order || 0) - (a.order || 0))
+}))
+---
+
+{
+	sidebarStructure.map(group => (
+		<div class="sidebar-group">
+			<h3 class="group-title">{group.title}</h3>
+
+			<ul>
+				{group.items.map(item => (
+					<li>
+						<a href={item.href} class={currentPath === item.href ? 'active' : ''}>
+							{item.title}
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	))
+}
