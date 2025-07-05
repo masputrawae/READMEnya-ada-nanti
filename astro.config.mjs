@@ -9,7 +9,7 @@ import pagefind from "astro-pagefind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://masputrawae.github.io',
-  base: '/',
+  base: '/READMEnya-ada-nanti/',
   trailingSlash: 'always',
   cacheDir: './astro-cacheDir',
   build: {
