@@ -6,6 +6,9 @@ tags:
   - astro-js
   - javascript
 created: 2025-06-21T10:15:03+07:00
+sidebar:
+  group: 'Other Page' # harus cocok dengan salah satu label di SIDEBAR
+  order: 3
 ---
 
 Dapatkan `url` Halaman saat ini

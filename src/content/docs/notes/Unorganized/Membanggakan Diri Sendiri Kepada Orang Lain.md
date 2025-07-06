@@ -5,6 +5,9 @@ tags:
   - reflection
   - thinking
 created: 2025-06-28T15:16:17+07:00
+sidebar:
+  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR
+  order: 4
 ---
 
 Hal yang yang muncul di kepala ku saat catatan ini ku tulis. Sering di sebuah obrolan, entah serius atau tidak, terkadang kita sering membanggakan suatu hal tentang pencapaian atau hal menarik tentang diri kita sendiri 🤔, ya itu hal yang wajar memang dan cukup membuat diri sendiri senang. Cuma satu hal, Apakah mereka mendengarkan?, Atau apakah mereka senang atau perduli tentang kamu?. aku rasa sebagai besar tidak (Walaupun tidak semua, tergantung apakah seseorang itu memperhatikan mu atau tidak). **Dan ini hanya asumsi ku**

@@ -6,6 +6,9 @@ tags:
   - astro-js
   - javascript
 created: 2025-06-23T21:19:31+07:00
+sidebar:
+  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR
+  order: 3
 ---
 
 🤔 Iseng-iseng coba fitur [View Transition di Astro](https://docs.astro.build/en/guides/view-transitions/), pengalaman pertama waktu dijalankan secara lokal sih kelihatan keren dan smooth banget tanpa reload dan juga di localhost langsung berpindah halaman tanpa perlu request dari server luar. Ini juga pertama kalinya aku coba Astro.

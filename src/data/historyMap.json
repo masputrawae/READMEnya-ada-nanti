@@ -1,4 +1,72 @@
 {
+  "src/content/docs/notes/Quick Notes/Obsidian Desktop/Ex Desktop.md": [
+    {
+      "hash": "b743a13",
+      "date": "2025-07-06T11:52:58.000Z",
+      "message": "Changed On 📅 : 2025-07-06 18:52:58",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 18:52:58 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 18:52:58 2025 +0700"
+      },
+      "diff": ""
+    },
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Quick Notes/Obsidian Mobile/Ex Mobile.md": [
+    {
+      "hash": "b743a13",
+      "date": "2025-07-06T11:52:58.000Z",
+      "message": "Changed On 📅 : 2025-07-06 18:52:58",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 18:52:58 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 18:52:58 2025 +0700"
+      },
+      "diff": ""
+    },
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
   "src/content/docs/notes/JavaScript/Alasan Keyword var Di JavaScript Tidak Direkomendasikan.md": [
     {
       "hash": "44f426c",
@@ -810,42 +878,6 @@
     }
   ],
   "src/content/docs/notes/Python/Tuple Di Python.md": [
-    {
-      "hash": "44f426c",
-      "date": "2025-07-06T10:42:22.000Z",
-      "message": "init 2",
-      "author": {
-        "name": "Masputrawae",
-        "email": "masputrawae.official@gmail.com",
-        "date": "Sun Jul 6 17:42:22 2025 +0700"
-      },
-      "committer": {
-        "name": "Masputrawae",
-        "email": "masputrawae.official@gmail.com",
-        "date": "Sun Jul 6 17:42:22 2025 +0700"
-      },
-      "diff": ""
-    }
-  ],
-  "src/content/docs/notes/Quick Notes/Obsidian Desktop/Ex Desktop.md": [
-    {
-      "hash": "44f426c",
-      "date": "2025-07-06T10:42:22.000Z",
-      "message": "init 2",
-      "author": {
-        "name": "Masputrawae",
-        "email": "masputrawae.official@gmail.com",
-        "date": "Sun Jul 6 17:42:22 2025 +0700"
-      },
-      "committer": {
-        "name": "Masputrawae",
-        "email": "masputrawae.official@gmail.com",
-        "date": "Sun Jul 6 17:42:22 2025 +0700"
-      },
-      "diff": ""
-    }
-  ],
-  "src/content/docs/notes/Quick Notes/Obsidian Mobile/Ex Mobile.md": [
     {
       "hash": "44f426c",
       "date": "2025-07-06T10:42:22.000Z",

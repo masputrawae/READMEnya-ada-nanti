@@ -1,0 +1,116 @@
+---
+import { getCollection } from 'astro:content'
+import { SIDEBAR } from '../../sidebar.config'
+import { Icon } from 'astro-icon/components'
+
+const docs = await getCollection('docs')
+const getSidebarDocs = docs.filter(doc => doc.data.sidebar)
+
+// Ubah docs jadi array dengan info minimal
+const docItems = getSidebarDocs.map(doc => ({
+	id: doc.id === 'home' ? '/' : doc.id,
+	title: doc.data.title,
+	group: doc.data.sidebar?.group || 'Ungrouped',
+	order: doc.data.sidebar?.order ?? 0
+}))
+
+// Kelompokkan dokumen ke grup berdasarkan SIDEBAR
+const grouped: Record<string, { defaultActive: boolean; items: typeof docItems }> = {}
+
+for (const group of SIDEBAR) {
+	// ambil dokumen yang termasuk group ini
+	const itemsInGroup = docItems
+		.filter(item => item.group === group.label)
+		.sort((a, b) => a.order - b.order)
+
+	grouped[group.label] = {
+		defaultActive: group.defaultActive,
+		items: itemsInGroup
+	}
+}
+---
+
+<nav class="nav">
+	{
+		Object.entries(grouped).map(([groupName, { defaultActive, items }]) => {
+			const collapseId = crypto.randomUUID()
+
+			return (
+				<div class="nav__contain">
+					<strong data-dropdown={collapseId} class="nav__label">
+						<span>{groupName}</span>
+						<Icon
+							name="chevron-down"
+							class={`nav__label-icon ${defaultActive ? 'nav__label-icon--open' : ''}`}
+						/>
+					</strong>
+					<ul id={collapseId} class={`dropdown ${defaultActive ? 'dropdown--open' : ''}`}>
+						{items.map(item => (
+							<li class="dropdown__item">
+								<a href={item.id} class="dropdown__link">
+									{item.title}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			)
+		})
+	}
+</nav>
+
+<style>
+	@reference '../styles/global.css';
+	@layer components {
+		.nav {
+			@apply grid;
+		}
+
+		.nav__contain {
+			@apply pt-8;
+		}
+
+		.nav__label {
+			@apply mb-2 flex items-center justify-between gap-2 border-b border-b-zinc-800 pb-1 text-lg text-zinc-50;
+		}
+
+		.nav__label-icon {
+			@apply transition-all duration-500;
+		}
+
+		.nav__label-icon--open {
+			@apply -rotate-90;
+		}
+
+    .dropdown {
+      @apply hidden transition-all duration-300;
+    }
+
+    .dropdown--open {
+      @apply block;
+    }
+
+    .dropdown__item {
+      @apply max-w-3xs overflow-hidden;
+    }
+
+    .dropdown__link {
+      @apply truncate text-sm px-1 py-4;
+    }
+	}
+</style>
+
+<script is:inline>
+	const buttons = document.querySelectorAll('[data-dropdown]')
+
+	buttons.forEach(btn => {
+		const id = btn.getAttribute('data-dropdown')
+		const dropdown = document.getElementById(id)
+		const icon = document.querySelector(`[data-dropdown="${id}"] .nav__label-icon`)
+
+		btn.addEventListener('click', () => {
+			dropdown.classList.toggle('dropdown--open')
+			icon.classList.toggle('nav__label-icon--open')
+		})
+	})
+</script>

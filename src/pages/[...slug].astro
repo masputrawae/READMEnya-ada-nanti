@@ -22,9 +22,6 @@ const filePath = doc.filePath ? `./${doc.filePath}` : '';
 const history = doc.filePath && historyMap[doc.filePath as keyof typeof historyMap]
   ? historyMap[doc.filePath as keyof typeof historyMap]
   : [];
-
-console.log('🚀 log 🚀:', history);
-
 ---
 
 <BaseLayout>

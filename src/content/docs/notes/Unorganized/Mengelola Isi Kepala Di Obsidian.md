@@ -6,6 +6,9 @@ tags:
   - thinking
   - method
 created: 2025-06-14T12:10:39+07:00
+sidebar:
+  group: 'Other Page' # harus cocok dengan salah satu label di SIDEBAR
+  order: 2
 ---
 
 Menurutku, kesederhanaan bisa sangat membantu, meskipun tidak selalu cocok untuk semua hal. Aku menulis ini karena kemarin, sebelum membuat vault dan catatan ini, aku sempat mencoba menulis dengan pendekatan Zettelkasten — metode yang cukup populer.

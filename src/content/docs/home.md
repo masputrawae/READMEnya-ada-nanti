@@ -1,6 +1,6 @@
 ---
 id: '12345678901234' # minimal 14 karakter sesuai z.string().min(14)
-title: 'home'
+title: 'Home'
 created: '2024-12-01' # akan di-coerce ke Date
 
 # Optional fields

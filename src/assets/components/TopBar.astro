@@ -1,11 +1,62 @@
 ---
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
+import { SITE_PARAMS } from '../../site.config'
+
 const { inMobile } = Astro.props
+
+const title = SITE_PARAMS.title
+const logo = SITE_PARAMS.logo
+const tagline = SITE_PARAMS.tagline
+
+const SITE_URL = `${import.meta.env.SITE}${import.meta.env.BASE_URL}`
 ---
 
-<div>
-  <button>
-    <Icon name={inMobile ? 'icon-bar-3' : 'icon-x-mark'} />
+<div class="topbar">
+  <a href={SITE_URL} class="brand">
+    <Image src={logo} alt={title} width={58} height={58} class="brand__logo" />
+    <span class="brand__body">
+      <strong class="brand__title">{title}</strong>
+      <em class="brand__tagline">{tagline}</em>
+    </span>
+  </a>
+  <button data-sidebar="sidebar" class="topbar__btn">
+    <Icon name={inMobile ? 'icon-bar-3' : 'icon-x-mark'} class="topbar__btn-icon" />
   </button>
 </div>
+
+<style>
+  @reference '../styles/global.css';
+
+  @layer components {
+    /* topbar */
+    .topbar {
+      @apply items-center justify-between flex;
+    }
+
+    .topbar__btn-icon {
+      @apply size-6 text-white;
+    }
+
+    /* brand */
+    .brand {
+      @apply items-center flex gap-2;
+    }
+
+    .brand__logo {
+      @apply rounded-full border-2 size-14 shadow-black shadow-sm border-zinc-900;
+    }
+
+    .brand__body {
+      @apply grid text-shadow-md text-shadow-black;
+    }
+
+    .brand__title {
+      @apply text-lg text-white;
+    }
+
+    .brand__tagline {
+      @apply text-sm not-italic;
+    }
+  }
+</style>
