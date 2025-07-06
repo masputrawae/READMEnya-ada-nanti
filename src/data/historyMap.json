@@ -1,1 +1,62 @@
-{}
+{
+  "src/content/docs/gaspoll/test-kedua.md": [
+    {
+      "hash": "6422acd",
+      "date": "2025-07-06T10:28:45.000Z",
+      "message": "Changed On 📅 : 2025-07-06 17:28:45",
+      "rawMarkdown": "---\nid: \"abcdefghijklmn12\"\ntitle: \"Contoh Dokumen Other\"\ncreated: \"2025-02-20\"\n\nupdate: \"2025-05-01\"\ndescription: \"Dokumen ini menggunakan sidebar group 'Other Page'.\"\npinned: false\ntags:\n  - \"other\"\ncategories:\n  - \"examples\"\n\nsidebar:\n  group: \"Other Page\" # ini cocok dengan label kedua di SIDEBAR\n  order: 2\n---\n\n# Contoh Other\n\nIni konten markdown untuk halaman dengan sidebar group **Other Page**.\n\nUbah 1\n\nUbah 2"
+    },
+    {
+      "hash": "ebca7aa",
+      "date": "2025-07-06T10:27:58.000Z",
+      "message": "Changed On 📅 : 2025-07-06 17:27:58",
+      "rawMarkdown": "---\nid: \"abcdefghijklmn12\"\ntitle: \"Contoh Dokumen Other\"\ncreated: \"2025-02-20\"\n\nupdate: \"2025-05-01\"\ndescription: \"Dokumen ini menggunakan sidebar group 'Other Page'.\"\npinned: false\ntags:\n  - \"other\"\ncategories:\n  - \"examples\"\n\nsidebar:\n  group: \"Other Page\" # ini cocok dengan label kedua di SIDEBAR\n  order: 2\n---\n\n# Contoh Other\n\nIni konten markdown untuk halaman dengan sidebar group **Other Page**.\n\nUbah 1\n\nUbah 2"
+    },
+    {
+      "hash": "3f209c1",
+      "date": "2025-07-06T10:21:29.000Z",
+      "message": "initial commit",
+      "rawMarkdown": "---\nid: \"abcdefghijklmn12\"\ntitle: \"Contoh Dokumen Other\"\ncreated: \"2025-02-20\"\n\nupdate: \"2025-05-01\"\ndescription: \"Dokumen ini menggunakan sidebar group 'Other Page'.\"\npinned: false\ntags:\n  - \"other\"\ncategories:\n  - \"examples\"\n\nsidebar:\n  group: \"Other Page\" # ini cocok dengan label kedua di SIDEBAR\n  order: 2\n---\n\n# Contoh Other\n\nIni konten markdown untuk halaman dengan sidebar group **Other Page**.\n\nUbah 1\n\nUbah 2"
+    }
+  ],
+  "src/content/docs/home.md": [
+    {
+      "hash": "6422acd",
+      "date": "2025-07-06T10:28:45.000Z",
+      "message": "Changed On 📅 : 2025-07-06 17:28:45",
+      "rawMarkdown": "---\nid: '12345678901234' # minimal 14 karakter sesuai z.string().min(14)\ntitle: 'home'\ncreated: '2024-12-01' # akan di-coerce ke Date\n\n# Optional fields\nupdate: '2025-01-15'\ndescription: 'Ini hanya deskripsi dummy untuk pengujian.'\nimage: '/images/contoh.jpg'\npinned: true\ntags:\n  - 'dummy'\n  - 'test'\ncategories:\n  - 'examples'\n  - 'demo'\n\nsidebar:\n  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR\n  order: 1\n---\n\n# Judul Konten\n\nIni konten markdown dummy. Kamu bisa tulis apapun di sini.\n\nUbah 1\n\nUbah 2"
+    },
+    {
+      "hash": "ebca7aa",
+      "date": "2025-07-06T10:27:58.000Z",
+      "message": "Changed On 📅 : 2025-07-06 17:27:58",
+      "rawMarkdown": "---\nid: '12345678901234' # minimal 14 karakter sesuai z.string().min(14)\ntitle: 'home'\ncreated: '2024-12-01' # akan di-coerce ke Date\n\n# Optional fields\nupdate: '2025-01-15'\ndescription: 'Ini hanya deskripsi dummy untuk pengujian.'\nimage: '/images/contoh.jpg'\npinned: true\ntags:\n  - 'dummy'\n  - 'test'\ncategories:\n  - 'examples'\n  - 'demo'\n\nsidebar:\n  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR\n  order: 1\n---\n\n# Judul Konten\n\nIni konten markdown dummy. Kamu bisa tulis apapun di sini.\n\nUbah 1\n\nUbah 2"
+    },
+    {
+      "hash": "3f209c1",
+      "date": "2025-07-06T10:21:29.000Z",
+      "message": "initial commit",
+      "rawMarkdown": "---\nid: '12345678901234' # minimal 14 karakter sesuai z.string().min(14)\ntitle: 'home'\ncreated: '2024-12-01' # akan di-coerce ke Date\n\n# Optional fields\nupdate: '2025-01-15'\ndescription: 'Ini hanya deskripsi dummy untuk pengujian.'\nimage: '/images/contoh.jpg'\npinned: true\ntags:\n  - 'dummy'\n  - 'test'\ncategories:\n  - 'examples'\n  - 'demo'\n\nsidebar:\n  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR\n  order: 1\n---\n\n# Judul Konten\n\nIni konten markdown dummy. Kamu bisa tulis apapun di sini.\n\nUbah 1\n\nUbah 2"
+    }
+  ],
+  "src/content/docs/notes/nosidebar.md": [
+    {
+      "hash": "6422acd",
+      "date": "2025-07-06T10:28:45.000Z",
+      "message": "Changed On 📅 : 2025-07-06 17:28:45",
+      "rawMarkdown": "---\nid: \"xyz987654321000\"\ntitle: \"Contoh Tanpa Sidebar\"\ncreated: \"2025-03-10\"\n\ndescription: \"Ini dokumen dummy tanpa properti sidebar sama sekali.\"\ntags:\n  - \"no-sidebar\"\ncategories:\n  - \"examples\"\n---\n\n# Tanpa Sidebar\n\nIni konten markdown yang tidak punya field `sidebar` di frontmatter.\n\nUbah 1\n\nUbah 2"
+    },
+    {
+      "hash": "ebca7aa",
+      "date": "2025-07-06T10:27:58.000Z",
+      "message": "Changed On 📅 : 2025-07-06 17:27:58",
+      "rawMarkdown": "---\nid: \"xyz987654321000\"\ntitle: \"Contoh Tanpa Sidebar\"\ncreated: \"2025-03-10\"\n\ndescription: \"Ini dokumen dummy tanpa properti sidebar sama sekali.\"\ntags:\n  - \"no-sidebar\"\ncategories:\n  - \"examples\"\n---\n\n# Tanpa Sidebar\n\nIni konten markdown yang tidak punya field `sidebar` di frontmatter.\n\nUbah 1\n\nUbah 2"
+    },
+    {
+      "hash": "3f209c1",
+      "date": "2025-07-06T10:21:29.000Z",
+      "message": "initial commit",
+      "rawMarkdown": "---\nid: \"xyz987654321000\"\ntitle: \"Contoh Tanpa Sidebar\"\ncreated: \"2025-03-10\"\n\ndescription: \"Ini dokumen dummy tanpa properti sidebar sama sekali.\"\ntags:\n  - \"no-sidebar\"\ncategories:\n  - \"examples\"\n---\n\n# Tanpa Sidebar\n\nIni konten markdown yang tidak punya field `sidebar` di frontmatter.\n\nUbah 1\n\nUbah 2"
+    }
+  ]
+}

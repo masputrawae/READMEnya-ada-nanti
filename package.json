@@ -13,6 +13,7 @@
     "astro-icon": "^1.1.5"
   },
   "devDependencies": {
+    "fast-glob": "^3.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
