@@ -1,8 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro'
 import { render, getCollection } from 'astro:content'
-import { getHistory } from '../assets/utils/getHistoryOnGit.ts'
-
+import historyMap from '../data/historyMap.json'
 import BaseLayout from '../assets/layouts/BaseLayout.astro'
 
 export const getStaticPaths = (async () => {
@@ -20,7 +19,7 @@ const { Content } = await render(doc)
 
 // =================================== //
 const filePath = `./${doc.filePath}`;
-const history = getHistory(filePath)
+const history = historyMap[doc.filePath] || []
 ---
 
 <BaseLayout>

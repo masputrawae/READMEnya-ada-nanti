@@ -8,9 +8,9 @@ function getFullHistoryMap() {
     { encoding: 'utf-8' }
   )
 
-  const map: Record<string, { hash: string; date: string; message: string }[]> = {}
+  const map = {}
   const lines = output.split('\n')
-  let currentCommit: { hash: string; date: string; message: string } | null = null
+  let currentCommit = null
 
   for (const line of lines) {
     if (!line.trim()) continue
@@ -32,5 +32,5 @@ function getFullHistoryMap() {
 
 // generate & save ke file
 const map = getFullHistoryMap()
-fs.writeFileSync('./historyMap.json', JSON.stringify(map, null, 2))
+fs.writeFileSync('./src/data/historyMap.json', JSON.stringify(map, null, 2))
 console.log(`✅ History map generated: ${Object.keys(map).length} files`)
