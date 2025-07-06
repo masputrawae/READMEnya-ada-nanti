@@ -16,6 +16,7 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths
 
 const { doc } = Astro.props
+const { slug } = Astro.params
 const { Content } = await render(doc)
 
 // =================================== //
@@ -26,19 +27,17 @@ const history = doc.filePath && historyMap[doc.filePath as keyof typeof historyM
 ---
 
 <BaseLayout>
-  <ContentTab>
-    <article slot="readTab">
-      <h1>Discussion: {doc.data.title}</h1>
-      <Content />
-    </article>
-    <article slot="discussionTab">
-      <h1>Discussion: {doc.data.title}</h1>
-    </article>
-    <article slot="historyTab">
-      <h1>history: {doc.data.title}</h1>
-    </article>
-    <article slot="searchTab">
-      <h1>Search: {doc.data.title}</h1>
-    </article>
-  </ContentTab>
+  <div>
+    <div>
+      <div>
+        <a href={slug}>Read</a>
+        <a href={`Source/${doc.id}/`}>Discussion</a>
+      </div>
+    </div>
+    <div>
+      <article class="markdown">
+        <Content />
+      </article>
+    </div>
+  </div>
 </BaseLayout>
