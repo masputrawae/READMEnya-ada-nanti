@@ -4,7 +4,7 @@ import fs from 'fs'
 
 function getFullHistoryMap() {
   const output = execSync(
-    `git log --max-count=100 --pretty=format:"%h|%at|%s" --name-only -- docs/`,
+    `git log --max-count=100 --pretty=format:"%h|%at|%s" --name-only -- ./src/docs/`,
     { encoding: 'utf-8' }
   )
 
