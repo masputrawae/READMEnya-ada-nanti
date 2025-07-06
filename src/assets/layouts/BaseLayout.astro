@@ -12,7 +12,7 @@ import Footer from '../components/Footer.astro'
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 	</head>
-	<body>
+	<body class="body">
 		<aside class="sidebar">
 			<TopBar inMobile={false} />
 			<Sidebar />
@@ -28,8 +28,11 @@ import Footer from '../components/Footer.astro'
 <style>
 	@reference '../styles/global.css';
 	@layer components {
+    .body {
+      @apply grid lg:grid-cols-[20rem_minmax(0,1fr)];
+    }
 		.sidebar {
-			@apply invisible fixed h-dvh w-xs -translate-x-full border-r-2 border-r-zinc-800 bg-zinc-900 p-5 transition-all duration-300;
+			@apply invisible fixed h-dvh w-xs -translate-x-full border-r-2 border-r-zinc-800 bg-zinc-900 p-5 transition-all duration-300 lg:sticky lg:visible lg:translate-none lg:w-full;
 		}
 
 		.sidebar--open {
