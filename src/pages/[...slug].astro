@@ -31,7 +31,12 @@ const history = doc.filePath && historyMap[doc.filePath as keyof typeof historyM
     <div>
       <div>
         <a href={slug}>Read</a>
-        <a href={`Source/${doc.id}/`}>Discussion</a>
+        <a href={`/Talk-In/${doc.id}/`}>Discussion</a>
+      </div>
+      <div>
+        <a href={`/Source-In/${doc.id}/`}>View Source</a>
+        <a href={`/History-In/${doc.id}/`}>View History</a>
+        <a href={`/History-In/${doc.id}/`}>Search</a>
       </div>
     </div>
     <div>
