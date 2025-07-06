@@ -18,8 +18,13 @@ const { doc } = Astro.props
 const { Content } = await render(doc)
 
 // =================================== //
-const filePath = `./${doc.filePath}`;
-const history = historyMap[doc.filePath] || []
+const filePath = doc.filePath ? `./${doc.filePath}` : '';
+const history = doc.filePath && historyMap[doc.filePath as keyof typeof historyMap]
+  ? historyMap[doc.filePath as keyof typeof historyMap]
+  : [];
+
+console.log('🚀 log 🚀:', history);
+
 ---
 
 <BaseLayout>

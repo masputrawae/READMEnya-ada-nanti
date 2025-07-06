@@ -1,22 +1,1096 @@
 {
+  "src/content/docs/notes/JavaScript/Alasan Keyword var Di JavaScript Tidak Direkomendasikan.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Alasan let Dan const Lebih Direkomendasikan.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Array Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Asynchronous Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Callback Function di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Contoh Pengkondisian Yang Lebih Kompleks di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Else If Statement Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Function Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Fungsi Slice Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Fungsi filter Di JavaScrip.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Fungsi map Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/If Statement Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Jenis Jenis Scope Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Jenis Nilai Yang Falsy dan Truthy JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Kontrol Alur If Else Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Logical AND Operator di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Logical OR Operator di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Math Object Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Membuat Slugify Sederhana Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Mendeklarasikan Variabel Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Menghilangkan Duplikat Pada Array di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Mengurutkan Array Berdasarkan Nilai Boolean Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Nullis Coalescing Operator.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Operator Perbandingan Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Perbedaan var let dan const.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Perilaku var let dan const di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Promise Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Strict Mode Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Ternary Operator Di JavaScript v2.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Ternary Operator Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Tipe Data Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Ubah String Ke Number Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/Variabel Tanpa Keyword Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/JavaScript/async-await di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Linux/Apa Perbedaan Bash Dan Shell.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Linux/Sudo.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": " 1 file changed, 50 insertions(+)"
+    }
+  ],
+  "src/content/docs/notes/Python/Dictionary Di Python.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Python/List Di Python.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Python/Mendeklarasikan Variabel Di Python.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Python/Mengambil Input Penggunaan Di Python.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Python/Operasi Aritmatika Di Python.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Python/Operator Perbandingan Di Python.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Python/Percabangan Di Python.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Python/Set Di Python.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Python/Tipe Data Di Python.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Python/Tuple Di Python.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Quick Notes/Obsidian Desktop/Ex Desktop.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Quick Notes/Obsidian Mobile/Ex Mobile.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/References/Breakpoint SCSS.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/References/Cara Cepat Buat Typescale Dengan SCSS.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/References/Menampilkan Output Di JavaScript.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/SASS SCSS/Mixins Di SCSS.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/SASS SCSS/Variabel Di SCSS.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Unorganized/Antara Mobile First atau Desktop First.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Unorganized/Fenomena Lemot Tapi Ngak Lemot.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Unorganized/Membanggakan Diri Sendiri Kepada Orang Lain.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Unorganized/Mengelola Isi Kepala Di Obsidian.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/Unorganized/Tandai Link Halaman Aktif di Astro.md": [
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
   "src/content/docs/gaspoll/test-kedua.md": [
     {
       "hash": "6422acd",
       "date": "2025-07-06T10:28:45.000Z",
       "message": "Changed On 📅 : 2025-07-06 17:28:45",
-      "rawMarkdown": "---\nid: \"abcdefghijklmn12\"\ntitle: \"Contoh Dokumen Other\"\ncreated: \"2025-02-20\"\n\nupdate: \"2025-05-01\"\ndescription: \"Dokumen ini menggunakan sidebar group 'Other Page'.\"\npinned: false\ntags:\n  - \"other\"\ncategories:\n  - \"examples\"\n\nsidebar:\n  group: \"Other Page\" # ini cocok dengan label kedua di SIDEBAR\n  order: 2\n---\n\n# Contoh Other\n\nIni konten markdown untuk halaman dengan sidebar group **Other Page**.\n\nUbah 1\n\nUbah 2"
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:28:45 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:28:45 2025 +0700"
+      },
+      "diff": " 1 file changed, 3 insertions(+), 1 deletion(-)"
     },
     {
       "hash": "ebca7aa",
       "date": "2025-07-06T10:27:58.000Z",
       "message": "Changed On 📅 : 2025-07-06 17:27:58",
-      "rawMarkdown": "---\nid: \"abcdefghijklmn12\"\ntitle: \"Contoh Dokumen Other\"\ncreated: \"2025-02-20\"\n\nupdate: \"2025-05-01\"\ndescription: \"Dokumen ini menggunakan sidebar group 'Other Page'.\"\npinned: false\ntags:\n  - \"other\"\ncategories:\n  - \"examples\"\n\nsidebar:\n  group: \"Other Page\" # ini cocok dengan label kedua di SIDEBAR\n  order: 2\n---\n\n# Contoh Other\n\nIni konten markdown untuk halaman dengan sidebar group **Other Page**.\n\nUbah 1\n\nUbah 2"
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:27:58 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:27:58 2025 +0700"
+      },
+      "diff": " 1 file changed, 2 insertions(+)"
     },
     {
       "hash": "3f209c1",
       "date": "2025-07-06T10:21:29.000Z",
       "message": "initial commit",
-      "rawMarkdown": "---\nid: \"abcdefghijklmn12\"\ntitle: \"Contoh Dokumen Other\"\ncreated: \"2025-02-20\"\n\nupdate: \"2025-05-01\"\ndescription: \"Dokumen ini menggunakan sidebar group 'Other Page'.\"\npinned: false\ntags:\n  - \"other\"\ncategories:\n  - \"examples\"\n\nsidebar:\n  group: \"Other Page\" # ini cocok dengan label kedua di SIDEBAR\n  order: 2\n---\n\n# Contoh Other\n\nIni konten markdown untuk halaman dengan sidebar group **Other Page**.\n\nUbah 1\n\nUbah 2"
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:21:29 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:21:29 2025 +0700"
+      },
+      "diff": " 1 file changed, 21 insertions(+)"
     }
   ],
   "src/content/docs/home.md": [
@@ -24,19 +1098,49 @@
       "hash": "6422acd",
       "date": "2025-07-06T10:28:45.000Z",
       "message": "Changed On 📅 : 2025-07-06 17:28:45",
-      "rawMarkdown": "---\nid: '12345678901234' # minimal 14 karakter sesuai z.string().min(14)\ntitle: 'home'\ncreated: '2024-12-01' # akan di-coerce ke Date\n\n# Optional fields\nupdate: '2025-01-15'\ndescription: 'Ini hanya deskripsi dummy untuk pengujian.'\nimage: '/images/contoh.jpg'\npinned: true\ntags:\n  - 'dummy'\n  - 'test'\ncategories:\n  - 'examples'\n  - 'demo'\n\nsidebar:\n  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR\n  order: 1\n---\n\n# Judul Konten\n\nIni konten markdown dummy. Kamu bisa tulis apapun di sini.\n\nUbah 1\n\nUbah 2"
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:28:45 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:28:45 2025 +0700"
+      },
+      "diff": " 1 file changed, 3 insertions(+), 1 deletion(-)"
     },
     {
       "hash": "ebca7aa",
       "date": "2025-07-06T10:27:58.000Z",
       "message": "Changed On 📅 : 2025-07-06 17:27:58",
-      "rawMarkdown": "---\nid: '12345678901234' # minimal 14 karakter sesuai z.string().min(14)\ntitle: 'home'\ncreated: '2024-12-01' # akan di-coerce ke Date\n\n# Optional fields\nupdate: '2025-01-15'\ndescription: 'Ini hanya deskripsi dummy untuk pengujian.'\nimage: '/images/contoh.jpg'\npinned: true\ntags:\n  - 'dummy'\n  - 'test'\ncategories:\n  - 'examples'\n  - 'demo'\n\nsidebar:\n  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR\n  order: 1\n---\n\n# Judul Konten\n\nIni konten markdown dummy. Kamu bisa tulis apapun di sini.\n\nUbah 1\n\nUbah 2"
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:27:58 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:27:58 2025 +0700"
+      },
+      "diff": " 1 file changed, 2 insertions(+)"
     },
     {
       "hash": "3f209c1",
       "date": "2025-07-06T10:21:29.000Z",
       "message": "initial commit",
-      "rawMarkdown": "---\nid: '12345678901234' # minimal 14 karakter sesuai z.string().min(14)\ntitle: 'home'\ncreated: '2024-12-01' # akan di-coerce ke Date\n\n# Optional fields\nupdate: '2025-01-15'\ndescription: 'Ini hanya deskripsi dummy untuk pengujian.'\nimage: '/images/contoh.jpg'\npinned: true\ntags:\n  - 'dummy'\n  - 'test'\ncategories:\n  - 'examples'\n  - 'demo'\n\nsidebar:\n  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR\n  order: 1\n---\n\n# Judul Konten\n\nIni konten markdown dummy. Kamu bisa tulis apapun di sini.\n\nUbah 1\n\nUbah 2"
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:21:29 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:21:29 2025 +0700"
+      },
+      "diff": " 1 file changed, 25 insertions(+)"
     }
   ],
   "src/content/docs/notes/nosidebar.md": [
@@ -44,19 +1148,49 @@
       "hash": "6422acd",
       "date": "2025-07-06T10:28:45.000Z",
       "message": "Changed On 📅 : 2025-07-06 17:28:45",
-      "rawMarkdown": "---\nid: \"xyz987654321000\"\ntitle: \"Contoh Tanpa Sidebar\"\ncreated: \"2025-03-10\"\n\ndescription: \"Ini dokumen dummy tanpa properti sidebar sama sekali.\"\ntags:\n  - \"no-sidebar\"\ncategories:\n  - \"examples\"\n---\n\n# Tanpa Sidebar\n\nIni konten markdown yang tidak punya field `sidebar` di frontmatter.\n\nUbah 1\n\nUbah 2"
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:28:45 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:28:45 2025 +0700"
+      },
+      "diff": " 1 file changed, 3 insertions(+), 1 deletion(-)"
     },
     {
       "hash": "ebca7aa",
       "date": "2025-07-06T10:27:58.000Z",
       "message": "Changed On 📅 : 2025-07-06 17:27:58",
-      "rawMarkdown": "---\nid: \"xyz987654321000\"\ntitle: \"Contoh Tanpa Sidebar\"\ncreated: \"2025-03-10\"\n\ndescription: \"Ini dokumen dummy tanpa properti sidebar sama sekali.\"\ntags:\n  - \"no-sidebar\"\ncategories:\n  - \"examples\"\n---\n\n# Tanpa Sidebar\n\nIni konten markdown yang tidak punya field `sidebar` di frontmatter.\n\nUbah 1\n\nUbah 2"
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:27:58 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:27:58 2025 +0700"
+      },
+      "diff": " 1 file changed, 2 insertions(+)"
     },
     {
       "hash": "3f209c1",
       "date": "2025-07-06T10:21:29.000Z",
       "message": "initial commit",
-      "rawMarkdown": "---\nid: \"xyz987654321000\"\ntitle: \"Contoh Tanpa Sidebar\"\ncreated: \"2025-03-10\"\n\ndescription: \"Ini dokumen dummy tanpa properti sidebar sama sekali.\"\ntags:\n  - \"no-sidebar\"\ncategories:\n  - \"examples\"\n---\n\n# Tanpa Sidebar\n\nIni konten markdown yang tidak punya field `sidebar` di frontmatter.\n\nUbah 1\n\nUbah 2"
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:21:29 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:21:29 2025 +0700"
+      },
+      "diff": " 1 file changed, 15 insertions(+)"
     }
   ]
 }
