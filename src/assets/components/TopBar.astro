@@ -1,0 +1,11 @@
+---
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+const { inMobile } = Astro.props
+---
+
+<div>
+  <button>
+    <Icon name={inMobile ? 'icon-bar-3' : 'icon-x-mark'} />
+  </button>
+</div>
