@@ -4,7 +4,7 @@ import Sidebar from '../components/Sidebar.astro'
 import TopBar from '../components/TopBar.astro'
 import Footer from '../components/Footer.astro'
 
-export const prerender = false;
+import { SITE_PARAMS } from '../../site.config'
 ---
 
 <!doctype html>
@@ -12,43 +12,15 @@ export const prerender = false;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Home</title>
 	</head>
-	<body class="body">
-		<aside class="sidebar">
-			<TopBar inMobile={false} />
-			<Sidebar />
-		</aside>
-		<div class="max-w-full overflow-x-hidden">
+	<body class="grid lg:grid-cols-[20rem_minmax(0,1fr)]">
+    <Sidebar />
+		<div class="max-w-full">
 			<TopBar inMobile={true} />
 			<slot />
 			<Footer />
 		</div>
+    <script src="../script/main.js"></script>
 	</body>
 </html>
-
-<style>
-	@reference '../styles/global.css';
-	@layer components {
-		.body {
-			@apply grid lg:grid-cols-[20rem_minmax(0,1fr)];
-		}
-		.sidebar {
-			@apply invisible fixed h-dvh w-xs -translate-x-full border-r-2 border-r-zinc-800 bg-zinc-900 p-5 transition-all duration-300 lg:visible lg:sticky lg:w-full lg:translate-none;
-		}
-
-		.sidebar--open {
-			@apply visible translate-x-0;
-		}
-	}
-</style>
-
-<script is:inline>
-	;(() => {
-		document.querySelectorAll('[data-sidebar]').forEach(btn => {
-			btn.addEventListener('click', () => {
-				document.querySelector('.sidebar').classList.toggle('sidebar--open')
-			})
-		})
-	})()
-</script>

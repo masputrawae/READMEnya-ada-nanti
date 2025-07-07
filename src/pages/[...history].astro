@@ -3,30 +3,27 @@ import BaseLayout from '../assets/layouts/BaseLayout.astro'
 import NavContent from '../assets/components/NavContent.astro'
 
 import { getCollection } from 'astro:content'
-import { render } from 'astro:content'
-
 import type { GetStaticPaths } from 'astro'
 
 export const getStaticPaths = (async () => {
 	const docs = await getCollection('docs')
 
 	return [
-		...docs.map(doc => ({
-			params: { slug: doc.id === 'home' ? '/' : doc.id },
-			props: { doc }
+		...docs.map(entry => ({
+			params: { history: `/History-In=${entry.id}/` },
+			props: { entry }
 		}))
 	]
 }) satisfies GetStaticPaths
 
-const { doc } = Astro.props
-const { Content } = await render(doc)
+const { entry } = Astro.props
 ---
 
 <BaseLayout>
 	<main class="max-w-full overflow-x-hidden">
-		<NavContent entry={doc}/>
+		<NavContent entry={entry} />
 		<article class="markdown">
-			<Content />
+      In history
 		</article>
 	</main>
 </BaseLayout>

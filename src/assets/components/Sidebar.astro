@@ -2,7 +2,9 @@
 import { getCollection } from 'astro:content'
 import { SIDEBAR } from '../../sidebar.config'
 import { Icon } from 'astro-icon/components'
-import { absUrl, relUrl } from '../utils/url'
+import { relUrl } from '../utils/url'
+
+import TopBar from './TopBar.astro'
 
 const docs = await getCollection('docs')
 const getSidebarDocs = docs.filter(doc => doc.data.sidebar)
@@ -31,87 +33,40 @@ for (const group of SIDEBAR) {
 }
 ---
 
-<nav class="nav">
-	{
-		Object.entries(grouped).map(([groupName, { defaultActive, items }]) => {
-			const collapseId = crypto.randomUUID()
-
-			return (
-				<div class="nav__contain">
-					<strong data-dropdown={collapseId} class="nav__label">
-						<span>{groupName}</span>
-						<Icon
-							name="icon-chevron-down"
-							class={`nav__label-icon ${defaultActive ? '' : 'nav__label-icon--open'}`}
-						/>
-					</strong>
-					<ul id={collapseId} class={`dropdown ${defaultActive ? 'dropdown--open' : ''}`}>
-						{items.map(item => (
-							<li class="dropdown__item">
-								<a href={item.id} class="dropdown__link">
-									{item.title}
-								</a>
-							</li>
-						))}
-					</ul>
-				</div>
-			)
-		})
-	}
-</nav>
-
-<style>
-	@reference '../styles/global.css';
-	@layer components {
-		.nav {
-			@apply grid;
+<aside
+	id="offcanvas"
+	class="fixed top-0 left-0 z-50 h-dvh w-xs overflow-y-auto bg-zinc-900 p-4 transition-all duration-300 ease-in-out lg:visible lg:sticky lg:translate-none"
+>
+	<TopBar inMobile={false} />
+	<nav class="grid">
+		{
+			Object.entries(grouped).map(([groupName, { defaultActive, items }]) => {
+				const collapseId = crypto.randomUUID()
+				return (
+					<div>
+						<button
+							data-collapse-target={collapseId}
+							class="flex w-full items-center justify-between"
+						>
+							<span>{groupName}</span>
+							<Icon
+								name="icon-chevron-down"
+								class={`icon ${defaultActive ? 'iconIsActive' : ''}`}
+							/>
+						</button>
+						<div
+							id={collapseId}
+							class={`collapse flex-col ${defaultActive ? 'collapseIsActive' : ''}`}
+						>
+							<div>
+								{items.map(item => (
+									<a href={item.id}>{item.title}</a>
+								))}
+							</div>
+						</div>
+					</div>
+				)
+			})
 		}
-
-		.nav__contain {
-			@apply pt-8;
-		}
-
-		.nav__label {
-			@apply mb-2 flex items-center justify-between gap-2 border-b border-b-zinc-800 pb-1 text-lg text-zinc-50;
-		}
-
-		.nav__label-icon {
-			@apply transition-all duration-500;
-		}
-
-		.nav__label-icon--open {
-			@apply -rotate-90;
-		}
-
-    .dropdown {
-      @apply hidden transition-all duration-300;
-    }
-
-    .dropdown--open {
-      @apply block;
-    }
-
-    .dropdown__item {
-      @apply max-w-3xs overflow-hidden;
-    }
-
-    .dropdown__link {
-      @apply text-sm px-1 py-4;
-    }
-	}
-</style>
-
-<script is:inline>
-	const buttons = document.querySelectorAll('[data-dropdown]')
-
-	buttons.forEach(btn => {
-		const id = btn.getAttribute('data-dropdown')
-		const dropdown = document.getElementById(id)
-		const icon = document.querySelector(`[data-dropdown="${id}"] .nav__label-icon`)
-
-		btn.addEventListener('click', () => {
-			dropdown.classList.toggle('dropdown--open')
-			icon.classList.toggle('nav__label-icon--open')
-		})
-	})
-</script>
+	</nav>
+</aside>

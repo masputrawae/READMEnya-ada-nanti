@@ -1,6 +1,22 @@
 {
   "src/content/docs/home.md": [
     {
+      "hash": "8ea3a1b",
+      "date": "2025-07-07T08:08:04.000Z",
+      "message": "Changed On 📅 : 2025-07-07 15:08:04",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "diff": " 1 file changed, 3 insertions(+), 1 deletion(-)"
+    },
+    {
       "hash": "7e50de0",
       "date": "2025-07-06T13:59:15.000Z",
       "message": "Changed On 📅 : 2025-07-06 20:59:15",
@@ -81,7 +97,125 @@
       "diff": " 1 file changed, 25 insertions(+)"
     }
   ],
+  "src/content/docs/notes/Python/List Di Python.md": [
+    {
+      "hash": "8ea3a1b",
+      "date": "2025-07-07T08:08:04.000Z",
+      "message": "Changed On 📅 : 2025-07-07 15:08:04",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "diff": ""
+    },
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/SASS SCSS/Mixins Di SCSS.md": [
+    {
+      "hash": "8ea3a1b",
+      "date": "2025-07-07T08:08:04.000Z",
+      "message": "Changed On 📅 : 2025-07-07 15:08:04",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "diff": ""
+    },
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
+  "src/content/docs/notes/SASS SCSS/Variabel Di SCSS.md": [
+    {
+      "hash": "8ea3a1b",
+      "date": "2025-07-07T08:08:04.000Z",
+      "message": "Changed On 📅 : 2025-07-07 15:08:04",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "diff": ""
+    },
+    {
+      "hash": "44f426c",
+      "date": "2025-07-06T10:42:22.000Z",
+      "message": "init 2",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Sun Jul 6 17:42:22 2025 +0700"
+      },
+      "diff": ""
+    }
+  ],
   "src/content/docs/notes/Unorganized/Antara Mobile First atau Desktop First.md": [
+    {
+      "hash": "8ea3a1b",
+      "date": "2025-07-07T08:08:04.000Z",
+      "message": "Changed On 📅 : 2025-07-07 15:08:04",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "diff": ""
+    },
     {
       "hash": "cd8c9e9",
       "date": "2025-07-06T13:57:15.000Z",
@@ -117,6 +251,22 @@
   ],
   "src/content/docs/notes/Unorganized/Fenomena Lemot Tapi Ngak Lemot.md": [
     {
+      "hash": "8ea3a1b",
+      "date": "2025-07-07T08:08:04.000Z",
+      "message": "Changed On 📅 : 2025-07-07 15:08:04",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "diff": ""
+    },
+    {
       "hash": "cd8c9e9",
       "date": "2025-07-06T13:57:15.000Z",
       "message": "Changed On 📅 : 2025-07-06 20:57:15",
@@ -150,6 +300,22 @@
     }
   ],
   "src/content/docs/notes/Unorganized/Membanggakan Diri Sendiri Kepada Orang Lain.md": [
+    {
+      "hash": "8ea3a1b",
+      "date": "2025-07-07T08:08:04.000Z",
+      "message": "Changed On 📅 : 2025-07-07 15:08:04",
+      "author": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "committer": {
+        "name": "Masputrawae",
+        "email": "masputrawae.official@gmail.com",
+        "date": "Mon Jul 7 15:08:04 2025 +0700"
+      },
+      "diff": ""
+    },
     {
       "hash": "cd8c9e9",
       "date": "2025-07-06T13:57:15.000Z",
@@ -985,24 +1151,6 @@
       "diff": ""
     }
   ],
-  "src/content/docs/notes/Python/List Di Python.md": [
-    {
-      "hash": "44f426c",
-      "date": "2025-07-06T10:42:22.000Z",
-      "message": "init 2",
-      "author": {
-        "name": "Masputrawae",
-        "email": "masputrawae.official@gmail.com",
-        "date": "Sun Jul 6 17:42:22 2025 +0700"
-      },
-      "committer": {
-        "name": "Masputrawae",
-        "email": "masputrawae.official@gmail.com",
-        "date": "Sun Jul 6 17:42:22 2025 +0700"
-      },
-      "diff": ""
-    }
-  ],
   "src/content/docs/notes/Python/Mendeklarasikan Variabel Di Python.md": [
     {
       "hash": "44f426c",
@@ -1184,42 +1332,6 @@
     }
   ],
   "src/content/docs/notes/References/Menampilkan Output Di JavaScript.md": [
-    {
-      "hash": "44f426c",
-      "date": "2025-07-06T10:42:22.000Z",
-      "message": "init 2",
-      "author": {
-        "name": "Masputrawae",
-        "email": "masputrawae.official@gmail.com",
-        "date": "Sun Jul 6 17:42:22 2025 +0700"
-      },
-      "committer": {
-        "name": "Masputrawae",
-        "email": "masputrawae.official@gmail.com",
-        "date": "Sun Jul 6 17:42:22 2025 +0700"
-      },
-      "diff": ""
-    }
-  ],
-  "src/content/docs/notes/SASS SCSS/Mixins Di SCSS.md": [
-    {
-      "hash": "44f426c",
-      "date": "2025-07-06T10:42:22.000Z",
-      "message": "init 2",
-      "author": {
-        "name": "Masputrawae",
-        "email": "masputrawae.official@gmail.com",
-        "date": "Sun Jul 6 17:42:22 2025 +0700"
-      },
-      "committer": {
-        "name": "Masputrawae",
-        "email": "masputrawae.official@gmail.com",
-        "date": "Sun Jul 6 17:42:22 2025 +0700"
-      },
-      "diff": ""
-    }
-  ],
-  "src/content/docs/notes/SASS SCSS/Variabel Di SCSS.md": [
     {
       "hash": "44f426c",
       "date": "2025-07-06T10:42:22.000Z",

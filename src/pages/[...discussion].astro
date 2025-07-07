@@ -3,8 +3,6 @@ import BaseLayout from '../assets/layouts/BaseLayout.astro'
 import NavContent from '../assets/components/NavContent.astro'
 
 import { getCollection } from 'astro:content'
-import { render } from 'astro:content'
-
 import type { GetStaticPaths } from 'astro'
 
 export const getStaticPaths = (async () => {
@@ -12,21 +10,20 @@ export const getStaticPaths = (async () => {
 
 	return [
 		...docs.map(doc => ({
-			params: { slug: doc.id === 'home' ? '/' : doc.id },
+			params: { discussion: `/Discussion-In=${doc.id}` },
 			props: { doc }
 		}))
 	]
 }) satisfies GetStaticPaths
 
 const { doc } = Astro.props
-const { Content } = await render(doc)
 ---
 
 <BaseLayout>
 	<main class="max-w-full overflow-x-hidden">
 		<NavContent entry={doc}/>
 		<article class="markdown">
-			<Content />
+      In Discussion
 		</article>
 	</main>
 </BaseLayout>

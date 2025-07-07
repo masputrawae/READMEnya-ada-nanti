@@ -1,19 +1,39 @@
 ---
+import Search from 'astro-pagefind/components/Search'
+
+import { SITE_PARAMS } from '../../site.config'
 import { Icon } from 'astro-icon/components'
 import { relUrl } from '../utils/url'
-import Search from "astro-pagefind/components/Search";
-const { href, q } = Astro.props
+
+const { entry } = Astro.props
+const githubUrl = `https://github.com`
+
+const readHref = relUrl(entry.id === 'home' ? '/' : entry.id)
+const discussionHref = relUrl(`/Discussion-In=${entry.id}/`)
+const historyHref = relUrl(`/History-In=${entry.id}/`)
+
+const editPageHref = `${githubUrl}/${SITE_PARAMS.repo}/edit/${SITE_PARAMS.branch}/${entry.filePath}`
+const viewSourceHref = `${githubUrl}/${SITE_PARAMS.repo}/blob/${SITE_PARAMS.branch}/${entry.filePath}?plain=1`
 ---
 
-<div>
-  <nav>
-    <a href={relUrl(href)}>Read</a>
-    <a href={relUrl(`/discussion/${href}`)}>Discussion</a>
-  </nav>
+<div class="py-4">
+	<div id="collapseBtn">
+		<button>
+			<Icon name="icon-chevron-down" id="iconOpen" />
+		</button>
+	</div>
 
-  <nav>
-    <a href={relUrl(`/source/${href}`)}>View Source</a>
-    <a href={relUrl(`/history/${href}`)}>View History</a>
-    <Search id='search' query={q} className="pagefind-ui" uiOptions={{ showImages: false }} />
-  </nav>
+	<div id="collapseNav">
+		<nav>
+			<a href={readHref}>Read</a>
+			<a href={discussionHref}>Discussion</a>
+		</nav>
+
+		<nav>
+			<a href={historyHref}>View History</a>
+			<a target="_blank" rel="noopener noreferrer" href={editPageHref}>Edit Page</a>
+			<a target="_blank" rel="noopener noreferrer" href={viewSourceHref}>View Source</a>
+			<Search id="search" className="pagefind-ui" uiOptions={{ showImages: true }} />
+		</nav>
+	</div>
 </div>

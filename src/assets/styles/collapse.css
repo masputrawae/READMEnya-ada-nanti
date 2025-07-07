@@ -1,0 +1,16 @@
+@layer components {
+  .collapse {
+    @apply hidden;
+  }
+  .collapse.collapseIsActive {
+    @apply grid;
+  }
+
+  .icon{
+    @apply -rotate-90;
+  }
+
+  .icon.iconIsActive {
+    @apply -rotate-0;
+  }
+}

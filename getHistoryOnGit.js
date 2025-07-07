@@ -81,7 +81,7 @@ function getFullHistoryMap() {
 // Panggil fungsi untuk menghasilkan history map
 const map = getFullHistoryMap()
 
-// Simpan hasil ke file JSON di ./src/data/historyMap.json
-fs.writeFileSync('./src/data/historyMap.json', JSON.stringify(map, null, 2))
+// Simpan hasil ke file JSON di ./src/content/data/historyOnGit.json
+fs.writeFileSync('./src/content/data/historyOnGit.json', JSON.stringify(map, null, 2))
 
 console.log(`✅ History map generated: ${Object.keys(map).length} files with diffs`)

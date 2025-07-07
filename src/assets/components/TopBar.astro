@@ -12,55 +12,22 @@ const tagline = SITE_PARAMS.tagline
 const SITE_URL = `${import.meta.env.SITE}${import.meta.env.BASE_URL}`
 ---
 
-<div class=`topbar ${inMobile ? 'topbar--mobile' : ''}`>
-	<a href={SITE_URL} class="brand">
-		<Image src={logo} alt={title} width={58} height={58} class="brand__logo" />
-		<span class="brand__body">
-			<strong class="brand__title">{title}</strong>
-			<em class="brand__tagline">{tagline}</em>
+<div class=`flex items-center justify-between ${inMobile ? 'lg:hidden' : ''}`>
+	<a href={SITE_URL} class="flex items-center gap-2">
+		<Image
+			src={logo}
+			alt={title}
+			format="webp"
+			width={56}
+			height={56}
+			class="size-14 rounded-full border-2 border-zinc-900 shadow-sm shadow-black"
+		/>
+		<span class="grid text-shadow-md text-shadow-black">
+			<strong class="text-lg text-white">{title}</strong>
+			<em class="text-xs text-zinc-400 not-italic">{tagline}</em>
 		</span>
 	</a>
-	<button data-sidebar="sidebar" class=`topbar__btn ${inMobile ? '' : 'lg:hidden'}`>
-		<Icon name={inMobile ? 'icon-bar-3' : 'icon-x-mark'} class="topbar__btn-icon" />
+	<button data-offcanvas-target="offcanvas" class=` ${inMobile ? '' : 'lg:hidden'}`>
+		<Icon name={inMobile ? 'icon-bar-3' : 'icon-x-mark'} />
 	</button>
 </div>
-
-<style>
-	@reference '../styles/global.css';
-
-	@layer components {
-		/* topbar */
-		.topbar {
-			@apply flex items-center justify-between;
-		}
-
-		.topbar--mobile {
-			@apply border-b border-b-zinc-800 px-4 py-2 shadow-sm shadow-black lg:hidden;
-		}
-
-		.topbar__btn-icon {
-			@apply size-6 text-white;
-		}
-
-		/* brand */
-		.brand {
-			@apply flex items-center gap-2;
-		}
-
-		.brand__logo {
-			@apply size-14 rounded-full border-2 border-zinc-900 shadow-sm shadow-black;
-		}
-
-		.brand__body {
-			@apply grid text-shadow-black text-shadow-md;
-		}
-
-		.brand__title {
-			@apply text-lg text-white;
-		}
-
-		.brand__tagline {
-			@apply text-sm not-italic;
-		}
-	}
-</style>
