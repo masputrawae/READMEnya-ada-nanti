@@ -1,0 +1,34 @@
+---
+import { getEntry } from 'astro:content'
+import BaseLayout from '../../assets/layouts/BaseLayout.astro'
+
+let { discussion } = Astro.params
+
+const id = discussion || 'home'
+
+const doc = await getEntry('docs', id)
+
+if (!doc) {
+	return Astro.redirect('/404')
+}
+---
+
+<BaseLayout>
+	<script
+		is:inline
+		src="https://giscus.app/client.js"
+		data-repo="masputrawae/READMEnya-ada-nanti"
+		data-repo-id="R_kgDOOZ9iaQ"
+		data-category="General"
+		data-category-id="DIC_kwDOOZ9iac4CsgYg"
+		data-mapping="title"
+		data-strict="0"
+		data-reactions-enabled="1"
+		data-emit-metadata="0"
+		data-input-position="bottom"
+		data-theme="dark"
+		data-lang="en"
+		crossorigin="anonymous"
+		async
+	></script>
+</BaseLayout>

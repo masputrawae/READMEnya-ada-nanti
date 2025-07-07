@@ -2,13 +2,14 @@
 import { getCollection } from 'astro:content'
 import { SIDEBAR } from '../../sidebar.config'
 import { Icon } from 'astro-icon/components'
+import { absUrl, relUrl } from '../utils/url'
 
 const docs = await getCollection('docs')
 const getSidebarDocs = docs.filter(doc => doc.data.sidebar)
 
 // Ubah docs jadi array dengan info minimal
 const docItems = getSidebarDocs.map(doc => ({
-	id: doc.id === 'home' ? '/' : doc.id,
+	id: doc.id === 'home' ? relUrl('/') : relUrl(doc.id),
 	title: doc.data.title,
 	group: doc.data.sidebar?.group || 'Ungrouped',
 	order: doc.data.sidebar?.order ?? 0

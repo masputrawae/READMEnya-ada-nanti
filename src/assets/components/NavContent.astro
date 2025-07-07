@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon/components'
+import { relUrl } from '../utils/url'
+
+const { href } = Astro.props
+---
+
+<div>
+  <nav>
+    <a href={relUrl(href)}>Read</a>
+    <a href={relUrl(`/discussion/${href}`)}>Discussion</a>
+  </nav>
+
+  <nav>
+    <a href="#">Edit</a>
+    <a href={relUrl(`/source/${href}`)}>View Source</a>
+    <a href={relUrl(`/history/${href}`)}>View History</a>
+  </nav>
+</div>

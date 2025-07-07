@@ -1,13 +1,13 @@
 ---
 import { getEntry, render } from 'astro:content'
-import historyMap from '../data/historyMap.json'
-import BaseLayout from '../assets/layouts/BaseLayout.astro'
-import NavContent from '../assets/components/NavContent.astro'
+import historyMap from '../../data/historyMap.json'
+import BaseLayout from '../../assets/layouts/BaseLayout.astro'
+import NavContent from '../../assets/components/NavContent.astro'
 
 // Ambil slug dari params
-let { slug } = Astro.params
+let { history } = Astro.params
 
-const id = slug || 'home' // jika root, gunakan id 'home'
+const id = history || 'home' // jika root, gunakan id 'home'
 
 // Ambil entry dari koleksi 'docs' berdasarkan id
 const doc = await getEntry('docs', id)
@@ -17,12 +17,8 @@ if (!doc) {
 	return Astro.redirect('/404')
 }
 
-// Render markdown menjadi komponen Content
-const { Content } = await render(doc)
-
 // History map
-const filePath = doc.filePath ? `./${doc.filePath}` : ''
-const history =
+const historyFile =
 	doc.filePath && historyMap[doc.filePath as keyof typeof historyMap]
 		? historyMap[doc.filePath as keyof typeof historyMap]
 		: []
@@ -30,7 +26,10 @@ const history =
 
 <BaseLayout>
 	<div class="markdown">
-    <NavContent href={doc.id} />
-		<Content />
+    {
+      historyFile.map(history => (
+        <a href="">{history.author}</a>
+      ))
+    }
 	</div>
 </BaseLayout>

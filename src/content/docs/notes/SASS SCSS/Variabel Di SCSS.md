@@ -6,6 +6,9 @@ tags:
   - stylesheet
   - fundamental
 created: 2025-06-29T17:33:17+07:00
+sidebar:
+  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR
+  order: 3
 ---
 
 Buat file `_variables.scss`

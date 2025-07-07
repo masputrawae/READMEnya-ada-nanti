@@ -6,6 +6,9 @@ tags:
   - stylesheet
   - fundamental
 created: 2025-06-29T12:20:39+07:00
+sidebar:
+  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR
+  order: 2
 ---
 
 Mixin di sass/scss adalah cara menulis rangkaian aturan css yang dibungkus jadi 1 aturan dan bisa digunakan berulang kali di banyak tempat dengan lebih mudah dan cepat.

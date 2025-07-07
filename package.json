@@ -9,6 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^6.4.1",
+    "@braindb/astro": "^0.1.1",
+    "@braindb/core": "^0.0.17",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.11.0",
     "astro-icon": "^1.1.5",

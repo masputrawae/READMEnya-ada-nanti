@@ -27,3 +27,5 @@ Amet fugiat commodo labore nisi est mollit velit id. Non quis pariatur consectet
 ## Heading 2
 
 Elit velit quis eiusmod veniam sit quis consectetur ea cupidatat ullamco officia consectetur mollit. Consequat officia incididunt nisi ipsum sint velit proident exercitation. Laborum commodo veniam laborum deserunt ullamco elit et aute minim pariatur elit quis sit. Amet nulla laboris id aute quis.
+
+[[Alasan Keyword var Di JavaScript Tidak Direkomendasikan]]

@@ -6,6 +6,9 @@ tags:
   - programming
   - fundamental
 created: 2025-06-29T23:16:46+07:00
+sidebar:
+  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR
+  order: 4
 ---
 
 List (daftar) adalah bagian dari struktur data di python, list digunakan untuk menyimpan kumpulan item dalam satu variabel dan bisa menyimpan berbagai tipe data.

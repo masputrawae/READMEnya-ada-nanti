@@ -6,9 +6,6 @@ tags:
   - front-end
   - design
 created: 2025-06-21T10:20:28+07:00
-sidebar:
-  group: 'Main Page' # harus cocok dengan salah satu label di SIDEBAR
-  order: 2
 ---
 
 ## Pertanyaan
