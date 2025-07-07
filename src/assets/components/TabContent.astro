@@ -1,0 +1,44 @@
+---
+import { Icon } from 'astro-icon/components'
+const { docs } = Astro.props
+---
+
+<div>
+	<div>
+		<div>
+			<h1>{docs.data.title}</h1>
+			<button class="">
+				<Icon name="icon-bars-arrow-down" />
+				<Icon name="icon-bars-arrow-up" />
+			</button>
+		</div>
+
+		<div>
+			<div>
+				<button>Read</button>
+				<button>Discussion</button>
+			</div>
+			<div>
+				<a href="#">Edit Page</a>
+				<a href="#">View Source</a>
+				<button>View History</button>
+				<button>Search...</button>
+			</div>
+		</div>
+	</div>
+
+	<div>
+    <article id="readTab">
+      <slot name="readTab" />
+    </article>
+    <aside id="discussionTab">
+      <slot name="discussionTab" />
+    </aside>
+    <aside id="viewHistoryTab">
+      <slot name="viewHistoryTab" />
+    </aside>
+    <aside id="searchTab">
+      <slot name="searchTab" />
+    </aside>
+  </div>
+</div>

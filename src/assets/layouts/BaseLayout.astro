@@ -17,7 +17,7 @@ import Footer from '../components/Footer.astro'
 			<TopBar inMobile={false} />
 			<Sidebar />
 		</aside>
-		<div>
+		<div class="max-w-full overflow-x-hidden">
 			<TopBar inMobile={true} />
 			<slot />
 			<Footer />
@@ -28,11 +28,11 @@ import Footer from '../components/Footer.astro'
 <style>
 	@reference '../styles/global.css';
 	@layer components {
-    .body {
-      @apply grid lg:grid-cols-[20rem_minmax(0,1fr)];
-    }
+		.body {
+			@apply grid lg:grid-cols-[20rem_minmax(0,1fr)];
+		}
 		.sidebar {
-			@apply invisible fixed h-dvh w-xs -translate-x-full border-r-2 border-r-zinc-800 bg-zinc-900 p-5 transition-all duration-300 lg:sticky lg:visible lg:translate-none lg:w-full;
+			@apply invisible fixed h-dvh w-xs -translate-x-full border-r-2 border-r-zinc-800 bg-zinc-900 p-5 transition-all duration-300 lg:visible lg:sticky lg:w-full lg:translate-none;
 		}
 
 		.sidebar--open {
@@ -42,9 +42,11 @@ import Footer from '../components/Footer.astro'
 </style>
 
 <script is:inline>
-	document.querySelectorAll('[data-sidebar]').forEach(btn => {
-		btn.addEventListener('click', () => {
-			document.querySelector('.sidebar').classList.toggle('sidebar--open')
+	;(() => {
+		document.querySelectorAll('[data-sidebar]').forEach(btn => {
+			btn.addEventListener('click', () => {
+				document.querySelector('.sidebar').classList.toggle('sidebar--open')
+			})
 		})
-	})
+	})()
 </script>

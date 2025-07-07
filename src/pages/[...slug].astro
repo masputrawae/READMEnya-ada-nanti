@@ -3,7 +3,7 @@ import type { GetStaticPaths } from 'astro'
 import { render, getCollection } from 'astro:content'
 import historyMap from '../data/historyMap.json'
 import BaseLayout from '../assets/layouts/BaseLayout.astro'
-import ContentTab from '../assets/components/ContentTab.astro'
+import TabContent from '../assets/components/TabContent.astro'
 
 export const getStaticPaths = (async () => {
   const docs = await getCollection('docs')
@@ -28,21 +28,10 @@ const history = doc.filePath && historyMap[doc.filePath as keyof typeof historyM
 
 <BaseLayout>
   <div>
-    <div>
-      <div>
-        <a href={slug}>Read</a>
-        <a href={`/Talk-In/${doc.id}/`}>Discussion</a>
-      </div>
-      <div>
-        <a href={`/Source-In/${doc.id}/`}>View Source</a>
-        <a href={`/History-In/${doc.id}/`}>View History</a>
-        <a href={`/History-In/${doc.id}/`}>Search</a>
-      </div>
-    </div>
-    <div>
-      <article class="markdown">
+    <TabContent docs={doc}>
+      <div slot="readTab">
         <Content />
-      </article>
-    </div>
+      </div>
+    </TabContent>
   </div>
 </BaseLayout>

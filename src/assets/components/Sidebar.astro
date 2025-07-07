@@ -41,7 +41,7 @@ for (const group of SIDEBAR) {
 						<span>{groupName}</span>
 						<Icon
 							name="icon-chevron-down"
-							class={`nav__label-icon ${defaultActive ? 'nav__label-icon--open' : ''}`}
+							class={`nav__label-icon ${defaultActive ? '' : 'nav__label-icon--open'}`}
 						/>
 					</strong>
 					<ul id={collapseId} class={`dropdown ${defaultActive ? 'dropdown--open' : ''}`}>
