@@ -10,7 +10,7 @@ import netlify from '@astrojs/netlify'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://masputrawae.github.io',
+	site: 'https://gasjalan.netlify.app',
 	base: '/',
 	output: 'server',
 	devToolbar: { enabled: false },

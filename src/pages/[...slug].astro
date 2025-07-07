@@ -4,6 +4,8 @@ import historyMap from '../data/historyMap.json'
 import BaseLayout from '../assets/layouts/BaseLayout.astro'
 import NavContent from '../assets/components/NavContent.astro'
 
+export const prerender = false;
+
 // Ambil slug dari params
 let { slug } = Astro.params
 
@@ -26,11 +28,16 @@ const history =
 	doc.filePath && historyMap[doc.filePath as keyof typeof historyMap]
 		? historyMap[doc.filePath as keyof typeof historyMap]
 		: []
+
+const q = Astro.url.searchParams.get("q") ?? undefined;
 ---
 
 <BaseLayout>
-	<div class="markdown">
-    <NavContent href={doc.id} />
-		<Content />
+	<div>
+    <NavContent href={doc.id} q={q} />
+    <h1>{doc.data.title}</h1>
+		<article class="markdown">
+      <Content />
+    </article>
 	</div>
 </BaseLayout>

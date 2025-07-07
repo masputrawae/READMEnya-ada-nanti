@@ -1,8 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { relUrl } from '../utils/url'
-
-const { href } = Astro.props
+import Search from "astro-pagefind/components/Search";
+const { href, q } = Astro.props
 ---
 
 <div>
@@ -12,8 +12,8 @@ const { href } = Astro.props
   </nav>
 
   <nav>
-    <a href="#">Edit</a>
     <a href={relUrl(`/source/${href}`)}>View Source</a>
     <a href={relUrl(`/history/${href}`)}>View History</a>
+    <Search query={q} />
   </nav>
 </div>
