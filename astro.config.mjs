@@ -9,6 +9,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
 	site: 'https://masputrawae.github.io',
 	base: '/',
+  output: 'server',
 	devToolbar: { enabled: false },
 	integrations: [icon()],
 
