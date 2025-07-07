@@ -35,34 +35,33 @@ for (const group of SIDEBAR) {
 
 <aside
 	id="offcanvas"
-	class="fixed top-0 left-0 z-50 h-dvh w-xs overflow-y-auto bg-zinc-900 p-4 transition-all duration-300 ease-in-out lg:visible lg:sticky lg:translate-none"
+	class="fixed top-0 left-0 z-50 h-dvh w-2xs overflow-y-auto bg-zinc-900 p-4 transition-all duration-300 ease-in-out lg:visible lg:sticky lg:translate-none"
 >
 	<TopBar inMobile={false} />
-	<nav class="grid">
+	<nav class="grid pt-4">
 		{
 			Object.entries(grouped).map(([groupName, { defaultActive, items }]) => {
-				const collapseId = crypto.randomUUID()
 				return (
-					<div>
+					<div class="mt-4">
 						<button
-							data-collapse-target={collapseId}
-							class="flex w-full items-center justify-between"
+							data-collapse-target={groupName.replace(/\s+/g, '')}
+							class="flex w-full items-center justify-between rounded-sm border border-zinc-800 px-2 py-1 text-lg text-zinc-50"
 						>
 							<span>{groupName}</span>
 							<Icon
 								name="icon-chevron-down"
-								class={`icon ${defaultActive ? 'iconIsActive' : ''}`}
+								class={`icon ${defaultActive ? 'iconIsActive' : ' '}`}
 							/>
 						</button>
 						<div
-							id={collapseId}
-							class={`collapse flex-col ${defaultActive ? 'collapseIsActive' : ''}`}
+							id={groupName.replace(/\s+/g, '')}
+							class={`collapse mt-4 ${defaultActive ? 'collapseIsActive' : ' '}`}
 						>
-							<div>
-								{items.map(item => (
-									<a href={item.id}>{item.title}</a>
-								))}
-							</div>
+							{items.map(item => (
+								<a href={item.id} class="visible block px-4 py-1 text-sm hover:text-white">
+									{item.title}
+								</a>
+							))}
 						</div>
 					</div>
 				)

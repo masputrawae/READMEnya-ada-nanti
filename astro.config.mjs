@@ -10,8 +10,6 @@ import pagefind from 'astro-pagefind'
 export default defineConfig({
 	site: 'https://gasjalan.netlify.app',
 	base: '/',
-	output: 'static',
-	devToolbar: { enabled: false },
 	integrations: [icon(), brainDbAstro()],
 	vite: {
 		plugins: [tailwindcss(), pagefind()]

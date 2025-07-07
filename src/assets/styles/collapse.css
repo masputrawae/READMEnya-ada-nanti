@@ -2,8 +2,8 @@
   .collapse {
     @apply hidden;
   }
-  .collapse.collapseIsActive {
-    @apply grid;
+  .collapseIsActive {
+    @apply block;
   }
 
   .icon{
