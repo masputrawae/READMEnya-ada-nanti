@@ -14,6 +14,6 @@ const { href, q } = Astro.props
   <nav>
     <a href={relUrl(`/source/${href}`)}>View Source</a>
     <a href={relUrl(`/history/${href}`)}>View History</a>
-    <Search query={q} />
+    <Search id='search' query={q} />
   </nav>
 </div>
