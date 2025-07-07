@@ -7,6 +7,7 @@ import icon from 'astro-icon'
 import tailwindcss from '@tailwindcss/vite'
 
 import netlify from '@astrojs/netlify'
+import pagefind from 'astro-pagefind'
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,7 +18,7 @@ export default defineConfig({
 	integrations: [icon(), brainDbAstro()],
 
 	vite: {
-		plugins: [tailwindcss()]
+		plugins: [tailwindcss(), pagefind()]
 	},
 
 	adapter: netlify()
