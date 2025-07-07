@@ -14,13 +14,15 @@ import { SITE_PARAMS } from '../../site.config'
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Home</title>
 	</head>
-	<body class="grid lg:grid-cols-[18rem_minmax(0,1fr)]">
-    <Sidebar />
-		<div class="max-w-full">
-			<TopBar inMobile={true} />
-			<slot />
-			<Footer />
+	<body>
+		<div class="isolate grid lg:grid-cols-[18rem_minmax(0,1fr)]">
+			<Sidebar />
+			<div class="max-w-full">
+				<TopBar inMobile={true} />
+				<slot />
+				<Footer />
+			</div>
 		</div>
-    <script src="../script/main.js"></script>
+		<script src="../script/main.js"></script>
 	</body>
 </html>

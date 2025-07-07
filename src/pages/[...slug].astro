@@ -23,9 +23,10 @@ const { Content } = await render(doc)
 ---
 
 <BaseLayout>
-	<main class="max-w-full overflow-x-hidden">
+	<main class="max-w-full overflow-x-hidden px-4">
 		<NavContent entry={doc}/>
 		<article class="markdown">
+      <h1>{doc.data.title}</h1>
 			<Content />
 		</article>
 	</main>

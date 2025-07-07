@@ -1,16 +1,16 @@
 @layer components {
-  .collapse {
-    @apply hidden;
-  }
-  .collapseIsActive {
-    @apply block;
-  }
+	.collapses {
+		@apply hidden;
+	}
+	.collapses.collapsesIsActive {
+		@apply grid;
+	}
 
-  .icon{
-    @apply -rotate-90;
-  }
+	.icon {
+		@apply -rotate-90;
+	}
 
-  .icon.iconIsActive {
-    @apply -rotate-0;
-  }
+	.icon.iconIsActive {
+		@apply -rotate-0;
+	}
 }

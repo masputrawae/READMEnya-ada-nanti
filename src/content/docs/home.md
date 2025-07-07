@@ -20,8 +20,6 @@ sidebar:
   order: 1
 ---
 
-# Judul Konten
-
 Amet fugiat commodo labore nisi est mollit velit id. Non quis pariatur consectetur ea Lorem excepteur pariatur sit consequat anim do sunt. Occaecat adipisicing veniam non enim adipisicing aliquip. Exercitation ut cillum adipisicing est nostrud consectetur. Et proident veniam adipisicing labore amet dolore officia dolore exercitation laboris in.
 
 ## Heading 2

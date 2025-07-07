@@ -47,7 +47,7 @@ export const setText = (element, text) => {
 		const btnCollapse = $(`[data-collapse-target=${getTargetId}] .icon`)
 
 		onClick(btn, () => {
-			collapse.classList.toggle('collapseIsActive')
+			collapse.classList.toggle('collapsesIsActive')
 			if (btnCollapse) {
 				btnCollapse.classList.toggle('iconIsActive')
 			}

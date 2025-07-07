@@ -15,11 +15,13 @@
 	--text-7xl: 1.68rem;
 }
 
-@import './collapse.css';
-@import './offcanvas.css';
+
 
 @layer components {
 	.markdown {
 		@apply prose prose-invert prose-zinc prose-headings:border-b prose-headings:border-b-zinc-700 prose-headings:pb-2 prose-headings:pt-4 prose-h1:text-6xl prose-h2:text-5xl prose-h3:text-4xl prose-h4:text-3xl prose-h5:text-2xl prose-h6:text-xl prose-headings:font-normal max-w-full leading-relaxed;
 	}
 }
+
+@import './collapse.css';
+@import './offcanvas.css';
