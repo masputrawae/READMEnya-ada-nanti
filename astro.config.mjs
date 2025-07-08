@@ -8,8 +8,8 @@ import pagefind from 'astro-pagefind'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://gasjalan.netlify.app',
-	base: '/',
+	site: 'https://masputrawae.github.io',
+	base: '/READMEnya-ada-nanti/',
 	integrations: [icon(), brainDbAstro()],
 	vite: {
 		plugins: [tailwindcss(), pagefind()]
