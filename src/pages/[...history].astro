@@ -21,12 +21,12 @@ const { entry } = Astro.props
 
 <BaseLayout>
 	<main class="max-w-full overflow-x-hidden">
-		<article class="px-2">
+		<div class="px-2">
       <NavContent entry={entry} activeIn="historyPage" />
-      <section class="markdown border border-zinc-800 px-2 min-h-dvh">
+      <article class="markdown border border-zinc-800 px-2 min-h-dvh">
         <h1>History In: {entry.data.title}</h1>
-      </section>
-		</article>
+      </article>
+		</div>
 	</main>
 </BaseLayout>
 

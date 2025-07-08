@@ -2,7 +2,6 @@
 import Search from 'astro-pagefind/components/Search'
 
 import { SITE_PARAMS } from '../../site.config'
-import { Icon } from 'astro-icon/components'
 import { relUrl } from '../utils/url'
 
 const { entry, activeIn } = Astro.props
@@ -17,52 +16,74 @@ const viewSourceHref = `${githubUrl}/${SITE_PARAMS.repo}/blob/${SITE_PARAMS.bran
 ---
 
 <div class="mb-4 items-center pt-4 lg:flex">
-	<Search id="search" className="pagefind-ui max-h-4" uiOptions={{ showImages: true }} />
+  <Search
+    id="search"
+    className="pagefind-ui max-h-4"
+    uiOptions={{ showImages: true }}
+  />
 </div>
 
-<nav class="relative flex items-center justify-between pt-4">
-	<div class="-mb-[1px] flex bg-zinc-900">
-		<a
-			href={readHref}
-			class={`inline-block px-4 -mr-[1px] py-2 border border-zinc-800 ${activeIn === 'readPage' ? 'border-b-zinc-900' : ''}`}
-			>Read</a
-		>
-		<a
-			href={discussionHref}
-			class={`inline-block px-4 py-2 border border-zinc-800 ${activeIn === 'discussionPage' ? 'border-b-zinc-900' : ''}`}
-			>Discussion</a
-		>
-	</div>
+<header class="relative flex items-center justify-between pt-4">
+  <nav class="-mb-[1px] flex bg-zinc-900">
+    <a
+      href={readHref}
+      class={`inline-block px-4 -mr-[1px] py-2 border border-zinc-800 ${
+        activeIn === 'readPage' ? 'border-b-zinc-900' : ''
+      }`}
+    >
+      Read
+    </a>
+    <a
+      href={discussionHref}
+      class={`inline-block px-4 py-2 border border-zinc-800 ${
+        activeIn === 'discussionPage' ? 'border-b-zinc-900' : ''
+      }`}
+    >
+      Discussion
+    </a>
+  </nav>
 
-	<div class="-mb-[1px] border border-zinc-800 lg:border-none">
-		<button data-dropdown-target="dropDown1" class="inline-block px-4 py-2 lg:hidden">More</button>
+  <div class="-mb-[1px] border border-zinc-800 lg:border-none">
+    <button
+      data-dropdown-target="dropDown1"
+      class="inline-block px-4 py-2 lg:hidden"
+    >
+      More
+    </button>
 
-		<div
-			id="dropDown1"
-			class="absolute top-full right-0 hidden w-full border border-t-0 border-zinc-800 bg-zinc-900 px-4 py-2 lg:py-0 lg:px-0 lg:relative lg:block lg:border-0"
-		>
-			<div class="grid gap-2 lg:flex lg:gap-0">
-				<a
-					href={historyHref}
-					class={`inline-block px-4 -ml-[1px] py-2 border border-zinc-800 ${activeIn === 'historyPage' ? 'lg:border-b-zinc-900' : ''}`}
-					>View History</a
-				>
-				<a
-					target="_blank"
-					rel="noopener noreferrer"
-					href={viewSourceHref}
-					class="-ml-[1px] inline-block border border-zinc-800 px-4 py-2">View Source</a
-				>
-				<a
-					target="_blank"
-					rel="noopener noreferrer"
-					href={editPageHref}
-					class="-ml-[1px] inline-block border border-zinc-800 px-4 py-2">Edit Page</a
-				>
-			</div>
-		</div>
-	</div>
-</nav>
+    <div
+      id="dropDown1"
+      class="absolute top-full right-0 hidden w-full border border-t-0 border-zinc-800 bg-zinc-900 px-4 py-2 lg:py-0 lg:px-0 lg:relative lg:block lg:border-0"
+    >
+      <nav class="grid gap-2 lg:flex lg:gap-0">
+        <a
+          href={historyHref}
+          class={`inline-block px-4 -ml-[1px] py-2 border border-zinc-800 ${
+            activeIn === 'historyPage' ? 'lg:border-b-zinc-900' : ''
+          }`}
+        >
+          View History
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={viewSourceHref}
+          class="-ml-[1px] inline-block border border-zinc-800 px-4 py-2"
+        >
+          View Source
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={editPageHref}
+          class="-ml-[1px] inline-block border border-zinc-800 px-4 py-2"
+        >
+          Edit Page
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
 
 <style is:global>
 	.pagefind-ui {

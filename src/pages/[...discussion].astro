@@ -21,11 +21,11 @@ const { doc } = Astro.props
 
 <BaseLayout>
 	<main class="max-w-full overflow-x-hidden">
-		<article class="px-2">
+		<div class="px-2">
       <NavContent entry={doc} activeIn="discussionPage" />
-      <section class="markdown border border-zinc-800 px-2 min-h-dvh">
+      <aside class="markdown border border-zinc-800 px-2 min-h-dvh">
         <h1>Talk In: {doc.data.title}</h1>
-      </section>
-		</article>
+      </aside>
+		</div>
 	</main>
 </BaseLayout>
