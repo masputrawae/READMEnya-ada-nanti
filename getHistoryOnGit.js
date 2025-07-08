@@ -12,7 +12,7 @@ function getFullHistoryMap() {
   // --pretty=format:"..." menentukan info metadata commit.
   // --name-only membuat git log mencetak nama file yang berubah di setiap commit.
   const output = execSync(
-    `git log --max-count=100 --pretty=format:"%h|%at|%s|%an|%ae|%ad|%cn|%ce|%cd|" --name-only -- ./src/content/docs/`,
+    `git log --max-count=100 --pretty=format:"%H|%at|%s|%an|%ae|%ad|%cn|%ce|%cd|" --name-only -- ./src/content/docs/`,
     { encoding: 'utf-8' }
   )
 

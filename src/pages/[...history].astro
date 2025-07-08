@@ -7,26 +7,39 @@ import type { GetStaticPaths } from 'astro'
 
 export const getStaticPaths = (async () => {
 	const docs = await getCollection('docs')
-
 	return [
 		...docs.map(entry => ({
 			params: { history: `/History-In/${entry.id}/` },
 			props: { entry }
-		}))
+		})),
 	]
 }) satisfies GetStaticPaths
 
 const { entry } = Astro.props
+
+const histories = await getCollection('historyOnGit')
+const filterHistory = histories.filter(history => history.id === entry.filePath)
 ---
 
 <BaseLayout>
 	<main class="max-w-full overflow-x-hidden">
-		<div class="px-2">
-      <NavContent entry={entry} activeIn="historyPage" />
-      <article class="markdown border border-zinc-800 px-2 min-h-dvh">
-        <h1>History In: {entry.data.title}</h1>
-      </article>
+		<div class="px-2 lg:px-4 xl:px-8">
+			<NavContent entry={entry} activeIn="historyPage" />
+			<article class="markdown min-h-dvh border border-zinc-800 px-2 lg:px-4 xl:px-8">
+				<h1>History In: {entry.data.title}</h1>
+        <ul>
+          {
+            filterHistory.map(history => (
+              history.data.map(item => (
+                <li class="grid">
+                  <span>Commit Message: {item.message}</span>
+                  <span>Commit Message: {item.author}</span>
+                </li>
+              ))
+            ))
+          }
+        </ul>
+			</article>
 		</div>
 	</main>
 </BaseLayout>
-

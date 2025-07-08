@@ -22,12 +22,12 @@ const { doc } = Astro.props
 
 <BaseLayout>
 	<main class="max-w-full overflow-x-hidden">
-		<div class="px-2">
-      <NavContent entry={doc} activeIn="discussionPage" />
-      <aside class="markdown border border-zinc-800 px-2 min-h-dvh">
-        <h1>Talk In: {doc.data.title}</h1>
-        <Giscus/>
-      </aside>
+		<div class="px-2 lg:px-4 xl:px-8">
+			<NavContent entry={doc} activeIn="discussionPage" />
+			<aside class="markdown min-h-dvh border border-zinc-800 px-2 lg:px-4 xl:px-8">
+				<h1>Talk In: {doc.data.title}</h1>
+				<Giscus />
+			</aside>
 		</div>
 	</main>
 </BaseLayout>

@@ -24,12 +24,12 @@ const { Content } = await render(doc)
 
 <BaseLayout>
 	<main class="max-w-full overflow-x-hidden">
-		<div class="px-2">
-      <NavContent entry={doc} activeIn="readPage" />
-      <article class="markdown border border-zinc-800 px-2 min-h-dvh">
-        <h1>{doc.data.title}</h1>
-        <Content />
-      </article>
+		<div class="px-2 lg:px-4 xl:px-8">
+			<NavContent entry={doc} activeIn="readPage" />
+			<article class="markdown min-h-dvh border border-zinc-800 px-2 lg:px-4 xl:px-8">
+				<h1>{doc.data.title}</h1>
+				<Content />
+			</article>
 		</div>
 	</main>
 </BaseLayout>
