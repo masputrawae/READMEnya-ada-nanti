@@ -10,7 +10,7 @@ export const getStaticPaths = (async () => {
 
 	return [
 		...docs.map(entry => ({
-			params: { history: `/History-In=${entry.id}/` },
+			params: { history: `/History-In/${entry.id}/` },
 			props: { entry }
 		}))
 	]

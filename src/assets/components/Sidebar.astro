@@ -30,10 +30,12 @@ for (const group of SIDEBAR) {
 		items: itemsInGroup
 	}
 }
+
+console.log(Astro.url.pathname)
 ---
 
 <aside
-id="offcanvas"
+	id="offcanvas"
 	class="fixed top-0 left-0 z-50 h-dvh w-2xs overflow-y-auto bg-zinc-900 p-4 transition-all duration-300 ease-in-out lg:visible lg:sticky lg:translate-none"
 >
 	<TopBar inMobile={false} />
@@ -45,7 +47,10 @@ id="offcanvas"
 						<strong class="text-zinc-50">{groupName}</strong>
 					</li>
 					{items.map(item => {
-						const isActive = Astro.url.pathname === relUrl(item.id)
+						const isActive =
+							Astro.url.pathname === item.id ||
+							(item.id !== relUrl('/') && Astro.url.pathname.startsWith(item.id))
+
 						return (
 							<li>
 								<a

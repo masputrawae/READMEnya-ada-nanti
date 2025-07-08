@@ -4,13 +4,14 @@ import NavContent from '../assets/components/NavContent.astro'
 
 import { getCollection } from 'astro:content'
 import type { GetStaticPaths } from 'astro'
+import Giscus from '../assets/components/Giscus.astro'
 
 export const getStaticPaths = (async () => {
 	const docs = await getCollection('docs')
 
 	return [
 		...docs.map(doc => ({
-			params: { discussion: `/Discussion-In=${doc.id}` },
+			params: { discussion: `/Discussion-In/${doc.id}` },
 			props: { doc }
 		}))
 	]
@@ -25,6 +26,7 @@ const { doc } = Astro.props
       <NavContent entry={doc} activeIn="discussionPage" />
       <aside class="markdown border border-zinc-800 px-2 min-h-dvh">
         <h1>Talk In: {doc.data.title}</h1>
+        <Giscus/>
       </aside>
 		</div>
 	</main>

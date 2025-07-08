@@ -8,18 +8,18 @@ const { entry, activeIn } = Astro.props
 const githubUrl = `https://github.com`
 
 const readHref = relUrl(entry.id === 'home' ? '/' : entry.id)
-const discussionHref = relUrl(`/Discussion-In=${entry.id}/`)
-const historyHref = relUrl(`/History-In=${entry.id}/`)
+const discussionHref = relUrl(`/Discussion-In/${entry.id}/`)
+const historyHref = relUrl(`/History-In/${entry.id}/`)
 
 const editPageHref = `${githubUrl}/${SITE_PARAMS.repo}/edit/${SITE_PARAMS.branch}/${entry.filePath}`
 const viewSourceHref = `${githubUrl}/${SITE_PARAMS.repo}/blob/${SITE_PARAMS.branch}/${entry.filePath}?plain=1`
 ---
 
-<div class="mb-4 items-center pt-4 lg:flex">
+<div class="mb-4 items-center pt-4 pb-8 lg:flex">
   <Search
     id="search"
     className="pagefind-ui max-h-4"
-    uiOptions={{ showImages: true }}
+    uiOptions={{ showImages: false }}
   />
 </div>
 
@@ -87,7 +87,7 @@ const viewSourceHref = `${githubUrl}/${SITE_PARAMS.repo}/blob/${SITE_PARAMS.bran
 
 <style is:global>
 	.pagefind-ui {
-		--pagefind-ui-scale: 0.5;
+		--pagefind-ui-scale: 0.7;
 		--pagefind-ui-primary: rgb(80, 80, 255);
 		--pagefind-ui-text: rgb(255, 255, 255);
 		--pagefind-ui-border: rgb(60, 60, 60);
@@ -95,7 +95,6 @@ const viewSourceHref = `${githubUrl}/${SITE_PARAMS.repo}/blob/${SITE_PARAMS.bran
 		--pagefind-ui-border-radius: 0.25rem;
 		--pagefind-ui-font: sans-serif;
 		--pagefind-ui-background: rgb(37, 37, 37);
-
 		width: 100%;
 	}
 

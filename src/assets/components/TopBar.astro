@@ -2,11 +2,12 @@
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import { SITE_PARAMS } from '../../site.config'
+import { relUrl } from '../utils/url'
 
 const { inMobile } = Astro.props
 
 const title = SITE_PARAMS.title
-const logo = SITE_PARAMS.logo
+const logo = relUrl(SITE_PARAMS.logo)
 const tagline = SITE_PARAMS.tagline
 
 const SITE_URL = `${import.meta.env.SITE}${import.meta.env.BASE_URL}`
