@@ -38,19 +38,16 @@ export const setText = (element, text) => {
 	})
 })()
 
-// ====================== COLLAPSE ====================== //
+// ====================== DROPDOWN ====================== //
 ;(() => {
-	const buttons = $$('[data-collapse-target]')
+	const buttons = $$('[data-dropdown-target]')
 	buttons.forEach((btn) => {
-		const getTargetId = btn.getAttribute('data-collapse-target')
-		const collapse = $(`#${getTargetId}`)
-		const btnCollapse = $(`[data-collapse-target=${getTargetId}] .icon`)
+		const getTargetId = btn.getAttribute('data-dropdown-target')
+		const dropdown = $(`#${getTargetId}`)
 
 		onClick(btn, () => {
-			collapse.classList.toggle('collapsesIsActive')
-			if (btnCollapse) {
-				btnCollapse.classList.toggle('iconIsActive')
-			}
+			dropdown.classList.toggle('block')
+			dropdown.classList.toggle('hidden')
 		})
 	})
 })()

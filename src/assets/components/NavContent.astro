@@ -5,7 +5,7 @@ import { SITE_PARAMS } from '../../site.config'
 import { Icon } from 'astro-icon/components'
 import { relUrl } from '../utils/url'
 
-const { entry } = Astro.props
+const { entry, activeIn } = Astro.props
 const githubUrl = `https://github.com`
 
 const readHref = relUrl(entry.id === 'home' ? '/' : entry.id)
@@ -16,63 +16,89 @@ const editPageHref = `${githubUrl}/${SITE_PARAMS.repo}/edit/${SITE_PARAMS.branch
 const viewSourceHref = `${githubUrl}/${SITE_PARAMS.repo}/blob/${SITE_PARAMS.branch}/${entry.filePath}?plain=1`
 ---
 
-<div class="flex items-center justify-between flex-wrap pt-4">
-	<nav class="flex items-center flex-wrap border border-zinc-700 mb-4">
-		<a class="px-4 py-2 w-max border-r border-zinc-700" href={readHref}>Read</a>
-		<a class="px-4 py-2 w-max" href={discussionHref}>Discussion</a>
-    <button data-collapse-target="navContent" class="px-4 py-2 w-max border-l border-zinc-700">More</button>
-	</nav>
-
-	<nav id="navContent" class="collapses items-center flex-wrap border border-zinc-700 mb-4 lg:flex ">
-		<a class="px-4 py-2 w-max visible" href={historyHref}>View History</a>
-		<a target="_blank" rel="noopener noreferrer" class="px-4 py-2 w-max visible" href={editPageHref}
-			>Edit Page</a
-		>
-		<a target="_blank" rel="noopener noreferrer" class="px-4 py-2 w-max visible" href={viewSourceHref}
-			>View Source</a
-		>
-	</nav>
-
-	<nav class="flex items-center w-full px-5 mb-4">
-		<Search id="search" className="pagefind-ui max-h-4" uiOptions={{ showImages: true }} />
-	</nav>
+<div class="mb-4 items-center pt-4 lg:flex">
+	<Search id="search" className="pagefind-ui max-h-4" uiOptions={{ showImages: true }} />
 </div>
 
+<nav class="relative flex items-center justify-between pt-4">
+	<div class="-mb-[1px] flex bg-zinc-900">
+		<a
+			href={readHref}
+			class={`inline-block px-4 -mr-[1px] py-2 border border-zinc-800 ${activeIn === 'readPage' ? 'border-b-zinc-900' : ''}`}
+			>Read</a
+		>
+		<a
+			href={discussionHref}
+			class={`inline-block px-4 py-2 border border-zinc-800 ${activeIn === 'discussionPage' ? 'border-b-zinc-900' : ''}`}
+			>Discussion</a
+		>
+	</div>
+
+	<div class="-mb-[1px] border border-zinc-800 lg:border-none">
+		<button data-dropdown-target="dropDown1" class="inline-block px-4 py-2 lg:hidden">More</button>
+
+		<div
+			id="dropDown1"
+			class="absolute top-full right-0 hidden w-full border border-t-0 border-zinc-800 bg-zinc-900 px-4 py-2 lg:py-0 lg:px-0 lg:relative lg:block lg:border-0"
+		>
+			<div class="grid gap-2 lg:flex lg:gap-0">
+				<a
+					href={historyHref}
+					class={`inline-block px-4 -ml-[1px] py-2 border border-zinc-800 ${activeIn === 'historyPage' ? 'lg:border-b-zinc-900' : ''}`}
+					>View History</a
+				>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href={viewSourceHref}
+					class="-ml-[1px] inline-block border border-zinc-800 px-4 py-2">View Source</a
+				>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href={editPageHref}
+					class="-ml-[1px] inline-block border border-zinc-800 px-4 py-2">Edit Page</a
+				>
+			</div>
+		</div>
+	</div>
+</nav>
+
 <style is:global>
-  .pagefind-ui {
-    --pagefind-ui-scale: 0.5;
-    --pagefind-ui-primary: rgb(80, 80, 255);
-    --pagefind-ui-text: rgb(255, 255, 255);
-    --pagefind-ui-border: rgb(60, 60, 60);
-    --pagefind-ui-border-width: 1px;
-    --pagefind-ui-border-radius: 0.25rem;
-    --pagefind-ui-font: sans-serif;
-    --pagefind-ui-background: rgb(37, 37, 37);
-    
-    width: 100%;
-  }
-  
-  .pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-top: 0px;
-    z-index: 9999;
-    padding: 0 2em 1em;
-    overflow-y: auto;
-    box-shadow:
-      0 10px 10px -5px rgba(0, 0, 0, 0.2),
-      0 2px 2px 0 rgba(0, 0, 0, 0.1);
-    border-bottom-right-radius: var(--pagefind-ui-border-radius);
-    border-bottom-left-radius: var(--pagefind-ui-border-radius);
-    background-color: var(--pagefind-ui-background);
-  }
+	.pagefind-ui {
+		--pagefind-ui-scale: 0.5;
+		--pagefind-ui-primary: rgb(80, 80, 255);
+		--pagefind-ui-text: rgb(255, 255, 255);
+		--pagefind-ui-border: rgb(60, 60, 60);
+		--pagefind-ui-border-width: 1px;
+		--pagefind-ui-border-radius: 0.25rem;
+		--pagefind-ui-font: sans-serif;
+		--pagefind-ui-background: rgb(37, 37, 37);
 
-  .pagefind-ui .pagefind-ui__result-link {
-    color: var(--pagefind-ui-primary);
-  }
+		width: 100%;
+	}
 
-  .pagefind-ui .pagefind-ui__result-excerpt {
-    color: var(--pagefind-ui-text);
-  }
+	.pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin-top: 0px;
+		z-index: 9999;
+		padding: 0 2em 1em;
+		overflow-y: auto;
+		box-shadow:
+			0 10px 10px -5px rgba(0, 0, 0, 0.2),
+			0 2px 2px 0 rgba(0, 0, 0, 0.1);
+		border-bottom-right-radius: var(--pagefind-ui-border-radius);
+		border-bottom-left-radius: var(--pagefind-ui-border-radius);
+		background-color: var(--pagefind-ui-background);
+	}
+
+	.pagefind-ui .pagefind-ui__result-link {
+		color: var(--pagefind-ui-primary);
+	}
+
+	.pagefind-ui .pagefind-ui__result-excerpt {
+		color: var(--pagefind-ui-text);
+	}
 </style>

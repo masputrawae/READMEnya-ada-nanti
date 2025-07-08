@@ -1,8 +1,0 @@
-@layer components {
-  #offcanvas {
-    @apply invisible -translate-x-full;
-  }
-  #offcanvas.offcanvasIsActive {
-    @apply translate-x-0 visible;
-  }
-}
