@@ -10,6 +10,8 @@ import pagefind from 'astro-pagefind'
 export default defineConfig({
 	site: 'https://masputrawae.github.io',
 	base: '/READMEnya-ada-nanti/',
+  trailingSlash: 'always',
+  build: {format: 'directory'},
 	integrations: [icon(), brainDbAstro()],
 	vite: {
 		plugins: [tailwindcss(), pagefind()]
