@@ -1,12 +1,39 @@
 <div id="searchBar" class="search-bar">
-  <div class="search-bar__form">
-    <label for="search">
-      {{ partial "components/icon" (dict "name" "search") }}
-    </label>
-    <input type="search" name="search" id="search" class="search-bar__input">
+  <div class="search-bar__wrapper">
+    <form class="search-bar__form">
+      <label for="search">
+        {{ partial "components/icon" (dict "name" "search") }}
+      </label>
+      <input
+        type="search"
+        name="search"
+        id="search"
+        class="search-bar__input"
+        placeholder="Search Notes..."
+      />
+    </form>
+    <button class="search-bar__close" data-modal="searchBar">
+      {{ partial "components/icon" (dict "name" "x") }}
+    </button>
   </div>
 
   <nav class="search-bar__results-wrapper">
-    <ul id="results" class="results"></ul>
+    <ul id="results" class="results">
+      <li class="results">
+        <a href="" class="results__link">dummy 1</a>
+      </li>
+      <li class="results">
+        <a href="" class="results__link">dummy 2</a>
+      </li>
+      <li class="results">
+        <a href="" class="results__link">dummy 3</a>
+      </li>
+      <li class="results">
+        <a href="" class="results__link">dummy 4</a>
+      </li>
+      <li class="results">
+        <a href="" class="results__link">dummy 5</a>
+      </li>
+    </ul>
   </nav>
 </div>

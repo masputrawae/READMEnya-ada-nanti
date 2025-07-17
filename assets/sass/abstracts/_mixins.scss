@@ -11,7 +11,7 @@
 // flex variant
 @mixin flex-justify($justify, $align) {
   display: flex;
-  justify-content: $val;
+  justify-content: $justify;
   align-items: $align;
 }
 
