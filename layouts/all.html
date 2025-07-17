@@ -1,0 +1,10 @@
+{{- define "main" }}
+  
+  {{- if in (slice "home" "page") .Kind  }}
+    {{ partial "content" . }}
+  {{- else if in (slice "section" "taxonomy" "term") .Kind }}
+    {{ partial "content" . }}
+  {{- else }}
+    {{- errorf "Unsupported page kind: %s" .Kind }}
+  {{- end }}
+{{- end }}

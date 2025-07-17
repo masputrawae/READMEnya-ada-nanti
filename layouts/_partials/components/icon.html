@@ -1,0 +1,15 @@
+{{/* Partial: icon.html
+     - name: nama file SVG (tanpa .svg)
+     - class: class CSS (opsional)
+*/}}
+
+{{- $name := .name -}}
+{{- $class := or .class "" -}}
+
+{{- $data := dict "class" $class -}}
+
+{{- $icon := resources.Get (print "icons/" $name ".svg") 
+    | resources.ExecuteAsTemplate (print "icons/" $name ".svg") $data 
+    | resources.Minify -}}
+
+{{- $icon.Content | safeHTML -}}

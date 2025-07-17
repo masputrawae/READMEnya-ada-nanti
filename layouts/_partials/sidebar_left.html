@@ -1,0 +1,7 @@
+<aside>
+  <header>
+    <h2>Header Sidebar</h2>
+  </header>
+  {{ partial "components/menu.html" (dict "menuID" "main" "page" .) }}
+  {{ partial "components/tree" . }}
+</aside>

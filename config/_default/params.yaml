@@ -1,0 +1,52 @@
+author        : 'Putra Jaya'
+description   : |
+  In nostrud ut sunt cupidatat amet. Nostrud laboris occaecat qui sit adipisicing Lorem exercitation culpa sunt ut exercitation mollit. Deserunt sunt eu eiusmod amet dolore tempor do tempor culpa esse.
+
+logo          : assets/images/logo.webp
+image         : assets/images/default-image.webp
+
+tagline:
+  - Selamat Datang!
+  - Hari Yang Indah!
+  - Manusia Biasa
+  - Semangat Belajar!
+  - Semangat Koding!
+  - Hai Hello!
+  - Cah Bagus
+
+wikilink      : false
+
+social:
+  - name      : Facebook
+    url       : https://facebook.com
+    icon      : facebook
+  - name      : Twitter x
+    url       : https://x.com/
+    icon      : twitter-x
+
+favicons:
+  - rel       : icon
+    type      : image/x-icon
+    href      : assets/favicons/favicon.ico
+  - rel       : apple-touch-icon
+    type      : image/png
+    size      : 180x180
+    href      : assets/favicons/apple-touch-icon.png
+  - rel       : icon
+    type      : image/png
+    size      : 32x32
+    href      : assets/favicons/favicon-32x32.png
+  - rel       : icon
+    type      : image/png
+    size      : 16x16
+    href      : assets/favicons/favicon-16x16.png
+  - rel       : icon
+    type      : image/png
+    size      : 192x192
+    href      : assets/favicons/android-chrome-192x192.png
+  - rel       : icon
+    type      : image/png
+    size      : 512x512
+    href      : assets/favicons/android-chrome-512x512.png
+  - rel       : manifest
+    href      : manifest.json

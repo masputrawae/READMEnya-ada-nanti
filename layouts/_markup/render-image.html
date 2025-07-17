@@ -1,0 +1,12 @@
+{{- $src := .Destination | safeURL | relURL -}}
+{{- $alt := .PlainText | default "Image" -}}
+{{- $titleParts := split .Title "|" -}}
+{{- $align := index $titleParts 0 | default "center" -}}
+{{- $caption := index $titleParts 1 | default "" -}}
+
+<figure class="figure figure--{{ $align }}">
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" class="figure__image">
+  {{- if $caption }}
+    <figcaption class="figure__caption">{{ $caption | markdownify }}</figcaption>
+  {{- end -}}
+</figure>

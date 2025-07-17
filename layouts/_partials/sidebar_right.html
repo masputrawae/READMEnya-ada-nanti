@@ -1,0 +1,8 @@
+<aside>
+  <header>
+    <h2>Header Sidebar</h2>
+  </header>
+
+  {{ .TableOfContents }}
+  {{ partial "components/terms.html" (dict "taxonomy" "tags" "page" .) }}
+</aside>

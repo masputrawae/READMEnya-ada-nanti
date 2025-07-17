@@ -1,0 +1,10 @@
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+
+{{ range site.Params.favicons }}
+  <link 
+    rel="{{ .rel }}" 
+    {{ with .type }}type="{{ . }}"{{ end }}
+    {{ with .size }}sizes="{{ . }}"{{ end }}
+    href="{{ .href | absURL }}"
+  />
+{{ end }}

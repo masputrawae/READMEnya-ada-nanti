@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html 
+  lang="{{ site.Language.LanguageCode }}" 
+  dir="{{ or site.Language.LanguageDirection `ltr` }}" 
+  data-theme="dark"
+>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {{ partial "headed/meta" . }}
+  {{ partial "headed/font" . }}
+  {{ partial "headed/sass" . }}
+  
+</head>
+<body>
+  <div class="layout">
+    {{ partial "header" . }}
+    {{ partial "sidebar_left" . }}
+
+    <main class="main">
+      <article class="markdown">
+        <h1>{{ .Title }}</h1>
+        {{ block "main" . }}{{ end }}
+      </article>
+    </main>
+
+    {{ partial "footer" . }}
+    {{ partial "sidebar_right" . }}
+  </div>
+
+  {{ partial "headed/js" . }}
+</body>
+</html>
