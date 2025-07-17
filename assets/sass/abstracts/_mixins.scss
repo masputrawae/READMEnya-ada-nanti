@@ -1,0 +1,66 @@
+// _breakpoints.scss
+@use './variables' as v;
+
+@mixin full-screen {
+  position: fixed;
+  inset: 0;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+// flex variant
+@mixin flex-justify($justify, $align) {
+  display: flex;
+  justify-content: $val;
+  align-items: $align;
+}
+
+@mixin circle($val) {
+  width: $val;
+  height: $val;
+  border-radius: 50%;
+}
+
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin transition($val...) {
+  transition: $val, 0.3s ease-in-out;
+}
+
+@mixin width-height($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin grid-cols($val) {
+  display: grid;
+  grid-template-columns: repeat($val, minmax(0, 1fr));
+}
+
+@mixin theme-vars($map) {
+  @each $key, $value in $map {
+    --#{$key}: #{$value};
+  }
+}
+
+@mixin custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-border-default);
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--color-border-default);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 4px;
+  }
+}

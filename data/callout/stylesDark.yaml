@@ -1,0 +1,109 @@
+tip:
+  bg: "#4a3f00"
+  border: "#d4b106"
+  color: "#fffbe6"
+
+info:
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+success: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+warning:
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+danger:
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+error: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+bug: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+note:
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+abstract: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+todo: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+question: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+failure: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+example: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+quote: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+important: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+history: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+journal: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+date: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+book: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+search: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+person: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"
+
+code: 
+  bg: "#002766"
+  border: "#69c0ff"
+  color: "#e6f7ff"

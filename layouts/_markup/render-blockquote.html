@@ -1,77 +1,27 @@
-{{ $icons := dict
-  "tip" "fire"
-  "info" "info-circle"
-  "success" "clipboard-check"
-  "warning" "exclamation-octagon"
-  "danger" "lightning-fill"
-  "error" "bug"
-  "bug" "bug-fill"
-  "note" "pen"
-  "abstract" "clipboard-data"
-  "todo" "check2-circle"
-  "question" "question-circle"
-  "failure" "x"
-  "example" "list-ul"
-  "quote" "quote"
-  "important" "exclamation-triangle-fill"
-  "history" "clock-history"
-  "journal" "journal-text"
-  "date" "calendar"
-  "book" "book"
-  "search" "search"
-  "person" "person"
-  "code" "braces"
+{{ $icons := site.Data.callout.icons }}
+{{ $lightStyles := site.Data.callout.stylesLight }}
+{{ $darkStyles := site.Data.callout.stylesDark }}
+{{ $default := site.Data.callout.default }}
 
-  "alexa" "alexa"
-  "behance" "behance"
-  "bluesky" "bluesky"
-  "discord" "discord"
-  "dribbble" "dribbble"
-  "facebook" "facebook"
-  "github" "github"
-  "gitlab" "gitlab"
-  "google" "google"
-  "instagram" "instagram"
-  "line" "line"
-  "linkedin" "linkedin"
-  "mastodon" "mastodon"
-  "medium" "medium"
-  "messenger" "messenger"
-  "microsoft-teams" "microsoft-teams"
-  "opencollective" "opencollective"
-  "paypal" "paypal"
-  "pinterest" "pinterest"
-  "quora" "quora"
-  "reddit" "reddit"
-  "signal" "signal"
-  "sina-weibo" "sina-weibo"
-  "skype" "skype"
-  "slack" "slack"
-  "snapchat" "snapchat"
-  "sourceforge" "sourceforge"
-  "spotify" "spotify"
-  "stack-overflow" "stack-overflow"
-  "strava" "strava"
-  "substack" "substack"
-  "telegram" "telegram"
-  "tencent-qq" "tencent-qq"
-  "threads" "threads"
-  "threads-fill" "threads-fill"
-  "tiktok" "tiktok"
-  "twitch" "twitch"
-  "twitter" "twitter"
-  "twitter-x" "twitter-x"
-  "vimeo" "vimeo"
-  "wechat" "wechat"
-  "whatsapp" "whatsapp"
-  "wordpress" "wordpress"
-  "yelp" "yelp"
-  "youtube" "youtube"
-}}
+{{ $light := index $lightStyles .AlertType | default (index $default "light") }}
+{{ $dark := index $darkStyles .AlertType | default (index $default "dark") }}
+
+<style>
+  [data-theme="light"] .callout-{{ .AlertType }} {
+    --callout-bg: {{ $light.bg }};
+    --callout-border: {{ $light.border }};
+    --callout-color: {{ $light.color }};
+  }
+  [data-theme="dark"] .callout-{{ .AlertType }} {
+    --callout-bg: {{ $dark.bg }};
+    --callout-border: {{ $dark.border }};
+    --callout-color: {{ $dark.color }};
+  }
+</style>
 
 {{ if eq .Type "alert" }}
   <details 
-    class="callout callout--other callout--{{ .AlertType }}" 
+    class="callout callout-{{ .AlertType }}" 
     open
   >
     <summary 

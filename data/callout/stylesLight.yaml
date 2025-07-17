@@ -1,0 +1,109 @@
+tip:
+  bg:
+  border:
+  color:
+
+info:
+  bg: "#1e40af10" # blue 800 + 10
+  border: "#172554" # blue 950
+  color: "#60a5fa" # blue 400
+
+success: 
+  bg:
+  border:
+  color:
+
+warning:
+  bg:
+  border:
+  color:
+
+danger:
+  bg:
+  border:
+  color:
+
+error: 
+  bg:
+  border:
+  color:
+
+bug: 
+  bg:
+  border:
+  color:
+
+note:
+  bg:
+  border:
+  color:
+
+abstract: 
+  bg:
+  border:
+  color:
+
+todo: 
+  bg:
+  border:
+  color:
+
+question: 
+  bg:
+  border:
+  color:
+
+failure: 
+  bg:
+  border:
+  color:
+
+example: 
+  bg:
+  border:
+  color:
+
+quote: 
+  bg:
+  border:
+  color:
+
+important: 
+  bg:
+  border:
+  color:
+
+history: 
+  bg:
+  border:
+  color:
+
+journal: 
+  bg:
+  border:
+  color:
+
+date: 
+  bg:
+  border:
+  color:
+
+book: 
+  bg:
+  border:
+  color:
+
+search: 
+  bg:
+  border:
+  color:
+
+person: 
+  bg:
+  border:
+  color:
+
+code: 
+  bg:
+  border:
+  color:
