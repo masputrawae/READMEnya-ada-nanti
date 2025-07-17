@@ -1,0 +1,14 @@
+<a href="{{ site.BaseURL | relURL }}" class="brand">
+  <img
+    src="{{ site.Params.logo | relURL }}"
+    width="40"
+    height="40"
+    loading="eager"
+    alt="Logo {{ site.Params.author }}"
+    class="brand__logo"
+  />
+  <span class="brand__body">
+    <strong class="brand__title">{{ site.Params.author }}</strong>
+    <em class="typewriter brand__tagline" data-texts="{{ site.Params.tagline | jsonify }}"></em>
+  </span>
+</a>

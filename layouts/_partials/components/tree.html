@@ -19,6 +19,7 @@
           
           <button class="tree__btn {{ if $isOpen}} tree__btn--isOpen {{ end }}" data-folder-target="{{ .RelPermalink | md5 }}">
             {{ .LinkTitle }}
+            {{ partial "components/icon" (dict "name" "caret-right-fill") }}
           </button>
 
           <ul id="{{ .RelPermalink | md5 }}" class="tree__children {{ if $isOpen }} tree__children--isOpen {{ end }}">

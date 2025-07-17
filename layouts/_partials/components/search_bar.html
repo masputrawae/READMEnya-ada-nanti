@@ -1,0 +1,12 @@
+<div id="searchBar" class="search-bar">
+  <div class="search-bar__form">
+    <label for="search">
+      {{ partial "components/icon" (dict "name" "search") }}
+    </label>
+    <input type="search" name="search" id="search" class="search-bar__input">
+  </div>
+
+  <nav class="search-bar__results-wrapper">
+    <ul id="results" class="results"></ul>
+  </nav>
+</div>

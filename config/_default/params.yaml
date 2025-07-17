@@ -16,6 +16,11 @@ tagline:
 
 wikilink      : false
 
+github:
+  url: https://github.com/masputrawae
+  repo: /READMEnya-ada-nanti/
+  branch: main
+
 social:
   - name      : Facebook
     url       : https://facebook.com
@@ -23,6 +28,12 @@ social:
   - name      : Twitter x
     url       : https://x.com/
     icon      : twitter-x
+  - name      : Discord
+    url       : https://Discord/
+    icon      : discord
+  - name      : Github
+    url       : https://github.com/masputrawae/
+    icon      : github
 
 favicons:
   - rel       : icon

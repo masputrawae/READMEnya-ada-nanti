@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="header__left">
+    {{ partial "components/brand" . }}
+    <button data-modal="searchBar">
+      {{ partial "components/icon" (dict "name" "search") }}
+      <span>Search Notes...</span>
+    </button>
+  </div>
+
+  <div class="header__right">
+    {{ range site.Params.social }}
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+        {{ partial "components/icon" (dict "name" .icon ) }}
+      </a>
+    {{ end }}
+  </div>
+</header>

@@ -2,9 +2,25 @@ main:
   - name: Home
     pageRef: /
     weight: 10
+    params: 
+      icon: house
   - name: Tags
     pageRef: /tags
     weight: 20
+    params: 
+      icon: tags
   - name: Tutorial
     pageRef: /Tutorial
     weight: 30
+    params:
+      icon: paragraph
+  - name: Apaun
+    pageRef: /Apaun
+    weight: 40
+    params:
+      icon: rocket-takeoff
+  - name: Entahlah
+    pageRef: /Entahlah
+    weight: 50
+    params:
+      icon: bookmark

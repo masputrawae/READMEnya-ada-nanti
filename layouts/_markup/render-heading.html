@@ -1,7 +1,9 @@
 {{ $level := .Level }}
-{{ $label := printf "#H%d" $level }}
+{{ $label := printf "type-h%d" $level }}
 
 <h{{ $level }} id="{{ .Anchor }}" class="heading">
   <span class="heading__text">{{ .Text }}</span>
-  <a href="#{{ .Anchor }}" class="heading__anchor">#</a>
+  <a href="#{{ .Anchor }}" class="heading__anchor">
+    {{ partial "components/icon" (dict "name" $label) }}
+  </a>
 </h{{ $level }}>

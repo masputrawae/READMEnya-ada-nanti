@@ -1,6 +1,9 @@
-<aside>
-  <header>
-    <h2>Header Sidebar</h2>
+<aside id="sidebarLeft" class="sidebar sidebar--left">
+  <header class="sidebar__header">
+    {{ partial "components/brand" . }}
+    <button data-modal="sidebarLeft">
+      {{ partial "components/icon" (dict "name" "x") }}
+    </button>
   </header>
   {{ partial "components/menu.html" (dict "menuID" "main" "page" .) }}
   {{ partial "components/tree" . }}
