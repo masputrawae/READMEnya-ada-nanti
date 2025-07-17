@@ -1,8 +1,7 @@
 @use '../abstracts/breakpoints' as b;
 @use '../abstracts/mixins' as m;
 @use '../abstracts/variables' as v;
-@use "sass:map";
-
+@use 'sass:map';
 
 html {
   @include m.custom-scrollbar;
@@ -70,7 +69,7 @@ body {
       }
     }
 
-    @include b.min(lg){
+    @include b.min(lg) {
       scroll-margin-block-start: 11dvh;
     }
   }
@@ -180,6 +179,25 @@ body {
     }
   }
 
+  .link {
+    &--external {
+      color: var(--color-link-external);
+
+      &:hover {
+        color: var(--color-link-external-hover);
+      }
+    }
+    
+    &--broken {
+      color: var(--color-link-broken);
+      cursor: not-allowed;
+      
+      &:hover {
+        color: var(--color-link-broken-hover);
+      }
+    }
+  }
+
   // CODE
   pre,
   code,
@@ -227,7 +245,6 @@ body {
 
 // LINKS
 .link {
-
   .bi {
     width: var(--text-sm);
     height: var(--text-sm);
@@ -238,7 +255,6 @@ body {
     color: var(--color-alert-error);
   }
 }
-
 
 // HIGLIGHT
 .highlight {
@@ -346,7 +362,6 @@ body {
 .callout {
   border: 1px solid var(--callout-border, #999);
   background-color: var(--callout-bg, #f0f0f0);
-  color:  var(--callout-color, #000);
   display: block;
   margin: 1rem;
 
@@ -356,6 +371,7 @@ body {
     gap: 1rem;
     padding: 1rem;
     border-bottom: 1px solid var(--callout-border, #999);
+    color: var(--callout-color, #000);
     margin-bottom: -1px;
     cursor: pointer;
   }

@@ -1,15 +1,24 @@
-{{- $isWikilink := eq .Destination "content" -}}
+{{- $isWikilink := eq .Destination "wikilinks" -}}
 {{- $isExternal := or (strings.HasPrefix .Destination "http://")
                        (strings.HasPrefix .Destination "https://")
                        (strings.HasPrefix .Destination "mailto:") -}}
 
 {{ if $isWikilink }}
   {{/* --- Wikilink handling --- */}}
-  {{ $target := .Title | lower | urlize }}
-  {{ $page := or (.Page.Site.GetPage $target) (.Page.Site.GetPage (printf "/%s" $target)) }}
+  {{ $rawTitle := cond (ne .Title "") .Title .Text }}
+  {{ $target := $rawTitle | lower | urlize }}
+  {{ $parts := split $target "#" }}
+  {{ $pagePath := index $parts 0 }}
+  {{ $anchor := "" }}
+  {{ if gt (len $parts) 1 }}
+    {{ $anchor = printf "#%s" (index $parts 1) }}
+  {{ end }}
+
+  {{ $page := or (.Page.Site.GetPage $pagePath) (.Page.Site.GetPage (printf "/%s" $pagePath)) }}
+
 
   {{ if $page }}
-    <a class="link link--internal" href="{{ $page.RelPermalink }}">
+    <a class="link link--internal" href="{{ $page.RelPermalink }}{{ $anchor }}">
       {{ .Text | safeHTML }}
       {{ partial "components/icon" (dict "name" "folder-symlink") }}
     </a>
@@ -23,7 +32,7 @@
       {{ end }}
     {{ end }}
     {{ if $aliasPage }}
-      <a class="link link--internal" href="{{ $aliasPage.RelPermalink }}">
+      <a class="link link--internal" href="{{ $aliasPage.RelPermalink }}{{ $anchor }}">
         {{ .Text | safeHTML }}
         {{ partial "components/icon" (dict "name" "folder-symlink") }}
       </a>
@@ -38,10 +47,17 @@
 {{ else if not $isExternal }}
   {{/* --- Internal markdown links + alias support --- */}}
   {{ $dest := .Destination }}
-  {{ $page := or (.Page.GetPage $dest) (.Page.Site.GetPage (printf "/%s" $dest)) }}
+  {{ $parts := split $dest "#" }}
+  {{ $pagePath := index $parts 0 }}
+  {{ $anchor := "" }}
+  {{ if gt (len $parts) 1 }}
+    {{ $anchor = printf "#%s" (index $parts 1) }}
+  {{ end }}
+  {{ $page := or (.Page.GetPage $pagePath) (.Page.Site.GetPage (printf "/%s" $pagePath)) }}
+
 
   {{ if $page }}
-    <a class="link link--internal" href="{{ $page.RelPermalink }}">
+    <a class="link link--internal" href="{{ $page.RelPermalink }}{{ $anchor }}">
       {{ .Text | safeHTML }}
       {{ partial "components/icon" (dict "name" "folder-symlink") }}
     </a>
@@ -55,7 +71,7 @@
       {{ end }}
     {{ end }}
     {{ if $aliasPage }}
-      <a class="link link--internal" href="{{ $aliasPage.RelPermalink }}">
+      <a class="link link--internal" href="{{ $aliasPage.RelPermalink }}{{ $anchor }}">
         {{ .Text | safeHTML }}
         {{ partial "components/icon" (dict "name" "folder-symlink") }}
       </a>
