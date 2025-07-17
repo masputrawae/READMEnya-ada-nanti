@@ -1,0 +1,20 @@
+@use '../abstracts/breakpoints' as b;
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+#linkpreview {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  max-height: 400px;
+  overflow: scroll;
+  z-index: 999999;
+  border: 1px solid var(--color-border-default);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: var(--color-shadow-default);
+  color: var(--color-text-default);
+  background-color: var(--color-bg-default);
+}

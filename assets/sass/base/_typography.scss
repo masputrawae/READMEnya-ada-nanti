@@ -187,11 +187,11 @@ body {
         color: var(--color-link-external-hover);
       }
     }
-    
+
     &--broken {
       color: var(--color-link-broken);
       cursor: not-allowed;
-      
+
       &:hover {
         color: var(--color-link-broken-hover);
       }
@@ -246,8 +246,7 @@ body {
 // LINKS
 .link {
   .bi {
-    width: var(--text-sm);
-    height: var(--text-sm);
+    @include m.width-height(var(--text-sm), var(--text-sm));
     display: inline;
   }
 
@@ -355,6 +354,7 @@ body {
       float: none;
       display: block;
       max-width: 100%;
+      text-align: left;
     }
   }
 }
