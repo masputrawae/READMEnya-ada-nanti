@@ -28,10 +28,11 @@
     {{ partial "footer" . }}
     {{ partial "sidebar_right" . }}
   </div>
+  <div id="linkpreview" role="tooltip"></div>
+  <div class="overlay" id="overlay"></div>
+  
   {{ partial "bottom_bar" . }}
   {{ partial "components/search_bar" . }}
-  {{ partial "components/link_preview" . }}
-  <div class="overlay" id="overlay"></div>
   {{ partial "headed/js" . }}
 </body>
 </html>

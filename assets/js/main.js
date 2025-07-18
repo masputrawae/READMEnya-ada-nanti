@@ -4,6 +4,7 @@ import { typingHandler } from './module_internal/typing'
 import { treeHandler } from './module_internal/collapsible_tree'
 import { tocHandler } from './module_internal/toc_highlight'
 import { searchHandler } from './module_internal/search'
+import { linkPreviewHandler } from './module_internal/link_preview'
 
 function main() {
   themeHandler()
@@ -12,6 +13,7 @@ function main() {
   treeHandler()
   tocHandler()
   searchHandler()
+  linkPreviewHandler()
 }
 
 document.addEventListener('DOMContentLoaded', main)
