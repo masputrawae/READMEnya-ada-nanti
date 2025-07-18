@@ -1,0 +1,36 @@
+@use '../abstracts/breakpoints' as b;
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.pagination {
+  @include m.flex-justify(center, center);
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  &__link {
+    @include m.flex-justify(center, center);
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--color-border-default);
+    border-radius: 0.5rem;
+    box-shadow: var(--color-shadow-default);
+
+    &--next {
+      text-align: end;
+    }
+
+    &--prev {
+      text-align: start;
+    }
+    span {
+      font-size: var(--text-2xl);
+    }
+    .bi {
+      @include m.width-height(2rem, 2rem);
+    }
+  }
+
+  @include b.min(xl){
+    flex-wrap: nowrap;
+  }
+}

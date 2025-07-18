@@ -38,6 +38,8 @@ type-h3
 type-h4
 type-h5
 type-h6
+chevron-double-left
+chevron-double-right
 
 alexa
 behance

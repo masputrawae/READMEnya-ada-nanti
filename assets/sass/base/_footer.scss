@@ -1,0 +1,29 @@
+@use '../abstracts/breakpoints' as b;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+
+.footer {
+  margin-block-start: 5rem;
+  padding-inline: 1rem;
+  padding-block-end: 6rem;
+  display: grid;
+  gap: 5rem;
+
+  &__copyright {
+    @include m.flex-justify(center, center);
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a {
+      color: var(--color-link-external);
+
+      &:hover {
+        color: var(--color-link-external-hover);
+      }
+    }
+  }
+
+  @include b.min(lg) {
+    grid-area: footer;
+  }
+}

@@ -68,6 +68,10 @@
   ul {
     padding-inline-start: 1rem;
     color: var(--color-text-muted);
+    
+    ul {
+      border-left: 1px solid var(--color-border-default);
+    }
   }
 
   a {
@@ -75,9 +79,10 @@
     display: inline-block;
     font-size: var(--text-sm);
     @include m.text-ellipsis;
+    @include m.transition(color, border-bottom-color);
 
     &.isActive {
-      color: var(--color-text-title);
+      color: var(--color-accent);
       border-bottom-color: var(--color-accent);
     }
   }

@@ -11,7 +11,7 @@
       'header header header'
       'sidebar-left content content'
       'sidebar-left footer footer';
-    grid-template-columns: 22rem minmax(0, 1fr);
+    grid-template-columns: 21rem minmax(0, 1fr);
     grid-template-rows: repeat(3, auto);
   }
 
@@ -20,7 +20,7 @@
       'header header header'
       'sidebar-left content sidebar-right'
       'sidebar-left footer sidebar-right';
-    grid-template-columns: 22rem minmax(0, 1fr) 22rem;
+    grid-template-columns: 21rem minmax(0, 1fr) 21rem;
   }
 }
 
@@ -68,13 +68,6 @@
 
   @include b.min(lg) {
     grid-area: content;
-  }
-}
-
-.footer {
-  padding-block-end: 6rem;
-  @include b.min(lg) {
-    grid-area: footer;
   }
 }
 

@@ -1,3 +1,28 @@
 <footer class="footer">
-  <p>Copyright {{ now.Year }}. All rights reserved.</p>
+  <nav class="pagination">
+    {{ $pages := .CurrentSection.Pages.ByTitle }}
+    {{ with $pages.Prev . }}
+      <a href="{{ .RelPermalink }}" class="pagination__link pagination__link--prev">
+        {{ partial "components/icon" (dict "name" "chevron-double-left") }}
+        <span>
+          <div>Prev</div>
+          <div>{{ .Title }}</div>
+        </span>
+      </a>
+    {{ end }}
+    {{ with $pages.Next . }}
+      <a href="{{ .RelPermalink }}" class="pagination__link pagination__link--next">
+        <span>
+          <div>Next</div>
+          <div>{{ .Title }}</div>
+        </span>
+        {{ partial "components/icon" (dict "name" "chevron-double-right") }}
+      </a>
+    {{ end }}
+  </nav>
+
+  <div class="footer__copyright">
+    <p class="footer__info"><a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Built with Hugo</a> · Theme by Putra Jaya</p>
+    <p>&copy; {{ site.Title }} · {{ now.Year }}. All rights reserved.</p>
+  </div>
 </footer>

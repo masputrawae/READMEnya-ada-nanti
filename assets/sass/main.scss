@@ -6,9 +6,11 @@
 @use './base/layout';
 @use './base/header';
 @use './base/sidebar';
+@use './base/footer';
 
 // COMPONENTS
 @use './components/brand';
 @use './components/link-preview';
 @use './components/menu';
 @use './components/search-bar';
+@use './components/pagination';
