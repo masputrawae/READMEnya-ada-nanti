@@ -64,6 +64,7 @@
 
 .main {
   padding-inline: 1rem;
+  margin-block-start: 10dvh;
 
   @include b.min(lg) {
     grid-area: content;

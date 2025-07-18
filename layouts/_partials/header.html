@@ -9,11 +9,11 @@
 
   <div class="header__right">
     {{ range site.Params.social }}
-      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="header__btn-action">
         {{ partial "components/icon" (dict "name" .icon ) }}
       </a>
     {{ end }}
-    <button data-btn-theme>
+    <button data-btn-theme class="header__btn-action">
       {{ partial "components/icon" (dict "name" "sun") }}
       {{ partial "components/icon" (dict "name" "moon-stars") }}
     </button>

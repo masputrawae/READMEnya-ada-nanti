@@ -40,9 +40,9 @@
     @include m.flex-justify(space-between, center);
     width: 100%;
     color: var(--color-text-title);
-    font-weight: 700;
     font-size: var(--text-lg);
     text-shadow: var(--color-text-shadow-default);
+    font-weight: 600;
 
     &--isOpen {
       .bi {

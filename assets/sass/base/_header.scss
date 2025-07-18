@@ -46,6 +46,18 @@
       @include m.flex-justify(space-between, center);
     }
 
+    &__right {
+      gap: 1rem;
+    }
+
+    &__btn-action {
+      color: var(--color-text-title);
+
+      .bi {
+        @include m.width-height(1.25rem, 1.25rem);
+      }
+    }
+
     [data-modal='searchBar'] {
       margin-top: 0;
     }

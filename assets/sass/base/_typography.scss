@@ -27,6 +27,7 @@ body {
     margin-top: 1.5rem;
     margin-bottom: 2rem;
     color: var(--color-text-title);
+    scroll-margin-block-start: 10dvh;
   }
 
   h1 {
@@ -54,7 +55,13 @@ body {
   }
 
   .heading {
-    border-bottom: 1px solid var(--color-border-default);
+    @include m.flex-justify(start, center);
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-border-default);      scroll-margin-block-start: 11dvh;
+
+    .bi {
+      @include m.width-height(1.5rem, 1.5rem);
+    }
 
     &__anchor {
       visibility: hidden;
@@ -67,10 +74,6 @@ body {
         visibility: visible;
         opacity: 1;
       }
-    }
-
-    @include b.min(lg) {
-      scroll-margin-block-start: 11dvh;
     }
   }
 
