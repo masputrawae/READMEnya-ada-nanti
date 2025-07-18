@@ -1,3 +1,14 @@
 baseURL       : 'https://example.org/'
 languageCode  : 'id'
 title         : 'My Garden'
+
+mediaType: "application/json"
+outputFormats:
+  search:
+    mediaType: "application/json"
+    baseName: "search"
+    isPlainText: true
+    notAlternative: true
+
+outputs:
+  home: ["search"]
