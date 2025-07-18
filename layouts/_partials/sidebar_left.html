@@ -5,6 +5,8 @@
       {{ partial "components/icon" (dict "name" "x") }}
     </button>
   </header>
-  {{ partial "components/menu.html" (dict "menuID" "main" "page" .) }}
-  {{ partial "components/tree" . }}
+  <nav class="sidebar__navigation">
+    {{ partial "components/menu.html" (dict "menuID" "main" "page" .) }}
+    {{ partial "components/tree" . }}
+  </nav>
 </aside>

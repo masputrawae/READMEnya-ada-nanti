@@ -4,6 +4,14 @@
     {{ partial "content" . }}
   {{- else if in (slice "section" "taxonomy" "term") .Kind }}
     {{ partial "content" . }}
+
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </li>
+      {{ end }}
+    </ul>
   {{- else }}
     {{- errorf "Unsupported page kind: %s" .Kind }}
   {{- end }}

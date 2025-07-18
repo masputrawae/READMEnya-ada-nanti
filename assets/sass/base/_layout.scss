@@ -40,6 +40,16 @@
   }
 }
 
+.main {
+  padding-inline: 1rem;
+  margin-block-start: 10dvh;
+
+  @include b.min(lg) {
+    grid-area: content;
+    padding-inline: 2rem;
+  }
+}
+
 .bottom-bar {
   @include m.flex-justify(space-around, center);
   width: 100%;
@@ -59,15 +69,6 @@
 
   @include b.min(lg){
     display: none;
-  }
-}
-
-.main {
-  padding-inline: 1rem;
-  margin-block-start: 10dvh;
-
-  @include b.min(lg) {
-    grid-area: content;
   }
 }
 
