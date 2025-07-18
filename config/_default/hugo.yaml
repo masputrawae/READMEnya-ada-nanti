@@ -11,4 +11,4 @@ outputFormats:
     notAlternative: true
 
 outputs:
-  home: ["search"]
+  home: ["html", "rss", "sitemap", "search"]
