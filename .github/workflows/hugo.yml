@@ -31,14 +31,14 @@ jobs:
       - name: Install Dart Sass
         run: sudo snap install dart-sass
 
-      - name: Npm Install
-        run: npm install
+      # - name: Npm Install
+      #   run: npm install
         
       - name: Gas Python
         run: python3 ./index_generator.py
         
-      - name: Gas Python Lagi
-        run: python3 ./moving_icon.py
+      # - name: Gas Python Lagi
+      #   run: python3 ./moving_icon.py
           
       - name: Setup Pages
         id: pages
