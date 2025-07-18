@@ -119,7 +119,7 @@ Sample text here...
 
 Syntax highlighting
 
-```js
+```js {file="/src/main.js"}
 var foo = function (bar) {
   return bar++
 }

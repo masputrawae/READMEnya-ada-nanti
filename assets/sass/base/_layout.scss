@@ -4,6 +4,24 @@
 
 .layout {
   display: block;
+
+  @include b.min(lg) {
+    display: grid;
+    grid-template-areas:
+      'header header header'
+      'sidebar-left content content'
+      'sidebar-left footer footer';
+    grid-template-columns: 22rem minmax(0, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+
+  @include b.min(xl) {
+    grid-template-areas:
+      'header header header'
+      'sidebar-left content sidebar-right'
+      'sidebar-left footer sidebar-right';
+    grid-template-columns: 22rem minmax(0, 1fr) 22rem;
+  }
 }
 
 [data-btn-theme] {
@@ -19,35 +37,6 @@
     .bi-sun {
       display: none;
     }
-  }
-}
-
-.header {
-  @include m.flex-justify(space-around, center);
-  z-index: 300;
-  width: 100%;
-
-  .brand {
-    display: none;
-  }
-
-  [data-modal='searchBar'] {
-    @include m.flex-justify(center, center);
-    margin-top: 1rem;
-    background-color: var(--color-bg-second);
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--color-border-default);
-    border-radius: 0.25rem;
-    box-shadow: var(--color-shadow-default);
-
-    span {
-      width: 200px;
-    }
-  }
-
-  &__right {
-    display: none;
   }
 }
 
@@ -67,113 +56,26 @@
     border-radius: 0.25rem;
     color: var(--color-text-title);
   }
-}
 
-.sidebar {
-  @include m.width-height(100%, 100dvh);
-  @include m.transition(visibility, transform);
-  position: fixed;
-  inset-block-start: 0;
-  padding: 1rem;
-  visibility: hidden;
-  z-index: 600;
-
-  &--left {
-    background-color: var(--color-bg-second);
-    inset-inline-start: 0;
-    transform: translateX(-100%);
-  }
-
-  &--right {
-    inset-inline-end: 0;
-    background-color: var(--color-bg-default);
-    transform: translateX(100%);
-  }
-
-  &.isOpen {
-    transform: translateX(0%);
-    visibility: visible;
+  @include b.min(lg){
+    display: none;
   }
 }
 
 .main {
   padding-inline: 1rem;
+
+  @include b.min(lg) {
+    grid-area: content;
+  }
 }
 
 .footer {
   padding-block-end: 6rem;
-}
-
-.search-bar {
-  @include m.transition(visibility, opacity);
-  @include m.width-height(80dvw, 40dvh);
-  position: fixed;
-  inset-inline-start: 50%;
-  inset-block-start: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--color-bg-second);
-  border-radius: 0.25rem;
-  border: 1px solid var(--color-border-default);
-  box-shadow: var(--color-shadow-default);
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 700;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-
-  &.isOpen {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  &__wrapper {
-    position: relative;
-    padding: 0.5rem 1rem;
-  }
-
-  &__form {
-    @include m.flex-justify(start, center);
-    width: 100%;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    border-radius: 0.25rem;
-    border: 1px solid var(--color-border-default);
-    background-color: var(--color-bg-default);
-  }
-
-  &__input {
-    outline: none;
-    flex: 1;
-    border: none;
-    background: transparent;
-    color: inherit;
-    font-size: 1rem;
-  }
-
-  &__close {
-    position: absolute;
-    bottom: 50%;
-    right: 0.75rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-
-    .bi {
-      @include m.width-height(1.5rem, 1.5rem);
-    }
-  }
-
-  &__results-wrapper {
-    overflow-y: auto;
-    flex: 1;
-    padding: 0 1rem 1rem;
-    margin-top: 1rem;
+  @include b.min(lg) {
+    grid-area: footer;
   }
 }
-
 
 .overlay {
   @include m.full-screen;

@@ -240,6 +240,7 @@ body {
   }
   @include b.min(xl) {
     max-width: 100ch;
+    padding-inline: 1rem;
   }
 }
 
@@ -275,7 +276,7 @@ body {
   }
 
   &::before {
-    content: attr(title);
+    content: attr(file);
     right: 0;
   }
 

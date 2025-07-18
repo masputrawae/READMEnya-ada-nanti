@@ -1,0 +1,31 @@
+@use '../abstracts/breakpoints' as b;
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &__logo {
+    @include m.circle(50px);
+    box-shadow: var(--color-shadow-default);
+    border: 2px solid var(--color-border-default);
+  }
+
+  &__body {
+    display: grid;
+    text-shadow: var(--color-text-shadow-default);
+  }
+
+  &__title {
+    font-size: var(--text-xl);
+    color: var(--color-text-title);
+  }
+
+  &__tagline {
+    font-size: var(--text-sm);
+    font-style: normal;
+    color: var(--color-text-muted);
+  }
+}

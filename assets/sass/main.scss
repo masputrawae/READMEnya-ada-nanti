@@ -4,6 +4,11 @@
 @use './base/syntax-github-light';
 @use './base/typography';
 @use './base/layout';
+@use './base/header';
+@use './base/sidebar';
 
 // COMPONENTS
+@use './components/brand';
 @use './components/link-preview';
+@use './components/menu';
+@use './components/search-bar';

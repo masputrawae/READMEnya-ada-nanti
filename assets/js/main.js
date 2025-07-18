@@ -170,9 +170,9 @@ function tocHandler() {
       }
     })
 
-    tocLinks.forEach(link => link.classList.remove('active'))
+    tocLinks.forEach(link => link.classList.remove('isActive'))
     if (activeIndex >= 0) {
-      tocLinks[activeIndex].classList.add('active')
+      tocLinks[activeIndex].classList.add('isActive')
     }
   }
 
